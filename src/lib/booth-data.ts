@@ -136,7 +136,7 @@ export const booths: Booth[] = [
         name: 'ECM', 
         description: 'ECM mobile app: mass document approvals & new aged care compliance features.', 
         longDescription: "See ECM's mobile app with mass document approvals and new compliance capabilities for Support at Home in aged care. Experience mobility solutions that enhance operational efficiency.", 
-        image: 'https://placehold.co/600x400.png' 
+        image: 'https://images.unsplash.com/photo-1640694514279-090bb1b09ee9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkYXNoYm9hcmQlMjBpbiUyMG1vYmlsZXxlbnwwfHx8fDE3NDkwMjkwNTN8MA&ixlib=rb-4.1.0&q=80&w=1080' 
       },
       { 
         id: 'f-cp-qs', 
