@@ -18,11 +18,14 @@ export default function HomePage() {
         <HeroVisualEffects /> {/* Add visual effects component */}
         <div className="px-4 z-10 w-full"> {/* Ensure content is above effects, removed container and mx-auto, added w-full */}
           <h1 className={cn(
-            "text-5xl md:text-7xl font-bold mb-8",
+            "text-5xl md:text-7xl font-bold mb-4", // Reduced mb from 8 to 4
             "gradient-text" 
           )}>
             Epicor Product Pavilion 2025
           </h1>
+          <h2 className="text-3xl md:text-4xl font-semibold text-foreground/90 mb-6"> {/* New sub-heading */}
+            Welcome to Manufacturing Bay
+          </h2>
           <p className="text-xl md:text-2xl text-foreground/80 mb-12"> {/* Removed max-w-3xl mx-auto */}
             Step into the future of manufacturing. Explore our latest innovations designed to power your production floor—from smart automation and AI-driven insights to seamless integrations across your supply chain.
           </p>
