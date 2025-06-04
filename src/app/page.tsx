@@ -26,11 +26,11 @@ export default function HomePage() {
   };
 
   const letterVariants = {
-    hidden: { opacity: 0, y: 20, filter: "blur(5px)" },
+    hidden: { opacity: 0, y: 20 }, // Removed filter: "blur(5px)"
     visible: {
       opacity: 1,
       y: 0,
-      filter: "blur(0px)",
+      // filter: "blur(0px)", // Removed filter
       transition: {
         type: "spring",
         damping: 10, // Adjusted damping
@@ -53,8 +53,8 @@ export default function HomePage() {
           </h1>
           <motion.h2 
             className={cn(
-              "text-3xl md:text-4xl font-semibold text-foreground/90 mb-6",
-              "gradient-text" // Added gradient text class
+              "text-3xl md:text-4xl font-semibold text-foreground/90 mb-6", // text-foreground/90 is overridden by gradient-text
+              "gradient-text" 
             )}
             variants={sentenceVariants}
             initial="hidden"
