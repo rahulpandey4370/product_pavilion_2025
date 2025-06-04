@@ -9,7 +9,7 @@ export default function HomePage() {
   return (
     <div className="space-y-24">
       {/* Hero Section */}
-      <section className="relative text-center py-20 md:py-32 min-h-[calc(80vh-var(--header-height,4rem))] flex flex-col justify-center items-center overflow-hidden">
+      <section className="relative text-center py-20 md:py-32 xl:py-40 2xl:py-48 min-h-[calc(80vh-var(--header-height,4rem))] flex flex-col justify-center items-center overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-gradient-to-br from-primary via-deep-black to-accent opacity-30 animate-gradient-bg bg-400%"></div>
           <div className="absolute inset-0 bg-deep-black opacity-70"></div>

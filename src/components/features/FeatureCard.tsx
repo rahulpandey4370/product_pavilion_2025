@@ -45,6 +45,7 @@ export default function FeatureCard({ feature, onViewDetails, index, boothColorG
               alt={feature.name}
               layout="fill"
               objectFit="cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               data-ai-hint="technology abstract"
             />
           </div>

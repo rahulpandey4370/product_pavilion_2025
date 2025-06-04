@@ -26,6 +26,7 @@ export default function FeatureModalClient({ feature, isOpen, onClose }: Feature
                   alt={feature.name}
                   layout="fill"
                   objectFit="cover"
+                  sizes="(max-width: 640px) 100vw, 600px"
                   data-ai-hint="technology detail"
                 />
               </div>
