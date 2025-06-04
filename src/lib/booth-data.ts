@@ -84,7 +84,7 @@ export const booths: Booth[] = [
         id: 'f-np-as-ai-integrations',
         name: 'Automation Studio: AI-Enabled Integrations',
         description: 'Discover how AI simplifies integration and automation with Automation Studio. This demo showcases how AI assists in building custom connectors and automation recipes—empowering users to connect systems and streamline workflows without deep technical expertise. It’s low-code integration made smarter, faster, and more accessible.',
-        image: 'https://images.unsplash.com/photo-1616121591347-9e39e909e4a8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxhdXRvbWF0aW9uJTIwd29ya2Zsb3d8ZW58MHx8fHwxNzQ5MDQwNTA1fDA&ixlib=rb-4.1.0&q=80&w=1080'
+        image: 'https://images.unsplash.com/photo-1602468432285-0fe26e8352ac?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
     ],
   },
@@ -112,49 +112,49 @@ export const booths: Booth[] = [
         id: 'f-ai-dev-pr-review',
         name: 'AI-Based PR Review',
         description: 'AI Agent integrated with Azure DevOps to automatically generate intelligent pull request summaries and previews. This enables faster, more informed code reviews and improves collaboration across development teams.',
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1607799632518-da91dd151b38?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
       {
         id: 'f-ai-dev-epiconnect',
         name: 'EpiConnect – Smarter Development & Testing through AI-Driven Customer Insight',
         description: 'EpiConnect bridges gaps between Engineering and Support using AI to analyze support tickets, identify recurring issues, monitor sentiment, and prioritize improvements. It also recommends severity for reported issues and aligns product testing with real customer pain points for more data-driven decisions.',
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1599658880436-c61792e70672?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
       {
         id: 'f-ai-dev-log-analyzer',
         name: 'Log Analyzer through AI',
         description: 'An AI-driven tool that semantically analyzes unstructured log files using large language models. It allows users to query logs in natural language, detect anomalies faster, and supports a modular, scalable, and product-agnostic setup—enhancing debugging and incident resolution.',
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1746608943132-065d1d4b3c5d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
       {
         id: 'f-ai-dev-imagen',
         name: 'iMAGen – Intelligent Manual & Automated Test Generator',
         description: 'iMAGen reads Jira requirements, summarizes feature expectations, and automatically generates detailed manual test cases. It integrates with test repositories and significantly improves QA efficiency—making it scalable across multiple products and projects.',
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1745674684463-62f62cb88d4c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
       {
         id: 'f-ai-dev-itrace',
         name: 'iTRACE – Intelligent Test Root-Cause Analysis and Correction Engine',
         description: 'An AI-assisted tool that analyzes logs, screenshots, and scripts to identify test automation failures. It provides actionable root-cause insights and fix suggestions—reducing debugging time from hours to minutes and accelerating continuous testing cycles.',
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1573164574472-797cdf4a583a?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
       {
         id: 'f-ai-dev-impact-analyzer',
         name: 'Impact Analyzer – AI-Enabled Precision Testing',
         description: 'Uses LLMs to analyze code diffs or commits from CodeChurn Tool and determine the impacted modules, functionalities, and relevant regression test cases. This enables precision testing and reduces unnecessary test runs—improving test relevance and efficiency.',
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1582224369048-e4d2d7a6ba30?q=80&w=2097&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
       {
         id: 'f-ai-dev-recoder-executor',
         name: 'ReCoder Executor – No Code Solution for Test Automation',
         description: 'A no-code test execution platform designed for scripts generated by Epicor ReCoder. It allows users to organize, execute, and monitor automated tests through an intuitive interface—streamlining automation workflows without requiring any programming skills.',
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
       {
         id: 'f-ai-dev-documatch',
         name: 'Epicor DocuMatch',
         description: 'A robust document comparison engine capable of identifying content differences across formats—including images and charts. It can be used manually or integrated into automation workflows, supporting validation and quality assurance across diverse document types.',
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1600267165477-6d4cc741b379?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
     ],
   },
@@ -170,7 +170,7 @@ export const booths: Booth[] = [
         id: 'f-cp-mattec-new-ux',
         name: 'Showcasing the New Mattec Experience',
         description: "Step into the future of Mattec with a modernized user experience. This demo illustrates the migration from legacy tech like C, C++, and MFC to a fully web-based platform built on the Kinetic ICE framework. The new Advanced MES interface eliminates client installs, enhances navigation, and lets users personalize their homepage with shortcuts—creating a faster, more user-friendly experience.",
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1602576666092-bf6447a729fc?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
       {
         id: 'f-cp-ecm-mobile-bulk',
@@ -182,19 +182,19 @@ export const booths: Booth[] = [
         id: 'f-cp-ice-overview',
         name: 'ICE Overview',
         description: "An overview of Epicor’s powerful ICE framework and its role in enabling innovation across products like Kinetic, Mattec, and SLS. Learn about key tools like BAQs, BPMs, Epicor Functions, UD Services, and Extension Maintenance—empowering users and developers to extend and automate the platform with ease.",
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1664526937033-fe2c11f1be25?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
       {
         id: 'f-cp-qs-freight',
         name: 'Quick Ship: Integrated Freight Validation',
         description: "This demo highlights seamless freight invoice validation by integrating ECM, Quick Ship, and Kinetic ERP. Invoices captured through ECM are auto-validated by Quick Ship and processed in Kinetic—reducing errors, cutting manual tasks, and optimizing freight workflows.",
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1664575602276-acd073f104c1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
       {
         id: 'f-cp-sls-new-ux-support',
         name: 'SLS New Experience & Support at Home',
         description: "Discover the redesigned, browser-based SLS interface built on Kinetic design principles. Also featured is the “Support at Home” module—helping aged care providers maintain compliance with Australia’s Aged Care Quality Standards. Includes tools for streamlined incident reporting, accurate documentation, and enhanced client privacy and rights.",
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1608222351212-18fe0ec7b13b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       }
     ],
   },
@@ -210,31 +210,31 @@ export const booths: Booth[] = [
         id: 'f-mfg-csf-flow',
         name: 'CSF Overall Flow',
         description: "An end-to-end demonstration of the Quote to Cash cycle in a generic manufacturing ERP context. This model provides a high-level understanding of the business flow supported by Kinetic ERP, enabling a deeper appreciation of the integrated capabilities that support global operations.",
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1580983559367-0dc2f8934365?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
       {
         id: 'f-mfg-csf-einvoicing',
         name: 'CSF E-invoicing Coverage',
         description: "A visual model showing the structure and information flow in e-invoicing systems mandated globally. The demo helps audiences understand the key entities and processes within a CSF-based e-invoicing framework, essential for ensuring compliance and automation across borders.",
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1616156027751-fc9a850fdc9b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
       {
         id: 'f-mfg-tropos-mobile',
         name: 'Tropos Mobile App',
         description: "Explore the modernized mobile experience of Tropos, where old RBA-based screens have been revamped using the latest technology stack. The new mobile app enhances usability and responsiveness—bringing a contemporary, mobile-first approach to process manufacturing operations.",
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1514575110897-1253ff7b2ccb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
       {
         id: 'f-mfg-tropos-kinetic',
         name: 'Tropos Kinetic Integration',
         description: "This demo highlights the financial integration between Tropos and Kinetic ERP. Experience how data flows seamlessly between systems—enabling consistent financial operations, consolidated reporting, and streamlined business processes across both platforms.",
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
       {
         id: 'f-mfg-tropos-liquor',
         name: 'Tropos: Learn to Make Liquor',
         description: "Dive into a smart, unified platform built to manage the planning, simulation, and execution of liquor blending. This feature showcases how precision, experimentation, and quality control come together in one digital solution—empowering manufacturers to maintain batch consistency and compliance.",
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       }
     ],
   },
@@ -250,13 +250,13 @@ export const booths: Booth[] = [
         id: 'f-int-connectors-recipes',
         name: 'AI New Connectors/Recipes',
         description: 'Discover the latest additions to Automation Studio’s connector library, including integrations with Propello, Eclipse, and more. These new recipes enable smoother automation and wider platform support—empowering users to connect business systems faster and build intelligent workflows with minimal effort.',
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1587440871875-191322ee64b0?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
       {
         id: 'f-int-data-fabric',
         name: 'Data Fabric',
         description: 'Showcasing powerful new capabilities in Data Fabric, this demo includes support for large files, cross-tenant configurations, and Linux-based agent deployments. These enhancements offer greater flexibility, scalability, and platform compatibility for complex integration needs.',
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=2006&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
       {
         id: 'f-int-gbl-licensing',
@@ -268,7 +268,7 @@ export const booths: Booth[] = [
         id: 'f-int-quickship-ltl',
         name: 'Quick Ship LTL: Automation Studio Integration',
         description: 'Experience seamless integration between Quick Ship and Automation Studio. This demo shows how the QS Connector and automation recipes are used to coordinate logistics workflows with LTL carriers—reducing manual processing, increasing visibility, and improving shipping efficiency.',
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
     ],
   },
@@ -284,31 +284,31 @@ export const booths: Booth[] = [
         id: 'f-cld-self-serve-upgrade',
         name: 'Self-Serve Upgrade via Cloud Management Portal',
         description: 'Experience the new Self-Serve Upgrade capability in the Cloud Management Portal (CMP), empowering customers to trigger upgrades independently. This innovation reduces upgrade time from 24+ hours to under 1 hour, eliminates dependency on CloudOps, and accelerates platform agility—improving overall customer experience and operational efficiency.',
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1667984390538-3dea7a3fe33d?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
       {
         id: 'f-cld-solarwinds-monitoring',
         name: 'Resource Monitoring with SolarWinds',
         description: 'See how real-time resource monitoring comes to life with SolarWinds. This demo features intuitive dashboards that provide visibility into the health and performance of servers, networks, and applications—complete with proactive alerting and deep operational insights.',
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1690627931320-16ac56eb2588?q=80&w=2093&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
       {
         id: 'f-cld-nextgen-arch-ops',
         name: 'Next-Gen Cloud Architecture & Operations',
         description: 'Explore our next-gen architecture, combining scalable infrastructure, Infrastructure as Code (IaC), CI/CD, and policy-driven governance. With AI-assisted operational insights and anomaly detection, this architecture ensures consistent deployments, faster provisioning, and resilient cloud operations at scale.',
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1629904853893-c2c8981a1dc5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
       {
         id: 'f-cld-quickship-deployment',
         name: 'Quick Ship Deployment (Cloud-Native)',
         description: 'Discover how Quick Ship’s SaaS solution utilizes ARM templates and PowerShell scripting to enable streamlined deployments and seamless upgrades—delivering speed, reliability, and cloud-native scalability for logistics platforms.',
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1577760258779-e787a1733016?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
       {
         id: 'f-cld-resource-optimization',
         name: 'Cloud Resource Optimization: Auto Start/Stop',
         description: 'This initiative demonstrates automated scheduling of start/stop routines for non-production cloud VMs—minimizing costs, conserving energy, and ensuring cloud resources are used only when needed. A smart solution to improve sustainability and reduce operational waste.',
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1667984390535-6d03cff0b11a?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
     ],
   },
