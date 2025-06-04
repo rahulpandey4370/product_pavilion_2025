@@ -262,47 +262,15 @@ html {
 }
 
 
-/* Animated borders wrapper */
+/* Animated borders wrapper - Toned down */
 .booth-card-border-wrap {
-  padding: 2px; /* Controls border thickness */
-  border-radius: calc(var(--radius) + 2px); /* Match outer */
+  border-radius: var(--radius); 
   position: relative;
   overflow: hidden;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.booth-card-border-wrap::before { /* Animated gradient border */
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: conic-gradient(from var(--angle), var(--neon-blue), var(--neon-purple), var(--neon-pink), var(--neon-green), var(--neon-blue));
-  border-radius: inherit; /* Match parent border-radius */
-  animation: rotateBorder 5s linear infinite; /* Slower rotation */
-  z-index: -1; /* Behind the actual card content */
-  opacity: 0; /* Hidden by default, shown on hover */
-  transition: opacity 0.4s ease-in-out;
-}
 
-@media (hover: hover) {
-  .booth-card-border-wrap:hover::before {
-    opacity: 1;
-  }
-  .booth-card-border-wrap:hover {
-     transform: translateY(-5px) scale(1.01); /* Subtle lift for border wrapper */
-  }
-}
-
-
-@property --angle {
-  syntax: '<angle>';
-  initial-value: 0deg;
-  inherits: false;
-}
-
-@keyframes rotateBorder {
-  to { --angle: 360deg; }
-}
-
-/* Removed --booth-accent-color-transparent definitions as they are no longer used for hover */
+/* Removed animated border via ::before and @keyframes rotateBorder */
 
 
 /* Advanced Button Animations - For GradientButton */
@@ -390,7 +358,7 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .scroll-animate, .floating-shape, .particle, .booth-card-base::before, .magnetic-btn::before, .ripple, .booth-card-border-wrap::before, .morphing-shape-bg, .gradient-text, .loading-spinner, .loading-spinner::before, .loading-spinner::after {
+  .scroll-animate, .floating-shape, .particle, .booth-card-base::before, .magnetic-btn::before, .ripple, .morphing-shape-bg, .gradient-text, .loading-spinner, .loading-spinner::before, .loading-spinner::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -595,3 +563,4 @@ html {
   color: var(--neon-green) !important;
 }
 
+    
