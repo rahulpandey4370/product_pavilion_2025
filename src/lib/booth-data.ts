@@ -262,7 +262,7 @@ export const booths: Booth[] = [
         id: 'f-int-di-eulk-licensing',
         name: 'DI / EULK (GBL Licensing Automation)',
         description: 'This demo walks through the GBL (Global Business Logic) process used to automatically generate licenses for Data Interchange and EULK. By eliminating manual intervention, this automation streamlines compliance tasks and accelerates license provisioning in enterprise environments.',
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxHbG9iYWwlMjBMaWNlbnNpbmd8ZW58MHx8fHwxNzQ5MDI5NDc2fDA&ixlib=rb-4.1.0&q=80&w=1080'
       },
       {
         id: 'f-int-quickship-ltl',
@@ -275,44 +275,39 @@ export const booths: Booth[] = [
   {
     id: 'cloud',
     name: 'Cloud',
-    tagline: 'Elevate Your Business with Cloud',
-    description: 'Leverage the power of the cloud for scalability, reliability, and innovation. Our cloud solutions support your digital transformation journey.',
+    tagline: 'Cloud Enablers',
+    description: 'Discover the power of self-managed portals, intelligent cloud architecture, and real-time monitoring—designed to drive innovation, agility, and control. Visit us to see how Epicor delivers a smarter, faster path to the cloud.',
     iconName: 'Cloud',
     heroImage: 'https://images.unsplash.com/photo-1561736778-92e52a7769ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjbG91ZCUyMGNvbXB1dGluZ3xlbnwwfHx8fDE3NDkwMjgxNjB8MA&ixlib=rb-4.1.0&q=80&w=1080',
     features: [
       {
-        id: 'f-cld-cmp',
-        name: 'CMP',
-        description: 'Self-managed portals & intelligent cloud management platforms for innovation.',
-        longDescription: 'Discover the power of self-managed portals and intelligent cloud management platforms designed to drive innovation and control.',
+        id: 'f-cld-self-serve-upgrade',
+        name: 'Self-Serve Upgrade via Cloud Management Portal',
+        description: 'Experience the new Self-Serve Upgrade capability in the Cloud Management Portal (CMP), empowering customers to trigger upgrades independently. This innovation reduces upgrade time from 24+ hours to under 1 hour, eliminates dependency on CloudOps, and accelerates platform agility—improving overall customer experience and operational efficiency.',
         image: 'https://placehold.co/600x400.png'
       },
       {
-        id: 'f-cld-infra',
-        name: 'Infra',
-        description: 'Intelligent cloud architecture for agile, scalable performance.',
-        longDescription: 'Experience intelligent cloud architecture and infrastructure solutions that provide agility and scalable performance.',
+        id: 'f-cld-solarwinds-monitoring',
+        name: 'Resource Monitoring with SolarWinds',
+        description: 'See how real-time resource monitoring comes to life with SolarWinds. This demo features intuitive dashboards that provide visibility into the health and performance of servers, networks, and applications—complete with proactive alerting and deep operational insights.',
         image: 'https://placehold.co/600x400.png'
       },
       {
-        id: 'f-cld-upgrade',
-        name: 'Upgrade',
-        description: "Epicor's smarter, faster path to cloud upgrades with streamlined migration.",
-        longDescription: 'See how Epicor delivers a smarter, faster path to cloud upgrades with streamlined migration processes.',
+        id: 'f-cld-nextgen-arch-ops',
+        name: 'Next-Gen Cloud Architecture & Operations',
+        description: 'Explore our next-gen architecture, combining scalable infrastructure, Infrastructure as Code (IaC), CI/CD, and policy-driven governance. With AI-assisted operational insights and anomaly detection, this architecture ensures consistent deployments, faster provisioning, and resilient cloud operations at scale.',
         image: 'https://placehold.co/600x400.png'
       },
       {
-        id: 'f-cld-ss',
-        name: 'Self Serve',
-        description: 'Self-service capabilities for autonomous cloud management & configuration.',
-        longDescription: 'Explore self-service capabilities that empower users with autonomous cloud management and configuration tools.',
+        id: 'f-cld-quickship-deployment',
+        name: 'Quick Ship Deployment (Cloud-Native)',
+        description: 'Discover how Quick Ship’s SaaS solution utilizes ARM templates and PowerShell scripting to enable streamlined deployments and seamless upgrades—delivering speed, reliability, and cloud-native scalability for logistics platforms.',
         image: 'https://placehold.co/600x400.png'
       },
       {
-        id: 'f-cld-nga',
-        name: 'Cloud Next-Gen Architecture',
-        description: 'Real-time monitoring & next-gen cloud architecture for optimal performance.',
-        longDescription: 'Witness real-time monitoring and next-generation cloud architecture designed for optimal performance and innovation.',
+        id: 'f-cld-resource-optimization',
+        name: 'Cloud Resource Optimization: Auto Start/Stop',
+        description: 'This initiative demonstrates automated scheduling of start/stop routines for non-production cloud VMs—minimizing costs, conserving energy, and ensuring cloud resources are used only when needed. A smart solution to improve sustainability and reduce operational waste.',
         image: 'https://placehold.co/600x400.png'
       },
     ],
@@ -336,3 +331,50 @@ export const getBoothById = (id: string): Booth | undefined => {
   return booths.find(booth => booth.id === id);
 };
 
+// Original data for booth 'f1-kinetic' and 'f1-app-studio' and 'f1-edd' which are now part of 'prism-ai-use-cases'
+// These were likely individual features before being grouped.
+// Retaining them here for context or if they need to be re-integrated separately.
+// {
+//   id: 'f1-kinetic',
+//   name: 'Kinetic',
+//   description: 'Drive intelligent operations and enhanced decision-making with the AI-powered Kinetic platform and Prism tools.',
+//   longDescription: 'Unlock intelligent, seamless operations with the Kinetic platform—powered by AI agents and Prism tools. Enhance decision-making with List, Metric, and Multimodal agents, and customize with ease using Prism for Application Studio. Turn data into insights with Prism for EDD, streamline RFQ workflows, and retrieve documents using natural language via the ECM Agent. Integrated Quick Ship enables real-time freight tracking, while AI-driven KB support empowers self-service. Experience the future of agile, data-driven business.',
+//   image: 'https://images.unsplash.com/photo-1608222351212-18fe0ec7b13b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxEYXNoYm9hcmR8ZW58MHx8fHwxNzQ5MDMxMzAyfDA&ixlib=rb-4.1.0&q=80&w=1080'
+// },
+// {
+//   id: 'f1-app-studio',
+//   name: 'Application Studio',
+//   description: 'Easily customize and extend AI capabilities within Kinetic using Prism for Application Studio.',
+//   longDescription: 'Unlock intelligent, seamless operations with the Kinetic platform—powered by AI agents and Prism tools. Enhance decision-making with List, Metric, and Multimodal agents, and customize with ease using Prism for Application Studio. Turn data into insights with Prism for EDD, streamline RFQ workflows, and retrieve documents using natural language via the ECM Agent. Integrated Quick Ship enables real-time freight tracking, while AI-driven KB support empowers self-service. Experience the future of agile, data-driven business.',
+//   image: 'https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxBcHBsaWNhdGlvbiUyMHN0dWRpb3xlbnwwfHx8fDE3NDkwMzE0MDh8MA&ixlib=rb-4.1.0&q=80&w=1080'
+// },
+// {
+//   id: 'f1-edd',
+//   name: 'EDD',
+//   description: 'Leverage Prism for EDD to transform your enterprise data into actionable business insights.',
+//   longDescription: 'Unlock intelligent, seamless operations with the Kinetic platform—powered by AI agents and Prism tools. Enhance decision-making with List, Metric, and Multimodal agents, and customize with ease using Prism for Application Studio. Turn data into insights with Prism for EDD, streamline RFQ workflows, and retrieve documents using natural language via the ECM Agent. Integrated Quick Ship enables real-time freight tracking, while AI-driven KB support empowers self-service. Experience the future of agile, data-driven business.',
+//   image: 'https://images.unsplash.com/photo-1591696205602-2f950c417cb9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxlbnRlcnByaXNlJTIwZGF0YXxlbnwwfHx8fDE3NDkwMzE1NDl8MA&ixlib=rb-4.1.0&q=80&w=1080'
+// },
+// Original data for 'f-mfg-csf' and 'f-mfg-tropos' which are part of 'manufacturing-erp'
+// {
+//   id: 'f-mfg-csf',
+//   name: 'CSF',
+//   description: "Kinetic ERP's CSF for local compliance & global e-invoicing insights.",
+//   longDescription: "Explore Country Specific Functions (CSF) in Kinetic ERP, designed to meet local compliance needs. Get quick insights into global e-invoicing initiatives driving transparency and accountability in financial transactions.",
+//   image: 'https://images.unsplash.com/photo-1599658880436-c61792e70672?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8aW5zaWdodHN8ZW58MHx8fHwxNzQ5MDI5Mjg0fDA&ixlib=rb-4.1.0&q=80&w=1080'
+// },
+// {
+//   id: 'f-mfg-tropos',
+//   name: 'Tropos',
+//   description: 'Tropos: ERP for process manufacturers with recipe-based production, traceability & compliance.',
+//   longDescription: 'Discover Tropos, the ERP built for process manufacturers in food, beverage, pharmaceuticals, metals, and chemicals—featuring recipe-based production, full traceability, regulatory compliance, and lean manufacturing support.',
+//   image: 'https://images.unsplash.com/photo-1580983559367-0dc2f8934365?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxFUlB8ZW58MHx8fHwxNzQ5MDI5MzQzfDA&ixlib=rb-4.1.0&q=80&w=1080'
+// },
+// Original data for 'f-int-gl' which is part of 'integration'
+// {
+//   id: 'f-int-gl',
+//   name: 'Global Licensing',
+//   description: 'GBL process automates license generation for Data Interchange & EULK.',
+//   longDescription: 'Learn how the GBL process automates license generation for Data Interchange and EULK, streamlining compliance and license management processes.',
+//   image: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxHbG9iYWwlMjBMaWNlbnNpbmd8ZW58MHx8fHwxNzQ5MDI5NDc2fDA&ixlib=rb-4.1.0&q=80&w=1080'
+// }
