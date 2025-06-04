@@ -222,7 +222,7 @@ export const booths: Booth[] = [
     tagline: 'Elevate Your Business with Cloud',
     description: 'Leverage the power of the cloud for scalability, reliability, and innovation. Our cloud solutions support your digital transformation journey.',
     iconName: 'Cloud',
-    heroImage: 'https://placehold.co/1200x400.png',
+    heroImage: 'https://images.unsplash.com/photo-1561736778-92e52a7769ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjbG91ZCUyMGNvbXB1dGluZ3xlbnwwfHx8fDE3NDkwMjgxNjB8MA&ixlib=rb-4.1.0&q=80&w=1080',
     features: [
       { 
         id: 'f-cld-cmp', 
