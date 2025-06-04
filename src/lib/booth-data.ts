@@ -69,19 +69,19 @@ export const booths: Booth[] = [
     heroImage: 'https://placehold.co/1200x400.png',
     features: [
       {
-        id: 'f-np-ecm-ai',
+        id: 'f-np-ecm-ai-order-creation',
         name: 'ECM: AI-Led Order Creation from Document',
         description: 'Discover how AI is transforming order management with this cutting-edge proof of concept. Leveraging GPT and Google Gemini large language models, this demo showcases the automatic conversion of lengthy purchase orders—up to 100 pages—into structured, schema-aligned sales orders in Epicor Kinetic ERP. The AI extracts key details from header, line-item, and schedule levels, enabling high-volume, low-touch processing for faster, smarter order entry.',
         image: 'https://placehold.co/600x400.png'
       },
       {
-        id: 'f-np-ascend-ai',
+        id: 'f-np-ascend-ai-migration',
         name: 'Project Ascend: AI-Driven Migration to Cloud',
         description: 'See how AI is accelerating the journey to the cloud with Project Ascend. This demo highlights how AI analyzes existing customizations and provides summaries of their intent. The initiative supports future migration and streamlining of these customizations into the latest Kinetic version on cloud—reducing manual effort and enabling a smoother, smarter upgrade path.',
         image: 'https://placehold.co/600x400.png'
       },
       {
-        id: 'f-np-as-ai',
+        id: 'f-np-as-ai-integrations',
         name: 'Automation Studio: AI-Enabled Integrations',
         description: 'Discover how AI simplifies integration and automation with Automation Studio. This demo showcases how AI assists in building custom connectors and automation recipes—empowering users to connect systems and streamline workflows without deep technical expertise. It’s low-code integration made smarter, faster, and more accessible.',
         image: 'https://placehold.co/600x400.png'
@@ -241,31 +241,34 @@ export const booths: Booth[] = [
   {
     id: 'integration',
     name: 'Integration',
-    tagline: 'Connect Your Ecosystem',
-    description: 'Seamlessly integrate various systems, applications, and data sources to create a unified and efficient operational environment.',
+    tagline: 'Unify platforms & streamline workflows.',
+    description: 'Explore the latest in Automation Studio with newly added connectors and recipes, including Propello and Eclipse. See enhanced Data Fabric capabilities—featuring large file support, cross-tenant configurations, and Linux agent integration. Learn how the GBL process automates license generation for Data Interchange and EULK, streamlining compliance. Plus, watch seamless Quick Ship–Automation Studio integration in action with LTL carriers using QS Connector and automation recipes.',
     iconName: 'GitMerge',
     heroImage: 'https://images.unsplash.com/photo-1532619675605-1ede6c2ed2b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxpbnRlZ3JhdGlvbnxlbnwwfHx8fDE3NDkwMjk0NTR8MA&ixlib=rb-4.1.0&q=80&w=1080',
     features: [
       {
-        id: 'f-int-as',
-        name: 'Automation Studio',
-        description: 'Automation Studio: new connectors (Propello, Eclipse) & Quick Ship LTL integration.',
-        longDescription: 'Explore the latest in Automation Studio with newly added connectors and recipes, including Propello and Eclipse. Watch seamless Quick Ship–Automation Studio integration in action with LTL carriers using QS Connector and automation recipes.',
+        id: 'f-int-connectors-recipes',
+        name: 'AI New Connectors/Recipes',
+        description: 'Discover the latest additions to Automation Studio’s connector library, including integrations with Propello, Eclipse, and more. These new recipes enable smoother automation and wider platform support—empowering users to connect business systems faster and build intelligent workflows with minimal effort.',
         image: 'https://placehold.co/600x400.png'
       },
       {
-        id: 'f-int-df',
+        id: 'f-int-data-fabric',
         name: 'Data Fabric',
-        description: 'Data Fabric: large file support, cross-tenant configs & Linux agent integration.',
-        longDescription: 'See enhanced Data Fabric capabilities—featuring large file support, cross-tenant configurations, and Linux agent integration for comprehensive data management.',
+        description: 'Showcasing powerful new capabilities in Data Fabric, this demo includes support for large files, cross-tenant configurations, and Linux-based agent deployments. These enhancements offer greater flexibility, scalability, and platform compatibility for complex integration needs.',
         image: 'https://placehold.co/600x400.png'
       },
       {
-        id: 'f-int-gl',
-        name: 'Global Licensing',
-        description: 'GBL process automates license generation for Data Interchange & EULK.',
-        longDescription: 'Learn how the GBL process automates license generation for Data Interchange and EULK, streamlining compliance and license management processes.',
-        image: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxHbG9iYWwlMjBMaWNlbnNpbmd8ZW58MHx8fHwxNzQ5MDI5NDc2fDA&ixlib=rb-4.1.0&q=80&w=1080'
+        id: 'f-int-di-eulk-licensing',
+        name: 'DI / EULK (GBL Licensing Automation)',
+        description: 'This demo walks through the GBL (Global Business Logic) process used to automatically generate licenses for Data Interchange and EULK. By eliminating manual intervention, this automation streamlines compliance tasks and accelerates license provisioning in enterprise environments.',
+        image: 'https://placehold.co/600x400.png'
+      },
+      {
+        id: 'f-int-quickship-ltl',
+        name: 'Quick Ship LTL: Automation Studio Integration',
+        description: 'Experience seamless integration between Quick Ship and Automation Studio. This demo shows how the QS Connector and automation recipes are used to coordinate logistics workflows with LTL carriers—reducing manual processing, increasing visibility, and improving shipping efficiency.',
+        image: 'https://placehold.co/600x400.png'
       },
     ],
   },
