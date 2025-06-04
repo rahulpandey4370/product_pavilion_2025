@@ -8,8 +8,8 @@ import PageWrapper from '@/components/shared/PageWrapper';
 import { ThemeProvider } from '@/components/theme/ThemeProvider';
 
 export const metadata: Metadata = {
-  title: 'ProductVerse',
-  description: 'A premium digital experience for product showcase.',
+  title: 'Product Pavilion (Manufacturing Bay)',
+  description: 'A premium interface to showcase our AI Powered Manufacturing Products',
 };
 
 export default function RootLayout({
