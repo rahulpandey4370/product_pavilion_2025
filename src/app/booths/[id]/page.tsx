@@ -8,7 +8,7 @@ import { getBoothById, booths as allBooths } from '@/lib/booth-data';
 import type { Booth, Feature } from '@/types';
 import FeatureCard from '@/components/features/FeatureCard';
 import FeatureModalClient from '@/components/features/FeatureModalClient';
-import { Button } from '@/components/ui/button'; 
+import { Button } from '@/components/ui/button';
 import { ArrowLeft, ArrowRight, Home, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
@@ -34,7 +34,7 @@ export default function BoothDetailPage() {
   const params = useParams();
   const router = useRouter();
   const id = typeof params.id === 'string' ? params.id : '';
-  
+
   const [booth, setBooth] = useState<Booth | null>(null);
   const [selectedFeature, setSelectedFeature] = useState<Feature | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -61,7 +61,7 @@ export default function BoothDetailPage() {
     setIsModalOpen(false);
     setSelectedFeature(null);
   };
-  
+
   const navigateBooth = (direction: 'prev' | 'next') => {
     if (currentIndex === -1) return;
     let nextIndex;
@@ -132,7 +132,7 @@ export default function BoothDetailPage() {
       </section>
 
       {/* Features Grid Section */}
-      <section className="py-16">
+      <section className="products-section-background">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 gradient-text">Key Features</h2>
           {booth.features.length > 0 ? (
@@ -143,7 +143,7 @@ export default function BoothDetailPage() {
                   feature={feature}
                   onViewDetails={() => handleViewDetails(feature)}
                   index={index}
-                  boothThemeClass={boothThemeClass} 
+                  boothThemeClass={boothThemeClass}
                 />
               ))}
             </div>
