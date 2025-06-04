@@ -4,7 +4,7 @@
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import type { Feature } from '@/types';
-import GradientButton from '@/components/shared/GradientButton';
+import { Button } from '@/components/ui/button'; // Changed from GradientButton
 import { Eye } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -25,6 +25,7 @@ export default function FeatureCard({ feature, onViewDetails, index, boothThemeC
       <Card className={cn(
         "booth-card-base h-full flex flex-col overflow-hidden", 
         "glow-effect"
+        // boothThemeClass is not applied here directly, but CSS vars should cascade
       )}>
         {feature.image && (
           <div className="relative w-full h-48">
@@ -46,11 +47,18 @@ export default function FeatureCard({ feature, onViewDetails, index, boothThemeC
         </CardHeader>
         <CardContent className="flex-grow flex flex-col justify-between text-white/90 z-10">
           <p className="text-sm mb-4">{feature.description}</p>
-          <GradientButton onClick={onViewDetails} size="sm" className="w-full mt-auto" icon={Eye}>
+          <Button
+            onClick={onViewDetails}
+            variant="outline" // Base ShadCN variant
+            size="sm"
+            className="w-full mt-auto feature-card-details-button" // Apply custom class for themed outline
+          >
+            <Eye className="mr-2 h-4 w-4" />
             View Details
-          </GradientButton>
+          </Button>
         </CardContent>
       </Card>
     </div>
   );
 }
+

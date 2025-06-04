@@ -78,6 +78,16 @@
     --loading-bg-end: hsl(260, 70%, 4%);
     --loading-spinner-color: var(--neon-blue);
     --loading-logo-shadow: var(--neon-purple);
+
+    /* HSL versions of neon colors for hsla() usage */
+    --neon-blue-hsl-values: 180, 100%, 50%;
+    --neon-purple-hsl-values: 280, 100%, 65%;
+    --neon-pink-hsl-values: 320, 100%, 60%;
+    --neon-green-hsl-values: 120, 100%, 50%;
+    --orange-hsl-values: 20, 100%, 60%;
+    --industrial-blue-hsl-values: 210, 80%, 60%;
+    --sky-blue-hsl-values: 200, 100%, 65%;
+    --deeper-blue-hsl-values: 220, 70%, 60%;
   }
 
   /* Apply new HSL vars to ShadCN's expected vars */
@@ -251,43 +261,34 @@ html {
 }
 
 
-/* Advanced Button Animations - For GradientButton */
+/* Advanced Button Animations - For GradientButton (now solid pink with glow) */
 .magnetic-btn {
   position: relative;
-  background: var(--gradient-primary); /* Primary gradient */
+  background-color: var(--neon-pink); /* Solid neon pink */
   border: none;
-  border-radius: 50px; /* Pill shape */
+  border-radius: var(--radius); /* Standard app radius */
   padding: 14px 28px; 
-  color: hsl(var(--primary-foreground-hsl)); /* Use primary foreground for text */
+  color: hsl(var(--primary-foreground-hsl)); /* Dark text for contrast */
   font-weight: 600;
   cursor: pointer;
   overflow: hidden;
   transition: all 0.3s ease;
   z-index: 1; 
-  box-shadow: 0 4px 15px hsla(var(--primary-hsl), 0.2), 0 0 0 1px hsla(var(--primary-hsl), 0.3);
+  box-shadow: 0 4px 15px hsla(320, 100%, 60%, 0.2), /* Softer base shadow */
+              0 0 8px var(--neon-pink), /* Neon glow */
+              0 0 15px var(--neon-pink),
+              0 0 20px var(--neon-pink);
 }
 
-.magnetic-btn::before { /* Shine effect */
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -120%; 
-  width: 60%; 
-  height: 100%;
-  background: linear-gradient(90deg, transparent, hsla(var(--foreground-hsl),0.25), transparent);
-  transform: skewX(-30deg);
-  transition: left 0.7s cubic-bezier(0.23, 1, 0.32, 1); 
-  z-index: 0;
-}
+/* Removed shine effect: .magnetic-btn::before */
 
 @media (hover: hover) {
-  .magnetic-btn:hover::before {
-    left: 120%;
-  }
-
   .magnetic-btn:hover {
     transform: scale(1.05) translateY(-2px); 
-    box-shadow: 0 12px 35px hsla(var(--primary-hsl), 0.3), 0 0 0 1.5px hsla(var(--primary-hsl),0.5); 
+    box-shadow: 0 12px 35px hsla(320, 100%, 60%, 0.3), /* Enhanced base shadow */
+                0 0 10px var(--neon-pink), /* Stronger glow */
+                0 0 20px var(--neon-pink),
+                0 0 30px var(--neon-pink);
   }
 }
 
@@ -316,10 +317,21 @@ html {
 }
 
 
-/* Removed Scroll-Triggered Animations CSS */
-/* .scroll-animate ... */
-/* .slide-in-left ... */
-/* .animate-in ... */
+/* Feature Card "View Details" Button Styling */
+.feature-card-details-button {
+  color: var(--booth-accent-color) !important;
+  border-color: var(--booth-accent-color) !important;
+  border-width: 2px;
+  font-weight: 600;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.feature-card-details-button:hover {
+  background-color: hsla(var(--booth-accent-color-hsl-values, 180, 100%, 50%), 0.15) !important;
+  color: var(--booth-accent-color) !important;
+  box-shadow: 0 0 10px var(--booth-accent-color), inset 0 0 5px hsla(var(--booth-accent-color-hsl-values, 180, 100%, 50%), 0.1);
+}
 
 
 @media (prefers-reduced-motion: reduce) {
@@ -365,34 +377,42 @@ html {
 
 .booth-prism-ai-theme { 
   --booth-accent-color: var(--neon-blue);
+  --booth-accent-color-hsl-values: var(--neon-blue-hsl-values);
   background-image: linear-gradient(145deg, hsla(180, 100%, 50%, 0.25), hsla(200, 100%, 40%, 0.15), var(--glass-bg));
 }
 .booth-non-prism-ai-theme { 
-  --booth-accent-color: var(--neon-pink); 
+  --booth-accent-color: var(--neon-pink);
+  --booth-accent-color-hsl-values: var(--neon-pink-hsl-values);
   background-image: linear-gradient(145deg, hsla(320, 100%, 60%, 0.25), hsla(300, 100%, 50%, 0.15), var(--glass-bg));
 }
 .booth-ai-dev-theme { 
   --booth-accent-color: var(--neon-green);
+  --booth-accent-color-hsl-values: var(--neon-green-hsl-values);
   background-image: linear-gradient(145deg, hsla(120, 100%, 50%, 0.25), hsla(140, 100%, 40%, 0.15), var(--glass-bg));
 }
 .booth-cross-platform-theme { 
   --booth-accent-color: hsl(20, 100%, 60%); /* Custom orange */
+  --booth-accent-color-hsl-values: var(--orange-hsl-values);
   background-image: linear-gradient(145deg, hsla(20, 100%, 60%, 0.25), hsla(30, 100%, 50%, 0.15), var(--glass-bg));
 }
 .booth-manufacturing-erp-theme { 
   --booth-accent-color: hsl(210, 80%, 60%); /* Industrial blue */
+  --booth-accent-color-hsl-values: var(--industrial-blue-hsl-values);
   background-image: linear-gradient(145deg, hsla(210, 80%, 60%, 0.25), hsla(220, 80%, 50%, 0.15), var(--glass-bg));
 }
 .booth-integration-theme { 
   --booth-accent-color: var(--neon-purple);
+  --booth-accent-color-hsl-values: var(--neon-purple-hsl-values);
   background-image: linear-gradient(145deg, hsla(280, 100%, 65%, 0.25), hsla(260, 100%, 55%, 0.15), var(--glass-bg));
 }
 .booth-cloud-theme { 
   --booth-accent-color: hsl(200, 100%, 65%); /* Sky blue */
+  --booth-accent-color-hsl-values: var(--sky-blue-hsl-values);
   background-image: linear-gradient(145deg, hsla(200, 100%, 65%, 0.25), hsla(210, 100%, 55%, 0.15), var(--glass-bg));
 }
 .booth-cloud-enablers-theme { 
   --booth-accent-color: hsl(220, 70%, 60%); /* Deeper blue */
+  --booth-accent-color-hsl-values: var(--deeper-blue-hsl-values);
   background-image: linear-gradient(145deg, hsla(220, 70%, 60%, 0.25), hsla(230, 70%, 50%, 0.15), var(--glass-bg));
 }
 
@@ -498,3 +518,4 @@ html {
 .ai-suggester-form-card .text-emerald { 
   color: var(--neon-green) !important;
 }
+
