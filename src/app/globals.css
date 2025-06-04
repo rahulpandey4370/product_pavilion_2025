@@ -171,22 +171,42 @@ html {
 
 .floating-shape {
   position: absolute;
-  background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
-  border-radius: 50%;
-  animation: float 8s ease-in-out infinite alternate; /* Slower, smoother, alternates */
-  filter: blur(2px); /* More blur for depth */
-  opacity: 0.5; /* More subtle */
-}
-.floating-shape:nth-child(2n) {
-  background: linear-gradient(45deg, var(--neon-pink), var(--neon-green));
-  animation-direction: alternate-reverse;
-  animation-duration: 10s;
+  background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+  border-radius: 3px; /* Slightly rounded thin rectangles */
+  animation: driftAndFade 15s linear infinite;
+  opacity: 0; /* Start invisible, fade in via animation */
+  filter: blur(1px);
+  /* Dimensions and animation custom properties will be set by JS in HeroVisualEffects.tsx */
 }
 
-@keyframes float {
-  0% { transform: translateY(0px) translateX(0px) rotate(0deg) scale(0.8); opacity: 0.3; }
-  50% { transform: translateY(-40px) translateX(20px) rotate(180deg) scale(1); opacity: 0.6; }
-  100% { transform: translateY(10px) translateX(-10px) rotate(360deg) scale(0.8); opacity: 0.3;}
+.floating-shape:nth-child(2n) {
+  background: linear-gradient(90deg, var(--neon-green), var(--neon-pink));
+  animation-duration: 20s; /* Vary duration */
+}
+.floating-shape:nth-child(3n) {
+  background: linear-gradient(90deg, var(--neon-purple), var(--neon-blue)); /* Using neon-blue for cyan */
+  animation-duration: 12s;
+}
+
+@keyframes driftAndFade {
+  0% {
+    transform: translateX(var(--start-x)) translateY(var(--start-y)) scale(0.5);
+    opacity: 0;
+  }
+  10%, 70% { /* Hold visible for a while */
+    opacity: var(--max-opacity, 0.4);
+  }
+  15% {
+     transform: translateX(var(--mid-x)) translateY(var(--mid-y)) scale(1);
+  }
+  85% {
+    transform: translateX(var(--end-x)) translateY(var(--end-y)) scale(0.5);
+    opacity: var(--max-opacity, 0.4);
+  }
+  100% {
+    transform: translateX(var(--end-x)) translateY(var(--end-y)) scale(0.3);
+    opacity: 0;
+  }
 }
 
 /* Particle system background */
@@ -202,32 +222,27 @@ html {
 .particle {
   position: absolute;
   border-radius: 50%;
-  animation: particleFloat var(--particle-duration) linear infinite;
+  animation: particleDrift var(--particle-duration) linear infinite;
   pointer-events: none;
 }
 
-@keyframes particleFloat {
+@keyframes particleDrift {
   0% {
-    transform: translateY(0) translateX(0) scale(1);
+    transform: translateX(0px) translateY(0px) scale(1);
     opacity: var(--particle-opacity-start);
-  }
-  50% {
-    transform: translateY(calc(var(--particle-translate-y) * -1px)) translateX(var(--particle-translate-x)) scale(1.2);
-    opacity: calc(var(--particle-opacity-start) * 0.5);
   }
   100% {
-    transform: translateY(0px) translateX(0px) scale(1);
-    opacity: var(--particle-opacity-start);
+    transform: translateX(calc(var(--particle-translate-x) * 2px)) translateY(calc(var(--particle-translate-y) * 2px)) scale(0.5);
+    opacity: 0;
   }
 }
 
+
 /* Booth Card Enhancements */
 .booth-card-base { 
-  /* Background is now primarily set by theme-specific classes like .booth-prism-ai-theme */
-  /* This class provides the structural glassmorphism and hover transforms */
   backdrop-filter: blur(12px); 
   -webkit-backdrop-filter: blur(12px); 
-  border: 1px solid color-mix(in srgb, var(--booth-accent-color, var(--border-hsl)) 35%, transparent); /* Slightly more prominent base border */
+  border: 1px solid color-mix(in srgb, var(--booth-accent-color, var(--border-hsl)) 35%, transparent);
   box-shadow: var(--glass-shadow);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -240,11 +255,11 @@ html {
   position: absolute;
   top: 0;
   left: -150%; 
-  width: 70%; /* Wider shine */
+  width: 70%; 
   height: 100%;
   background: linear-gradient(90deg, transparent, hsla(var(--foreground-hsl),0.1), transparent);
   transform: skewX(-25deg); 
-  transition: left 0.85s cubic-bezier(0.23, 1, 0.32, 1); /* Smoother ease */
+  transition: left 0.85s cubic-bezier(0.23, 1, 0.32, 1); 
 }
 
 /* Only apply hover effects on devices that support hover */
@@ -254,12 +269,12 @@ html {
   }
 
   .booth-card-base:hover {
-    transform: translateY(-12px) scale(1.03); /* Slightly more lift */
-    box-shadow: 0 15px 30px hsla(var(--background-hsl), 0.3), /* Adjusted generic shadow */
-                0 0 30px color-mix(in srgb, var(--booth-accent-color) 55%, transparent), /* Wider, more vibrant outer theme glow */
-                0 0 15px color-mix(in srgb, var(--booth-accent-color) 80%, transparent), /* More focused inner theme glow */
-                inset 0 0 10px hsla(var(--booth-accent-color), 0.15); /* Subtle inset glow of accent color */
-    border-color: color-mix(in srgb, var(--booth-accent-color) 85%, transparent); /* Vibrant theme border */
+    transform: translateY(-12px) scale(1.03); 
+    box-shadow: 0 15px 30px hsla(var(--background-hsl), 0.3), 
+                0 0 30px color-mix(in srgb, var(--booth-accent-color) 55%, transparent), 
+                0 0 15px color-mix(in srgb, var(--booth-accent-color) 80%, transparent),
+                inset 0 0 10px hsla(var(--booth-accent-color), 0.15); 
+    border-color: color-mix(in srgb, var(--booth-accent-color) 85%, transparent); 
   }
 }
 
@@ -293,12 +308,12 @@ html {
   content: '';
   position: absolute;
   top: 0;
-  left: -120%; /* Start further left */
-  width: 60%; /* Narrower, more focused shine */
+  left: -120%; 
+  width: 60%; 
   height: 100%;
   background: linear-gradient(90deg, transparent, hsla(var(--foreground-hsl),0.25), transparent);
   transform: skewX(-30deg);
-  transition: left 0.7s cubic-bezier(0.23, 1, 0.32, 1); /* Smoother transition */
+  transition: left 0.7s cubic-bezier(0.23, 1, 0.32, 1); 
   z-index: 0;
 }
 
@@ -308,23 +323,23 @@ html {
   }
 
   .magnetic-btn:hover {
-    transform: scale(1.05) translateY(-2px); /* Add slight Y lift */
-    box-shadow: 0 12px 35px hsla(var(--primary-hsl), 0.3), 0 0 0 1.5px hsla(var(--primary-hsl),0.5); /* Uses first color of --gradient-primary */
+    transform: scale(1.05) translateY(-2px); 
+    box-shadow: 0 12px 35px hsla(var(--primary-hsl), 0.3), 0 0 0 1.5px hsla(var(--primary-hsl),0.5); 
   }
 }
 
 
-.magnetic-btn .btn-text { /* Span to wrap text for magnetic effect */
+.magnetic-btn .btn-text { 
   display: inline-block;
-  transition: transform 0.2s ease-out; /* Faster magnetic snap back */
+  transition: transform 0.2s ease-out; 
   position: relative;
-  z-index: 1; /* Ensure text is above ::before */
+  z-index: 1; 
 }
 
 .ripple {
   position: absolute;
   border-radius: 50%;
-  background: hsla(var(--foreground-hsl), 0.4); /* Ripple color from foreground */
+  background: hsla(var(--foreground-hsl), 0.4); 
   transform: scale(0);
   animation: ripple-effect 0.6s linear;
   pointer-events: none; 
@@ -342,7 +357,7 @@ html {
 .scroll-animate {
   opacity: 0;
   transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: opacity, transform; /* Optimize for animations */
+  will-change: opacity, transform; 
 }
 .slide-in-left { transform: translateX(-80px); }
 .slide-in-right { transform: translateX(80px); }
@@ -365,7 +380,7 @@ html {
     transition-delay: 0ms !important;
     animation-delay: 0ms !important;
   }
-  .scroll-animate { /* Ensure elements are visible if animations are off */
+  .scroll-animate { 
     opacity: 1;
     transform: none;
   }
@@ -374,7 +389,6 @@ html {
 
 /* Interactive Glow Effects */
 .glow-effect {
-  /* Base glow tied to booth accent for cards, primary for general elements */
   box-shadow: 
     0 0 10px hsla(var(--booth-accent-color, var(--primary-hsl)), 0.2), 
     0 0 20px hsla(var(--booth-accent-color, var(--primary-hsl)), 0.15),
@@ -396,19 +410,12 @@ html {
 
 /* Booth-Specific Color Themes (Now using CSS vars for accents on dark cards) */
 .booth-theme-card { 
-  /* Base card color for text, now inherited by default from .booth-card-base */
   color: hsl(var(--card-foreground-hsl)); 
 }
 .booth-theme-card h1, .booth-theme-card h2, .booth-theme-card h3, .booth-theme-card p, .booth-theme-card span {
   color: inherit; 
 }
 
-/*
-  --neon-blue: hsl(180 100% 50%);
-  --neon-pink: hsl(320 100% 60%);
-  --neon-green: hsl(120 100% 50%);
-  --neon-purple: hsl(280 100% 65%);
-*/
 
 .booth-prism-ai-theme { 
   --booth-accent-color: var(--neon-blue);
@@ -448,11 +455,11 @@ html {
   width: 150px;
   height: 150px;
   background: var(--gradient-secondary);
-  animation: morph 12s ease-in-out infinite alternate; /* Slower morph */
-  opacity: 0.2; /* More subtle for dark theme */
-  filter: blur(10px); /* More blur for softer effect */
-  position: absolute; /* Ensure positioning context */
-  z-index: -1; /* Behind foreground content */
+  animation: morph 12s ease-in-out infinite alternate; 
+  opacity: 0.2; 
+  filter: blur(10px); 
+  position: absolute; 
+  z-index: -1; 
 }
 
 @keyframes morph {
@@ -466,11 +473,11 @@ html {
 /* Gradient Text Effects */
 .gradient-text {
   background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple), var(--neon-pink), var(--neon-green), var(--neon-blue));
-  background-size: 400% 100%; /* Wider gradient for smoother shift */
+  background-size: 400% 100%; 
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: gradientShift 6s ease-in-out infinite alternate; /* Slower, alternates */
+  animation: gradientShift 6s ease-in-out infinite alternate; 
 }
 
 @keyframes gradientShift {
@@ -480,21 +487,21 @@ html {
 
 
 /* Loading Animations */
-.loading-spinner-container { /* Centering wrapper */
+.loading-spinner-container { 
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 200px; 
-  width: 100%; /* Ensure it takes space */
+  width: 100%; 
 }
 .loading-spinner {
   width: 50px; 
   height: 50px;
   border: 4px solid transparent; 
   border-top-color: var(--neon-blue);
-  border-right-color: var(--neon-blue); /* Add a second color for trail */
+  border-right-color: var(--neon-blue); 
   border-radius: 50%;
-  animation: spin 0.8s linear infinite; /* Faster spin */
+  animation: spin 0.8s linear infinite; 
   position: relative;
 }
 
@@ -505,12 +512,11 @@ html {
   right: -4px; bottom: -4px;
   border: 4px solid transparent;
   border-top-color: var(--neon-purple);
-  border-left-color: var(--neon-purple); /* Add a second color for trail */
+  border-left-color: var(--neon-purple); 
   border-radius: 50%;
-  animation: spin 1.2s linear infinite reverse; /* Different speed and direction */
+  animation: spin 1.2s linear infinite reverse; 
 }
 
-/* Optional inner dot for more sophistication */
 .loading-spinner::after { 
   content: '';
   position: absolute;
@@ -551,17 +557,18 @@ html {
 
 /* Targeting ShadCN's Card component when used for AI Suggester Form */
 .ai-suggester-form-card {
-  background: var(--glass-bg) !important;
-  backdrop-filter: blur(10px) !important;
-  -webkit-backdrop-filter: blur(10px) !important;
-  border: 1px solid var(--glass-border) !important;
-  box-shadow: var(--glass-shadow) !important;
+  background: var(--glass-bg); 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
 }
 
 .ai-suggester-form-card .text-primary {
- color: var(--neon-blue) !important; /* Or primary HSL if that's the desired neon */
+ color: var(--neon-blue) !important; 
 }
 
-.ai-suggester-form-card .text-emerald { /* If CheckCircle uses text-emerald */
+.ai-suggester-form-card .text-emerald { 
   color: var(--neon-green) !important;
 }
+
