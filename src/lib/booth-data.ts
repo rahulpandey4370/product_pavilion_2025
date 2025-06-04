@@ -91,31 +91,70 @@ export const booths: Booth[] = [
   {
     id: 'ai-accelerated-development',
     name: 'AI Accelerated Development',
-    tagline: 'Build Faster, Smarter',
-    description: 'Leverage AI to speed up your development lifecycle, from code generation to testing and deployment, ensuring quality and innovation.',
+    tagline: 'AI Accelerated Development – Develop Smarter, Innovate Faster',
+    description: 'Experience how AI transforms software delivery—from auto-generating C# code for e-invoicing to intelligent unit test creation with GitHub Copilot. See our AI Agent in action, generating smart pull request previews in Azure DevOps. Accelerate development, reduce effort, and empower partners like never before.',
     iconName: 'Rocket',
     heroImage: 'https://images.unsplash.com/photo-1526378722484-bd91ca387e72?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlfGVufDB8fHx8MTc0OTAyNzg4NXww&ixlib=rb-4.1.0&q=80&w=1080',
     features: [
       {
-        id: 'f-ad-csf',
-        name: 'CSF',
-        description: 'AI auto-generates C# code for e-invoicing & creates unit tests with GitHub Copilot.',
-        longDescription: 'Experience how AI transforms software delivery through auto-generating C# code for e-invoicing and intelligent unit test creation with GitHub Copilot. Accelerate development and reduce effort like never before.',
-        image: 'https://images.unsplash.com/photo-1495592822108-9e6261896da8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx0ZWNobm9sb2d5JTIwYWJzdHJhY3R8ZW58MHx8fHwxNzQ5MDI2Mzg3fDA&ixlib=rb-4.1.0&q=80&w=1080'
+        id: 'f-ai-dev-csf-einvoicing',
+        name: 'CSF E-Invoicing AI',
+        description: 'A framework where, once the business analyst creates the e-invoice JSON structure and mapping, AI generates the corresponding C# code. This code fetches, processes, and formats the data to produce the final e-invoice JSON file—ready for transmission to vendors. This innovation cuts down manual development effort and empowers partners to create e-invoicing templates without needing Epicor PD support.',
+        image: 'https://placehold.co/600x400.png'
       },
       {
-        id: 'f-ad-as',
-        name: 'Automation Studio',
-        description: 'AI Agent generates smart pull request previews in Azure DevOps, empowering partners.',
-        longDescription: 'See our AI Agent in action, generating smart pull request previews in Azure DevOps. Witness how AI is empowering partners through intelligent development automation.',
-        image: 'https://images.unsplash.com/photo-1512295767273-ac109ac3acfa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhdXRvbWF0aW9uJTIwc3R1ZGlvfGVufDB8fHx8MTc0OTAyNzYzOHww&ixlib=rb-4.1.0&q=80&w=1080'
+        id: 'f-ai-dev-unittest-copilot',
+        name: 'Unit Test Automation with GitHub Copilot',
+        description: 'Boost developer productivity with AI-powered unit test generation. This demo highlights how GitHub Copilot streamlines writing comprehensive test cases—saving time and improving code quality by automating repetitive work, allowing developers to focus on building features.',
+        image: 'https://placehold.co/600x400.png'
       },
       {
-        id: 'f-ad-df',
-        name: 'Data Fabric',
-        description: 'AI transforms software delivery workflows for smarter, efficient data integration.',
-        longDescription: 'Discover how AI transforms software delivery workflows, making development processes smarter and more efficient for seamless data integration.',
-        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxEYXRhfGVufDB8fHx8MTc0OTAyNzkyOHww&ixlib=rb-4.1.0&q=80&w=1080'
+        id: 'f-ai-dev-pr-review',
+        name: 'AI-Based PR Review',
+        description: 'AI Agent integrated with Azure DevOps to automatically generate intelligent pull request summaries and previews. This enables faster, more informed code reviews and improves collaboration across development teams.',
+        image: 'https://placehold.co/600x400.png'
+      },
+      {
+        id: 'f-ai-dev-epiconnect',
+        name: 'EpiConnect – Smarter Development & Testing through AI-Driven Customer Insight',
+        description: 'EpiConnect bridges gaps between Engineering and Support using AI to analyze support tickets, identify recurring issues, monitor sentiment, and prioritize improvements. It also recommends severity for reported issues and aligns product testing with real customer pain points for more data-driven decisions.',
+        image: 'https://placehold.co/600x400.png'
+      },
+      {
+        id: 'f-ai-dev-log-analyzer',
+        name: 'Log Analyzer through AI',
+        description: 'An AI-driven tool that semantically analyzes unstructured log files using large language models. It allows users to query logs in natural language, detect anomalies faster, and supports a modular, scalable, and product-agnostic setup—enhancing debugging and incident resolution.',
+        image: 'https://placehold.co/600x400.png'
+      },
+      {
+        id: 'f-ai-dev-imagen',
+        name: 'iMAGen – Intelligent Manual & Automated Test Generator',
+        description: 'iMAGen reads Jira requirements, summarizes feature expectations, and automatically generates detailed manual test cases. It integrates with test repositories and significantly improves QA efficiency—making it scalable across multiple products and projects.',
+        image: 'https://placehold.co/600x400.png'
+      },
+      {
+        id: 'f-ai-dev-itrace',
+        name: 'iTRACE – Intelligent Test Root-Cause Analysis and Correction Engine',
+        description: 'An AI-assisted tool that analyzes logs, screenshots, and scripts to identify test automation failures. It provides actionable root-cause insights and fix suggestions—reducing debugging time from hours to minutes and accelerating continuous testing cycles.',
+        image: 'https://placehold.co/600x400.png'
+      },
+      {
+        id: 'f-ai-dev-impact-analyzer',
+        name: 'Impact Analyzer – AI-Enabled Precision Testing',
+        description: 'Uses LLMs to analyze code diffs or commits from CodeChurn Tool and determine the impacted modules, functionalities, and relevant regression test cases. This enables precision testing and reduces unnecessary test runs—improving test relevance and efficiency.',
+        image: 'https://placehold.co/600x400.png'
+      },
+      {
+        id: 'f-ai-dev-recoder-executor',
+        name: 'ReCoder Executor – No Code Solution for Test Automation',
+        description: 'A no-code test execution platform designed for scripts generated by Epicor ReCoder. It allows users to organize, execute, and monitor automated tests through an intuitive interface—streamlining automation workflows without requiring any programming skills.',
+        image: 'https://placehold.co/600x400.png'
+      },
+      {
+        id: 'f-ai-dev-documatch',
+        name: 'Epicor DocuMatch',
+        description: 'A robust document comparison engine capable of identifying content differences across formats—including images and charts. It can be used manually or integrated into automation workflows, supporting validation and quality assurance across diverse document types.',
+        image: 'https://placehold.co/600x400.png'
       },
     ],
   },
