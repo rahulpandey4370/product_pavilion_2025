@@ -9,8 +9,36 @@ import { ArrowDown } from 'lucide-react';
 import Link from 'next/link';
 import HeroVisualEffects from '@/components/shared/HeroVisualEffects'; 
 import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
 
 export default function HomePage() {
+  const subHeadingText = "Welcome to Manufacturing Bay";
+
+  const sentenceVariants = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 0.3, // Start animation shortly after page load
+        staggerChildren: 0.05, // Time between each letter animation
+      },
+    },
+  };
+
+  const letterVariants = {
+    hidden: { opacity: 0, y: 20, filter: "blur(5px)" },
+    visible: {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      transition: {
+        type: "spring",
+        damping: 12,
+        stiffness: 200,
+      },
+    },
+  };
+
   return (
     <div className="space-y-24">
       {/* Hero Section */}
@@ -23,11 +51,20 @@ export default function HomePage() {
           )}>
             Epicor Product Pavilion 2025
           </h1>
-          <h2 className="text-3xl md:text-4xl font-semibold text-foreground/90 mb-6"> {/* New sub-heading */}
-            Welcome to Manufacturing Bay
-          </h2>
+          <motion.h2 
+            className="text-3xl md:text-4xl font-semibold text-foreground/90 mb-6"
+            variants={sentenceVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            {subHeadingText.split("").map((char, index) => (
+              <motion.span key={char + "-" + index} variants={letterVariants}>
+                {char}
+              </motion.span>
+            ))}
+          </motion.h2>
           <p className="text-xl md:text-2xl text-foreground/80 mb-12"> {/* Removed max-w-3xl mx-auto */}
-            Step into the future of manufacturing. Explore our latest innovations designed to power your production floor—from smart automation and AI-driven insights to seamless integrations across your supply chain.
+          Step into the future of manufacturing. Explore our latest innovations designed to power your production floor—from smart automation and AI-driven insights to seamless integrations across your supply chain.
           </p>
           <div> 
             <Button size="lg" asChild>
@@ -68,4 +105,3 @@ export default function HomePage() {
     </div>
   );
 }
-
