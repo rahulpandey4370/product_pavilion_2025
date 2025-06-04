@@ -84,14 +84,14 @@ export const booths: Booth[] = [
     tagline: 'Build Faster, Smarter',
     description: 'Leverage AI to speed up your development lifecycle, from code generation to testing and deployment, ensuring quality and innovation.',
     iconName: 'Rocket',
-    heroImage: 'https://images.unsplash.com/photo-1636690424408-4330adc3e583?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0ZWNobm9sb2d5JTIwYmFubmVyfGVufDB8fHx8MTc0OTAyNjM4N3ww&ixlib=rb-4.1.0&q=80&w=1080',
+    heroImage: 'https://images.unsplash.com/photo-1526378722484-bd91ca387e72?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlfGVufDB8fHx8MTc0OTAyNzg4NXww&ixlib=rb-4.1.0&q=80&w=1080',
     features: [
       {
         id: 'f-ad-csf',
         name: 'CSF',
         description: 'AI auto-generates C# code for e-invoicing & creates unit tests with GitHub Copilot.',
         longDescription: 'Experience how AI transforms software delivery through auto-generating C# code for e-invoicing and intelligent unit test creation with GitHub Copilot. Accelerate development and reduce effort like never before.',
-        image: 'https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8Q29kZXxlbnwwfHx8fDE3NDkwMjc3Mjh8MA&ixlib=rb-4.1.0&q=80&w=1080'
+        image: 'https://images.unsplash.com/photo-1495592822108-9e6261896da8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx0ZWNobm9sb2d5JTIwYWJzdHJhY3R8ZW58MHx8fHwxNzQ5MDI2Mzg3fDA&ixlib=rb-4.1.0&q=80&w=1080'
       },
       {
         id: 'f-ad-as',
