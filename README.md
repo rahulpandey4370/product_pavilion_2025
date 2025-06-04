@@ -20,7 +20,25 @@ The application is built with an event-driven architecture, utilizing the follow
 
 ## Setup and Running Locally
 
+Before you begin, ensure you have the following installed:
+
+- Node.js (version 18 or higher recommended)
+- npm or yarn
+- Git
+
 To set up and run the project locally, follow these steps:
 
-1. **Clone the repository:**
+1. **Clone the repository:** (Assuming you have the repository URL)
+
+2. **Install dependencies:**
+   Navigate to the project directory in your terminal and run: 
+   
+   `npm install`
+
+3. **Run the Application Locally:**
+   Run the following command:
+
+   `npm run dev`
+
+
 
