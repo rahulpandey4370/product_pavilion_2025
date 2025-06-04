@@ -105,7 +105,7 @@ export const booths: Booth[] = [
         name: 'Data Fabric',
         description: 'AI transforms software delivery workflows for smarter, efficient data integration.',
         longDescription: 'Discover how AI transforms software delivery workflows, making development processes smarter and more efficient for seamless data integration.',
-        image: 'https://images.unsplash.com/photo-1510906594845-bc082582c8cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwYWJzdHJhY3R8ZW58MHx8fHwxNzQ5MDI2Mzg3fDA&ixlib=rb-4.1.0&q=80&w=1080'
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxEYXRhfGVufDB8fHx8MTc0OTAyNzkyOHww&ixlib=rb-4.1.0&q=80&w=1080'
       },
     ],
   },
