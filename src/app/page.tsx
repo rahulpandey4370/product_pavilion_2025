@@ -26,10 +26,15 @@ export default function HomePage() {
   };
 
   const letterVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { 
+      opacity: 0, 
+      y: 20,
+      color: "hsla(var(--muted-foreground-hsl), 0.3)",
+    },
     visible: {
       opacity: 1,
       y: 0,
+      color: "hsla(var(--foreground-hsl), 0.9)",
       transition: {
         type: "spring",
         damping: 15, // Increased damping for a softer spring
@@ -52,8 +57,8 @@ export default function HomePage() {
           </h1>
           <motion.h2 
             className={cn(
-              "text-3xl md:text-4xl font-semibold text-foreground/90 mb-6"
-              // Removed "gradient-text" for a subtler color
+              "text-3xl md:text-4xl font-semibold mb-6"
+              // Removed "gradient-text" and "text-foreground/90"
             )}
             variants={sentenceVariants}
             initial="hidden"
