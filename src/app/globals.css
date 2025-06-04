@@ -422,7 +422,7 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .scroll-animate, .typewriter, .floating-shape, .particle, .booth-card-base::before, .magnetic-btn::before, .ripple, .booth-card-border-wrap::before, .morphing-shape-bg, .gradient-text, .loading-spinner, .loading-spinner::before, .loading-spinner::after {
+  .scroll-animate, .floating-shape, .particle, .booth-card-base::before, .magnetic-btn::before, .ripple, .booth-card-border-wrap::before, .morphing-shape-bg, .gradient-text, .loading-spinner, .loading-spinner::before, .loading-spinner::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -433,10 +433,7 @@ html {
     opacity: 1;
     transform: none;
   }
-  .typewriter {
-    border-right: none;
-    width: auto !important;
-  }
+  /* Removed .typewriter specific override to allow animation visibility */
 }
 
 
@@ -630,5 +627,7 @@ html {
 .ai-suggester-form-card .text-emerald { /* If CheckCircle uses text-emerald */
   color: var(--neon-green) !important;
 }
+
+    
 
     
