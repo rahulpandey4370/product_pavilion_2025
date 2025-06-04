@@ -55,9 +55,27 @@ export const booths: Booth[] = [
     iconName: 'Lightbulb',
     heroImage: 'https://placehold.co/1200x400.png',
     features: [
-      { id: 'f2-1', name: 'Advanced Data Management', description: 'Securely manage and organize your critical data.', longDescription: 'Our comprehensive data management suite offers robust tools for data storage, backup, recovery, and governance, ensuring data integrity and compliance.', image: 'https://placehold.co/600x400.png' },
-      { id: 'f2-2', name: 'Collaborative Workflow Tools', description: 'Enhance teamwork with integrated collaboration.', longDescription: 'Boost productivity with tools designed for seamless team collaboration, including shared workspaces, real-time editing, and project tracking.', image: 'https://placehold.co/600x400.png' },
-      { id: 'f2-3', name: 'Custom Reporting Suite', description: 'Generate insightful reports tailored to your needs.', longDescription: 'Create detailed, custom reports with our flexible reporting engine. Choose from various templates or build your own to track key metrics and performance indicators.', image: 'https://placehold.co/600x400.png' },
+      { 
+        id: 'f2-ecm', 
+        name: 'ECM', 
+        description: 'AI transforming purchase orders, accelerating cloud migrations, and simplifying integrations.', 
+        longDescription: 'Step into the future with our AI pavilion, where cutting-edge demos showcase how AI is revolutionizing business. See how powerful language models transform massive purchase orders into streamlined sales orders, how AI smartly accelerates cloud migrations by analyzing and upgrading customizations, and how low-code AI-driven automation simplifies system integration—making complex tasks faster, smarter, and accessible to everyone. Experience firsthand how AI is reshaping efficiency across order management, cloud adoption, and workflow automation.', 
+        image: 'https://placehold.co/600x400.png' 
+      },
+      { 
+        id: 'f2-automation-studio', 
+        name: 'Automation Studio', 
+        description: 'Low-code AI-driven automation making complex system integration faster and smarter.', 
+        longDescription: 'Step into the future with our AI pavilion, where cutting-edge demos showcase how AI is revolutionizing business. See how powerful language models transform massive purchase orders into streamlined sales orders, how AI smartly accelerates cloud migrations by analyzing and upgrading customizations, and how low-code AI-driven automation simplifies system integration—making complex tasks faster, smarter, and accessible to everyone. Experience firsthand how AI is reshaping efficiency across order management, cloud adoption, and workflow automation.', 
+        image: 'https://placehold.co/600x400.png' 
+      },
+      { 
+        id: 'f2-project-ascend', 
+        name: 'Project Ascend', 
+        description: 'Experience firsthand how AI is reshaping efficiency across order management, cloud adoption, and workflow automation.', 
+        longDescription: 'Step into the future with our AI pavilion, where cutting-edge demos showcase how AI is revolutionizing business. See how powerful language models transform massive purchase orders into streamlined sales orders, how AI smartly accelerates cloud migrations by analyzing and upgrading customizations, and how low-code AI-driven automation simplifies system integration—making complex tasks faster, smarter, and accessible to everyone. Experience firsthand how AI is reshaping efficiency across order management, cloud adoption, and workflow automation.', 
+        image: 'https://placehold.co/600x400.png' 
+      },
     ],
   },
   {
@@ -143,3 +161,4 @@ export const booths: Booth[] = [
 export const getBoothById = (id: string): Booth | undefined => {
   return booths.find(booth => booth.id === id);
 };
+
