@@ -161,53 +161,41 @@ export const booths: Booth[] = [
   {
     id: 'cross-platform',
     name: 'Cross Platform',
-    tagline: 'Seamless Experience Everywhere',
-    description: 'Develop applications that run smoothly across multiple operating systems and devices, ensuring a consistent user experience with a single codebase.',
+    tagline: 'Cross Platform: Beyond ERP – Powering Possibilities Across Platforms',
+    description: 'Explore how we’re transforming legacy products with a modern web-based experience—featuring Mattec’s shift to the ICE framework/UX Platform and a redesigned SLS interface. See new compliance capabilities for Support at Home in aged care, and ECM’s mobile app with mass document approvals. Experience seamless freight invoice processing across Kinetic, ECM, and Quick Ship—showcasing the true power of integrated Epicor solutions. Elevate UX, mobility, and operations—all in one booth.',
     iconName: 'Laptop',
     heroImage: 'https://images.unsplash.com/photo-1605918321371-584f5deab0a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8Y2xvdWQlMjBjb21wdXRpbmd8ZW58MHx8fHwxNzQ5MDI4MTYwfDA&ixlib=rb-4.1.0&q=80&w=1080',
     features: [
-      { 
-        id: 'f-cp-mattec', 
-        name: 'Mattec', 
-        description: "Mattec's shift to ICE framework/UX Platform modernizes legacy products with cutting-edge UX.", 
-        longDescription: "Explore the transformation to modern web-based experience featuring Mattec's shift to the ICE framework/UX Platform. See how legacy products are being elevated with cutting-edge UX design.", 
-        image: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxVSSUyMFVYfGVufDB8fHx8MTc0OTAyODI0Nnww&ixlib=rb-4.1.0&q=80&w=1080' 
+      {
+        id: 'f-cp-mattec-new-ux',
+        name: 'Showcasing the New Mattec Experience',
+        description: "Step into the future of Mattec with a modernized user experience. This demo illustrates the migration from legacy tech like C, C++, and MFC to a fully web-based platform built on the Kinetic ICE framework. The new Advanced MES interface eliminates client installs, enhances navigation, and lets users personalize their homepage with shortcuts—creating a faster, more user-friendly experience.",
+        image: 'https://placehold.co/600x400.png'
       },
-      { 
-        id: 'f-cp-sls', 
-        name: 'SLS', 
-        description: 'Redesigned SLS interface with modern web capabilities for enhanced UX.', 
-        longDescription: 'Experience the redesigned SLS interface with modern web-based capabilities. Witness how traditional systems are being transformed for enhanced user experience.', 
-        image: 'https://images.unsplash.com/photo-1549098473-5cc4347b3eb3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOHx8bW9kZXJuJTIwd2VifGVufDB8fHx8MTc0OTAyODU4Nnww&ixlib=rb-4.1.0&q=80&w=1080' 
+      {
+        id: 'f-cp-ecm-mobile-bulk',
+        name: 'ECM On the Go: Bulk Approvals through Mobile App',
+        description: "Revolutionize mobile workflows with ECM’s enhanced mobile app, now featuring mass document approval. Executives on the move can quickly select and approve multiple documents in one tap—without needing to open each one—bringing desktop-level efficiency to mobile devices.",
+        image: 'https://placehold.co/600x400.png'
       },
-      { 
-        id: 'f-cp-ecm', 
-        name: 'ECM', 
-        description: 'ECM mobile app: mass document approvals & new aged care compliance features.', 
-        longDescription: "See ECM's mobile app with mass document approvals and new compliance capabilities for Support at Home in aged care. Experience mobility solutions that enhance operational efficiency.", 
-        image: 'https://images.unsplash.com/photo-1640694514279-090bb1b09ee9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkYXNoYm9hcmQlMjBpbiUyMG1vYmlsZXxlbnwwfHx8fDE3NDkwMjkwNTN8MA&ixlib=rb-4.1.0&q=80&w=1080' 
+      {
+        id: 'f-cp-ice-overview',
+        name: 'ICE Overview',
+        description: "An overview of Epicor’s powerful ICE framework and its role in enabling innovation across products like Kinetic, Mattec, and SLS. Learn about key tools like BAQs, BPMs, Epicor Functions, UD Services, and Extension Maintenance—empowering users and developers to extend and automate the platform with ease.",
+        image: 'https://placehold.co/600x400.png'
       },
-      { 
-        id: 'f-cp-qs', 
-        name: 'Quick Ship', 
-        description: 'Seamless freight invoice processing with Kinetic & ECM via Quick Ship.', 
-        longDescription: 'Experience seamless freight invoice processing integration with Kinetic and ECM. See how Quick Ship showcases the true power of integrated Epicor solutions.', 
-        image: 'https://images.unsplash.com/photo-1654263736203-a289f57c0d82?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxpbnZvaWNlfGVufDB8fHx8MTc0OTAyODY3M3ww&ixlib=rb-4.1.0&q=80&w=1080' 
+      {
+        id: 'f-cp-qs-freight',
+        name: 'Quick Ship: Integrated Freight Validation',
+        description: "This demo highlights seamless freight invoice validation by integrating ECM, Quick Ship, and Kinetic ERP. Invoices captured through ECM are auto-validated by Quick Ship and processed in Kinetic—reducing errors, cutting manual tasks, and optimizing freight workflows.",
+        image: 'https://placehold.co/600x400.png'
       },
-      { 
-        id: 'f-cp-kinetic', 
-        name: 'Kinetic', 
-        description: 'Kinetic: seamless freight invoice processing & integration with ECM/Quick Ship.', 
-        longDescription: 'Discover seamless freight invoice processing capabilities and integration with ECM and Quick Ship, demonstrating comprehensive ERP connectivity.', 
-        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkYXNoYm9hcmR8ZW58MHx8fHwxNzQ5MDI4Njk0fDA&ixlib=rb-4.1.0&q=80&w=1080' 
-      },
-      { 
-        id: 'f-cp-ice', 
-        name: 'ICE Framework', 
-        description: 'ICE framework: modern UX Platform transforming legacy products for better UX & mobility.', 
-        longDescription: "Explore the modern web-based UX Platform that's transforming legacy products. See how the ICE framework elevates user experience, mobility, and operations.", 
-        image: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxVWCUyMGludGVyZmFjZXxlbnwwfHx8fDE3NDkwMjg4NzB8MA&ixlib=rb-4.1.0&q=80&w=1080' 
-      },
+      {
+        id: 'f-cp-sls-new-ux-support',
+        name: 'SLS New Experience & Support at Home',
+        description: "Discover the redesigned, browser-based SLS interface built on Kinetic design principles. Also featured is the “Support at Home” module—helping aged care providers maintain compliance with Australia’s Aged Care Quality Standards. Includes tools for streamlined incident reporting, accurate documentation, and enhanced client privacy and rights.",
+        image: 'https://placehold.co/600x400.png'
+      }
     ],
   },
   {
@@ -218,19 +206,19 @@ export const booths: Booth[] = [
     iconName: 'Factory',
     heroImage: 'https://images.unsplash.com/photo-1611117775350-ac3950990985?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bWFudWZhY3R1cmluZyUyMHxlbnwwfHx8fDE3NDkwMjkxODV8MA&ixlib=rb-4.1.0&q=80&w=1080',
     features: [
-      { 
-        id: 'f-mfg-csf', 
-        name: 'CSF', 
-        description: "Kinetic ERP's CSF for local compliance & global e-invoicing insights.", 
-        longDescription: 'Explore Country Specific Functions (CSF) in Kinetic ERP, designed to meet local compliance needs. Get quick insights into global e-invoicing initiatives driving transparency and accountability in financial transactions.', 
-        image: 'https://images.unsplash.com/photo-1599658880436-c61792e70672?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8aW5zaWdodHN8ZW58MHx8fHwxNzQ5MDI5Mjg0fDA&ixlib=rb-4.1.0&q=80&w=1080' 
+      {
+        id: 'f-mfg-csf',
+        name: 'CSF',
+        description: "Kinetic ERP's CSF for local compliance & global e-invoicing insights.",
+        longDescription: 'Explore Country Specific Functions (CSF) in Kinetic ERP, designed to meet local compliance needs. Get quick insights into global e-invoicing initiatives driving transparency and accountability in financial transactions.',
+        image: 'https://images.unsplash.com/photo-1599658880436-c61792e70672?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8aW5zaWdodHN8ZW58MHx8fHwxNzQ5MDI5Mjg0fDA&ixlib=rb-4.1.0&q=80&w=1080'
       },
-      { 
-        id: 'f-mfg-tropos', 
-        name: 'Tropos', 
-        description: 'Tropos: ERP for process manufacturers with recipe-based production, traceability & compliance.', 
-        longDescription: 'Discover Tropos, the ERP built for process manufacturers in food, beverage, pharmaceuticals, metals, and chemicals—featuring recipe-based production, full traceability, regulatory compliance, and lean manufacturing support.', 
-        image: 'https://images.unsplash.com/photo-1580983559367-0dc2f8934365?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxFUlB8ZW58MHx8fHwxNzQ5MDI5MzQzfDA&ixlib=rb-4.1.0&q=80&w=1080' 
+      {
+        id: 'f-mfg-tropos',
+        name: 'Tropos',
+        description: 'Tropos: ERP for process manufacturers with recipe-based production, traceability & compliance.',
+        longDescription: 'Discover Tropos, the ERP built for process manufacturers in food, beverage, pharmaceuticals, metals, and chemicals—featuring recipe-based production, full traceability, regulatory compliance, and lean manufacturing support.',
+        image: 'https://images.unsplash.com/photo-1580983559367-0dc2f8934365?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxFUlB8ZW58MHx8fHwxNzQ5MDI5MzQzfDA&ixlib=rb-4.1.0&q=80&w=1080'
       },
     ],
   },
@@ -242,26 +230,26 @@ export const booths: Booth[] = [
     iconName: 'GitMerge',
     heroImage: 'https://images.unsplash.com/photo-1532619675605-1ede6c2ed2b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxpbnRlZ3JhdGlvbnxlbnwwfHx8fDE3NDkwMjk0NTR8MA&ixlib=rb-4.1.0&q=80&w=1080',
     features: [
-      { 
-        id: 'f-int-as', 
-        name: 'Automation Studio', 
-        description: 'Automation Studio: new connectors (Propello, Eclipse) & Quick Ship LTL integration.', 
-        longDescription: 'Explore the latest in Automation Studio with newly added connectors and recipes, including Propello and Eclipse. Watch seamless Quick Ship–Automation Studio integration in action with LTL carriers using QS Connector and automation recipes.', 
-        image: 'https://placehold.co/600x400.png' 
+      {
+        id: 'f-int-as',
+        name: 'Automation Studio',
+        description: 'Automation Studio: new connectors (Propello, Eclipse) & Quick Ship LTL integration.',
+        longDescription: 'Explore the latest in Automation Studio with newly added connectors and recipes, including Propello and Eclipse. Watch seamless Quick Ship–Automation Studio integration in action with LTL carriers using QS Connector and automation recipes.',
+        image: 'https://placehold.co/600x400.png'
       },
-      { 
-        id: 'f-int-df', 
-        name: 'Data Fabric', 
-        description: 'Data Fabric: large file support, cross-tenant configs & Linux agent integration.', 
-        longDescription: 'See enhanced Data Fabric capabilities—featuring large file support, cross-tenant configurations, and Linux agent integration for comprehensive data management.', 
-        image: 'https://placehold.co/600x400.png' 
+      {
+        id: 'f-int-df',
+        name: 'Data Fabric',
+        description: 'Data Fabric: large file support, cross-tenant configs & Linux agent integration.',
+        longDescription: 'See enhanced Data Fabric capabilities—featuring large file support, cross-tenant configurations, and Linux agent integration for comprehensive data management.',
+        image: 'https://placehold.co/600x400.png'
       },
-      { 
-        id: 'f-int-gl', 
-        name: 'Global Licensing', 
-        description: 'GBL process automates license generation for Data Interchange & EULK.', 
-        longDescription: 'Learn how the GBL process automates license generation for Data Interchange and EULK, streamlining compliance and license management processes.', 
-        image: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxHbG9iYWwlMjBMaWNlbnNpbmd8ZW58MHx8fHwxNzQ5MDI5NDc2fDA&ixlib=rb-4.1.0&q=80&w=1080' 
+      {
+        id: 'f-int-gl',
+        name: 'Global Licensing',
+        description: 'GBL process automates license generation for Data Interchange & EULK.',
+        longDescription: 'Learn how the GBL process automates license generation for Data Interchange and EULK, streamlining compliance and license management processes.',
+        image: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxHbG9iYWwlMjBMaWNlbnNpbmd8ZW58MHx8fHwxNzQ5MDI5NDc2fDA&ixlib=rb-4.1.0&q=80&w=1080'
       },
     ],
   },
@@ -273,40 +261,40 @@ export const booths: Booth[] = [
     iconName: 'Cloud',
     heroImage: 'https://images.unsplash.com/photo-1561736778-92e52a7769ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjbG91ZCUyMGNvbXB1dGluZ3xlbnwwfHx8fDE3NDkwMjgxNjB8MA&ixlib=rb-4.1.0&q=80&w=1080',
     features: [
-      { 
-        id: 'f-cld-cmp', 
-        name: 'CMP', 
-        description: 'Self-managed portals & intelligent cloud management platforms for innovation.', 
-        longDescription: 'Discover the power of self-managed portals and intelligent cloud management platforms designed to drive innovation and control.', 
-        image: 'https://placehold.co/600x400.png' 
+      {
+        id: 'f-cld-cmp',
+        name: 'CMP',
+        description: 'Self-managed portals & intelligent cloud management platforms for innovation.',
+        longDescription: 'Discover the power of self-managed portals and intelligent cloud management platforms designed to drive innovation and control.',
+        image: 'https://placehold.co/600x400.png'
       },
-      { 
-        id: 'f-cld-infra', 
-        name: 'Infra', 
-        description: 'Intelligent cloud architecture for agile, scalable performance.', 
-        longDescription: 'Experience intelligent cloud architecture and infrastructure solutions that provide agility and scalable performance.', 
-        image: 'https://placehold.co/600x400.png' 
+      {
+        id: 'f-cld-infra',
+        name: 'Infra',
+        description: 'Intelligent cloud architecture for agile, scalable performance.',
+        longDescription: 'Experience intelligent cloud architecture and infrastructure solutions that provide agility and scalable performance.',
+        image: 'https://placehold.co/600x400.png'
       },
-      { 
-        id: 'f-cld-upgrade', 
-        name: 'Upgrade', 
-        description: "Epicor's smarter, faster path to cloud upgrades with streamlined migration.", 
-        longDescription: 'See how Epicor delivers a smarter, faster path to cloud upgrades with streamlined migration processes.', 
-        image: 'https://placehold.co/600x400.png' 
+      {
+        id: 'f-cld-upgrade',
+        name: 'Upgrade',
+        description: "Epicor's smarter, faster path to cloud upgrades with streamlined migration.",
+        longDescription: 'See how Epicor delivers a smarter, faster path to cloud upgrades with streamlined migration processes.',
+        image: 'https://placehold.co/600x400.png'
       },
-      { 
-        id: 'f-cld-ss', 
-        name: 'Self Serve', 
-        description: 'Self-service capabilities for autonomous cloud management & configuration.', 
-        longDescription: 'Explore self-service capabilities that empower users with autonomous cloud management and configuration tools.', 
-        image: 'https://placehold.co/600x400.png' 
+      {
+        id: 'f-cld-ss',
+        name: 'Self Serve',
+        description: 'Self-service capabilities for autonomous cloud management & configuration.',
+        longDescription: 'Explore self-service capabilities that empower users with autonomous cloud management and configuration tools.',
+        image: 'https://placehold.co/600x400.png'
       },
-      { 
-        id: 'f-cld-nga', 
-        name: 'Cloud Next-Gen Architecture', 
-        description: 'Real-time monitoring & next-gen cloud architecture for optimal performance.', 
-        longDescription: 'Witness real-time monitoring and next-generation cloud architecture designed for optimal performance and innovation.', 
-        image: 'https://placehold.co/600x400.png' 
+      {
+        id: 'f-cld-nga',
+        name: 'Cloud Next-Gen Architecture',
+        description: 'Real-time monitoring & next-gen cloud architecture for optimal performance.',
+        longDescription: 'Witness real-time monitoring and next-generation cloud architecture designed for optimal performance and innovation.',
+        image: 'https://placehold.co/600x400.png'
       },
     ],
   },
