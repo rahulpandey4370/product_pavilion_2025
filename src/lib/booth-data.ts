@@ -26,13 +26,13 @@ export const booths: Booth[] = [
         id: 'f1-prism-edd',
         name: 'Prism for EDD',
         description: 'Epicor Data Discovery (EDD) enables users to visualize real-time data through interactive dashboards. It transforms raw data into actionable insights without exporting data, enhancing performance monitoring and data-driven decisions.',
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1591696205602-2f950c417cb9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxlbnRlcnByaXNlJTIwZGF0YXxlbnwwfHx8fDE3NDkwMzE1NDl8MA&ixlib=rb-4.1.0&q=80&w=1080'
       },
       {
         id: 'f1-prism-app-studio',
         name: 'Prism Application Studio',
         description: 'Allows users to build and deploy Kinetic customizations through a low-code, AI-assisted interface. It reduces reliance on developers, making it easier to tailor forms, workflows, and logic to specific business needs.',
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxBcHBsaWNhdGlvbiUyMHN0dWRpb3xlbnwwfHx8fDE3NDkwMzE0MDh8MA&ixlib=rb-4.1.0&q=80&w=1080'
       },
       {
         id: 'f1-platform-ux-multimodal',
@@ -63,30 +63,27 @@ export const booths: Booth[] = [
   {
     id: 'non-prism-ai-use-cases',
     name: 'Non Prism AI Use Cases',
-    tagline: 'Versatile Solutions Beyond AI',
-    description: 'See the Future of Our Product—Through the Lens of AI',
+    tagline: 'See the Future of Our Product—Through the Lens of AI',
+    description: 'Step into the future with our AI pavilion, where cutting-edge demos showcase how AI is revolutionizing business. See how powerful language models transform massive purchase orders into streamlined sales orders, how AI smartly accelerates cloud migrations by analyzing and upgrading customizations, and how low-code AI-driven automation simplifies system integration—making complex tasks faster, smarter, and accessible to everyone. Experience firsthand how AI is reshaping efficiency across order management, cloud adoption, and workflow automation.',
     iconName: 'Lightbulb',
     heroImage: 'https://placehold.co/1200x400.png',
     features: [
       {
-        id: 'f-np-ecm',
-        name: 'ECM (Enterprise Content Management)',
-        description: 'AI transforms purchase orders to sales orders, reshaping order management efficiency.',
-        longDescription: 'See how powerful language models transform massive purchase orders into streamlined sales orders. Experience firsthand how AI is reshaping efficiency across order management.',
+        id: 'f-np-ecm-ai',
+        name: 'ECM: AI-Led Order Creation from Document',
+        description: 'Discover how AI is transforming order management with this cutting-edge proof of concept. Leveraging GPT and Google Gemini large language models, this demo showcases the automatic conversion of lengthy purchase orders—up to 100 pages—into structured, schema-aligned sales orders in Epicor Kinetic ERP. The AI extracts key details from header, line-item, and schedule levels, enabling high-volume, low-touch processing for faster, smarter order entry.',
         image: 'https://placehold.co/600x400.png'
       },
       {
-        id: 'f-np-as',
-        name: 'Automation Studio',
-        description: 'Low-code AI simplifies system integration, revolutionizing workflow automation.',
-        longDescription: 'Experience how low-code AI-driven automation simplifies system integration—making complex tasks faster, smarter, and accessible to everyone. See how AI is revolutionizing workflow automation.',
+        id: 'f-np-ascend-ai',
+        name: 'Project Ascend: AI-Driven Migration to Cloud',
+        description: 'See how AI is accelerating the journey to the cloud with Project Ascend. This demo highlights how AI analyzes existing customizations and provides summaries of their intent. The initiative supports future migration and streamlining of these customizations into the latest Kinetic version on cloud—reducing manual effort and enabling a smoother, smarter upgrade path.',
         image: 'https://placehold.co/600x400.png'
       },
       {
-        id: 'f-np-pa',
-        name: 'Project Ascend',
-        description: 'AI accelerates cloud migrations by analyzing and upgrading customizations.',
-        longDescription: 'Discover how AI smartly accelerates cloud migrations by analyzing and upgrading customizations. Step into the future where cutting-edge technology is transforming cloud adoption processes.',
+        id: 'f-np-as-ai',
+        name: 'Automation Studio: AI-Enabled Integrations',
+        description: 'Discover how AI simplifies integration and automation with Automation Studio. This demo showcases how AI assists in building custom connectors and automation recipes—empowering users to connect systems and streamline workflows without deep technical expertise. It’s low-code integration made smarter, faster, and more accessible.',
         image: 'https://placehold.co/600x400.png'
       },
     ],
@@ -292,3 +289,4 @@ export const booths: Booth[] = [
 export const getBoothById = (id: string): Booth | undefined => {
   return booths.find(booth => booth.id === id);
 };
+
