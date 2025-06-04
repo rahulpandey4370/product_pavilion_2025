@@ -158,52 +158,41 @@ html {
 
 /* Animations & Effects */
 
-/* Neon Streaks Background - NEW */
-.neon-streaks-container {
+/* Hero Background: Digital Aurora Effect */
+.hero-aurora-bg {
   position: absolute;
-  width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-  z-index: -1; /* Above morphing shapes, below main content */
-  perspective: 800px; /* For potential 3D effects on streaks */
+  z-index: -1; 
+  pointer-events: none;
 }
 
-.neon-streak {
+.aurora-blob {
   position: absolute;
-  background-color: var(--effect-color);
-  box-shadow: 0 0 5px var(--effect-color), 
-              0 0 10px color-mix(in srgb, var(--effect-color) 70%, transparent), 
-              0 0 20px color-mix(in srgb, var(--effect-color) 40%, transparent);
-  opacity: 0; /* Start invisible */
-  animation: neonStreakFlow var(--animation-duration) linear var(--animation-delay) infinite;
+  border-radius: 50%;
+  opacity: 0;
+  filter: blur(80px); /* Very soft edges */
   will-change: transform, opacity;
-  border-radius: 2px; /* Slightly rounded ends for streaks */
+  width: var(--size);
+  height: var(--size);
+  background-color: var(--aurora-color);
+  animation: auroraBlobAnimation var(--duration) ease-in-out var(--delay) infinite alternate;
 }
 
-@keyframes neonStreakFlow {
+@keyframes auroraBlobAnimation {
   0% {
+    transform: translate(var(--x-start), var(--y-start)) scale(0.8);
     opacity: 0;
-    transform: translateX(var(--start-x)) translateY(var(--start-y)) rotate(var(--initial-rotate)) scale(var(--initial-scale));
   }
-  10% { /* Fade in quickly */
-    opacity: 0.7;
-    transform: translateX(calc(var(--start-x) + (var(--end-x) - var(--start-x)) * 0.1)) 
-               translateY(calc(var(--start-y) + (var(--end-y) - var(--start-y)) * 0.1)) 
-               rotate(calc(var(--initial-rotate) + var(--rotation-delta) * 0.1)) 
-               scale(var(--mid-scale));
-  }
-  90% { /* Hold visibility and continue transform */
-    opacity: 0.7;
-    transform: translateX(calc(var(--start-x) + (var(--end-x) - var(--start-x)) * 0.9)) 
-               translateY(calc(var(--start-y) + (var(--end-y) - var(--start-y)) * 0.9)) 
-               rotate(calc(var(--initial-rotate) + var(--rotation-delta) * 0.9)) 
-               scale(var(--initial-scale)); /* Scale back down towards end */
+  50% {
+    opacity: var(--max-opacity);
   }
   100% {
+    transform: translate(var(--x-end), var(--y-end)) scale(1.2);
     opacity: 0;
-    transform: translateX(var(--end-x)) translateY(var(--end-y)) rotate(calc(var(--initial-rotate) + var(--rotation-delta))) scale(0.3);
   }
 }
 
@@ -334,7 +323,7 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .scroll-animate, .neon-streak, .booth-card-base::before, .magnetic-btn::before, .ripple, .morphing-shape-bg, .gradient-text, .loading-spinner, .loading-spinner::before, .loading-spinner::after {
+  .scroll-animate, .aurora-blob, .booth-card-base::before, .magnetic-btn::before, .ripple, .gradient-text, .loading-spinner, .loading-spinner::before, .loading-spinner::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -409,25 +398,6 @@ html {
 .booth-cloud-enablers-theme { 
   --booth-accent-color: hsl(220, 70%, 60%); /* Deeper blue */
   background-image: linear-gradient(145deg, hsla(220, 70%, 60%, 0.25), hsla(230, 70%, 50%, 0.15), var(--glass-bg));
-}
-
-/* Morphing Shapes */
-.morphing-shape-bg { 
-  width: 150px;
-  height: 150px;
-  background: var(--gradient-secondary);
-  animation: morph 12s ease-in-out infinite alternate; 
-  opacity: 0.2; 
-  filter: blur(20px); /* Increased blur for deeper background effect */
-  position: absolute; 
-  /* z-index will be set inline in HeroVisualEffects.tsx to ensure it's behind neon streaks */
-}
-
-@keyframes morph {
-  0%, 100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; transform: rotate(0deg) scale(1) translateX(0) translateY(0); }
-  25% { border-radius: 50% 50% 30% 70% / 40% 60% 30% 70%; transform: rotate(90deg) scale(1.1) translateX(10px) translateY(-5px); }
-  50% { border-radius: 70% 30% 50% 50% / 60% 70% 30% 30%; transform: rotate(180deg) scale(0.9) translateX(-10px) translateY(10px); }
-  75% { border-radius: 40% 60% 70% 30% / 50% 50% 50% 50%; transform: rotate(270deg) scale(1.05) translateX(5px) translateY(5px); }
 }
 
 
