@@ -129,7 +129,7 @@ export const booths: Booth[] = [
         name: 'SLS', 
         description: 'Redesigned SLS interface with modern web capabilities for enhanced UX.', 
         longDescription: 'Experience the redesigned SLS interface with modern web-based capabilities. Witness how traditional systems are being transformed for enhanced user experience.', 
-        image: 'https://placehold.co/600x400.png' 
+        image: 'https://images.unsplash.com/photo-1549098473-5cc4347b3eb3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOHx8bW9kZXJuJTIwd2VifGVufDB8fHx8MTc0OTAyODU4Nnww&ixlib=rb-4.1.0&q=80&w=1080' 
       },
       { 
         id: 'f-cp-ecm', 
