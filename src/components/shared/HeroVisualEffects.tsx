@@ -4,51 +4,71 @@
 import React, { useEffect, useRef } from 'react';
 
 const NEON_COLORS = ['var(--neon-blue)', 'var(--neon-purple)', 'var(--neon-pink)', 'var(--neon-green)'];
-const NUM_AURORA_BLOBS = 5;
+const NUM_STARS = 20; // Increased for a "crazier" feel
 
 const HeroVisualEffects: React.FC = () => {
-  const auroraContainerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const container = auroraContainerRef.current;
+    const container = containerRef.current;
     if (!container) return;
 
-    // Clear previous blobs if any (e.g., on hot reload)
+    // Clear previous effects
     while (container.firstChild) {
       container.removeChild(container.firstChild);
     }
 
-    for (let i = 0; i < NUM_AURORA_BLOBS; i++) {
-      const blob = document.createElement('div');
-      blob.className = 'aurora-blob';
+    for (let i = 0; i < NUM_STARS; i++) {
+      const star = document.createElement('div');
+      star.className = 'shooting-star';
 
-      const size = Math.random() * 300 + 200; // Size between 200px and 500px
-      const duration = Math.random() * 20 + 15; // Duration between 15s and 35s
-      const delay = Math.random() * 10; // Delay up to 10s
-      const maxOpacity = Math.random() * 0.3 + 0.2; // Max opacity between 0.2 and 0.5
+      const color = NEON_COLORS[Math.floor(Math.random() * NEON_COLORS.length)];
+      const duration = Math.random() * 4 + 3; // Duration between 3s and 7s
+      const delay = Math.random() * 7;       // Delay up to 7s
+      const length = Math.random() * 150 + 75; // Length 75px to 225px
+      const thickness = Math.random() * 2 + 1; // Thickness 1px to 3px
 
-      blob.style.setProperty('--size', `${size}px`);
-      blob.style.setProperty('--aurora-color', NEON_COLORS[i % NEON_COLORS.length]);
+      // Initial position (randomly on screen, biased towards edges to shoot across)
+      let initialX, initialY;
+      if (Math.random() > 0.5) { // Start from left/right edge
+        initialX = Math.random() > 0.5 ? '-5vw' : '105vw'; // Slightly off-screen
+        initialY = Math.random() * 100 + 'vh';
+      } else { // Start from top/bottom edge
+        initialX = Math.random() * 100 + 'vw';
+        initialY = Math.random() > 0.5 ? '-5vh' : '105vh'; // Slightly off-screen
+      }
       
-      // Blobs will start/end near edges and move across viewport
-      blob.style.setProperty('--x-start', `${Math.random() * 80 - 40}vw`); // -40vw to 40vw
-      blob.style.setProperty('--y-start', `${Math.random() * 80 - 40}vh`); // -40vh to 40vh
-      blob.style.setProperty('--x-end', `${Math.random() * 80 - 40}vw`);
-      blob.style.setProperty('--y-end', `${Math.random() * 80 - 40}vh`);
-      
-      blob.style.setProperty('--duration', `${duration}s`);
-      blob.style.setProperty('--delay', `${delay}s`);
-      blob.style.setProperty('--max-opacity', `${maxOpacity}`);
+      // Travel distance and angle are now primarily handled by keyframes translating towards center/opposite side
+      // We can set a general angle for orientation
+      const angle = Math.random() * 360; // Random orientation
 
-      container.appendChild(blob);
+      // Determine random end translation factors for the keyframe
+      // These make stars shoot towards somewhat opposite areas
+      const translateXEndFactor = (Math.random() - 0.5) * 2; // -1 to 1
+      const translateYEndFactor = (Math.random() - 0.5) * 2; // -1 to 1
+
+
+      star.style.setProperty('--star-color', color);
+      star.style.setProperty('--star-length', `${length}px`);
+      star.style.setProperty('--star-thickness', `${thickness}px`);
+      star.style.setProperty('--duration', `${duration}s`);
+      star.style.setProperty('--delay', `${delay}s`);
+      star.style.setProperty('--angle', `${angle}deg`);
+
+      // Setting initial position via style.left and style.top
+      star.style.left = initialX;
+      star.style.top = initialY;
+      
+      // These are relative translations from its starting point for the animation
+      star.style.setProperty('--translate-x-end', `${translateXEndFactor * 80}vw`); // Travel up to 80vw
+      star.style.setProperty('--translate-y-end', `${translateYEndFactor * 80}vh`); // Travel up to 80vh
+
+
+      container.appendChild(star);
     }
   }, []);
 
-  return (
-    <div ref={auroraContainerRef} className="hero-aurora-bg" aria-hidden="true">
-      {/* Aurora blobs will be dynamically added here by useEffect */}
-    </div>
-  );
+  return <div ref={containerRef} className="hero-effects-container" aria-hidden="true" />;
 };
 
 export default HeroVisualEffects;
