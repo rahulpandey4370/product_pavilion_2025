@@ -19,22 +19,21 @@ export default function HomePage() {
     visible: {
       opacity: 1,
       transition: {
-        delay: 0.1, // Reduced delay
-        staggerChildren: 0.03, // Reduced stagger for faster letter appearance
+        delay: 0.1,
+        staggerChildren: 0.05, // Slightly increased stagger for smoother reveal
       },
     },
   };
 
   const letterVariants = {
-    hidden: { opacity: 0, y: 20 }, // Removed filter: "blur(5px)"
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      // filter: "blur(0px)", // Removed filter
       transition: {
         type: "spring",
-        damping: 10, // Adjusted damping
-        stiffness: 150, // Adjusted stiffness
+        damping: 15, // Increased damping for a softer spring
+        stiffness: 100, // Decreased stiffness for a softer spring
       },
     },
   };
@@ -53,8 +52,8 @@ export default function HomePage() {
           </h1>
           <motion.h2 
             className={cn(
-              "text-3xl md:text-4xl font-semibold text-foreground/90 mb-6", // text-foreground/90 is overridden by gradient-text
-              "gradient-text" 
+              "text-3xl md:text-4xl font-semibold text-foreground/90 mb-6"
+              // Removed "gradient-text" for a subtler color
             )}
             variants={sentenceVariants}
             initial="hidden"
