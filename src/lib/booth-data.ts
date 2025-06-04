@@ -23,13 +23,13 @@ export const booths: Booth[] = [
         image: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMnx8cmVhbHRpbWUlMjBkYXRhfGVufDB8fHx8MTc0OTAzNDcxMHww&ixlib=rb-4.1.0&q=80&w=1080'
       },
       {
-        id: 'f1-prism-edd',
+        id: 'f1-edd',
         name: 'Prism for EDD',
         description: 'Epicor Data Discovery (EDD) enables users to visualize real-time data through interactive dashboards. It transforms raw data into actionable insights without exporting data, enhancing performance monitoring and data-driven decisions.',
         image: 'https://images.unsplash.com/photo-1591696205602-2f950c417cb9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxlbnRlcnByaXNlJTIwZGF0YXxlbnwwfHx8fDE3NDkwMzE1NDl8MA&ixlib=rb-4.1.0&q=80&w=1080'
       },
       {
-        id: 'f1-prism-app-studio',
+        id: 'f1-app-studio',
         name: 'Prism Application Studio',
         description: 'Allows users to build and deploy Kinetic customizations through a low-code, AI-assisted interface. It reduces reliance on developers, making it easier to tailor forms, workflows, and logic to specific business needs.',
         image: 'https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxBcHBsaWNhdGlvbiUyMHN0dWRpb3xlbnwwfHx8fDE3NDkwMzE0MDh8MA&ixlib=rb-4.1.0&q=80&w=1080'
@@ -56,7 +56,7 @@ export const booths: Booth[] = [
         id: 'f1-self-service-ai',
         name: 'Self-Service Problem Resolution with AI',
         description: 'This feature uses AI and KB articles to guide users through troubleshooting processes. It reduces support dependency, enabling faster and more proactive problem resolution.',
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1526374870839-e155464bb9b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8ZGlnaXRhbCUyMGFic3RyYWN0fGVufDB8fHx8MTc0OTAzNTgxMnww&ixlib=rb-4.1.0&q=80&w=1080'
       }
     ],
   },
@@ -378,5 +378,6 @@ export const getBoothById = (id: string): Booth | undefined => {
 //   longDescription: 'Learn how the GBL process automates license generation for Data Interchange and EULK, streamlining compliance and license management processes.',
 //   image: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxHbG9iYWwlMjBMaWNlbnNpbmd8ZW58MHx8fHwxNzQ5MDI5NDc2fDA&ixlib=rb-4.1.0&q=80&w=1080'
 // }
+
 
 
