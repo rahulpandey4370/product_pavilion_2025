@@ -2,7 +2,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Sparkles, Globe, Linkedin as LinkedinIcon } from 'lucide-react';
+import { Sparkles, Linkedin as LinkedinIcon } from 'lucide-react'; // Removed Globe
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { ThemeToggle } from '@/components/theme/ThemeToggle';
@@ -48,7 +48,16 @@ export default function Header() {
             "hover:bg-primary hover:text-primary-foreground"
           )}>
             <a href="https://www.epicor.com/en/" target="_blank" rel="noopener noreferrer" aria-label="Epicor Website">
-              <Globe className="h-4 w-4 sm:h-5 sm:w-5" />
+              <svg
+                viewBox="0 0 72 48"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-4 w-4 sm:h-5 sm:w-5"
+              >
+                <path d="M0 9L60 9L55 0L0 0Z" />
+                <path d="M8 25L68 25L63 16L13 16Z" />
+                <path d="M0 41L60 41L55 32L0 32Z" />
+              </svg>
             </a>
           </Button>
           <Button variant="ghost" size="icon" asChild className={cn(
