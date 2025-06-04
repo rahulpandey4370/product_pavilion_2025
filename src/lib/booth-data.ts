@@ -117,9 +117,48 @@ export const booths: Booth[] = [
     iconName: 'Laptop',
     heroImage: 'https://placehold.co/1200x400.png',
     features: [
-      { id: 'f4-1', name: 'Unified Codebase', description: 'Write once, deploy anywhere.', longDescription: 'Maximize efficiency by using a single codebase to build applications for iOS, Android, web, and desktop. Reduce development time and maintenance efforts.', image: 'https://placehold.co/600x400.png' },
-      { id: 'f4-2', name: 'Native Performance', description: 'Achieve near-native performance on all platforms.', longDescription: 'Our cross-platform framework is optimized for performance, delivering a smooth and responsive user experience that feels native to each platform.', image: 'https://placehold.co/600x400.png' },
-      { id: 'f4-3', name: 'Consistent UI/UX', description: 'Maintain brand consistency across devices.', longDescription: 'Ensure a cohesive user experience with UI components that adapt to different screen sizes and platform conventions while maintaining your brand identity.', image: 'https://placehold.co/600x400.png' },
+      { 
+        id: 'f4-mattec', 
+        name: 'Mattec', 
+        description: 'Modernizing Mattec with a web-based experience using the ICE framework and UX Platform.', 
+        longDescription: 'Explore how we’re transforming legacy products with a modern web-based experience—featuring Mattec’s shift to the ICE framework/UX Platform and a redesigned SLS interface. See new compliance capabilities for Support at Home in aged care, and ECM’s mobile app with mass document approvals. Experience seamless freight invoice processing across Kinetic, ECM, and Quick Ship—showcasing the true power of integrated Epicor solutions. Elevate UX, mobility, and operations—all in one booth.', 
+        image: 'https://placehold.co/600x400.png' 
+      },
+      { 
+        id: 'f4-sls', 
+        name: 'SLS', 
+        description: 'Redesigned SLS interface delivering an enhanced, modern user experience.', 
+        longDescription: 'Explore how we’re transforming legacy products with a modern web-based experience—featuring Mattec’s shift to the ICE framework/UX Platform and a redesigned SLS interface. See new compliance capabilities for Support at Home in aged care, and ECM’s mobile app with mass document approvals. Experience seamless freight invoice processing across Kinetic, ECM, and Quick Ship—showcasing the true power of integrated Epicor solutions. Elevate UX, mobility, and operations—all in one booth.', 
+        image: 'https://placehold.co/600x400.png' 
+      },
+      { 
+        id: 'f4-ecm-cross', 
+        name: 'ECM', 
+        description: 'ECM mobile app enabling mass document approvals and new aged care compliance features.', 
+        longDescription: 'Explore how we’re transforming legacy products with a modern web-based experience—featuring Mattec’s shift to the ICE framework/UX Platform and a redesigned SLS interface. See new compliance capabilities for Support at Home in aged care, and ECM’s mobile app with mass document approvals. Experience seamless freight invoice processing across Kinetic, ECM, and Quick Ship—showcasing the true power of integrated Epicor solutions. Elevate UX, mobility, and operations—all in one booth.', 
+        image: 'https://placehold.co/600x400.png' 
+      },
+      { 
+        id: 'f4-quickship-cross', 
+        name: 'Quick Ship', 
+        description: 'Seamless freight invoice processing integrated across Kinetic, ECM, and Quick Ship.', 
+        longDescription: 'Explore how we’re transforming legacy products with a modern web-based experience—featuring Mattec’s shift to the ICE framework/UX Platform and a redesigned SLS interface. See new compliance capabilities for Support at Home in aged care, and ECM’s mobile app with mass document approvals. Experience seamless freight invoice processing across Kinetic, ECM, and Quick Ship—showcasing the true power of integrated Epicor solutions. Elevate UX, mobility, and operations—all in one booth.', 
+        image: 'https://placehold.co/600x400.png' 
+      },
+      { 
+        id: 'f4-kinetic-cross', 
+        name: 'Kinetic', 
+        description: 'Showcasing integrated solutions and the power of Kinetic in cross-platform scenarios.', 
+        longDescription: 'Explore how we’re transforming legacy products with a modern web-based experience—featuring Mattec’s shift to the ICE framework/UX Platform and a redesigned SLS interface. See new compliance capabilities for Support at Home in aged care, and ECM’s mobile app with mass document approvals. Experience seamless freight invoice processing across Kinetic, ECM, and Quick Ship—showcasing the true power of integrated Epicor solutions. Elevate UX, mobility, and operations—all in one booth.', 
+        image: 'https://placehold.co/600x400.png' 
+      },
+      { 
+        id: 'f4-ice-framework', 
+        name: 'ICE Framework', 
+        description: 'The foundation for transforming legacy products into modern web experiences.', 
+        longDescription: 'Explore how we’re transforming legacy products with a modern web-based experience—featuring Mattec’s shift to the ICE framework/UX Platform and a redesigned SLS interface. See new compliance capabilities for Support at Home in aged care, and ECM’s mobile app with mass document approvals. Experience seamless freight invoice processing across Kinetic, ECM, and Quick Ship—showcasing the true power of integrated Epicor solutions. Elevate UX, mobility, and operations—all in one booth.', 
+        image: 'https://placehold.co/600x400.png' 
+      },
     ],
   },
   {
