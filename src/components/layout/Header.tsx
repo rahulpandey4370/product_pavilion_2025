@@ -51,7 +51,7 @@ export default function Header() {
             <a href="https://www.epicor.com/en/" target="_blank" rel="noopener noreferrer" aria-label="Epicor Website">
               {/* Use Next/Image component */}
               <Image
-                src="/logo.jpeg" 
+                src="/logo.jpg" 
                 alt="Epicor Logo"
                 width={20} // Intrinsic width of your image or desired display width
                 height={20} // Intrinsic height of your image or desired display height
