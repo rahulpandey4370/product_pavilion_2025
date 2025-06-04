@@ -358,6 +358,36 @@ html {
   100% { background-position: 100% 50%; }
 }
 
+/* Background for "Our Products" section */
+@keyframes softLightGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.products-section-background {
+  background: linear-gradient(270deg,
+    hsla(var(--neon-blue-hsl-values), 0.08), /* Slightly more subtle alpha */
+    hsla(var(--neon-purple-hsl-values), 0.08),
+    hsla(var(--neon-pink-hsl-values), 0.08),
+    hsla(var(--neon-blue-hsl-values), 0.08)
+  );
+  background-size: 500% 500%; /* Adjusted for potentially smoother animation */
+  animation: softLightGlow 30s ease infinite; /* Slower animation */
+  border-radius: var(--radius);
+  padding: 2rem; /* p-8 */
+  box-shadow: 0 4px 16px hsla(var(--background-hsl), 0.15), /* Softer shadow */
+              inset 0 0 0 1px hsla(var(--border-hsl), 0.15); /* Subtle inset border */
+  position: relative;
+  overflow: hidden; /* Ensures pseudo-elements for effects stay contained if added later */
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+  .products-section-background {
+    padding: 3rem; /* p-12 */
+  }
+}
+
 
 /* Loading Animations */
 .loading-spinner-container { 

@@ -39,7 +39,7 @@ export default function HomePage() {
       {/* Booth Showcase Grid Section */}
       <section id="booths" className="py-16">
         <div className="container mx-auto px-4">
-          <div className="bg-card/50 backdrop-filter backdrop-blur-sm rounded-xl p-8 md:p-12 shadow-xl border border-border/20">
+          <div className="products-section-background">
             <h2 className="text-4xl font-bold text-center mb-4 gradient-text">Our Products</h2>
             <p 
               className="text-xl text-foreground/80 text-center mb-12 max-w-2xl mx-auto"
