@@ -531,32 +531,6 @@ html {
   100% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
 }
 
-/* Ensure Shadcn Card uses our glassmorphic styles if .card is applied to it */
-/* This might be redundant if BoothCard.tsx correctly applies .booth-card-base */
-.card { 
-  background: var(--glass-bg) !important; /* Default for Shadcn card, but our booth cards will override */
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  border: 1px solid var(--glass-border) !important;
-  box-shadow: var(--glass-shadow) !important;
-  color: hsl(var(--card-foreground-hsl)) !important;
-}
-/* Hero section specific styles for very large screens */
-@media (min-width: 1536px) { /* Tailwind's 2xl breakpoint */
-  .hero-section-2xl-expansive {
-    min-height: calc(100vh - var(--header-height, 4rem)) !important; /* Full viewport height */
-    padding-top: 8rem !important; /* More padding */
-    padding-bottom: 8rem !important;
-  }
-  .hero-section-2xl-expansive h1 {
-    font-size: clamp(4rem, 3rem + 4vw, 7rem) !important; /* Even larger H1 */
-  }
-   .hero-section-2xl-expansive p {
-    font-size: clamp(1.5rem, 1rem + 1vw, 2.25rem) !important; /* Larger paragraph */
-    max-width: 80ch !important; /* Wider text block */
-  }
-}
-
 /* Ensure links in booth cards use the booth's accent color */
 .booth-card-base a {
   color: var(--booth-accent-color);
