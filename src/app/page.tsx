@@ -1,3 +1,4 @@
+
 'use client'; // Mark as client component for useEffect and scroll animations
 
 import { useEffect } from 'react';
@@ -33,7 +34,7 @@ export default function HomePage() {
   return (
     <div className="space-y-24">
       {/* Hero Section */}
-      <section className="relative text-center py-20 md:py-32 xl:py-40 2xl:py-48 min-h-[calc(90vh-var(--header-height,4rem))] flex flex-col justify-center items-center overflow-hidden">
+      <section className="relative text-center py-20 md:py-32 xl:py-40 2xl:py-48 min-h-[calc(90vh-var(--header-height,4rem))] flex flex-col justify-center items-center overflow-hidden hero-section-2xl-expansive">
         <HeroVisualEffects /> {/* Add visual effects component */}
         <div className="container mx-auto px-4 z-10"> {/* Ensure content is above effects */}
           <h1 className={cn(
@@ -41,7 +42,7 @@ export default function HomePage() {
             "typewriter-container" // Container for typewriter
           )}>
             <span className="typewriter gradient-text">
-              Welcome to ProductVerse
+              Epicor Product Pavilion 2025
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-foreground/80 mb-12 max-w-3xl mx-auto scroll-animate fade-in" style={{animationDelay: '3.6s'}}> {/* Increased text-foreground opacity */}
