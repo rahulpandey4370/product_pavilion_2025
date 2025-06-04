@@ -72,7 +72,7 @@ export const booths: Booth[] = [
         id: 'f-np-ecm-ai-order-creation',
         name: 'ECM: AI-Led Order Creation from Document',
         description: 'Discover how AI is transforming order management with this cutting-edge proof of concept. Leveraging GPT and Google Gemini large language models, this demo showcases the automatic conversion of lengthy purchase orders—up to 100 pages—into structured, schema-aligned sales orders in Epicor Kinetic ERP. The AI extracts key details from header, line-item, and schedule levels, enabling high-volume, low-touch processing for faster, smarter order entry.',
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8ZG9jdW1lbnRzfGVufDB8fHx8MTc0OTAzNjExNHww&ixlib=rb-4.1.0&q=80&w=1080'
       },
       {
         id: 'f-np-ascend-ai-migration',
@@ -378,6 +378,7 @@ export const getBoothById = (id: string): Booth | undefined => {
 //   longDescription: 'Learn how the GBL process automates license generation for Data Interchange and EULK, streamlining compliance and license management processes.',
 //   image: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxHbG9iYWwlMjBMaWNlbnNpbmd8ZW58MHx8fHwxNzQ5MDI5NDc2fDA&ixlib=rb-4.1.0&q=80&w=1080'
 // }
+
 
 
 
