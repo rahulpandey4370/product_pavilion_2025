@@ -14,7 +14,7 @@ export const booths: Booth[] = [
         id: 'f1-rfq-processing',
         name: 'RFQ Processing (Kinetic)',
         description: 'Prism AI for Business Communications revolutionizes RFQ workflows by leveraging NLP to review and summarize supplier interactions. It identifies optimal pricing and lead times, eliminating manual review and enabling procurement teams to focus on strategy and relationships.',
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkYXNoYm9hcmR8ZW58MHx8fHwxNzQ5MDI4Njk0fDA&ixlib=rb-4.1.0&q=80&w=1080'
       },
       {
         id: 'f1-list-metric-agents',
@@ -350,7 +350,7 @@ export const getBoothById = (id: string): Booth | undefined => {
 // },
 // {
 //   id: 'f1-edd',
-//   name: 'EDD',
+//   name: 'Prism for EDD',
 //   description: 'Leverage Prism for EDD to transform your enterprise data into actionable business insights.',
 //   longDescription: 'Unlock intelligent, seamless operations with the Kinetic platform—powered by AI agents and Prism tools. Enhance decision-making with List, Metric, and Multimodal agents, and customize with ease using Prism for Application Studio. Turn data into insights with Prism for EDD, streamline RFQ workflows, and retrieve documents using natural language via the ECM Agent. Integrated Quick Ship enables real-time freight tracking, while AI-driven KB support empowers self-service. Experience the future of agile, data-driven business.',
 //   image: 'https://images.unsplash.com/photo-1591696205602-2f950c417cb9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxlbnRlcnByaXNlJTIwZGF0YXxlbnwwfHx8fDE3NDkwMzE1NDl8MA&ixlib=rb-4.1.0&q=80&w=1080'
@@ -370,10 +370,10 @@ export const getBoothById = (id: string): Booth | undefined => {
 //   longDescription: 'Discover Tropos, the ERP built for process manufacturers in food, beverage, pharmaceuticals, metals, and chemicals—featuring recipe-based production, full traceability, regulatory compliance, and lean manufacturing support.',
 //   image: 'https://images.unsplash.com/photo-1580983559367-0dc2f8934365?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxFUlB8ZW58MHx8fHwxNzQ5MDI5MzQzfDA&ixlib=rb-4.1.0&q=80&w=1080'
 // },
-// Original data for 'f-int-gl' which is part of 'integration'
+// Original data for 'f-int-di-eulk-licensing' which is part of 'integration'
 // {
-//   id: 'f-int-gl',
-//   name: 'Global Licensing',
+//   id: 'f-int-di-eulk-licensing',
+//   name: 'DI / EULK (GBL Licensing Automation)',
 //   description: 'GBL process automates license generation for Data Interchange & EULK.',
 //   longDescription: 'Learn how the GBL process automates license generation for Data Interchange and EULK, streamlining compliance and license management processes.',
 //   image: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxHbG9iYWwlMjBMaWNlbnNpbmd8ZW58MHx8fHwxNzQ5MDI5NDc2fDA&ixlib=rb-4.1.0&q=80&w=1080'
