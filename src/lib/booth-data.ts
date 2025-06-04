@@ -50,7 +50,7 @@ export const booths: Booth[] = [
         id: 'f1-quickship-agent',
         name: 'Quick Ship Agent – AI-Powered Shipment Tracking',
         description: 'Integrates shipment tracking into Kinetic, allowing users to monitor delivery statuses without leaving the platform. It enhances visibility and user convenience by eliminating UI switching.',
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1569938709389-ff8ab00530b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNnx8bmF2aWdhdGlvbnxlbnwwfHx8fDE3NDkwMzU2NDd8MA&ixlib=rb-4.1.0&q=80&w=1080'
       },
       {
         id: 'f1-self-service-ai',
@@ -378,4 +378,5 @@ export const getBoothById = (id: string): Booth | undefined => {
 //   longDescription: 'Learn how the GBL process automates license generation for Data Interchange and EULK, streamlining compliance and license management processes.',
 //   image: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxHbG9iYWwlMjBMaWNlbnNpbmd8ZW58MHx8fHwxNzQ5MDI5NDc2fDA&ixlib=rb-4.1.0&q=80&w=1080'
 // }
+
 
