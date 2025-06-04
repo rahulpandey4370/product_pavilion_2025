@@ -18,8 +18,11 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  experimental: {
+    allowedDevOrigins: ['https://6000-firebase-studio-1749007671777.cluster-6dx7corvpngoivimwvvljgokdw.cloudworkstations.dev'],
+  },
   // Recommended for App Router + static export
-  // output: 'export', 
+  // output: 'export',
 };
 
 export default nextConfig;
