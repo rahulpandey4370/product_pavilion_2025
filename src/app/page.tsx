@@ -19,8 +19,8 @@ export default function HomePage() {
     visible: {
       opacity: 1,
       transition: {
-        delay: 0.3, // Start animation shortly after page load
-        staggerChildren: 0.05, // Time between each letter animation
+        delay: 0.1, // Reduced delay
+        staggerChildren: 0.03, // Reduced stagger for faster letter appearance
       },
     },
   };
@@ -33,8 +33,8 @@ export default function HomePage() {
       filter: "blur(0px)",
       transition: {
         type: "spring",
-        damping: 12,
-        stiffness: 200,
+        damping: 10, // Adjusted damping
+        stiffness: 150, // Adjusted stiffness
       },
     },
   };
@@ -46,13 +46,16 @@ export default function HomePage() {
         <HeroVisualEffects /> {/* Add visual effects component */}
         <div className="px-4 z-10 w-full"> {/* Ensure content is above effects, removed container and mx-auto, added w-full */}
           <h1 className={cn(
-            "text-5xl md:text-7xl font-bold mb-4", // Reduced mb from 8 to 4
+            "text-5xl md:text-7xl font-bold mb-4", 
             "gradient-text" 
           )}>
             Epicor Product Pavilion 2025
           </h1>
           <motion.h2 
-            className="text-3xl md:text-4xl font-semibold text-foreground/90 mb-6"
+            className={cn(
+              "text-3xl md:text-4xl font-semibold text-foreground/90 mb-6",
+              "gradient-text" // Added gradient text class
+            )}
             variants={sentenceVariants}
             initial="hidden"
             animate="visible"
