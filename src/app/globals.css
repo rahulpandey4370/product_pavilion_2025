@@ -423,7 +423,7 @@ html {
 .feature-card-title {
   @apply gradient-text;
 }
-/* Ensure feature modal titles are gradient text */
+/* Ensure feature modal titles are gradient-text */
 .feature-modal-title {
   @apply gradient-text;
 }
@@ -445,3 +445,24 @@ html {
   color: var(--neon-green) !important;
 }
 
+/* Glassmorphic Button for Feature Card "View Details" */
+.btn-glass-details {
+  background-color: hsla(var(--booth-accent-color-hsl-values, 180, 100%, 50%), 0.15) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: 1px solid hsla(var(--booth-accent-color-hsl-values, 180, 100%, 50%), 0.4) !important;
+  color: var(--booth-accent-color) !important;
+  border-radius: var(--radius) !important;
+  font-weight: 500;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-glass-details:hover {
+  background-color: hsla(var(--booth-accent-color-hsl-values, 180, 100%, 50%), 0.25) !important;
+  border-color: hsla(var(--booth-accent-color-hsl-values, 180, 100%, 50%), 0.7) !important;
+  box-shadow: 0 0 8px hsla(var(--booth-accent-color-hsl-values, 180, 100%, 50%), 0.3);
+}
+
+.btn-glass-details svg {
+  color: var(--booth-accent-color) !important; /* Ensure icon color matches text */
+}

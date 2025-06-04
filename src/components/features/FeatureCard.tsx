@@ -48,9 +48,10 @@ export default function FeatureCard({ feature, onViewDetails, index, boothThemeC
           <p className="text-sm mb-4">{feature.description}</p>
           <Button
             onClick={onViewDetails}
-            variant="outline" 
             size="sm"
-            className="w-full mt-auto" 
+            className={cn(
+              "w-full mt-auto btn-glass-details" // Apply the new glassmorphic style
+            )} 
           >
             <Eye className="mr-2 h-4 w-4" />
             View Details
@@ -60,3 +61,4 @@ export default function FeatureCard({ feature, onViewDetails, index, boothThemeC
     </div>
   );
 }
+
