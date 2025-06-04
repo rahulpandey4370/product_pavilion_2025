@@ -104,7 +104,7 @@ export default function BoothDetailPage() {
                 size="sm" 
                 onClick={() => navigateBooth('prev')} 
                 disabled={allBooths.length <= 1}
-                className="bg-background/30 hover:bg-accent hover:text-accent-foreground"
+                className="hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
             >
                 <ArrowLeft className="mr-2 h-4 w-4" /> Prev
             </Button>
@@ -113,7 +113,7 @@ export default function BoothDetailPage() {
                 size="sm" 
                 onClick={() => navigateBooth('next')} 
                 disabled={allBooths.length <= 1}
-                className="bg-background/30 hover:bg-accent hover:text-accent-foreground"
+                className="hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
             >
                 Next <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
