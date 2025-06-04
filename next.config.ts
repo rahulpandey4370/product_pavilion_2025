@@ -18,6 +18,8 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Recommended for App Router + static export
+  // output: 'export', 
 };
 
 export default nextConfig;

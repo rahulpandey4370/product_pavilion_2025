@@ -65,6 +65,33 @@ export default {
           border: 'hsl(var(--sidebar-border))',
           ring: 'hsl(var(--sidebar-ring))',
         },
+        // Custom colors for booth gradients
+        'electric-blue': '#0066FF',
+        'modern-indigo': '#6366F1',
+        'vibrant-pink': '#EC4899',
+        'deep-black': '#0A0A0A',
+        'rich-dark-gray': '#1A1A1A',
+        'pure-white': '#FFFFFF',
+        'muted-gray': '#A1A1AA',
+        'emerald': '#10B981',
+        'amber': '#F59E0B',
+        'booth-prism-ai-start': '#0066FF',
+        'booth-prism-ai-end': '#3B82F6', // Lighter blue
+        'booth-non-prism-ai-start': '#A855F7', // Purple
+        'booth-non-prism-ai-end': '#EC4899', // Pink
+        'booth-ai-dev-start': '#10B981', // Green
+        'booth-ai-dev-end': '#06B6D4', // Cyan
+        'booth-cross-platform-start': '#F97316', // Orange
+        'booth-cross-platform-end': '#EF4444', // Red
+        'booth-manufacturing-erp-start': '#374151', // Blue Gray
+        'booth-manufacturing-erp-end': '#1F2937', // Darker Blue Gray
+        'booth-integration-start': '#EF4444', // Red
+        'booth-integration-via': '#FCD34D', // Yellow
+        'booth-integration-end': '#10B981', // Green
+        'booth-cloud-start': '#38BDF8', // Sky Blue
+        'booth-cloud-end': '#0EA5E9', // Darker Sky Blue
+        'booth-cloud-enablers-start': '#1D4ED8', // Dark Blue
+        'booth-cloud-enablers-end': '#1E3A8A', // Even Darker Blue
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -88,11 +115,25 @@ export default {
             height: '0',
           },
         },
+        'gradient-bg': {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        },
+        'pulse-badge': {
+          '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+          '50%': { opacity: '0.7', transform: 'scale(1.1)' },
+        }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'gradient-bg': 'gradient-bg 15s ease infinite',
+        'pulse-badge': 'pulse-badge 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
+      backgroundSize: {
+        '400%': '400% 400%',
+      }
     },
   },
   plugins: [require('tailwindcss-animate')],
