@@ -56,24 +56,24 @@ export const booths: Booth[] = [
     heroImage: 'https://placehold.co/1200x400.png',
     features: [
       {
-        id: 'f2-ecm-updated',
-        name: 'ECM',
-        description: 'AI transforming purchase orders, accelerating cloud migrations, and simplifying integrations.',
-        longDescription: 'Step into the future with our AI pavilion, where cutting-edge demos showcase how AI is revolutionizing business. See how powerful language models transform massive purchase orders into streamlined sales orders, how AI smartly accelerates cloud migrations by analyzing and upgrading customizations, and how low-code AI-driven automation simplifies system integration—making complex tasks faster, smarter, and accessible to everyone. Experience firsthand how AI is reshaping efficiency across order management, cloud adoption, and workflow automation.',
+        id: 'f-np-ecm',
+        name: 'ECM (Enterprise Content Management)',
+        description: 'AI transforms purchase orders to sales orders, reshaping order management efficiency.',
+        longDescription: 'See how powerful language models transform massive purchase orders into streamlined sales orders. Experience firsthand how AI is reshaping efficiency across order management.',
         image: 'https://placehold.co/600x400.png'
       },
       {
-        id: 'f2-automation-studio-updated',
+        id: 'f-np-as',
         name: 'Automation Studio',
-        description: 'Low-code AI-driven automation making complex system integration faster and smarter.',
-        longDescription: 'Step into the future with our AI pavilion, where cutting-edge demos showcase how AI is revolutionizing business. See how powerful language models transform massive purchase orders into streamlined sales orders, how AI smartly accelerates cloud migrations by analyzing and upgrading customizations, and how low-code AI-driven automation simplifies system integration—making complex tasks faster, smarter, and accessible to everyone. Experience firsthand how AI is reshaping efficiency across order management, cloud adoption, and workflow automation.',
+        description: 'Low-code AI simplifies system integration, revolutionizing workflow automation.',
+        longDescription: 'Experience how low-code AI-driven automation simplifies system integration—making complex tasks faster, smarter, and accessible to everyone. See how AI is revolutionizing workflow automation.',
         image: 'https://placehold.co/600x400.png'
       },
       {
-        id: 'f2-project-ascend-updated',
+        id: 'f-np-pa',
         name: 'Project Ascend',
-        description: 'Experience firsthand how AI is reshaping efficiency across order management, cloud adoption, and workflow automation.',
-        longDescription: 'Step into the future with our AI pavilion, where cutting-edge demos showcase how AI is revolutionizing business. See how powerful language models transform massive purchase orders into streamlined sales orders, how AI smartly accelerates cloud migrations by analyzing and upgrading customizations, and how low-code AI-driven automation simplifies system integration—making complex tasks faster, smarter, and accessible to everyone. Experience firsthand how AI is reshaping efficiency across order management, cloud adoption, and workflow automation.',
+        description: 'AI accelerates cloud migrations by analyzing and upgrading customizations.',
+        longDescription: 'Discover how AI smartly accelerates cloud migrations by analyzing and upgrading customizations. Step into the future where cutting-edge technology is transforming cloud adoption processes.',
         image: 'https://placehold.co/600x400.png'
       },
     ],
@@ -87,24 +87,24 @@ export const booths: Booth[] = [
     heroImage: 'https://placehold.co/1200x400.png',
     features: [
       {
-        id: 'f3-csf-dev',
+        id: 'f-ad-csf',
         name: 'CSF',
-        description: 'AI-driven C# code generation for e-invoicing and intelligent unit test creation.',
-        longDescription: 'Experience how AI transforms software delivery—from auto-generating C# code for e-invoicing to intelligent unit test creation with GitHub Copilot. See our AI Agent in action, generating smart pull request previews in Azure DevOps. Accelerate development, reduce effort, and empower partners like never before',
+        description: 'AI auto-generates C# code for e-invoicing & creates unit tests with GitHub Copilot.',
+        longDescription: 'Experience how AI transforms software delivery through auto-generating C# code for e-invoicing and intelligent unit test creation with GitHub Copilot. Accelerate development and reduce effort like never before.',
         image: 'https://placehold.co/600x400.png'
       },
       {
-        id: 'f3-automation-studio-dev',
+        id: 'f-ad-as',
         name: 'Automation Studio',
-        description: 'AI Agent generating smart pull request previews in Azure DevOps for faster cycles.',
-        longDescription: 'Experience how AI transforms software delivery—from auto-generating C# code for e-invoicing to intelligent unit test creation with GitHub Copilot. See our AI Agent in action, generating smart pull request previews in Azure DevOps. Accelerate development, reduce effort, and empower partners like never before',
+        description: 'AI Agent generates smart pull request previews in Azure DevOps, empowering partners.',
+        longDescription: 'See our AI Agent in action, generating smart pull request previews in Azure DevOps. Witness how AI is empowering partners through intelligent development automation.',
         image: 'https://placehold.co/600x400.png'
       },
       {
-        id: 'f3-data-fabric-dev',
+        id: 'f-ad-df',
         name: 'Data Fabric',
-        description: 'Accelerate development and empower partners using AI-enhanced software delivery.',
-        longDescription: 'Experience how AI transforms software delivery—from auto-generating C# code for e-invoicing to intelligent unit test creation with GitHub Copilot. See our AI Agent in action, generating smart pull request previews in Azure DevOps. Accelerate development, reduce effort, and empower partners like never before',
+        description: 'AI transforms software delivery workflows for smarter, efficient data integration.',
+        longDescription: 'Discover how AI transforms software delivery workflows, making development processes smarter and more efficient for seamless data integration.',
         image: 'https://placehold.co/600x400.png'
       },
     ],
@@ -118,45 +118,45 @@ export const booths: Booth[] = [
     heroImage: 'https://placehold.co/1200x400.png',
     features: [
       { 
-        id: 'f4-mattec', 
+        id: 'f-cp-mattec', 
         name: 'Mattec', 
-        description: 'Modernizing Mattec with a web-based experience using the ICE framework and UX Platform.', 
-        longDescription: 'Explore how we’re transforming legacy products with a modern web-based experience—featuring Mattec’s shift to the ICE framework/UX Platform and a redesigned SLS interface. See new compliance capabilities for Support at Home in aged care, and ECM’s mobile app with mass document approvals. Experience seamless freight invoice processing across Kinetic, ECM, and Quick Ship—showcasing the true power of integrated Epicor solutions. Elevate UX, mobility, and operations—all in one booth.', 
+        description: "Mattec's shift to ICE framework/UX Platform modernizes legacy products with cutting-edge UX.", 
+        longDescription: "Explore the transformation to modern web-based experience featuring Mattec's shift to the ICE framework/UX Platform. See how legacy products are being elevated with cutting-edge UX design.", 
         image: 'https://placehold.co/600x400.png' 
       },
       { 
-        id: 'f4-sls', 
+        id: 'f-cp-sls', 
         name: 'SLS', 
-        description: 'Redesigned SLS interface delivering an enhanced, modern user experience.', 
-        longDescription: 'Explore how we’re transforming legacy products with a modern web-based experience—featuring Mattec’s shift to the ICE framework/UX Platform and a redesigned SLS interface. See new compliance capabilities for Support at Home in aged care, and ECM’s mobile app with mass document approvals. Experience seamless freight invoice processing across Kinetic, ECM, and Quick Ship—showcasing the true power of integrated Epicor solutions. Elevate UX, mobility, and operations—all in one booth.', 
+        description: 'Redesigned SLS interface with modern web capabilities for enhanced UX.', 
+        longDescription: 'Experience the redesigned SLS interface with modern web-based capabilities. Witness how traditional systems are being transformed for enhanced user experience.', 
         image: 'https://placehold.co/600x400.png' 
       },
       { 
-        id: 'f4-ecm-cross', 
+        id: 'f-cp-ecm', 
         name: 'ECM', 
-        description: 'ECM mobile app enabling mass document approvals and new aged care compliance features.', 
-        longDescription: 'Explore how we’re transforming legacy products with a modern web-based experience—featuring Mattec’s shift to the ICE framework/UX Platform and a redesigned SLS interface. See new compliance capabilities for Support at Home in aged care, and ECM’s mobile app with mass document approvals. Experience seamless freight invoice processing across Kinetic, ECM, and Quick Ship—showcasing the true power of integrated Epicor solutions. Elevate UX, mobility, and operations—all in one booth.', 
+        description: 'ECM mobile app: mass document approvals & new aged care compliance features.', 
+        longDescription: "See ECM's mobile app with mass document approvals and new compliance capabilities for Support at Home in aged care. Experience mobility solutions that enhance operational efficiency.", 
         image: 'https://placehold.co/600x400.png' 
       },
       { 
-        id: 'f4-quickship-cross', 
+        id: 'f-cp-qs', 
         name: 'Quick Ship', 
-        description: 'Seamless freight invoice processing integrated across Kinetic, ECM, and Quick Ship.', 
-        longDescription: 'Explore how we’re transforming legacy products with a modern web-based experience—featuring Mattec’s shift to the ICE framework/UX Platform and a redesigned SLS interface. See new compliance capabilities for Support at Home in aged care, and ECM’s mobile app with mass document approvals. Experience seamless freight invoice processing across Kinetic, ECM, and Quick Ship—showcasing the true power of integrated Epicor solutions. Elevate UX, mobility, and operations—all in one booth.', 
+        description: 'Seamless freight invoice processing with Kinetic & ECM via Quick Ship.', 
+        longDescription: 'Experience seamless freight invoice processing integration with Kinetic and ECM. See how Quick Ship showcases the true power of integrated Epicor solutions.', 
         image: 'https://placehold.co/600x400.png' 
       },
       { 
-        id: 'f4-kinetic-cross', 
+        id: 'f-cp-kinetic', 
         name: 'Kinetic', 
-        description: 'Showcasing integrated solutions and the power of Kinetic in cross-platform scenarios.', 
-        longDescription: 'Explore how we’re transforming legacy products with a modern web-based experience—featuring Mattec’s shift to the ICE framework/UX Platform and a redesigned SLS interface. See new compliance capabilities for Support at Home in aged care, and ECM’s mobile app with mass document approvals. Experience seamless freight invoice processing across Kinetic, ECM, and Quick Ship—showcasing the true power of integrated Epicor solutions. Elevate UX, mobility, and operations—all in one booth.', 
+        description: 'Kinetic: seamless freight invoice processing & integration with ECM/Quick Ship.', 
+        longDescription: 'Discover seamless freight invoice processing capabilities and integration with ECM and Quick Ship, demonstrating comprehensive ERP connectivity.', 
         image: 'https://placehold.co/600x400.png' 
       },
       { 
-        id: 'f4-ice-framework', 
+        id: 'f-cp-ice', 
         name: 'ICE Framework', 
-        description: 'The foundation for transforming legacy products into modern web experiences.', 
-        longDescription: 'Explore how we’re transforming legacy products with a modern web-based experience—featuring Mattec’s shift to the ICE framework/UX Platform and a redesigned SLS interface. See new compliance capabilities for Support at Home in aged care, and ECM’s mobile app with mass document approvals. Experience seamless freight invoice processing across Kinetic, ECM, and Quick Ship—showcasing the true power of integrated Epicor solutions. Elevate UX, mobility, and operations—all in one booth.', 
+        description: 'ICE framework: modern UX Platform transforming legacy products for better UX & mobility.', 
+        longDescription: "Explore the modern web-based UX Platform that's transforming legacy products. See how the ICE framework elevates user experience, mobility, and operations.", 
         image: 'https://placehold.co/600x400.png' 
       },
     ],
@@ -170,16 +170,16 @@ export const booths: Booth[] = [
     heroImage: 'https://placehold.co/1200x400.png',
     features: [
       { 
-        id: 'f5-csf', 
+        id: 'f-mfg-csf', 
         name: 'CSF', 
-        description: 'Kinetic ERP\'s Country Specific Functions (CSF) for local compliance and global e-invoicing initiatives.', 
-        longDescription: 'Explore Country Specific Functions (CSF) in Kinetic ERP, designed to meet local compliance needs. Get a quick insight into global e-invoicing initiatives driving transparency and accountability in financial transactions. Also, Discover Tropos, the ERP built for process manufacturers in food, beverage, pharmaceuticals, metals, and chemicals—featuring recipe-based production, full traceability, regulatory compliance, and lean manufacturing support.', 
+        description: "Kinetic ERP's CSF for local compliance & global e-invoicing insights.", 
+        longDescription: 'Explore Country Specific Functions (CSF) in Kinetic ERP, designed to meet local compliance needs. Get quick insights into global e-invoicing initiatives driving transparency and accountability in financial transactions.', 
         image: 'https://placehold.co/600x400.png' 
       },
       { 
-        id: 'f5-tropos', 
+        id: 'f-mfg-tropos', 
         name: 'Tropos', 
-        description: 'Tropos: ERP for process manufacturers (food, pharma, chemicals) with recipe-based production, traceability, and compliance.', 
+        description: 'Tropos: ERP for process manufacturers with recipe-based production, traceability & compliance.', 
         longDescription: 'Discover Tropos, the ERP built for process manufacturers in food, beverage, pharmaceuticals, metals, and chemicals—featuring recipe-based production, full traceability, regulatory compliance, and lean manufacturing support.', 
         image: 'https://placehold.co/600x400.png' 
       },
@@ -193,9 +193,27 @@ export const booths: Booth[] = [
     iconName: 'GitMerge',
     heroImage: 'https://placehold.co/1200x400.png',
     features: [
-      { id: 'f6-1', name: 'API Gateway', description: 'Centralized API management and security.', longDescription: 'Securely expose, manage, and monitor your APIs with our robust API Gateway. Control access, enforce policies, and analyze traffic.', image: 'https://placehold.co/600x400.png' },
-      { id: 'f6-2', name: 'Data Synchronization', description: 'Keep data consistent across systems.', longDescription: 'Automate data synchronization between disparate systems in real-time or on a scheduled basis. Ensure data accuracy and consistency across your organization.', image: 'https://placehold.co/600x400.png' },
-      { id: 'f6-3', name: 'Workflow Automation', description: 'Connect apps to automate workflows.', longDescription: 'Design and automate complex business workflows that span multiple applications and services. Improve efficiency and reduce manual intervention.', image: 'https://placehold.co/600x400.png' },
+      { 
+        id: 'f-int-as', 
+        name: 'Automation Studio', 
+        description: 'Automation Studio: new connectors (Propello, Eclipse) & Quick Ship LTL integration.', 
+        longDescription: 'Explore the latest in Automation Studio with newly added connectors and recipes, including Propello and Eclipse. Watch seamless Quick Ship–Automation Studio integration in action with LTL carriers using QS Connector and automation recipes.', 
+        image: 'https://placehold.co/600x400.png' 
+      },
+      { 
+        id: 'f-int-df', 
+        name: 'Data Fabric', 
+        description: 'Data Fabric: large file support, cross-tenant configs & Linux agent integration.', 
+        longDescription: 'See enhanced Data Fabric capabilities—featuring large file support, cross-tenant configurations, and Linux agent integration for comprehensive data management.', 
+        image: 'https://placehold.co/600x400.png' 
+      },
+      { 
+        id: 'f-int-gl', 
+        name: 'Global Licensing', 
+        description: 'GBL process automates license generation for Data Interchange & EULK.', 
+        longDescription: 'Learn how the GBL process automates license generation for Data Interchange and EULK, streamlining compliance and license management processes.', 
+        image: 'https://placehold.co/600x400.png' 
+      },
     ],
   },
   {
@@ -206,9 +224,41 @@ export const booths: Booth[] = [
     iconName: 'Cloud',
     heroImage: 'https://placehold.co/1200x400.png',
     features: [
-      { id: 'f7-1', name: 'Scalable Infrastructure', description: 'Compute and storage that grows with you.', longDescription: 'Dynamically scale your compute, storage, and networking resources to meet changing demands. Pay only for what you use and ensure high availability.', image: 'https://placehold.co/600x400.png' },
-      { id: 'f7-2', name: 'Cloud-Native Applications', description: 'Build and deploy modern applications.', longDescription: 'Develop and run resilient, scalable applications using microservices, containers, and serverless architectures. Accelerate innovation with cloud-native technologies.', image: 'https://placehold.co/600x400.png' },
-      { id: 'f7-3', name: 'Managed Cloud Services', description: 'Focus on your business, not infrastructure.', longDescription: 'Offload the management of your cloud infrastructure, databases, and applications to our expert team. Benefit from proactive monitoring, security, and optimization.', image: 'https://placehold.co/600x400.png' },
+      { 
+        id: 'f-cld-cmp', 
+        name: 'CMP', 
+        description: 'Self-managed portals & intelligent cloud management platforms for innovation.', 
+        longDescription: 'Discover the power of self-managed portals and intelligent cloud management platforms designed to drive innovation and control.', 
+        image: 'https://placehold.co/600x400.png' 
+      },
+      { 
+        id: 'f-cld-infra', 
+        name: 'Infra', 
+        description: 'Intelligent cloud architecture for agile, scalable performance.', 
+        longDescription: 'Experience intelligent cloud architecture and infrastructure solutions that provide agility and scalable performance.', 
+        image: 'https://placehold.co/600x400.png' 
+      },
+      { 
+        id: 'f-cld-upgrade', 
+        name: 'Upgrade', 
+        description: "Epicor's smarter, faster path to cloud upgrades with streamlined migration.", 
+        longDescription: 'See how Epicor delivers a smarter, faster path to cloud upgrades with streamlined migration processes.', 
+        image: 'https://placehold.co/600x400.png' 
+      },
+      { 
+        id: 'f-cld-ss', 
+        name: 'Self Serve', 
+        description: 'Self-service capabilities for autonomous cloud management & configuration.', 
+        longDescription: 'Explore self-service capabilities that empower users with autonomous cloud management and configuration tools.', 
+        image: 'https://placehold.co/600x400.png' 
+      },
+      { 
+        id: 'f-cld-nga', 
+        name: 'Cloud Next-Gen Architecture', 
+        description: 'Real-time monitoring & next-gen cloud architecture for optimal performance.', 
+        longDescription: 'Witness real-time monitoring and next-generation cloud architecture designed for optimal performance and innovation.', 
+        image: 'https://placehold.co/600x400.png' 
+      },
     ],
   },
   {
@@ -229,4 +279,3 @@ export const booths: Booth[] = [
 export const getBoothById = (id: string): Booth | undefined => {
   return booths.find(booth => booth.id === id);
 };
-
