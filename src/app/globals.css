@@ -88,6 +88,13 @@
     --industrial-blue-hsl-values: 210, 80%, 60%;
     --sky-blue-hsl-values: 200, 100%, 65%;
     --deeper-blue-hsl-values: 220, 70%, 60%;
+
+    /* pulseGridBg animation variables - dark theme defaults */
+    --pulse-opacity-start: 0.2;
+    --pulse-opacity-mid: 0.5;
+    --pulse-hue-rotate-mid: 30deg;
+    --pulse-brightness-start: 0.8;
+    --pulse-brightness-mid: 1.1;
   }
 
   html.light {
@@ -142,6 +149,13 @@
     --loading-bg-end: hsl(220, 25%, 93%);
     --loading-spinner-color: hsl(var(--primary-hsl));
     --loading-logo-shadow: hsl(var(--secondary-hsl));
+
+    /* pulseGridBg animation variables - light theme overrides */
+    --pulse-opacity-start: 0.3;
+    --pulse-opacity-mid: 0.6;
+    --pulse-hue-rotate-mid: 15deg;
+    --pulse-brightness-start: 1;
+    --pulse-brightness-mid: 1.05;
   }
 
 
@@ -237,14 +251,9 @@ html.light .hero-effects-container {
 
 
 @keyframes pulseGridBg { 
-  0% { opacity: 0.2; filter: hue-rotate(0deg) brightness(0.8); }
-  50% { opacity: 0.5; filter: hue-rotate(30deg) brightness(1.1); }
-  100% { opacity: 0.2; filter: hue-rotate(0deg) brightness(0.8); }
-}
-html.light @keyframes pulseGridBg {
-  0% { opacity: 0.3; filter: hue-rotate(0deg) brightness(1); }
-  50% { opacity: 0.6; filter: hue-rotate(15deg) brightness(1.05); }
-  100% { opacity: 0.3; filter: hue-rotate(0deg) brightness(1); }
+  0% { opacity: var(--pulse-opacity-start); filter: hue-rotate(0deg) brightness(var(--pulse-brightness-start)); }
+  50% { opacity: var(--pulse-opacity-mid); filter: hue-rotate(var(--pulse-hue-rotate-mid)) brightness(var(--pulse-brightness-mid)); }
+  100% { opacity: var(--pulse-opacity-start); filter: hue-rotate(0deg) brightness(var(--pulse-brightness-start)); }
 }
 
 .shooting-star {
@@ -584,101 +593,4 @@ html.light .products-section-background {
 }
 .feature-modal-title {
   @apply gradient-text;
-}
-
-.ai-suggester-form-card {
-  background: var(--glass-bg); 
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow);
-}
-html.light .ai-suggester-form-card {
-  background: hsla(0,0%,100%,0.5); 
-  border: 1px solid hsla(var(--border-hsl), 0.5);
-}
-
-
-.ai-suggester-form-card .text-primary {
- color: var(--neon-blue) !important; 
-}
-
-.ai-suggester-form-card .text-emerald { 
-  color: var(--neon-green) !important;
-}
-
-.btn-glass-details {
-  background-color: hsla(var(--booth-accent-color-hsl-values, 180, 100%, 50%), 0.15) !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
-  border: 1px solid hsla(var(--booth-accent-color-hsl-values, 180, 100%, 50%), 0.4) !important;
-  color: var(--booth-accent-color) !important;
-  border-radius: var(--radius) !important;
-  font-weight: 500;
-  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-}
-html.light .btn-glass-details {
-  background-color: hsla(var(--booth-accent-color-hsl-values), 0.1) !important;
-  border: 1px solid hsla(var(--booth-accent-color-hsl-values), 0.3) !important;
-}
-
-
-.btn-glass-details:hover {
-  background-color: hsla(var(--booth-accent-color-hsl-values, 180, 100%, 50%), 0.25) !important;
-  border-color: hsla(var(--booth-accent-color-hsl-values, 180, 100%, 50%), 0.7) !important;
-  box-shadow: 0 0 8px hsla(var(--booth-accent-color-hsl-values, 180, 100%, 50%), 0.3);
-}
-html.light .btn-glass-details:hover {
-  background-color: hsla(var(--booth-accent-color-hsl-values), 0.2) !important;
-  border-color: hsla(var(--booth-accent-color-hsl-values), 0.6) !important;
-  box-shadow: 0 0 6px hsla(var(--booth-accent-color-hsl-values), 0.25);
-}
-
-.btn-glass-details svg {
-  color: var(--booth-accent-color) !important; 
-}
-
-/* Ensure text in FeatureModalClient is readable in light mode */
-html.light .text-white {
-  color: hsl(var(--foreground-hsl)) !important; /* Override direct white text */
-}
-html.light .text-white\\/90 { /* Escaped slash */
-  color: hsla(var(--foreground-hsl), 0.9) !important;
-}
-html.light .text-\\[var\\(--neon-blue\\)\\] { /* Escaped brackets for var() */
-   color: hsl(var(--primary-hsl)) !important; /* Use theme primary for neon-blue in light mode */
-}
-html.light .text-\\[var\\(--neon-purple\\)\\] {
-   color: hsl(var(--secondary-hsl)) !important; /* Use theme secondary for neon-purple */
-}
-
-/* Header text color in light mode */
-html.light .text-sidebar-foreground {
-  color: hsl(var(--foreground-hsl)) !important;
-}
-
-/* Ensure button component variants have sufficient contrast in light mode */
-/* Shadcn UI buttons should adapt via CSS vars, but check if overrides are needed */
-html.light .bg-primary {
-  background-color: hsl(var(--primary-hsl)) !important;
-}
-html.light .text-primary-foreground {
-  color: hsl(var(--primary-foreground-hsl)) !important;
-}
-html.light .hover\\:bg-primary\\/90:hover {
-   background-color: hsla(var(--primary-hsl), 0.9) !important;
-}
-html.light .border-destructive\\/50 {
-  border-color: hsla(var(--destructive-hsl), 0.5) !important;
-}
-html.light .text-destructive {
-  color: hsl(var(--destructive-hsl)) !important;
-}
-
-/* Ensure feature modal dialog content is styled correctly in light mode */
-html.light .sm\\:max-w-\\[600px\\].border-2.border-\\[var\\(--glass-border\\)\\] {
-  border-color: var(--glass-border) !important; /* var already defined for light */
-}
-html.light .bg-\\[var\\(--glass-bg\\)\\].backdrop-blur-xl {
-  background-color: var(--glass-bg) !important; /* var already defined for light */
 }
