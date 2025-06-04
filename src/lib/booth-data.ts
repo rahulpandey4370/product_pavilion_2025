@@ -1,3 +1,4 @@
+
 import type { Booth } from '@/types';
 
 export const booths: Booth[] = [
@@ -9,9 +10,41 @@ export const booths: Booth[] = [
     iconName: 'Cpu',
     heroImage: 'https://placehold.co/1200x400.png',
     features: [
-      { id: 'f1-1', name: 'AI-Powered Analytics', description: 'Gain deep insights from your data with advanced AI analytics.', longDescription: 'Our AI-Powered Analytics platform leverages machine learning algorithms to uncover hidden patterns, predict future trends, and provide actionable intelligence from complex datasets. Visualize your data in new ways and make smarter decisions.', image: 'https://placehold.co/600x400.png' },
-      { id: 'f1-2', name: 'Intelligent Automation', description: 'Automate complex workflows using AI.', longDescription: 'Streamline your operations and boost efficiency by automating repetitive tasks and complex processes. Our intelligent automation solutions adapt to changing conditions and learn over time.', image: 'https://placehold.co/600x400.png' },
-      { id: 'f1-3', name: 'Personalized Experiences', description: 'Deliver tailored experiences with AI.', longDescription: 'Create highly personalized customer journeys and product recommendations. Our AI algorithms analyze user behavior to deliver relevant content and interactions at scale.', image: 'https://placehold.co/600x400.png' },
+      {
+        id: 'f1-kinetic',
+        name: 'Kinetic',
+        description: 'Unlock intelligent, seamless operations with the Kinetic platform—powered by AI agents and Prism tools. Enhance decision-making with List, Metric, and Multimodal agents, and customize with ease using Prism for Application Studio. Turn data into insights with Prism for EDD, streamline RFQ workflows, and retrieve documents using natural language via the ECM Agent. Integrated Quick Ship enables real-time freight tracking, while AI-driven KB support empowers self-service. Experience the future of agile, data-driven business.',
+        longDescription: 'Unlock intelligent, seamless operations with the Kinetic platform—powered by AI agents and Prism tools. Enhance decision-making with List, Metric, and Multimodal agents, and customize with ease using Prism for Application Studio. Turn data into insights with Prism for EDD, streamline RFQ workflows, and retrieve documents using natural language via the ECM Agent. Integrated Quick Ship enables real-time freight tracking, while AI-driven KB support empowers self-service. Experience the future of agile, data-driven business.',
+        image: 'https://placehold.co/600x400.png'
+      },
+      {
+        id: 'f1-app-studio',
+        name: 'Application Studio',
+        description: 'Unlock intelligent, seamless operations with the Kinetic platform—powered by AI agents and Prism tools. Enhance decision-making with List, Metric, and Multimodal agents, and customize with ease using Prism for Application Studio. Turn data into insights with Prism for EDD, streamline RFQ workflows, and retrieve documents using natural language via the ECM Agent. Integrated Quick Ship enables real-time freight tracking, while AI-driven KB support empowers self-service. Experience the future of agile, data-driven business.',
+        longDescription: 'Unlock intelligent, seamless operations with the Kinetic platform—powered by AI agents and Prism tools. Enhance decision-making with List, Metric, and Multimodal agents, and customize with ease using Prism for Application Studio. Turn data into insights with Prism for EDD, streamline RFQ workflows, and retrieve documents using natural language via the ECM Agent. Integrated Quick Ship enables real-time freight tracking, while AI-driven KB support empowers self-service. Experience the future of agile, data-driven business.',
+        image: 'https://placehold.co/600x400.png'
+      },
+      {
+        id: 'f1-edd',
+        name: 'EDD',
+        description: 'Unlock intelligent, seamless operations with the Kinetic platform—powered by AI agents and Prism tools. Enhance decision-making with List, Metric, and Multimodal agents, and customize with ease using Prism for Application Studio. Turn data into insights with Prism for EDD, streamline RFQ workflows, and retrieve documents using natural language via the ECM Agent. Integrated Quick Ship enables real-time freight tracking, while AI-driven KB support empowers self-service. Experience the future of agile, data-driven business.',
+        longDescription: 'Unlock intelligent, seamless operations with the Kinetic platform—powered by AI agents and Prism tools. Enhance decision-making with List, Metric, and Multimodal agents, and customize with ease using Prism for Application Studio. Turn data into insights with Prism for EDD, streamline RFQ workflows, and retrieve documents using natural language via the ECM Agent. Integrated Quick Ship enables real-time freight tracking, while AI-driven KB support empowers self-service. Experience the future of agile, data-driven business.',
+        image: 'https://placehold.co/600x400.png'
+      },
+      {
+        id: 'f1-ecm',
+        name: 'ECM',
+        description: 'Unlock intelligent, seamless operations with the Kinetic platform—powered by AI agents and Prism tools. Enhance decision-making with List, Metric, and Multimodal agents, and customize with ease using Prism for Application Studio. Turn data into insights with Prism for EDD, streamline RFQ workflows, and retrieve documents using natural language via the ECM Agent. Integrated Quick Ship enables real-time freight tracking, while AI-driven KB support empowers self-service. Experience the future of agile, data-driven business.',
+        longDescription: 'Unlock intelligent, seamless operations with the Kinetic platform—powered by AI agents and Prism tools. Enhance decision-making with List, Metric, and Multimodal agents, and customize with ease using Prism for Application Studio. Turn data into insights with Prism for EDD, streamline RFQ workflows, and retrieve documents using natural language via the ECM Agent. Integrated Quick Ship enables real-time freight tracking, while AI-driven KB support empowers self-service. Experience the future of agile, data-driven business.',
+        image: 'https://placehold.co/600x400.png'
+      },
+      {
+        id: 'f1-quick-ship',
+        name: 'Quick Ship',
+        description: 'Unlock intelligent, seamless operations with the Kinetic platform—powered by AI agents and Prism tools. Enhance decision-making with List, Metric, and Multimodal agents, and customize with ease using Prism for Application Studio. Turn data into insights with Prism for EDD, streamline RFQ workflows, and retrieve documents using natural language via the ECM Agent. Integrated Quick Ship enables real-time freight tracking, while AI-driven KB support empowers self-service. Experience the future of agile, data-driven business.',
+        longDescription: 'Unlock intelligent, seamless operations with the Kinetic platform—powered by AI agents and Prism tools. Enhance decision-making with List, Metric, and Multimodal agents, and customize with ease using Prism for Application Studio. Turn data into insights with Prism for EDD, streamline RFQ workflows, and retrieve documents using natural language via the ECM Agent. Integrated Quick Ship enables real-time freight tracking, while AI-driven KB support empowers self-service. Experience the future of agile, data-driven business.',
+        image: 'https://placehold.co/600x400.png'
+      }
     ],
   },
   {
