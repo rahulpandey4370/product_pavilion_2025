@@ -167,7 +167,7 @@ export const booths: Booth[] = [
     tagline: 'Optimize Your Production Line',
     description: 'A comprehensive ERP solution tailored for the manufacturing industry, streamlining operations from inventory management to supply chain and production planning.',
     iconName: 'Factory',
-    heroImage: 'https://placehold.co/1200x400.png',
+    heroImage: 'https://images.unsplash.com/photo-1611117775350-ac3950990985?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bWFudWZhY3R1cmluZyUyMHxlbnwwfHx8fDE3NDkwMjkxODV8MA&ixlib=rb-4.1.0&q=80&w=1080',
     features: [
       { 
         id: 'f-mfg-csf', 
