@@ -91,7 +91,7 @@ export const booths: Booth[] = [
         name: 'CSF',
         description: 'AI auto-generates C# code for e-invoicing & creates unit tests with GitHub Copilot.',
         longDescription: 'Experience how AI transforms software delivery through auto-generating C# code for e-invoicing and intelligent unit test creation with GitHub Copilot. Accelerate development and reduce effort like never before.',
-        image: 'https://images.unsplash.com/photo-1495592822108-9e6261896da8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx0ZWNobm9sb2d5JTIwYWJzdHJhY3R8ZW58MHx8fHwxNzQ5MDI2Mzg3fDA&ixlib=rb-4.1.0&q=80&w=1080'
+        image: 'https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8Q29kZXxlbnwwfHx8fDE3NDkwMjc3Mjh8MA&ixlib=rb-4.1.0&q=80&w=1080'
       },
       {
         id: 'f-ad-as',
@@ -105,7 +105,7 @@ export const booths: Booth[] = [
         name: 'Data Fabric',
         description: 'AI transforms software delivery workflows for smarter, efficient data integration.',
         longDescription: 'Discover how AI transforms software delivery workflows, making development processes smarter and more efficient for seamless data integration.',
-        image: 'https://images.unsplash.com/photo-1510906594845-bc082582c8cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwYWJzdHJhY3R8ZW58MHx8fHwxNzQ5MDI2Mzg3fDA&ixlib=rb-4.1.0&q=80&w=1080'
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkYXRhfGVufDB8fHx8MTc0OTAyNzcxMXww&ixlib=rb-4.1.0&q=80&w=1080'
       },
     ],
   },
