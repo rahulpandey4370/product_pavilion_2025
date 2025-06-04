@@ -38,7 +38,7 @@ export const booths: Booth[] = [
         id: 'f1-platform-ux-multimodal',
         name: 'Platform - UX (Grow Integration + Multimodal Agent)',
         description: 'A multimodal agent interprets diverse inputs like images and video. For example, it can analyze a Grow BI chart snapshot and answer contextual questions, enhancing data comprehension through visual and intuitive interactions.',
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxVSSUyMFVYfGVufDB8fHx8MTc0OTAyODI0Nnww&ixlib=rb-4.1.0&q=80&w=1080'
       },
       {
         id: 'f1-ecm-prism-agent',
@@ -259,9 +259,9 @@ export const booths: Booth[] = [
         image: 'https://placehold.co/600x400.png'
       },
       {
-        id: 'f-int-gl',
-        name: 'Global Licensing',
-        description: 'GBL process automates license generation for Data Interchange & EULK.',
+        id: 'f-int-gbl-licensing',
+        name: 'DI / EULK (GBL Licensing Automation)',
+        description: 'This demo walks through the GBL (Global Business Logic) process used to automatically generate licenses for Data Interchange and EULK. By eliminating manual intervention, this automation streamlines compliance tasks and accelerates license provisioning in enterprise environments.',
         image: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxHbG9iYWwlMjBMaWNlbnNpbmd8ZW58MHx8fHwxNzQ5MDI5NDc2fDA&ixlib=rb-4.1.0&q=80&w=1080'
       },
       {
