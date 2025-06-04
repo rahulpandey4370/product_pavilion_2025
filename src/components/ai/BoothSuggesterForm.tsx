@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -10,7 +11,6 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Loader2, Wand2, CheckCircle } from 'lucide-react';
-import GradientButton from '@/components/shared/GradientButton';
 
 const FormSchema = z.object({
   preferences: z.string().min(10, { message: 'Please describe your interests in at least 10 characters.' }),
@@ -68,16 +68,19 @@ export default function BoothSuggesterForm() {
               <p className="text-sm text-destructive mt-1">{form.formState.errors.preferences.message}</p>
             )}
           </div>
-          <GradientButton type="submit" className="w-full text-lg py-6" disabled={isLoading} icon={isLoading ? Loader2 : Wand2}>
+          <Button type="submit" className="w-full text-lg py-3" disabled={isLoading}> {/* Adjusted padding from py-6 to py-3 for standard feel */}
             {isLoading ? (
               <>
                 <Loader2 className="mr-2 h-5 w-5 animate-spin" />
                 Getting Suggestions...
               </>
             ) : (
-              'Suggest Booths'
+              <>
+                <Wand2 className="mr-2 h-5 w-5" />
+                Suggest Booths
+              </>
             )}
-          </GradientButton>
+          </Button>
         </form>
 
         {error && (

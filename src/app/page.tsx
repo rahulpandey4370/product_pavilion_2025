@@ -4,7 +4,7 @@
 import { booths } from '@/lib/booth-data';
 import BoothGrid from '@/components/booths/BoothGrid';
 import BoothSuggesterForm from '@/components/ai/BoothSuggesterForm';
-import GradientButton from '@/components/shared/GradientButton';
+import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
 import Link from 'next/link';
 import HeroVisualEffects from '@/components/shared/HeroVisualEffects'; 
@@ -27,11 +27,11 @@ export default function HomePage() {
             Explore cutting-edge product showcases, discover innovative features, and find solutions tailored to your needs.
           </p>
           <div> 
-            <GradientButton size="lg" asChild>
-              <Link href="#booths" className="magnetic-btn">
-                <span className="btn-text">Explore Booths</span> <ArrowDown className="ml-2 h-5 w-5" />
+            <Button size="lg" asChild>
+              <Link href="#booths">
+                Explore Booths <ArrowDown className="ml-2 h-5 w-5" />
               </Link>
-            </GradientButton>
+            </Button>
           </div>
         </div>
       </section>

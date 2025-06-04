@@ -9,7 +9,6 @@ import type { Booth, Feature } from '@/types';
 import FeatureCard from '@/components/features/FeatureCard';
 import FeatureModalClient from '@/components/features/FeatureModalClient';
 import { Button } from '@/components/ui/button'; 
-import GradientButton from '@/components/shared/GradientButton';
 import { ArrowLeft, ArrowRight, Home, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
@@ -96,12 +95,12 @@ export default function BoothDetailPage() {
           <span className="font-medium text-foreground gradient-text">{booth.name}</span>
         </div>
         <div className="flex space-x-2">
-          <GradientButton size="sm" onClick={() => navigateBooth('prev')} disabled={allBooths.length <=1} icon={ArrowLeft}>
-             Prev
-          </GradientButton>
-          <GradientButton size="sm" onClick={() => navigateBooth('next')} disabled={allBooths.length <=1} icon={ArrowRight} iconPosition="right">
-            Next
-          </GradientButton>
+          <Button size="sm" onClick={() => navigateBooth('prev')} disabled={allBooths.length <=1}>
+             <ArrowLeft className="mr-2 h-4 w-4" /> Prev
+          </Button>
+          <Button size="sm" onClick={() => navigateBooth('next')} disabled={allBooths.length <=1}>
+            Next <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
         </div>
       </nav>
 
