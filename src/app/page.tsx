@@ -24,7 +24,7 @@ export default function HomePage() {
             Epicor Product Pavilion 2025
           </h1>
           <p className="text-xl md:text-2xl text-foreground/80 mb-12"> {/* Removed max-w-3xl mx-auto */}
-            Explore cutting-edge product showcases, discover innovative features, and find solutions tailored to your needs.
+            Step into the future of manufacturing. Explore our latest innovations designed to power your production floor—from smart automation and AI-driven insights to seamless integrations across your supply chain.
           </p>
           <div> 
             <Button size="lg" asChild>
@@ -65,3 +65,4 @@ export default function HomePage() {
     </div>
   );
 }
+
