@@ -100,13 +100,13 @@ export const booths: Booth[] = [
         id: 'f-ai-dev-csf-einvoicing',
         name: 'CSF E-Invoicing AI',
         description: 'A framework where, once the business analyst creates the e-invoice JSON structure and mapping, AI generates the corresponding C# code. This code fetches, processes, and formats the data to produce the final e-invoice JSON file—ready for transmission to vendors. This innovation cuts down manual development effort and empowers partners to create e-invoicing templates without needing Epicor PD support.',
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1693045181224-9fc2f954f054?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxN3x8aW52b2ljZXxlbnwwfHx8fDE3NDkwMjg2NzN8MA&ixlib=rb-4.1.0&q=80&w=1080'
       },
       {
         id: 'f-ai-dev-unittest-copilot',
         name: 'Unit Test Automation with GitHub Copilot',
         description: 'Boost developer productivity with AI-powered unit test generation. This demo highlights how GitHub Copilot streamlines writing comprehensive test cases—saving time and improving code quality by automating repetitive work, allowing developers to focus on building features.',
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1556075798-4825dfaaf498?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxnaXRodWIlMjB8ZW58MHx8fHwxNzQ5MDM4NTI2fDA&ixlib=rb-4.1.0&q=80&w=1080'
       },
       {
         id: 'f-ai-dev-pr-review',
