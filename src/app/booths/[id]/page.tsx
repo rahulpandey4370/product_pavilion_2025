@@ -86,34 +86,50 @@ export default function BoothDetailPage() {
   return (
     <div className="space-y-12">
       {/* Breadcrumbs and Navigation */}
-      <nav className="flex justify-between items-center mb-8">
-        <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-          <Link href="/" className="hover:text-primary flex items-center"> {/* Adjusted hover color */}
-            <Home className="h-4 w-4 mr-1" /> Home
-          </Link>
-          <ChevronRight className="h-4 w-4" />
-          <span className="font-medium text-foreground gradient-text">{booth.name}</span>
-        </div>
-        <div className="flex space-x-2">
-          <Button size="sm" onClick={() => navigateBooth('prev')} disabled={allBooths.length <=1}>
-             <ArrowLeft className="mr-2 h-4 w-4" /> Prev
-          </Button>
-          <Button size="sm" onClick={() => navigateBooth('next')} disabled={allBooths.length <=1}>
-            Next <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
-        </div>
-      </nav>
+      <div className="p-4 rounded-lg mb-8 border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-md shadow-lg">
+        <nav className="flex flex-col sm:flex-row justify-between items-center gap-y-3 sm:gap-x-4">
+          {/* Breadcrumb side */}
+          <div className="flex items-center space-x-1.5 text-sm text-muted-foreground">
+            <Link href="/" className="hover:text-primary flex items-center transition-colors">
+              <Home className="h-4 w-4 mr-1" />
+              <span className="text-foreground/90">Home</span>
+            </Link>
+            <ChevronRight className="h-4 w-4 text-foreground/50" />
+            <span className="font-medium text-base gradient-text">{booth.name}</span>
+          </div>
+          {/* Navigation buttons side */}
+          <div className="flex items-center space-x-2">
+            <Button 
+                variant="outline" 
+                size="sm" 
+                onClick={() => navigateBooth('prev')} 
+                disabled={allBooths.length <= 1}
+                className="bg-background/30 hover:bg-accent hover:text-accent-foreground"
+            >
+                <ArrowLeft className="mr-2 h-4 w-4" /> Prev
+            </Button>
+            <Button 
+                variant="outline" 
+                size="sm" 
+                onClick={() => navigateBooth('next')} 
+                disabled={allBooths.length <= 1}
+                className="bg-background/30 hover:bg-accent hover:text-accent-foreground"
+            >
+                Next <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </div>
+        </nav>
+      </div>
 
       {/* Booth Header Section */}
       <section className={cn(
-          "relative py-16 md:py-24 rounded-lg overflow-hidden booth-theme-card glow-effect", // text-white removed
+          "relative py-16 md:py-24 rounded-lg overflow-hidden booth-theme-card glow-effect", 
           boothThemeClass
         )}
       >
         <div className="container mx-auto px-4 text-center relative z-10">
           <DynamicLucideIcon iconName={booth.iconName} className="h-20 w-20 mx-auto mb-6 text-[var(--booth-accent-color)]" />
           <h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">{booth.name}</h1>
-          {/* CardDescription-like p tag will inherit color from booth-theme-card */}
           <p className="text-xl md:text-2xl opacity-90 mb-6 max-w-3xl mx-auto">{booth.tagline}</p>
           {booth.heroImage && (
             <div className="relative w-full max-w-4xl h-64 md:h-96 mx-auto mt-8 rounded-lg overflow-hidden shadow-2xl border-2 border-[var(--glass-border)]">
@@ -128,7 +144,6 @@ export default function BoothDetailPage() {
               />
             </div>
           )}
-          {/* Description p tag will inherit color */}
           <p className="mt-8 text-lg opacity-80 max-w-3xl mx-auto">{booth.description}</p>
         </div>
       </section>
@@ -164,5 +179,3 @@ export default function BoothDetailPage() {
     </div>
   );
 }
-
-    
