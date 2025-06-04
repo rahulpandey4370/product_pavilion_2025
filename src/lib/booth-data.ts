@@ -122,7 +122,7 @@ export const booths: Booth[] = [
         name: 'Mattec', 
         description: "Mattec's shift to ICE framework/UX Platform modernizes legacy products with cutting-edge UX.", 
         longDescription: "Explore the transformation to modern web-based experience featuring Mattec's shift to the ICE framework/UX Platform. See how legacy products are being elevated with cutting-edge UX design.", 
-        image: 'https://placehold.co/600x400.png' 
+        image: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxVSSUyMFVYfGVufDB8fHx8MTc0OTAyODI0Nnww&ixlib=rb-4.1.0&q=80&w=1080' 
       },
       { 
         id: 'f-cp-sls', 
