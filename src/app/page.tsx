@@ -16,14 +16,14 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative text-center py-20 md:py-32 xl:py-40 2xl:py-48 min-h-[calc(90vh-var(--header-height,4rem))] flex flex-col justify-center items-center overflow-hidden hero-section-2xl-expansive">
         <HeroVisualEffects /> {/* Add visual effects component */}
-        <div className="container mx-auto px-4 z-10"> {/* Ensure content is above effects */}
+        <div className="px-4 z-10 w-full"> {/* Ensure content is above effects, removed container and mx-auto, added w-full */}
           <h1 className={cn(
             "text-5xl md:text-7xl font-bold mb-8",
             "gradient-text" 
           )}>
             Epicor Product Pavilion 2025
           </h1>
-          <p className="text-xl md:text-2xl text-foreground/80 mb-12 max-w-3xl mx-auto"> 
+          <p className="text-xl md:text-2xl text-foreground/80 mb-12"> {/* Removed max-w-3xl mx-auto */}
             Explore cutting-edge product showcases, discover innovative features, and find solutions tailored to your needs.
           </p>
           <div> 
