@@ -5,6 +5,7 @@ import { Moon, Sun } from 'lucide-react';
 import { useTheme } from '@/components/theme/ThemeProvider';
 import { Button } from '@/components/ui/button';
 import { useState, useEffect } from 'react';
+import { cn } from '@/lib/utils';
 
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
@@ -22,6 +23,9 @@ export function ThemeToggle() {
       size="icon"
       onClick={toggleTheme}
       aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+      className={cn(
+        "hover:bg-primary hover:text-primary-foreground"
+      )}
     >
       {theme === 'light' ? (
         <Moon className="h-[1.2rem] w-[1.2rem]" />
