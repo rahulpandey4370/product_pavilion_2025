@@ -84,28 +84,28 @@ export const booths: Booth[] = [
     tagline: 'Build Faster, Smarter',
     description: 'Leverage AI to speed up your development lifecycle, from code generation to testing and deployment, ensuring quality and innovation.',
     iconName: 'Rocket',
-    heroImage: 'https://placehold.co/1200x400.png',
+    heroImage: 'https://images.unsplash.com/photo-1636690424408-4330adc3e583?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0ZWNobm9sb2d5JTIwYmFubmVyfGVufDB8fHx8MTc0OTAyNjM4N3ww&ixlib=rb-4.1.0&q=80&w=1080',
     features: [
       {
         id: 'f-ad-csf',
         name: 'CSF',
         description: 'AI auto-generates C# code for e-invoicing & creates unit tests with GitHub Copilot.',
         longDescription: 'Experience how AI transforms software delivery through auto-generating C# code for e-invoicing and intelligent unit test creation with GitHub Copilot. Accelerate development and reduce effort like never before.',
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1495592822108-9e6261896da8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx0ZWNobm9sb2d5JTIwYWJzdHJhY3R8ZW58MHx8fHwxNzQ5MDI2Mzg3fDA&ixlib=rb-4.1.0&q=80&w=1080'
       },
       {
         id: 'f-ad-as',
         name: 'Automation Studio',
         description: 'AI Agent generates smart pull request previews in Azure DevOps, empowering partners.',
         longDescription: 'See our AI Agent in action, generating smart pull request previews in Azure DevOps. Witness how AI is empowering partners through intelligent development automation.',
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx0ZWNobm9sb2d5JTIwYWJzdHJhY3R8ZW58MHx8fHwxNzQ5MDI2Mzg3fDA&ixlib=rb-4.1.0&q=80&w=1080'
       },
       {
         id: 'f-ad-df',
         name: 'Data Fabric',
         description: 'AI transforms software delivery workflows for smarter, efficient data integration.',
         longDescription: 'Discover how AI transforms software delivery workflows, making development processes smarter and more efficient for seamless data integration.',
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1510906594845-bc082582c8cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwYWJzdHJhY3R8ZW58MHx8fHwxNzQ5MDI2Mzg3fDA&ixlib=rb-4.1.0&q=80&w=1080'
       },
     ],
   },
