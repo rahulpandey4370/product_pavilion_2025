@@ -1,55 +1,17 @@
 
-'use client'; // Mark as client component for useEffect and scroll animations
+'use client'; 
 
-import { useEffect, useState } from 'react'; // Import useState
+import { useEffect } from 'react'; 
 import { booths } from '@/lib/booth-data';
 import BoothGrid from '@/components/booths/BoothGrid';
 import BoothSuggesterForm from '@/components/ai/BoothSuggesterForm';
 import GradientButton from '@/components/shared/GradientButton';
 import { ArrowDown } from 'lucide-react';
 import Link from 'next/link';
-import HeroVisualEffects from '@/components/shared/HeroVisualEffects'; // Import new component
+import HeroVisualEffects from '@/components/shared/HeroVisualEffects'; 
 import { cn } from '@/lib/utils';
-import LoadingScreen from '@/components/layout/LoadingScreen'; // Added for loading screen
 
 export default function HomePage() {
-  const [isLoading, setIsLoading] = useState(true); // Added for loading screen
-
-  useEffect(() => {
-    // Simulate loading time
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1500); // Adjust time as needed
-
-    return () => clearTimeout(timer);
-  }, []);
-
-
-  useEffect(() => {
-    if (isLoading) return; // Don't run animations if loading
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 } // Trigger when 10% of the element is visible
-    );
-
-    const elementsToAnimate = document.querySelectorAll('.scroll-animate');
-    elementsToAnimate.forEach((el) => observer.observe(el));
-
-    return () => elementsToAnimate.forEach((el) => observer.unobserve(el));
-  }, [isLoading]);
-
-  if (isLoading) {
-    return <LoadingScreen />;
-  }
-
   return (
     <div className="space-y-24">
       {/* Hero Section */}
@@ -62,10 +24,10 @@ export default function HomePage() {
           )}>
             Epicor Product Pavilion 2025
           </h1>
-          <p className="text-xl md:text-2xl text-foreground/80 mb-12 max-w-3xl mx-auto scroll-animate fade-in" style={{animationDelay: '0.2s'}}> 
+          <p className="text-xl md:text-2xl text-foreground/80 mb-12 max-w-3xl mx-auto"> 
             Explore cutting-edge product showcases, discover innovative features, and find solutions tailored to your needs.
           </p>
-          <div className="scroll-animate slide-in-up" style={{animationDelay: '0.4s'}}> 
+          <div> 
             <GradientButton size="lg" asChild>
               <Link href="#booths" className="magnetic-btn">
                 <span className="btn-text">Explore Booths</span> <ArrowDown className="ml-2 h-5 w-5" />
@@ -76,13 +38,12 @@ export default function HomePage() {
       </section>
 
       {/* Booth Showcase Grid Section */}
-      <section id="booths" className="py-16 scroll-animate fade-in">
+      <section id="booths" className="py-16">
         <div className="container mx-auto px-4">
           <div className="bg-card/50 backdrop-filter backdrop-blur-sm rounded-xl p-8 md:p-12 shadow-xl border border-border/20">
-            <h2 className="text-4xl font-bold text-center mb-4 gradient-text scroll-animate slide-in-down">Our Product Pavilions</h2>
+            <h2 className="text-4xl font-bold text-center mb-4 gradient-text">Our Product Pavilions</h2>
             <p 
-              className="text-xl text-foreground/80 text-center mb-12 max-w-2xl mx-auto scroll-animate slide-in-up"
-              style={{animationDelay: '0.2s'}}
+              className="text-xl text-foreground/80 text-center mb-12 max-w-2xl mx-auto"
             >
               Dive into our diverse range of product booths, each offering unique solutions and innovations.
             </p>
@@ -92,10 +53,10 @@ export default function HomePage() {
       </section>
 
       {/* AI Booth Suggester Section */}
-      <section id="ai-suggester" className="py-16 bg-background/30 rounded-lg scroll-animate fade-in" style={{backdropFilter: 'blur(5px)'}}>
+      <section id="ai-suggester" className="py-16 bg-background/30 rounded-lg" style={{backdropFilter: 'blur(5px)'}}>
         <div className="container mx-auto px-4">
-           <h2 className="text-4xl font-bold text-center mb-12 gradient-text scroll-animate slide-in-down">Need Guidance? Let AI Help!</h2>
-          <div className="scroll-animate slide-in-up" style={{animationDelay: '0.2s'}}>
+           <h2 className="text-4xl font-bold text-center mb-12 gradient-text">Need Guidance? Let AI Help!</h2>
+          <div>
             <BoothSuggesterForm />
           </div>
         </div>

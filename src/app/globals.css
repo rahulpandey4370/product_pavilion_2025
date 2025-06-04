@@ -316,36 +316,19 @@ html {
 }
 
 
-/* Scroll-Triggered Animations */
-.scroll-animate {
-  opacity: 0;
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: opacity, transform; 
-}
-.slide-in-left { transform: translateX(-80px); }
-.slide-in-right { transform: translateX(80px); }
-.slide-in-up { transform: translateY(80px); }
-.slide-in-down { transform: translateY(-80px); }
-.fade-in { opacity: 0; }
-.scale-in { transform: scale(0.9); opacity: 0; }
+/* Removed Scroll-Triggered Animations CSS */
+/* .scroll-animate ... */
+/* .slide-in-left ... */
+/* .animate-in ... */
 
-
-.animate-in {
-  transform: translate(0, 0) scale(1) !important;
-  opacity: 1 !important;
-}
 
 @media (prefers-reduced-motion: reduce) {
-  .scroll-animate, .shooting-star, .aurora-blob, .booth-card-base::before, .magnetic-btn::before, .ripple, .gradient-text, .loading-spinner, .loading-spinner::before, .loading-spinner::after, .hero-effects-container {
+  .shooting-star, .aurora-blob, .booth-card-base::before, .magnetic-btn::before, .ripple, .gradient-text, .loading-spinner, .loading-spinner::before, .loading-spinner::after, .hero-effects-container {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     transition-delay: 0ms !important;
     animation-delay: 0ms !important;
-  }
-  .scroll-animate { 
-    opacity: 1;
-    transform: none;
   }
 }
 
@@ -515,4 +498,3 @@ html {
 .ai-suggester-form-card .text-emerald { 
   color: var(--neon-green) !important;
 }
-

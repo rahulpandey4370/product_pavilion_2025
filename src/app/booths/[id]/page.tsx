@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -7,7 +8,7 @@ import { getBoothById, booths as allBooths } from '@/lib/booth-data';
 import type { Booth, Feature } from '@/types';
 import FeatureCard from '@/components/features/FeatureCard';
 import FeatureModalClient from '@/components/features/FeatureModalClient';
-import { Button } from '@/components/ui/button'; // Will become magnetic if used with GradientButton asChild or direct class
+import { Button } from '@/components/ui/button'; 
 import GradientButton from '@/components/shared/GradientButton';
 import { ArrowLeft, ArrowRight, Home, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
@@ -39,25 +40,6 @@ export default function BoothDetailPage() {
   const [selectedFeature, setSelectedFeature] = useState<Feature | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(-1);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const elementsToAnimate = document.querySelectorAll('.scroll-animate');
-    elementsToAnimate.forEach((el) => observer.observe(el));
-
-    return () => elementsToAnimate.forEach((el) => observer.unobserve(el));
-  }, [booth]); // Re-run if booth changes to apply to new elements
 
   useEffect(() => {
     if (id) {
@@ -105,7 +87,7 @@ export default function BoothDetailPage() {
   return (
     <div className="space-y-12">
       {/* Breadcrumbs and Navigation */}
-      <nav className="flex justify-between items-center mb-8 scroll-animate fade-in">
+      <nav className="flex justify-between items-center mb-8">
         <div className="flex items-center space-x-2 text-sm text-muted-foreground">
           <Link href="/" className="hover:text-[var(--neon-blue)] flex items-center">
             <Home className="h-4 w-4 mr-1" /> Home
@@ -125,12 +107,10 @@ export default function BoothDetailPage() {
 
       {/* Booth Header Section */}
       <section className={cn(
-          "relative py-16 md:py-24 rounded-lg overflow-hidden text-white booth-theme-card glow-effect scroll-animate fade-in",
+          "relative py-16 md:py-24 rounded-lg overflow-hidden text-white booth-theme-card glow-effect",
           boothThemeClass
         )}
-        style={{animationDelay: '0.2s'}}
       >
-        {/* Pattern can be an SVG or a CSS background pattern here if desired, for now removed for theme gradient focus */}
         <div className="container mx-auto px-4 text-center relative z-10">
           <DynamicLucideIcon iconName={booth.iconName} className="h-20 w-20 mx-auto mb-6 text-[var(--booth-accent-color)]" />
           <h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">{booth.name}</h1>
@@ -153,7 +133,7 @@ export default function BoothDetailPage() {
       </section>
 
       {/* Features Grid Section */}
-      <section className="py-16 scroll-animate fade-in" style={{animationDelay: '0.4s'}}>
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 gradient-text">Key Features</h2>
           {booth.features.length > 0 ? (
@@ -164,7 +144,7 @@ export default function BoothDetailPage() {
                   feature={feature}
                   onViewDetails={() => handleViewDetails(feature)}
                   index={index}
-                  boothThemeClass={boothThemeClass} // Pass booth theme for consistency
+                  boothThemeClass={boothThemeClass} 
                 />
               ))}
             </div>
