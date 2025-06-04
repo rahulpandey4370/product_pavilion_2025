@@ -150,7 +150,7 @@ export const booths: Booth[] = [
         name: 'Kinetic', 
         description: 'Kinetic: seamless freight invoice processing & integration with ECM/Quick Ship.', 
         longDescription: 'Discover seamless freight invoice processing capabilities and integration with ECM and Quick Ship, demonstrating comprehensive ERP connectivity.', 
-        image: 'https://placehold.co/600x400.png' 
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkYXNoYm9hcmR8ZW58MHx8fHwxNzQ5MDI4Njk0fDA&ixlib=rb-4.1.0&q=80&w=1080' 
       },
       { 
         id: 'f-cp-ice', 
