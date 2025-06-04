@@ -20,7 +20,7 @@ export const booths: Booth[] = [
         id: 'f1-list-metric-agents',
         name: 'Demonstration of List and Metric Agents',
         description: 'This feature empowers business users to retrieve real-time operational lists (e.g., open orders, overdue items) without IT support. It accelerates decision-making through AI-driven, self-service insights directly in Kinetic.',
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMnx8cmVhbHRpbWUlMjBkYXRhfGVufDB8fHx8MTc0OTAzNDcxMHww&ixlib=rb-4.1.0&q=80&w=1080'
       },
       {
         id: 'f1-prism-edd',
@@ -259,9 +259,9 @@ export const booths: Booth[] = [
         image: 'https://placehold.co/600x400.png'
       },
       {
-        id: 'f-int-di-eulk-licensing',
-        name: 'DI / EULK (GBL Licensing Automation)',
-        description: 'This demo walks through the GBL (Global Business Logic) process used to automatically generate licenses for Data Interchange and EULK. By eliminating manual intervention, this automation streamlines compliance tasks and accelerates license provisioning in enterprise environments.',
+        id: 'f-int-gl',
+        name: 'Global Licensing',
+        description: 'GBL process automates license generation for Data Interchange & EULK.',
         image: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxHbG9iYWwlMjBMaWNlbnNpbmd8ZW58MHx8fHwxNzQ5MDI5NDc2fDA&ixlib=rb-4.1.0&q=80&w=1080'
       },
       {
