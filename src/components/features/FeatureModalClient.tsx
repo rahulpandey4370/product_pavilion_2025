@@ -4,23 +4,29 @@ import Image from 'next/image';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import type { Feature } from '@/types';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { cn } from '@/lib/utils';
 
 interface FeatureModalClientProps {
   feature: Feature | null;
   isOpen: boolean;
   onClose: () => void;
+  boothThemeClass?: string; // Optional: to theme the modal based on the booth
 }
 
-export default function FeatureModalClient({ feature, isOpen, onClose }: FeatureModalClientProps) {
+export default function FeatureModalClient({ feature, isOpen, onClose, boothThemeClass }: FeatureModalClientProps) {
   if (!feature) return null;
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[600px] bg-card text-card-foreground p-0">
+      <DialogContent className={cn(
+        "sm:max-w-[600px] p-0 border-2 border-[var(--glass-border)] shadow-2xl",
+        "bg-[var(--glass-bg)] backdrop-blur-xl text-white", // Glassmorphic background
+        boothThemeClass // Apply booth theme if provided, for accent colors primarily
+      )}>
         <ScrollArea className="max-h-[80vh]">
           <div className="p-6">
             {feature.image && (
-              <div className="relative w-full h-64 mb-6 rounded-lg overflow-hidden">
+              <div className="relative w-full h-64 mb-6 rounded-lg overflow-hidden border border-[var(--glass-border)]">
                 <Image
                   src={feature.image}
                   alt={feature.name}
@@ -32,28 +38,23 @@ export default function FeatureModalClient({ feature, isOpen, onClose }: Feature
               </div>
             )}
             <DialogHeader className="mb-4">
-              <DialogTitle className="text-3xl font-headline text-primary">{feature.name}</DialogTitle>
+              <DialogTitle className="text-3xl font-headline gradient-text">{feature.name}</DialogTitle>
               {feature.category && (
-                <DialogDescription className="text-muted-foreground text-sm">
+                <DialogDescription className="text-[var(--neon-blue)] text-sm"> {/* Use a neon color for category */}
                   Category: {feature.category}
                 </DialogDescription>
               )}
             </DialogHeader>
-            <div className="space-y-4 text-base text-foreground/90">
-              <p className="font-semibold">Description:</p>
+            <div className="space-y-4 text-base text-white/90">
+              <p className="font-semibold text-[var(--neon-purple)]">Description:</p>
               <p>{feature.description}</p>
               {feature.longDescription && (
                 <>
-                  <p className="font-semibold mt-4">Detailed Overview:</p>
+                  <p className="font-semibold mt-4 text-[var(--neon-purple)]">Detailed Overview:</p>
                   <p className="whitespace-pre-wrap">{feature.longDescription}</p>
                 </>
               )}
             </div>
-            {/* Placeholder for related features carousel if needed later */}
-            {/* <div className="mt-8">
-              <h4 className="text-lg font-semibold mb-2">Related Features:</h4>
-              {/* Carousel component here *\/}
-            {/* </div> */}
           </div>
         </ScrollArea>
       </DialogContent>

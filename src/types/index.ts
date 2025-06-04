@@ -1,4 +1,3 @@
-import type { LucideIcon } from 'lucide-react';
 
 export interface Feature {
   id: string;
@@ -16,8 +15,7 @@ export interface Booth {
   tagline: string;
   description: string;
   features: Feature[];
-  colorGradient: string; // Tailwind CSS class for gradient
-  iconName: string; // Changed from icon: LucideIcon to iconName: string
+  iconName: string; 
   heroImage?: string; // Placeholder image URL for booth detail page
-  pattern?: string; // class for bg pattern or url
+  // colorGradient and pattern removed, will be handled by CSS classes based on id
 }

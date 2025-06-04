@@ -2,80 +2,111 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer base {
   :root {
-    --background: 0 0% 100%; /* Light theme background (not used for dark theme) */
-    --foreground: 0 0% 3.9%; /* Light theme foreground */
-    --card: 0 0% 100%; /* Light theme card */
-    --card-foreground: 0 0% 3.9%; /* Light theme card foreground */
-    --popover: 0 0% 100%; /* Light theme popover */
-    --popover-foreground: 0 0% 3.9%; /* Light theme popover foreground */
-    --primary: 217 100% 50%; /* Electric Blue */
-    --primary-foreground: 0 0% 100%; /* White */
-    --secondary: 237 88% 66%; /* Modern Indigo (as secondary, adjust if needed) */
-    --secondary-foreground: 0 0% 100%; /* White */
-    --muted: 0 0% 96.1%; /* Light theme muted */
-    --muted-foreground: 0 0% 45.1%; /* Light theme muted foreground */
-    --accent: 327 82% 61%; /* Vibrant Pink */
-    --accent-foreground: 0 0% 100%; /* White */
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 10%; /* Adjusted for dark theme, similar to surface */
-    --input: 0 0% 10%; /* Adjusted for dark theme, similar to surface */
-    --ring: 217 100% 50%; /* Electric Blue for ring */
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Primary Gradients */
+    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    
+    /* Background Gradients */
+    --bg-dark: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+    --bg-card-gradient: linear-gradient(145deg, rgba(35, 35, 50, 0.7), rgba(25, 25, 40, 0.6)); /* Adjusted for dark theme */
+    
+    /* Neon Accents */
+    --neon-blue: #00d4ff;
+    --neon-purple: #b794f6;
+    --neon-pink: #ff6b9d;
+    --neon-green: #00ff88;
+    
+    /* Glass Effects */
+    --glass-bg: rgba(255, 255, 255, 0.05); /* Subtle for dark theme */
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+
+    /* ShadCN Theme Variables (Dark Theme Focus) */
+    --background-hsl: 230 40% 6%; /* Derived from --bg-dark for fallback */
+    --foreground-hsl: 0 0% 100%; /* Pure White */
+    
+    --card-hsl: 230 30% 10%; /* Solid fallback for card, actual card will use --bg-card-gradient or --glass-bg */
+    --card-foreground-hsl: 0 0% 100%;
+
+    --popover-hsl: 230 30% 10%; /* Consistent with card */
+    --popover-foreground-hsl: 0 0% 100%;
+
+    --primary-hsl: 193 100% 50%; /* --neon-blue */
+    --primary-foreground-hsl: 230 40% 6%; /* Dark for contrast on neon blue */
+
+    --secondary-hsl: 260 86% 77%; /* --neon-purple */
+    --secondary-foreground-hsl: 230 40% 6%; /* Dark for contrast */
+
+    --muted-hsl: 230 20% 15%; 
+    --muted-foreground-hsl: 230 15% 65%;
+
+    --accent-hsl: 339 100% 71%; /* --neon-pink */
+    --accent-foreground-hsl: 230 40% 6%; /* Dark for contrast */
+
+    --destructive-hsl: 0 84.2% 60.2%;
+    --destructive-foreground-hsl: 0 0% 98%;
+
+    --border-hsl: 230 20% 20%; /* Slightly lighter for borders on dark bg */
+    --input-hsl: 230 20% 18%; /* For input fields */
+    --ring-hsl: 193 100% 50%; /* --neon-blue for focus rings */
+
+    --radius: 0.75rem; /* Slightly more rounded */
+
+    /* Chart colors - can be updated with neons if desired */
+    --chart-1: hsl(var(--primary-hsl));
+    --chart-2: hsl(var(--secondary-hsl));
+    --chart-3: hsl(var(--accent-hsl));
+    --chart-4: 151 100% 50%; /* --neon-green */
+    --chart-5: 40 100% 60%; /* A vibrant yellow/orange */
+
+    /* Sidebar - can be themed similarly if Sidebar component is used extensively */
+    --sidebar-background-hsl: 230 35% 8%;
+    --sidebar-foreground-hsl: 0 0% 90%;
+    --sidebar-primary-hsl: var(--primary-hsl);
+    --sidebar-primary-foreground-hsl: var(--primary-foreground-hsl);
+    --sidebar-accent-hsl: var(--accent-hsl);
+    --sidebar-accent-foreground-hsl: var(--accent-foreground-hsl);
+    --sidebar-border-hsl: var(--border-hsl);
+    --sidebar-ring-hsl: var(--ring-hsl);
   }
-  .dark {
-    --background: 0 0% 4%; /* Deep Black #0A0A0A */
-    --foreground: 0 0% 100%; /* Pure White #FFFFFF */
-    --card: 0 0% 10%; /* Rich Dark Gray #1A1A1A (Surface) */
-    --card-foreground: 0 0% 100%; /* Pure White */
-    --popover: 0 0% 10%; /* Rich Dark Gray */
-    --popover-foreground: 0 0% 100%; /* Pure White */
-    --primary: 217 100% 50%; /* Electric Blue #0066FF */
-    --primary-foreground: 0 0% 100%; /* Pure White */
-    --secondary: 237 88% 66%; /* Modern Indigo #6366F1 */
-    --secondary-foreground: 0 0% 100%; /* Pure White */
-    --muted: 0 0% 10%; /* Rich Dark Gray */
-    --muted-foreground: 240 4% 65%; /* Muted Gray #A1A1AA */
-    --accent: 327 82% 61%; /* Vibrant Pink #EC4899 */
-    --accent-foreground: 0 0% 100%; /* Pure White */
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 15%; /* Slightly lighter than card for borders */
-    --input: 0 0% 15%; /* Slightly lighter than card for inputs */
-    --ring: 217 100% 50%; /* Electric Blue for ring */
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    --sidebar-background: 0 0% 6%; /* Slightly lighter black for sidebar */
-    --sidebar-foreground: 0 0% 85%; /* Lighter gray for sidebar text */
-    --sidebar-primary: 217 100% 50%; /* Electric Blue */
-    --sidebar-primary-foreground: 0 0% 100%; /* White */
-    --sidebar-accent: 327 82% 61%; /* Vibrant Pink */
-    --sidebar-accent-foreground: 0 0% 100%; /* White */
-    --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 217 100% 50%;
+
+  /* Apply new HSL vars to ShadCN's expected vars */
+  :root {
+    --background: hsl(var(--background-hsl));
+    --foreground: hsl(var(--foreground-hsl));
+    --card: hsl(var(--card-hsl));
+    --card-foreground: hsl(var(--card-foreground-hsl));
+    --popover: hsl(var(--popover-hsl));
+    --popover-foreground: hsl(var(--popover-foreground-hsl));
+    --primary: hsl(var(--primary-hsl));
+    --primary-foreground: hsl(var(--primary-foreground-hsl));
+    --secondary: hsl(var(--secondary-hsl));
+    --secondary-foreground: hsl(var(--secondary-foreground-hsl));
+    --muted: hsl(var(--muted-hsl));
+    --muted-foreground: hsl(var(--muted-foreground-hsl));
+    --accent: hsl(var(--accent-hsl));
+    --accent-foreground: hsl(var(--accent-foreground-hsl));
+    --destructive: hsl(var(--destructive-hsl));
+    --destructive-foreground: hsl(var(--destructive-foreground-hsl));
+    --border: hsl(var(--border-hsl));
+    --input: hsl(var(--input-hsl));
+    --ring: hsl(var(--ring-hsl));
+    
+    --sidebar-background: hsl(var(--sidebar-background-hsl));
+    --sidebar-foreground: hsl(var(--sidebar-foreground-hsl));
+    --sidebar-primary: hsl(var(--sidebar-primary-hsl));
+    --sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground-hsl));
+    --sidebar-accent: hsl(var(--sidebar-accent-hsl));
+    --sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground-hsl));
+    --sidebar-border: hsl(var(--sidebar-border-hsl));
+    --sidebar-ring: hsl(var(--sidebar-ring-hsl));
   }
+
+  /* Dark theme is default, no need for .dark selector if html has .dark */
+  /* The :root above effectively becomes the dark theme */
 }
 
 @layer base {
@@ -83,24 +114,382 @@ body {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
-    /* Apply dark theme by default */
-    @apply dark;
-    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem); /* Fluid typography for body */
+    @apply text-foreground;
+    background: var(--bg-dark); /* Apply gradient background */
+    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
   }
 
-  h1 {
-    font-size: clamp(2.5rem, 1.5rem + 3vw, 4.5rem); /* Fluid typography for H1 */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline;
   }
-  h2 {
-    font-size: clamp(2rem, 1.25rem + 2.5vw, 3.5rem); /* Fluid typography for H2 */
-  }
-  h3 {
-    font-size: clamp(1.75rem, 1.1rem + 2vw, 2.75rem); /* Fluid typography for H3 */
-  }
-  /* Add more for h4-h6 if needed, adjusting clamp values */
+  h1 { font-size: clamp(2.5rem, 1.5rem + 3vw, 4.5rem); }
+  h2 { font-size: clamp(2rem, 1.25rem + 2.5vw, 3.5rem); }
+  h3 { font-size: clamp(1.75rem, 1.1rem + 2vw, 2.75rem); }
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Animations & Effects */
+
+/* Floating geometric shapes in background */
+.floating-shapes-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -1; /* Ensure it's behind content */
+}
+
+.floating-shape {
+  position: absolute;
+  background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+  filter: blur(1px);
+  opacity: 0.7;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
+  50% { transform: translateY(-30px) rotate(180deg); opacity: 0.4; }
+}
+
+/* Particle system background */
+.particle-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 0; /* Above floating shapes, below main content */
+}
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  animation: particleFloat var(--particle-duration) linear infinite;
+  pointer-events: none;
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: var(--particle-opacity-start);
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px) scale(1.2);
+    opacity: calc(var(--particle-opacity-start) * 0.5);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+    opacity: var(--particle-opacity-start);
+  }
+}
+
+
+/* Typewriter effect for main heading */
+.typewriter-container {
+  display: inline-block; /* Necessary for width animation */
+}
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid var(--neon-blue);
+  animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+  width: 0; /* Start with no width */
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--neon-blue); }
+}
+
+
+/* Booth Card Enhancements */
+.booth-card-base { /* Renamed to avoid conflict if Shadcn Card is also .booth-card */
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+
+.booth-card-base::before { /* Shimmer effect */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%; /* Start further left */
+  width: 50%; /* Narrower shine */
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transform: skewX(-25deg); /* Angle the shine */
+  transition: left 0.75s;
+}
+
+.booth-card-base:hover::before {
+  left: 150%; /* Move further right */
+}
+
+.booth-card-base:hover {
+  transform: translateY(-10px) scale(1.03); /* Added scale for 3D feel */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px var(--neon-blue-transparent, rgba(0, 212, 255, 0.3)); /* Default glow, can be booth specific */
+}
+
+/* Animated borders wrapper */
+.booth-card-border-wrap {
+  padding: 2px; /* Controls border thickness */
+  border-radius: calc(var(--radius) + 2px); /* Match outer */
+  position: relative;
+  overflow: hidden;
+}
+.booth-card-border-wrap::before { /* Animated gradient border */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: conic-gradient(from var(--angle), var(--neon-blue), var(--neon-purple), var(--neon-pink), var(--neon-green), var(--neon-blue));
+  border-radius: inherit; /* Match parent border-radius */
+  animation: rotateBorder 4s linear infinite;
+  z-index: -1; /* Behind the actual card content */
+  --angle: 0deg;
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotateBorder {
+  to { --angle: 360deg; }
+}
+
+/* Apply booth specific neon for hover shadow */
+.booth-prism-ai-theme:hover { --neon-blue-transparent: rgba(0, 212, 255, 0.4); }
+.booth-non-prism-ai-theme:hover { --neon-blue-transparent: rgba(255, 107, 157, 0.4); } /* using neon-pink */
+.booth-ai-dev-theme:hover { --neon-blue-transparent: rgba(0, 255, 136, 0.4); } /* using neon-green */
+/* ... add for other themes if needed */
+
+
+/* Advanced Button Animations */
+.magnetic-btn {
+  position: relative;
+  background: var(--gradient-primary);
+  border: none;
+  border-radius: 50px; /* Pill shape */
+  padding: 14px 28px; /* Slightly smaller */
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 1; /* Ensure content is above pseudo-elements */
+}
+
+.magnetic-btn::before { /* Shine effect */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.6s ease-out; /* Smoother transition */
+  z-index: -1;
+}
+
+.magnetic-btn:hover::before {
+  left: 100%;
+}
+
+.magnetic-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4); /* Uses first color of --gradient-primary */
+}
+
+.magnetic-btn .btn-text { /* Span to wrap text for magnetic effect */
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5); /* Lighter ripple */
+  transform: scale(0);
+  animation: ripple-effect 0.6s linear;
+  pointer-events: none; /* Important for click-through */
+}
+
+@keyframes ripple-effect {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+
+/* Scroll-Triggered Animations */
+.scroll-animate {
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.slide-in-left { transform: translateX(-100px); }
+.slide-in-right { transform: translateX(100px); }
+.slide-in-up { transform: translateY(100px); }
+.slide-in-down { transform: translateY(-100px); }
+.fade-in { opacity: 0; }
+
+.animate-in {
+  transform: translate(0, 0) !important;
+  opacity: 1 !important;
+}
+
+/* Stagger animations for grid items can be done with JS or inline styles */
+/* .booth-card-base:nth-child(1) { transition-delay: 0.1s; } ... */
+
+
+/* Interactive Glow Effects */
+.glow-effect {
+  box-shadow: 
+    0 0 15px rgba(102, 126, 234, 0.2), /* Softer base glow */
+    0 0 30px rgba(102, 126, 234, 0.15),
+    inset 0 0 10px rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(102, 126, 234, 0.3); /* Softer border */
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.glow-effect:hover {
+  box-shadow: 
+    0 0 25px rgba(102, 126, 234, 0.4), /* Enhanced hover glow */
+    0 0 50px rgba(102, 126, 234, 0.25),
+    inset 0 0 15px rgba(255, 255, 255, 0.1);
+  border-color: rgba(102, 126, 234, 0.6);
+}
+
+
+/* Booth-Specific Color Themes */
+.booth-theme-card { /* Common styles for themed cards */
+  color: var(--foreground-hsl); /* Default text color */
+}
+.booth-theme-card h1, .booth-theme-card h2, .booth-theme-card h3, .booth-theme-card p, .booth-theme-card span {
+  color: inherit; /* Ensure text elements inherit from parent */
+}
+
+.booth-prism-ai-theme { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); --booth-accent-color: var(--neon-blue); }
+.booth-non-prism-ai-theme { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); --booth-accent-color: var(--neon-pink); }
+.booth-ai-dev-theme { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); --booth-accent-color: var(--neon-green); }
+.booth-cross-platform-theme { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); --booth-accent-color: #ff6b35; } /* Custom orange */
+.booth-manufacturing-erp-theme { background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%); --booth-accent-color: #4299e1; } /* Adjusted industrial blue */
+.booth-integration-theme { background: conic-gradient(from 0deg, #667eea, #764ba2, #f093fb, #f5576c, #4facfe, #00f2fe, #667eea); --booth-accent-color: var(--neon-purple); }
+.booth-cloud-theme { background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%); --booth-accent-color: #74b9ff; }
+.booth-cloud-enablers-theme { background: linear-gradient(135deg, #1e3a8a 0%, #0c1e42 100%); --booth-accent-color: #3b82f6; } /* Deeper blue */
+
+/* For booth specific hover glows if needed */
+.booth-prism-ai-theme:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 30px var(--neon-blue); }
+.booth-non-prism-ai-theme:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 30px var(--neon-pink); }
+.booth-ai-dev-theme:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 30px var(--neon-green); }
+.booth-cross-platform-theme:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 30px #ff6b35; }
+.booth-manufacturing-erp-theme:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 30px #4299e1; }
+.booth-integration-theme:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 30px var(--neon-purple); }
+.booth-cloud-theme:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 30px #74b9ff; }
+.booth-cloud-enablers-theme:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 30px #3b82f6; }
+
+
+/* Morphing Shapes */
+.morphing-shape-bg { /* Apply to a background div */
+  width: 200px;
+  height: 200px;
+  background: var(--gradient-secondary);
+  animation: morph 10s ease-in-out infinite alternate; /* Added alternate */
+  opacity: 0.3; /* Softer */
+  filter: blur(5px); /* More blur */
+}
+
+@keyframes morph {
+  0%, 100% { border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%; transform: rotate(0deg) scale(1); }
+  34% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; transform: rotate(120deg) scale(1.1); }
+  67% { border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%; transform: rotate(240deg) scale(0.9); }
+}
+
+
+/* Gradient Text Effects */
+.gradient-text {
+  background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple), var(--neon-pink), var(--neon-green), var(--neon-blue));
+  background-size: 300% 100%; /* Adjusted size */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 5s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+
+/* Loading Animations */
+.loading-spinner-container { /* Centering wrapper */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px; /* Ensure it's visible */
+}
+.loading-spinner {
+  width: 60px; /* Larger */
+  height: 60px;
+  border: 4px solid transparent; /* Thicker border */
+  border-top-color: var(--neon-blue);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  position: relative;
+}
+
+.loading-spinner::before {
+  content: '';
+  position: absolute;
+  top: -4px; left: -4px; /* Adjust for thicker border */
+  right: -4px; bottom: -4px;
+  border: 4px solid transparent;
+  border-top-color: var(--neon-purple);
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite reverse; /* Different speed */
+}
+
+.loading-spinner::after { /* Optional third layer */
+  content: '';
+  position: absolute;
+  top: 2px; left: 2px; /* Inner layer */
+  right: 2px; bottom: 2px;
+  border: 2px solid transparent;
+  border-top-color: var(--neon-pink);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Ensure card backgrounds are glassmorphic */
+.card { /* Targeting ShadCN's Card component if this class exists or is added */
+  background: var(--glass-bg) !important; /* May need !important due to specificity */
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border: 1px solid var(--glass-border) !important;
+  box-shadow: var(--glass-shadow) !important;
 }

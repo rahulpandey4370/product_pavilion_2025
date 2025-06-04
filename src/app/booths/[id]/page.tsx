@@ -1,4 +1,4 @@
-'use client'; // Required because of useState for modal
+'use client';
 
 import { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
@@ -7,11 +7,28 @@ import { getBoothById, booths as allBooths } from '@/lib/booth-data';
 import type { Booth, Feature } from '@/types';
 import FeatureCard from '@/components/features/FeatureCard';
 import FeatureModalClient from '@/components/features/FeatureModalClient';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button'; // Will become magnetic if used with GradientButton asChild or direct class
+import GradientButton from '@/components/shared/GradientButton';
 import { ArrowLeft, ArrowRight, Home, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import DynamicLucideIcon from '@/components/shared/DynamicLucideIcon';
+
+// Helper to get theme class based on booth ID
+const getBoothThemeClass = (boothId?: string | null) => {
+  if (!boothId) return '';
+  switch (boothId) {
+    case 'prism-ai-use-cases': return 'booth-prism-ai-theme';
+    case 'non-prism-ai-use-cases': return 'booth-non-prism-ai-theme';
+    case 'ai-accelerated-development': return 'booth-ai-dev-theme';
+    case 'cross-platform': return 'booth-cross-platform-theme';
+    case 'manufacturing-erp': return 'booth-manufacturing-erp-theme';
+    case 'integration': return 'booth-integration-theme';
+    case 'cloud': return 'booth-cloud-theme';
+    case 'cloud-enablers': return 'booth-cloud-enablers-theme';
+    default: return '';
+  }
+};
 
 export default function BoothDetailPage() {
   const params = useParams();
@@ -24,13 +41,31 @@ export default function BoothDetailPage() {
   const [currentIndex, setCurrentIndex] = useState(-1);
 
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elementsToAnimate = document.querySelectorAll('.scroll-animate');
+    elementsToAnimate.forEach((el) => observer.observe(el));
+
+    return () => elementsToAnimate.forEach((el) => observer.unobserve(el));
+  }, [booth]); // Re-run if booth changes to apply to new elements
+
+  useEffect(() => {
     if (id) {
       const foundBooth = getBoothById(id);
       if (foundBooth) {
         setBooth(foundBooth);
         setCurrentIndex(allBooths.findIndex(b => b.id === id));
       } else {
-        // Handle booth not found, e.g., redirect to a 404 page or home
         router.push('/');
       }
     }
@@ -57,10 +92,12 @@ export default function BoothDetailPage() {
     router.push(`/booths/${allBooths[nextIndex].id}`);
   };
 
+  const boothThemeClass = getBoothThemeClass(booth?.id);
+
   if (!booth) {
     return (
-      <div className="flex justify-center items-center min-h-screen">
-        <ArrowPathIcon className="h-12 w-12 animate-spin text-primary" />
+      <div className="flex justify-center items-center min-h-screen loading-spinner-container">
+        <div className="loading-spinner"></div>
       </div>
     );
   }
@@ -68,33 +105,38 @@ export default function BoothDetailPage() {
   return (
     <div className="space-y-12">
       {/* Breadcrumbs and Navigation */}
-      <nav className="flex justify-between items-center mb-8">
+      <nav className="flex justify-between items-center mb-8 scroll-animate fade-in">
         <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-          <Link href="/" className="hover:text-primary flex items-center">
+          <Link href="/" className="hover:text-[var(--neon-blue)] flex items-center">
             <Home className="h-4 w-4 mr-1" /> Home
           </Link>
           <ChevronRight className="h-4 w-4" />
-          <span className="font-medium text-foreground">{booth.name}</span>
+          <span className="font-medium text-foreground gradient-text">{booth.name}</span>
         </div>
         <div className="flex space-x-2">
-          <Button variant="outline" size="sm" onClick={() => navigateBooth('prev')} disabled={allBooths.length <=1}>
-            <ArrowLeft className="h-4 w-4 mr-1" /> Prev
-          </Button>
-          <Button variant="outline" size="sm" onClick={() => navigateBooth('next')} disabled={allBooths.length <=1}>
-            Next <ArrowRight className="h-4 w-4 ml-1" />
-          </Button>
+          <GradientButton size="sm" onClick={() => navigateBooth('prev')} disabled={allBooths.length <=1} icon={ArrowLeft}>
+             Prev
+          </GradientButton>
+          <GradientButton size="sm" onClick={() => navigateBooth('next')} disabled={allBooths.length <=1} icon={ArrowRight} iconPosition="right">
+            Next
+          </GradientButton>
         </div>
       </nav>
 
       {/* Booth Header Section */}
-      <section className={cn("relative py-16 md:py-24 rounded-lg overflow-hidden text-primary-foreground", booth.colorGradient)}>
-        <div className={cn("absolute inset-0 opacity-10", booth.pattern)} />
+      <section className={cn(
+          "relative py-16 md:py-24 rounded-lg overflow-hidden text-white booth-theme-card glow-effect scroll-animate fade-in",
+          boothThemeClass
+        )}
+        style={{animationDelay: '0.2s'}}
+      >
+        {/* Pattern can be an SVG or a CSS background pattern here if desired, for now removed for theme gradient focus */}
         <div className="container mx-auto px-4 text-center relative z-10">
-          <DynamicLucideIcon iconName={booth.iconName} className="h-20 w-20 mx-auto mb-6" />
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 font-headline">{booth.name}</h1>
+          <DynamicLucideIcon iconName={booth.iconName} className="h-20 w-20 mx-auto mb-6 text-[var(--booth-accent-color)]" />
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">{booth.name}</h1>
           <p className="text-xl md:text-2xl opacity-90 mb-6 max-w-3xl mx-auto">{booth.tagline}</p>
           {booth.heroImage && (
-            <div className="relative w-full max-w-4xl h-64 md:h-96 mx-auto mt-8 rounded-lg overflow-hidden shadow-2xl border-4 border-background/20">
+            <div className="relative w-full max-w-4xl h-64 md:h-96 mx-auto mt-8 rounded-lg overflow-hidden shadow-2xl border-2 border-[var(--glass-border)]">
               <Image
                 src={booth.heroImage}
                 alt={`${booth.name} hero image`}
@@ -111,9 +153,9 @@ export default function BoothDetailPage() {
       </section>
 
       {/* Features Grid Section */}
-      <section className="py-16">
+      <section className="py-16 scroll-animate fade-in" style={{animationDelay: '0.4s'}}>
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 font-headline">Key Features</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 gradient-text">Key Features</h2>
           {booth.features.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {booth.features.map((feature, index) => (
@@ -122,7 +164,7 @@ export default function BoothDetailPage() {
                   feature={feature}
                   onViewDetails={() => handleViewDetails(feature)}
                   index={index}
-                  boothColorGradient={booth.colorGradient}
+                  boothThemeClass={boothThemeClass} // Pass booth theme for consistency
                 />
               ))}
             </div>
@@ -136,16 +178,8 @@ export default function BoothDetailPage() {
         feature={selectedFeature}
         isOpen={isModalOpen}
         onClose={handleCloseModal}
+        boothThemeClass={boothThemeClass}
       />
     </div>
-  );
-}
-
-// Helper Icon for loading state
-function ArrowPathIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" {...props}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
-    </svg>
   );
 }

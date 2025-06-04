@@ -1,5 +1,4 @@
 import type { Booth } from '@/types';
-// Note: We don't import specific icons here anymore, as we'll use their names (strings).
 
 export const booths: Booth[] = [
   {
@@ -7,10 +6,8 @@ export const booths: Booth[] = [
     name: 'Prism AI Use Cases',
     tagline: 'Unlock the Power of AI',
     description: 'Explore innovative applications and solutions driven by Prism AI, transforming industries and everyday tasks with intelligent automation and insights.',
-    colorGradient: 'bg-gradient-to-br from-booth-prism-ai-start to-booth-prism-ai-end',
-    iconName: 'Cpu', // Changed from icon: Cpu
+    iconName: 'Cpu',
     heroImage: 'https://placehold.co/1200x400.png',
-    pattern: 'pattern-polka-dots pattern-blue-500 pattern-bg-transparent pattern-opacity-20 pattern-size-4',
     features: [
       { id: 'f1-1', name: 'AI-Powered Analytics', description: 'Gain deep insights from your data with advanced AI analytics.', longDescription: 'Our AI-Powered Analytics platform leverages machine learning algorithms to uncover hidden patterns, predict future trends, and provide actionable intelligence from complex datasets. Visualize your data in new ways and make smarter decisions.', image: 'https://placehold.co/600x400.png' },
       { id: 'f1-2', name: 'Intelligent Automation', description: 'Automate complex workflows using AI.', longDescription: 'Streamline your operations and boost efficiency by automating repetitive tasks and complex processes. Our intelligent automation solutions adapt to changing conditions and learn over time.', image: 'https://placehold.co/600x400.png' },
@@ -22,10 +19,8 @@ export const booths: Booth[] = [
     name: 'Non Prism AI Use Cases',
     tagline: 'Versatile Solutions Beyond AI',
     description: 'Discover a range of powerful applications that excel in their domains without relying on Prism AI, showcasing robust and specialized functionalities.',
-    colorGradient: 'bg-gradient-to-br from-booth-non-prism-ai-start to-booth-non-prism-ai-end',
-    iconName: 'Lightbulb', // Changed from icon: Lightbulb
+    iconName: 'Lightbulb',
     heroImage: 'https://placehold.co/1200x400.png',
-    pattern: 'pattern-grid pattern-pink-500 pattern-bg-transparent pattern-opacity-20 pattern-size-4',
     features: [
       { id: 'f2-1', name: 'Advanced Data Management', description: 'Securely manage and organize your critical data.', longDescription: 'Our comprehensive data management suite offers robust tools for data storage, backup, recovery, and governance, ensuring data integrity and compliance.', image: 'https://placehold.co/600x400.png' },
       { id: 'f2-2', name: 'Collaborative Workflow Tools', description: 'Enhance teamwork with integrated collaboration.', longDescription: 'Boost productivity with tools designed for seamless team collaboration, including shared workspaces, real-time editing, and project tracking.', image: 'https://placehold.co/600x400.png' },
@@ -37,10 +32,8 @@ export const booths: Booth[] = [
     name: 'AI Accelerated Development',
     tagline: 'Build Faster, Smarter',
     description: 'Leverage AI to speed up your development lifecycle, from code generation to testing and deployment, ensuring quality and innovation.',
-    colorGradient: 'bg-gradient-to-br from-booth-ai-dev-start to-booth-ai-dev-end',
-    iconName: 'Rocket', // Changed from icon: Rocket
+    iconName: 'Rocket',
     heroImage: 'https://placehold.co/1200x400.png',
-    pattern: 'pattern-lines pattern-green-500 pattern-bg-transparent pattern-opacity-20 pattern-size-4',
     features: [
       { id: 'f3-1', name: 'AI Code Assistant', description: 'Smart code suggestions and auto-completion.', longDescription: 'Our AI Code Assistant integrates with your IDE to provide intelligent code suggestions, auto-completion, and bug detection, speeding up development and improving code quality.', image: 'https://placehold.co/600x400.png' },
       { id: 'f3-2', name: 'Automated Testing with AI', description: 'Generate and run tests intelligently.', longDescription: 'Reduce testing time and improve coverage with AI-driven test case generation, prioritization, and automated execution. Identify critical bugs faster.', image: 'https://placehold.co/600x400.png' },
@@ -52,8 +45,7 @@ export const booths: Booth[] = [
     name: 'Cross Platform',
     tagline: 'Seamless Experience Everywhere',
     description: 'Develop applications that run smoothly across multiple operating systems and devices, ensuring a consistent user experience with a single codebase.',
-    colorGradient: 'bg-gradient-to-br from-booth-cross-platform-start to-booth-cross-platform-end',
-    iconName: 'Laptop', // Changed from icon: Laptop
+    iconName: 'Laptop',
     heroImage: 'https://placehold.co/1200x400.png',
     features: [
       { id: 'f4-1', name: 'Unified Codebase', description: 'Write once, deploy anywhere.', longDescription: 'Maximize efficiency by using a single codebase to build applications for iOS, Android, web, and desktop. Reduce development time and maintenance efforts.', image: 'https://placehold.co/600x400.png' },
@@ -66,8 +58,7 @@ export const booths: Booth[] = [
     name: 'Manufacturing ERP',
     tagline: 'Optimize Your Production Line',
     description: 'A comprehensive ERP solution tailored for the manufacturing industry, streamlining operations from inventory management to supply chain and production planning.',
-    colorGradient: 'bg-gradient-to-br from-booth-manufacturing-erp-start to-booth-manufacturing-erp-end',
-    iconName: 'Factory', // Changed from icon: Factory
+    iconName: 'Factory',
     heroImage: 'https://placehold.co/1200x400.png',
     features: [
       { id: 'f5-1', name: 'Production Planning', description: 'Efficiently schedule and manage production.', longDescription: 'Optimize your manufacturing schedules, manage resources, and track progress in real-time with our advanced production planning module.', image: 'https://placehold.co/600x400.png' },
@@ -80,8 +71,7 @@ export const booths: Booth[] = [
     name: 'Integration',
     tagline: 'Connect Your Ecosystem',
     description: 'Seamlessly integrate various systems, applications, and data sources to create a unified and efficient operational environment.',
-    colorGradient: 'bg-gradient-to-br from-booth-integration-start via-booth-integration-via to-booth-integration-end',
-    iconName: 'GitMerge', // Changed from icon: GitMerge
+    iconName: 'GitMerge',
     heroImage: 'https://placehold.co/1200x400.png',
     features: [
       { id: 'f6-1', name: 'API Gateway', description: 'Centralized API management and security.', longDescription: 'Securely expose, manage, and monitor your APIs with our robust API Gateway. Control access, enforce policies, and analyze traffic.', image: 'https://placehold.co/600x400.png' },
@@ -94,8 +84,7 @@ export const booths: Booth[] = [
     name: 'Cloud',
     tagline: 'Elevate Your Business with Cloud',
     description: 'Leverage the power of the cloud for scalability, reliability, and innovation. Our cloud solutions support your digital transformation journey.',
-    colorGradient: 'bg-gradient-to-br from-booth-cloud-start to-booth-cloud-end',
-    iconName: 'Cloud', // Changed from icon: Cloud
+    iconName: 'Cloud',
     heroImage: 'https://placehold.co/1200x400.png',
     features: [
       { id: 'f7-1', name: 'Scalable Infrastructure', description: 'Compute and storage that grows with you.', longDescription: 'Dynamically scale your compute, storage, and networking resources to meet changing demands. Pay only for what you use and ensure high availability.', image: 'https://placehold.co/600x400.png' },
@@ -108,8 +97,7 @@ export const booths: Booth[] = [
     name: 'Cloud Enablers',
     tagline: 'Tools for Your Cloud Journey',
     description: 'A suite of tools and services designed to facilitate your adoption and optimization of cloud technologies, ensuring a smooth and successful transition.',
-    colorGradient: 'bg-gradient-to-br from-booth-cloud-enablers-start to-booth-cloud-enablers-end',
-    iconName: 'Layers', // Changed from icon: Layers
+    iconName: 'Layers',
     heroImage: 'https://placehold.co/1200x400.png',
     features: [
       { id: 'f8-1', name: 'Cloud Migration Tools', description: 'Simplify your move to the cloud.', longDescription: 'Automate and streamline the process of migrating your applications, data, and infrastructure to the cloud. Minimize downtime and risk with our proven methodologies and tools.', image: 'https://placehold.co/600x400.png' },
