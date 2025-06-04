@@ -176,7 +176,7 @@ export const booths: Booth[] = [
         id: 'f-cp-ecm-mobile-bulk',
         name: 'ECM On the Go: Bulk Approvals through Mobile App',
         description: "Revolutionize mobile workflows with ECM’s enhanced mobile app, now featuring mass document approval. Executives on the move can quickly select and approve multiple documents in one tap—without needing to open each one—bringing desktop-level efficiency to mobile devices.",
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1640694514279-090bb1b09ee9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkYXNoYm9hcmQlMjBpbiUyMG1vYmlsZXxlbnwwfHx8fDE3NDkwMjkwNTN8MA&ixlib=rb-4.1.0&q=80&w=1080'
       },
       {
         id: 'f-cp-ice-overview',
@@ -201,25 +201,41 @@ export const booths: Booth[] = [
   {
     id: 'manufacturing-erp',
     name: 'Manufacturing ERP',
-    tagline: 'Optimize Your Production Line',
-    description: 'A comprehensive ERP solution tailored for the manufacturing industry, streamlining operations from inventory management to supply chain and production planning.',
+    tagline: 'Manufacturing ERP: Expand Globally, Excel Industry Specifically (Process Mfg)',
+    description: 'Explore Country Specific Functions (CSF) in Kinetic ERP, designed to meet local compliance needs. Get a quick insight into global e-invoicing initiatives driving transparency and accountability in financial transactions. Also, discover Tropos—the ERP built for process manufacturers in food, beverage, pharmaceuticals, metals, and chemicals—featuring recipe-based production, full traceability, regulatory compliance, and lean manufacturing support.',
     iconName: 'Factory',
     heroImage: 'https://images.unsplash.com/photo-1611117775350-ac3950990985?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bWFudWZhY3R1cmluZyUyMHxlbnwwfHx8fDE3NDkwMjkxODV8MA&ixlib=rb-4.1.0&q=80&w=1080',
     features: [
       {
-        id: 'f-mfg-csf',
-        name: 'CSF',
-        description: "Kinetic ERP's CSF for local compliance & global e-invoicing insights.",
-        longDescription: 'Explore Country Specific Functions (CSF) in Kinetic ERP, designed to meet local compliance needs. Get quick insights into global e-invoicing initiatives driving transparency and accountability in financial transactions.',
-        image: 'https://images.unsplash.com/photo-1599658880436-c61792e70672?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8aW5zaWdodHN8ZW58MHx8fHwxNzQ5MDI5Mjg0fDA&ixlib=rb-4.1.0&q=80&w=1080'
+        id: 'f-mfg-csf-flow',
+        name: 'CSF Overall Flow',
+        description: "An end-to-end demonstration of the Quote to Cash cycle in a generic manufacturing ERP context. This model provides a high-level understanding of the business flow supported by Kinetic ERP, enabling a deeper appreciation of the integrated capabilities that support global operations.",
+        image: 'https://placehold.co/600x400.png'
       },
       {
-        id: 'f-mfg-tropos',
-        name: 'Tropos',
-        description: 'Tropos: ERP for process manufacturers with recipe-based production, traceability & compliance.',
-        longDescription: 'Discover Tropos, the ERP built for process manufacturers in food, beverage, pharmaceuticals, metals, and chemicals—featuring recipe-based production, full traceability, regulatory compliance, and lean manufacturing support.',
-        image: 'https://images.unsplash.com/photo-1580983559367-0dc2f8934365?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxFUlB8ZW58MHx8fHwxNzQ5MDI5MzQzfDA&ixlib=rb-4.1.0&q=80&w=1080'
+        id: 'f-mfg-csf-einvoicing',
+        name: 'CSF E-invoicing Coverage',
+        description: "A visual model showing the structure and information flow in e-invoicing systems mandated globally. The demo helps audiences understand the key entities and processes within a CSF-based e-invoicing framework, essential for ensuring compliance and automation across borders.",
+        image: 'https://placehold.co/600x400.png'
       },
+      {
+        id: 'f-mfg-tropos-mobile',
+        name: 'Tropos Mobile App',
+        description: "Explore the modernized mobile experience of Tropos, where old RBA-based screens have been revamped using the latest technology stack. The new mobile app enhances usability and responsiveness—bringing a contemporary, mobile-first approach to process manufacturing operations.",
+        image: 'https://placehold.co/600x400.png'
+      },
+      {
+        id: 'f-mfg-tropos-kinetic',
+        name: 'Tropos Kinetic Integration',
+        description: "This demo highlights the financial integration between Tropos and Kinetic ERP. Experience how data flows seamlessly between systems—enabling consistent financial operations, consolidated reporting, and streamlined business processes across both platforms.",
+        image: 'https://placehold.co/600x400.png'
+      },
+      {
+        id: 'f-mfg-tropos-liquor',
+        name: 'Tropos: Learn to Make Liquor',
+        description: "Dive into a smart, unified platform built to manage the planning, simulation, and execution of liquor blending. This feature showcases how precision, experimentation, and quality control come together in one digital solution—empowering manufacturers to maintain batch consistency and compliance.",
+        image: 'https://placehold.co/600x400.png'
+      }
     ],
   },
   {
