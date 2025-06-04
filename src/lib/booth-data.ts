@@ -87,7 +87,7 @@ export const booths: Booth[] = [
     heroImage: 'https://placehold.co/1200x400.png',
     features: [
       {
-        id: 'f3-csf',
+        id: 'f3-csf-dev',
         name: 'CSF',
         description: 'AI-driven C# code generation for e-invoicing and intelligent unit test creation.',
         longDescription: 'Experience how AI transforms software delivery—from auto-generating C# code for e-invoicing to intelligent unit test creation with GitHub Copilot. See our AI Agent in action, generating smart pull request previews in Azure DevOps. Accelerate development, reduce effort, and empower partners like never before',
@@ -169,9 +169,20 @@ export const booths: Booth[] = [
     iconName: 'Factory',
     heroImage: 'https://placehold.co/1200x400.png',
     features: [
-      { id: 'f5-1', name: 'Production Planning', description: 'Efficiently schedule and manage production.', longDescription: 'Optimize your manufacturing schedules, manage resources, and track progress in real-time with our advanced production planning module.', image: 'https://placehold.co/600x400.png' },
-      { id: 'f5-2', name: 'Inventory Control', description: 'Real-time tracking of inventory levels.', longDescription: 'Maintain optimal inventory levels, reduce waste, and automate reordering processes with our comprehensive inventory control system.', image: 'https://placehold.co/600x400.png' },
-      { id: 'f5-3', name: 'Supply Chain Management', description: 'Integrated supply chain visibility.', longDescription: 'Gain end-to-end visibility of your supply chain, from raw materials procurement to finished goods delivery. Collaborate effectively with suppliers and partners.', image: 'https://placehold.co/600x400.png' },
+      { 
+        id: 'f5-csf', 
+        name: 'CSF', 
+        description: 'Kinetic ERP\'s Country Specific Functions (CSF) for local compliance and global e-invoicing initiatives.', 
+        longDescription: 'Explore Country Specific Functions (CSF) in Kinetic ERP, designed to meet local compliance needs. Get a quick insight into global e-invoicing initiatives driving transparency and accountability in financial transactions. Also, Discover Tropos, the ERP built for process manufacturers in food, beverage, pharmaceuticals, metals, and chemicals—featuring recipe-based production, full traceability, regulatory compliance, and lean manufacturing support.', 
+        image: 'https://placehold.co/600x400.png' 
+      },
+      { 
+        id: 'f5-tropos', 
+        name: 'Tropos', 
+        description: 'Tropos: ERP for process manufacturers (food, pharma, chemicals) with recipe-based production, traceability, and compliance.', 
+        longDescription: 'Discover Tropos, the ERP built for process manufacturers in food, beverage, pharmaceuticals, metals, and chemicals—featuring recipe-based production, full traceability, regulatory compliance, and lean manufacturing support.', 
+        image: 'https://placehold.co/600x400.png' 
+      },
     ],
   },
   {
