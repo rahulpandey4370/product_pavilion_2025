@@ -24,7 +24,8 @@ export default function FeatureCard({ feature, onViewDetails, index, boothThemeC
     >
       <Card className={cn(
         "booth-card-base h-full flex flex-col overflow-hidden", 
-        "glow-effect"
+        "glow-effect",
+        boothThemeClass // Apply booth theme class for its background and --booth-accent-color
       )}>
         {feature.image && (
           <div className="relative w-full h-48">
@@ -40,18 +41,26 @@ export default function FeatureCard({ feature, onViewDetails, index, boothThemeC
             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
           </div>
         )}
-        <CardHeader className="text-white z-10"> 
+        {/* Card component handles text color via text-card-foreground, so no explicit text-white needed */}
+        <CardHeader className="z-10"> 
           <CardTitle className="text-xl font-headline gradient-text">{feature.name}</CardTitle>
+          {/* CardDescription inherits color. Neon blue for category for thematic consistency */}
           {feature.category && <CardDescription className="text-[var(--neon-blue)]">{feature.category}</CardDescription>}
         </CardHeader>
-        <CardContent className="flex-grow flex flex-col justify-between text-white/90 z-10">
+        <CardContent className="flex-grow flex flex-col justify-between z-10">
+          {/* Paragraph text will inherit from Card's text-card-foreground */}
           <p className="text-sm mb-4">{feature.description}</p>
           <Button
             onClick={onViewDetails}
             size="sm"
             className={cn(
-              "w-full mt-auto btn-glass-details" // Apply the new glassmorphic style
+              "w-full mt-auto btn-glass-details" 
             )} 
+            style={{ 
+              '--btn-accent-color': 'var(--booth-accent-color)',
+              'color': 'hsl(var(--primary-foreground-hsl))', // Ensure button text contrasts with its own bg
+              'background': 'hsla(var(--booth-accent-color-hsl-values), 0.7)',
+             } as React.CSSProperties}
           >
             <Eye className="mr-2 h-4 w-4" />
             View Details
@@ -62,3 +71,4 @@ export default function FeatureCard({ feature, onViewDetails, index, boothThemeC
   );
 }
 
+    

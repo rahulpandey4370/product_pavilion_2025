@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -20,7 +21,7 @@ export default function FeatureModalClient({ feature, isOpen, onClose, boothThem
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className={cn(
         "sm:max-w-[600px] p-0 border-2 border-[var(--glass-border)] shadow-2xl",
-        "bg-[var(--glass-bg)] backdrop-blur-xl text-white", // Glassmorphic background
+        "bg-[var(--glass-bg)] backdrop-blur-xl text-popover-foreground", // Changed text-white to text-popover-foreground
         boothThemeClass // Apply booth theme if provided, for accent colors primarily
       )}>
         <ScrollArea className="max-h-[80vh]">
@@ -40,12 +41,14 @@ export default function FeatureModalClient({ feature, isOpen, onClose, boothThem
             <DialogHeader className="mb-4">
               <DialogTitle className="text-3xl font-headline gradient-text">{feature.name}</DialogTitle>
               {feature.category && (
-                <DialogDescription className="text-[var(--neon-blue)] text-sm"> {/* Use a neon color for category */}
+                 // DialogDescription will use popover-foreground. Neon color for category for theme.
+                <DialogDescription className="text-[var(--neon-blue)] text-sm">
                   Category: {feature.category}
                 </DialogDescription>
               )}
             </DialogHeader>
-            <div className="space-y-4 text-base text-white/90">
+            {/* Text will use popover-foreground from DialogContent */}
+            <div className="space-y-4 text-base opacity-90"> 
               <p className="font-semibold text-[var(--neon-purple)]">Description:</p>
               <p>{feature.description}</p>
               {feature.longDescription && (
@@ -61,3 +64,5 @@ export default function FeatureModalClient({ feature, isOpen, onClose, boothThem
     </Dialog>
   );
 }
+
+    

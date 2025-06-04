@@ -98,40 +98,42 @@
   }
 
   html.light {
-    --background-hsl: 240 20% 97%;
-    --foreground-hsl: 240 50% 10%;
+    --background-hsl: 240 20% 97%; /* Very light gray-blue */
+    --foreground-hsl: 240 50% 10%; /* Very dark blue-gray */
     
-    --card-hsl: 0 0% 100%;
+    --card-hsl: 0 0% 100%; /* White */
     --card-foreground-hsl: var(--foreground-hsl);
 
-    --popover-hsl: 0 0% 100%;
+    --popover-hsl: 0 0% 100%; /* White */
     --popover-foreground-hsl: var(--foreground-hsl);
 
-    --primary-hsl: 200 80% 50%; 
-    --primary-foreground-hsl: 0 0% 100%;
+    --primary-hsl: 200 80% 50%; /* Bright, clear blue */
+    --primary-foreground-hsl: 0 0% 100%; /* White text on primary */
 
-    --secondary-hsl: 280 70% 58%;
-    --secondary-foreground-hsl: 0 0% 100%;
+    --secondary-hsl: 280 70% 58%; /* Vibrant purple */
+    --secondary-foreground-hsl: 0 0% 100%; /* White text on secondary */
 
-    --muted-hsl: 240 15% 92%;
-    --muted-foreground-hsl: 240 10% 40%;
+    --muted-hsl: 240 15% 92%; /* Light gray */
+    --muted-foreground-hsl: 240 10% 40%; /* Medium-dark gray */
 
-    --accent-hsl: 110 70% 50%;
-    --accent-foreground-hsl: 240 50% 10%; /* Darker text on light accent */
+    --accent-hsl: 110 70% 50%; /* Bright, clear green */
+    --accent-foreground-hsl: 240 50% 10%; /* Dark text on accent */
 
-    --destructive-hsl: 0 72% 51%;
-    --destructive-foreground-hsl: 0 0% 98%;
+    --destructive-hsl: 0 72% 51%; /* Clear red */
+    --destructive-foreground-hsl: 0 0% 98%; /* Light text on destructive */
 
-    --border-hsl: 240 20% 88%;
-    --input-hsl: 0 0% 100%; /* White input */
-    --ring-hsl: 200 80% 55%;
+    --border-hsl: 240 20% 88%; /* Light gray border */
+    --input-hsl: 0 0% 100%; /* White input background */
+    --ring-hsl: 200 80% 55%; /* Primary blue for focus rings */
 
+    /* Chart colors for light theme - solid, vibrant */
     --chart-1: hsl(200 70% 50%);
     --chart-2: hsl(280 60% 55%);
     --chart-3: hsl(110 60% 45%);
-    --chart-4: hsl(330 70% 60%); 
-    --chart-5: hsl(35 80% 50%);
+    --chart-4: hsl(330 70% 60%); /* Pink */
+    --chart-5: hsl(35 80% 50%); /* Orange */
 
+    /* Sidebar for light theme */
     --sidebar-background-hsl: 240 25% 95%;
     --sidebar-foreground-hsl: var(--foreground-hsl);
     --sidebar-primary-hsl: var(--primary-hsl);
@@ -142,20 +144,37 @@
     --sidebar-ring-hsl: var(--ring-hsl);
     
     /* Light theme specific adjustments for custom effects */
-    --bg-dark: linear-gradient(135deg, hsl(220 30% 92%) 0%, hsl(220 25% 95%) 100%);
-    --glass-bg: hsla(0, 0%, 100%, 0.6); /* Lighter glass */
-    --glass-border: hsla(var(--foreground-hsl), 0.12);
+    --bg-dark: linear-gradient(135deg, hsl(220 30% 92%) 0%, hsl(220 25% 95%) 100%); /* Very light gradient */
+    --glass-bg: hsla(0, 0%, 100%, 0.6); /* Lighter glass effect */
+    --glass-border: hsla(var(--foreground-hsl), 0.12); /* Darker border for glass on light */
+    
     --loading-bg-start: hsl(220, 30%, 90%);
     --loading-bg-end: hsl(220, 25%, 93%);
-    --loading-spinner-color: hsl(var(--primary-hsl));
-    --loading-logo-shadow: hsl(var(--secondary-hsl));
+    --loading-spinner-color: hsl(var(--primary-hsl)); /* Use light theme primary */
+    --loading-logo-shadow: hsl(var(--secondary-hsl)); /* Use light theme secondary */
+
+    /* Neon variables redefined for light theme - map to main theme colors or use specific light-friendly HSLs */
+    --neon-blue: hsl(var(--primary-hsl));
+    --neon-purple: hsl(var(--secondary-hsl));
+    --neon-pink: hsl(330 80% 65%); /* A slightly brighter pink for light mode */
+    --neon-green: hsl(var(--accent-hsl));
+
+    /* HSL values for light theme neons (matching above) */
+    --neon-blue-hsl-values: 200, 80%, 50%;
+    --neon-purple-hsl-values: 280, 70%, 58%;
+    --neon-pink-hsl-values: 330, 80%, 65%;
+    --neon-green-hsl-values: 110, 70%, 50%;
+    --orange-hsl-values: 30, 90%, 55%; /* Adjusted orange for light theme if needed */
+    --industrial-blue-hsl-values: 210, 70%, 55%;
+    --sky-blue-hsl-values: 200, 90%, 60%;
+    --deeper-blue-hsl-values: 220, 60%, 55%;
 
     /* pulseGridBg animation variables - light theme overrides */
-    --pulse-opacity-start: 0.3;
+    --pulse-opacity-start: 0.3; /* Slightly more opaque for light theme */
     --pulse-opacity-mid: 0.6;
-    --pulse-hue-rotate-mid: 15deg;
-    --pulse-brightness-start: 1;
-    --pulse-brightness-mid: 1.05;
+    --pulse-hue-rotate-mid: 15deg; /* Less aggressive hue rotate */
+    --pulse-brightness-start: 1; /* No dimming */
+    --pulse-brightness-mid: 1.05; /* Slight brightness boost */
   }
 
 
@@ -215,15 +234,15 @@
     height: 8px;
   }
   ::-webkit-scrollbar-track {
-    background: hsl(var(--background-hsl) / 0.5);
+    background: hsl(var(--background-hsl) / 0.5); /* Use background with alpha */
     border-radius: 10px;
   }
   ::-webkit-scrollbar-thumb {
-    background: hsl(var(--primary-hsl) / 0.7);
+    background: hsl(var(--primary-hsl) / 0.7); /* Use primary with alpha */
     border-radius: 10px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--primary-hsl));
+    background: hsl(var(--primary-hsl)); /* Solid primary on hover */
   }
 }
 
@@ -245,7 +264,7 @@ html {
 }
 html.light .hero-effects-container {
   background-image:
-    linear-gradient(hsla(var(--primary-hsl), 0.15) 1px, transparent 1px),
+    linear-gradient(hsla(var(--primary-hsl), 0.15) 1px, transparent 1px), /* Slightly more visible grid lines */
     linear-gradient(to right, hsla(var(--primary-hsl), 0.15) 1px, transparent 1px);
 }
 
@@ -269,7 +288,8 @@ html.light .hero-effects-container {
   will-change: transform, opacity;
 }
 html.light .shooting-star {
-   filter: drop-shadow(0 0 4px hsla(var(--star-color-hsl-values), 0.8)) drop-shadow(0 0 8px hsla(var(--star-color-hsl-values), 0.6));
+   /* star-color is var(--neon-blue) which is overridden in html.light to use light theme primary */
+   filter: drop-shadow(0 0 4px hsla(var(--neon-blue-hsl-values), 0.6)) drop-shadow(0 0 8px hsla(var(--neon-blue-hsl-values), 0.4)); /* Softer shadow for light */
 }
 
 
@@ -321,7 +341,7 @@ html.light .booth-card-base {
   transition: left 0.85s cubic-bezier(0.23, 1, 0.32, 1); 
 }
 html.light .booth-card-base::before {
-  background: linear-gradient(90deg, transparent, hsla(var(--foreground-hsl), 0.03), transparent);
+  background: linear-gradient(90deg, transparent, hsla(var(--foreground-hsl), 0.03), transparent); /* More subtle sheen */
 }
 
 
@@ -335,13 +355,13 @@ html.light .booth-card-base::before {
     box-shadow: 0 15px 30px hsla(var(--background-hsl), 0.3), 
                 0 0 30px color-mix(in srgb, var(--booth-accent-color) 55%, transparent), 
                 0 0 15px color-mix(in srgb, var(--booth-accent-color) 80%, transparent),
-                inset 0 0 10px hsla(var(--booth-accent-color), 0.15); 
+                inset 0 0 10px hsla(var(--booth-accent-color-hsl-values), 0.15); 
     border-color: color-mix(in srgb, var(--booth-accent-color) 85%, transparent); 
   }
   html.light .booth-card-base:hover {
-    box-shadow: 0 10px 25px hsla(var(--background-hsl), 0.1),
+    box-shadow: 0 10px 25px hsla(var(--foreground-hsl), 0.05), /* Use foreground for shadow base in light */
                 0 0 20px color-mix(in srgb, var(--booth-accent-color) 40%, transparent),
-                inset 0 0 8px hsla(var(--booth-accent-color), 0.1);
+                inset 0 0 8px hsla(var(--booth-accent-color-hsl-values), 0.1);
     border-color: color-mix(in srgb, var(--booth-accent-color) 90%, transparent);
   }
 }
@@ -359,36 +379,42 @@ html.light .booth-card-base::before {
 
 .glow-effect {
   box-shadow: 
-    0 0 10px hsla(var(--booth-accent-color, var(--primary-hsl)), 0.2), 
-    0 0 20px hsla(var(--booth-accent-color, var(--primary-hsl)), 0.15),
+    0 0 10px hsla(var(--booth-accent-color-hsl-values), 0.2), 
+    0 0 20px hsla(var(--booth-accent-color-hsl-values), 0.15),
     inset 0 0 8px hsla(var(--foreground-hsl), 0.03);
-  border: 1px solid hsla(var(--booth-accent-color, var(--primary-hsl)), 0.25); 
+  border: 1px solid hsla(var(--booth-accent-color-hsl-values), 0.25); 
   transition: box-shadow 0.4s ease, border-color 0.4s ease;
 }
 html.light .glow-effect {
-  box-shadow: 0 0 8px hsla(var(--booth-accent-color, var(--primary-hsl)), 0.3);
-  border: 1px solid hsla(var(--booth-accent-color, var(--primary-hsl)), 0.4);
+  box-shadow: 0 0 8px hsla(var(--booth-accent-color-hsl-values), 0.3); /* Adjusted shadow for light */
+  border: 1px solid hsla(var(--booth-accent-color-hsl-values), 0.4);
 }
 
 @media (hover: hover) {
   .glow-effect:hover {
     box-shadow: 
-      0 0 20px hsla(var(--booth-accent-color, var(--primary-hsl)), 0.45), 
-      0 0 40px hsla(var(--booth-accent-color, var(--primary-hsl)), 0.3),
+      0 0 20px hsla(var(--booth-accent-color-hsl-values), 0.45), 
+      0 0 40px hsla(var(--booth-accent-color-hsl-values), 0.3),
       inset 0 0 15px hsla(var(--foreground-hsl), 0.05);
-    border-color: hsla(var(--booth-accent-color, var(--primary-hsl)), 0.6);
+    border-color: hsla(var(--booth-accent-color-hsl-values), 0.6);
   }
   html.light .glow-effect:hover {
-    box-shadow: 0 0 15px hsla(var(--booth-accent-color, var(--primary-hsl)), 0.5);
-    border-color: hsla(var(--booth-accent-color, var(--primary-hsl)), 0.7);
+    box-shadow: 0 0 15px hsla(var(--booth-accent-color-hsl-values), 0.5);
+    border-color: hsla(var(--booth-accent-color-hsl-values), 0.7);
   }
 }
 
 
 .booth-theme-card { 
-  color: hsl(var(--card-foreground-hsl)); 
+  color: hsl(var(--card-foreground-hsl)); /* Will be dark text on light theme */
 }
-.booth-theme-card h1, .booth-theme-card h2, .booth-theme-card h3, .booth-theme-card p, .booth-theme-card span {
+/* Ensure children of booth-theme-card also inherit the correct foreground color */
+.booth-theme-card h1, 
+.booth-theme-card h2, 
+.booth-theme-card h3, 
+.booth-theme-card p, 
+.booth-theme-card span,
+.booth-theme-card div { /* Added div for CardDescription etc. */
   color: inherit; 
 }
 
@@ -396,73 +422,74 @@ html.light .glow-effect {
 .booth-prism-ai-theme { 
   --booth-accent-color: var(--neon-blue);
   --booth-accent-color-hsl-values: var(--neon-blue-hsl-values);
-  background-image: linear-gradient(145deg, hsla(180, 100%, 50%, 0.25), hsla(200, 100%, 40%, 0.15), var(--glass-bg));
+  background-image: linear-gradient(145deg, hsla(var(--neon-blue-hsl-values), 0.25), hsla(200, 100%, 40%, 0.15), var(--glass-bg));
 }
 html.light .booth-prism-ai-theme {
-  background-image: linear-gradient(145deg, hsla(var(--neon-blue-hsl-values), 0.1), hsla(200, 100%, 40%, 0.05), var(--glass-bg));
+  /* --booth-accent-color will use the light theme's --neon-blue */
+  background-image: linear-gradient(145deg, hsla(var(--neon-blue-hsl-values), 0.15), hsla(200, 100%, 70%, 0.1), var(--glass-bg)); /* Lighter gradient */
 }
 
 .booth-non-prism-ai-theme { 
   --booth-accent-color: var(--neon-pink);
   --booth-accent-color-hsl-values: var(--neon-pink-hsl-values);
-  background-image: linear-gradient(145deg, hsla(320, 100%, 60%, 0.25), hsla(300, 100%, 50%, 0.15), var(--glass-bg));
+  background-image: linear-gradient(145deg, hsla(var(--neon-pink-hsl-values), 0.25), hsla(300, 100%, 50%, 0.15), var(--glass-bg));
 }
 html.light .booth-non-prism-ai-theme {
-  background-image: linear-gradient(145deg, hsla(var(--neon-pink-hsl-values), 0.1), hsla(300, 100%, 50%, 0.05), var(--glass-bg));
+  background-image: linear-gradient(145deg, hsla(var(--neon-pink-hsl-values), 0.15), hsla(300, 100%, 80%, 0.1), var(--glass-bg));
 }
 
 .booth-ai-dev-theme { 
   --booth-accent-color: var(--neon-green);
   --booth-accent-color-hsl-values: var(--neon-green-hsl-values);
-  background-image: linear-gradient(145deg, hsla(120, 100%, 50%, 0.25), hsla(140, 100%, 40%, 0.15), var(--glass-bg));
+  background-image: linear-gradient(145deg, hsla(var(--neon-green-hsl-values), 0.25), hsla(140, 100%, 40%, 0.15), var(--glass-bg));
 }
 html.light .booth-ai-dev-theme {
-  background-image: linear-gradient(145deg, hsla(var(--neon-green-hsl-values), 0.1), hsla(140, 100%, 40%, 0.05), var(--glass-bg));
+  background-image: linear-gradient(145deg, hsla(var(--neon-green-hsl-values), 0.15), hsla(140, 100%, 70%, 0.1), var(--glass-bg));
 }
 
 .booth-cross-platform-theme { 
-  --booth-accent-color: hsl(20, 100%, 60%); 
+  --booth-accent-color: hsl(var(--orange-hsl-values)); 
   --booth-accent-color-hsl-values: var(--orange-hsl-values);
-  background-image: linear-gradient(145deg, hsla(20, 100%, 60%, 0.25), hsla(30, 100%, 50%, 0.15), var(--glass-bg));
+  background-image: linear-gradient(145deg, hsla(var(--orange-hsl-values), 0.25), hsla(30, 100%, 50%, 0.15), var(--glass-bg));
 }
 html.light .booth-cross-platform-theme {
-  background-image: linear-gradient(145deg, hsla(var(--orange-hsl-values), 0.1), hsla(30, 100%, 50%, 0.05), var(--glass-bg));
+  background-image: linear-gradient(145deg, hsla(var(--orange-hsl-values), 0.15), hsla(30, 100%, 75%, 0.1), var(--glass-bg));
 }
 
 .booth-manufacturing-erp-theme { 
-  --booth-accent-color: hsl(210, 80%, 60%); 
+  --booth-accent-color: hsl(var(--industrial-blue-hsl-values)); 
   --booth-accent-color-hsl-values: var(--industrial-blue-hsl-values);
-  background-image: linear-gradient(145deg, hsla(210, 80%, 60%, 0.25), hsla(220, 80%, 50%, 0.15), var(--glass-bg));
+  background-image: linear-gradient(145deg, hsla(var(--industrial-blue-hsl-values), 0.25), hsla(220, 80%, 50%, 0.15), var(--glass-bg));
 }
 html.light .booth-manufacturing-erp-theme {
-  background-image: linear-gradient(145deg, hsla(var(--industrial-blue-hsl-values), 0.1), hsla(220, 80%, 50%, 0.05), var(--glass-bg));
+  background-image: linear-gradient(145deg, hsla(var(--industrial-blue-hsl-values), 0.15), hsla(220, 80%, 75%, 0.1), var(--glass-bg));
 }
 
 .booth-integration-theme { 
   --booth-accent-color: var(--neon-purple);
   --booth-accent-color-hsl-values: var(--neon-purple-hsl-values);
-  background-image: linear-gradient(145deg, hsla(280, 100%, 65%, 0.25), hsla(260, 100%, 55%, 0.15), var(--glass-bg));
+  background-image: linear-gradient(145deg, hsla(var(--neon-purple-hsl-values), 0.25), hsla(260, 100%, 55%, 0.15), var(--glass-bg));
 }
 html.light .booth-integration-theme {
-  background-image: linear-gradient(145deg, hsla(var(--neon-purple-hsl-values), 0.1), hsla(260, 100%, 55%, 0.05), var(--glass-bg));
+  background-image: linear-gradient(145deg, hsla(var(--neon-purple-hsl-values), 0.15), hsla(260, 100%, 80%, 0.1), var(--glass-bg));
 }
 
 .booth-cloud-theme { 
-  --booth-accent-color: hsl(200, 100%, 65%); 
+  --booth-accent-color: hsl(var(--sky-blue-hsl-values)); 
   --booth-accent-color-hsl-values: var(--sky-blue-hsl-values);
-  background-image: linear-gradient(145deg, hsla(200, 100%, 65%, 0.25), hsla(210, 100%, 55%, 0.15), var(--glass-bg));
+  background-image: linear-gradient(145deg, hsla(var(--sky-blue-hsl-values), 0.25), hsla(210, 100%, 55%, 0.15), var(--glass-bg));
 }
 html.light .booth-cloud-theme {
-  background-image: linear-gradient(145deg, hsla(var(--sky-blue-hsl-values), 0.1), hsla(210, 100%, 55%, 0.05), var(--glass-bg));
+  background-image: linear-gradient(145deg, hsla(var(--sky-blue-hsl-values), 0.15), hsla(210, 100%, 75%, 0.1), var(--glass-bg));
 }
 
 .booth-cloud-enablers-theme { 
-  --booth-accent-color: hsl(220, 70%, 60%); 
+  --booth-accent-color: hsl(var(--deeper-blue-hsl-values)); 
   --booth-accent-color-hsl-values: var(--deeper-blue-hsl-values);
-  background-image: linear-gradient(145deg, hsla(220, 70%, 60%, 0.25), hsla(230, 70%, 50%, 0.15), var(--glass-bg));
+  background-image: linear-gradient(145deg, hsla(var(--deeper-blue-hsl-values), 0.25), hsla(230, 70%, 50%, 0.15), var(--glass-bg));
 }
 html.light .booth-cloud-enablers-theme {
-  background-image: linear-gradient(145deg, hsla(var(--deeper-blue-hsl-values), 0.1), hsla(230, 70%, 50%, 0.05), var(--glass-bg));
+  background-image: linear-gradient(145deg, hsla(var(--deeper-blue-hsl-values), 0.15), hsla(230, 70%, 75%, 0.1), var(--glass-bg));
 }
 
 
@@ -475,7 +502,8 @@ html.light .booth-cloud-enablers-theme {
   animation: gradientShift 6s ease-in-out infinite alternate; 
 }
 html.light .gradient-text {
-  background: linear-gradient(90deg, hsl(200 80% 40%), hsl(280 60% 50%), hsl(320 70% 55%), hsl(110 60% 40%), hsl(200 80% 40%));
+  /* neon-* vars are correctly overridden for light theme */
+  background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple), var(--neon-pink), var(--neon-green), var(--neon-blue));
   background-size: 400% 100%;
   background-clip: text;
   -webkit-background-clip: text;
@@ -512,13 +540,14 @@ html.light .gradient-text {
   overflow: hidden; 
 }
 html.light .products-section-background {
+  /* neon-*-hsl-values are correctly overridden for light theme */
   background: linear-gradient(270deg,
-    hsla(var(--neon-blue-hsl-values), 0.06),
-    hsla(var(--neon-purple-hsl-values), 0.06),
-    hsla(var(--neon-pink-hsl-values), 0.06),
-    hsla(var(--neon-blue-hsl-values), 0.06)
+    hsla(var(--neon-blue-hsl-values), 0.1), /* Slightly more visible for light theme */
+    hsla(var(--neon-purple-hsl-values), 0.1),
+    hsla(var(--neon-pink-hsl-values), 0.1),
+    hsla(var(--neon-blue-hsl-values), 0.1)
   );
-  box-shadow: 0 2px 10px hsla(var(--background-hsl), 0.08), /* Subtler shadow on light */
+  box-shadow: 0 2px 10px hsla(var(--foreground-hsl), 0.04), /* Subtler shadow on light, based on foreground */
               inset 0 0 0 1px hsla(var(--border-hsl), 0.3);
 }
 
@@ -581,7 +610,7 @@ html.light .products-section-background {
 }
 
 .booth-card-base a {
-  color: var(--booth-accent-color);
+  color: var(--booth-accent-color); /* booth-accent-color is themed */
 }
 .booth-card-base a:hover {
   text-decoration: underline;
@@ -589,8 +618,10 @@ html.light .products-section-background {
 }
 
 .feature-card-title {
-  @apply gradient-text;
+  @apply gradient-text; /* gradient-text is themed */
 }
 .feature-modal-title {
-  @apply gradient-text;
+  @apply gradient-text; /* gradient-text is themed */
 }
+
+    

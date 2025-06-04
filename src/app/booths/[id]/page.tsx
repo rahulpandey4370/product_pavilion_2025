@@ -88,7 +88,7 @@ export default function BoothDetailPage() {
       {/* Breadcrumbs and Navigation */}
       <nav className="flex justify-between items-center mb-8">
         <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-          <Link href="/" className="hover:text-[var(--neon-blue)] flex items-center">
+          <Link href="/" className="hover:text-primary flex items-center"> {/* Adjusted hover color */}
             <Home className="h-4 w-4 mr-1" /> Home
           </Link>
           <ChevronRight className="h-4 w-4" />
@@ -106,13 +106,14 @@ export default function BoothDetailPage() {
 
       {/* Booth Header Section */}
       <section className={cn(
-          "relative py-16 md:py-24 rounded-lg overflow-hidden text-white booth-theme-card glow-effect",
+          "relative py-16 md:py-24 rounded-lg overflow-hidden booth-theme-card glow-effect", // text-white removed
           boothThemeClass
         )}
       >
         <div className="container mx-auto px-4 text-center relative z-10">
           <DynamicLucideIcon iconName={booth.iconName} className="h-20 w-20 mx-auto mb-6 text-[var(--booth-accent-color)]" />
           <h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">{booth.name}</h1>
+          {/* CardDescription-like p tag will inherit color from booth-theme-card */}
           <p className="text-xl md:text-2xl opacity-90 mb-6 max-w-3xl mx-auto">{booth.tagline}</p>
           {booth.heroImage && (
             <div className="relative w-full max-w-4xl h-64 md:h-96 mx-auto mt-8 rounded-lg overflow-hidden shadow-2xl border-2 border-[var(--glass-border)]">
@@ -127,6 +128,7 @@ export default function BoothDetailPage() {
               />
             </div>
           )}
+          {/* Description p tag will inherit color */}
           <p className="mt-8 text-lg opacity-80 max-w-3xl mx-auto">{booth.description}</p>
         </div>
       </section>
@@ -162,3 +164,5 @@ export default function BoothDetailPage() {
     </div>
   );
 }
+
+    
