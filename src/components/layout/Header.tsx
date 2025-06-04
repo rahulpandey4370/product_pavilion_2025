@@ -17,7 +17,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-sidebar-background/80 backdrop-blur-lg supports-[backdrop-filter]:bg-sidebar-background/60">
-      <div className="container flex h-16 max-w-7xl items-center justify-between mx-auto px-4">
+      <div className="flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center space-x-2">
           <Sparkles className="h-6 w-6 text-primary" />
           <span className="font-bold text-xl text-sidebar-foreground">Product Pavilion</span>

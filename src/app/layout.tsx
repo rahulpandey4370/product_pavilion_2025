@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className="font-body antialiased bg-background text-foreground min-h-screen flex flex-col">
         <Header />
         <PageWrapper>
-          <main className="flex-grow container mx-auto px-4 py-8 max-w-7xl">
+          <main className="flex-grow py-8">
             {children}
           </main>
         </PageWrapper>
