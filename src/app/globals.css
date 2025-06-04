@@ -158,82 +158,52 @@ html {
 
 /* Animations & Effects */
 
-/* Floating geometric shapes in background */
-.floating-shapes-container {
+/* Neon Streaks Background - NEW */
+.neon-streaks-container {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
   overflow: hidden;
-  z-index: -1; /* Ensure it's behind content */
+  z-index: -1; /* Above morphing shapes, below main content */
+  perspective: 800px; /* For potential 3D effects on streaks */
 }
 
-.floating-shape {
+.neon-streak {
   position: absolute;
-  background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
-  border-radius: 3px; /* Slightly rounded thin rectangles */
-  animation: driftAndFade 15s linear infinite;
-  opacity: 0; /* Start invisible, fade in via animation */
-  filter: blur(1px);
-  /* Dimensions and animation custom properties will be set by JS in HeroVisualEffects.tsx */
+  background-color: var(--effect-color);
+  box-shadow: 0 0 5px var(--effect-color), 
+              0 0 10px color-mix(in srgb, var(--effect-color) 70%, transparent), 
+              0 0 20px color-mix(in srgb, var(--effect-color) 40%, transparent);
+  opacity: 0; /* Start invisible */
+  animation: neonStreakFlow var(--animation-duration) linear var(--animation-delay) infinite;
+  will-change: transform, opacity;
+  border-radius: 2px; /* Slightly rounded ends for streaks */
 }
 
-.floating-shape:nth-child(2n) {
-  background: linear-gradient(90deg, var(--neon-green), var(--neon-pink));
-  animation-duration: 20s; /* Vary duration */
-}
-.floating-shape:nth-child(3n) {
-  background: linear-gradient(90deg, var(--neon-purple), var(--neon-blue)); /* Using neon-blue for cyan */
-  animation-duration: 12s;
-}
-
-@keyframes driftAndFade {
+@keyframes neonStreakFlow {
   0% {
-    transform: translateX(var(--start-x)) translateY(var(--start-y)) scale(0.5);
     opacity: 0;
+    transform: translateX(var(--start-x)) translateY(var(--start-y)) rotate(var(--initial-rotate)) scale(var(--initial-scale));
   }
-  10%, 70% { /* Hold visible for a while */
-    opacity: var(--max-opacity, 0.4);
+  10% { /* Fade in quickly */
+    opacity: 0.7;
+    transform: translateX(calc(var(--start-x) + (var(--end-x) - var(--start-x)) * 0.1)) 
+               translateY(calc(var(--start-y) + (var(--end-y) - var(--start-y)) * 0.1)) 
+               rotate(calc(var(--initial-rotate) + var(--rotation-delta) * 0.1)) 
+               scale(var(--mid-scale));
   }
-  15% {
-     transform: translateX(var(--mid-x)) translateY(var(--mid-y)) scale(1);
-  }
-  85% {
-    transform: translateX(var(--end-x)) translateY(var(--end-y)) scale(0.5);
-    opacity: var(--max-opacity, 0.4);
+  90% { /* Hold visibility and continue transform */
+    opacity: 0.7;
+    transform: translateX(calc(var(--start-x) + (var(--end-x) - var(--start-x)) * 0.9)) 
+               translateY(calc(var(--start-y) + (var(--end-y) - var(--start-y)) * 0.9)) 
+               rotate(calc(var(--initial-rotate) + var(--rotation-delta) * 0.9)) 
+               scale(var(--initial-scale)); /* Scale back down towards end */
   }
   100% {
-    transform: translateX(var(--end-x)) translateY(var(--end-y)) scale(0.3);
     opacity: 0;
-  }
-}
-
-/* Particle system background */
-.particle-container {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  z-index: 0; /* Above floating shapes, below main content */
-}
-.particle {
-  position: absolute;
-  border-radius: 50%;
-  animation: particleDrift var(--particle-duration) linear infinite;
-  pointer-events: none;
-}
-
-@keyframes particleDrift {
-  0% {
-    transform: translateX(0px) translateY(0px) scale(1);
-    opacity: var(--particle-opacity-start);
-  }
-  100% {
-    transform: translateX(calc(var(--particle-translate-x) * 2px)) translateY(calc(var(--particle-translate-y) * 2px)) scale(0.5);
-    opacity: 0;
+    transform: translateX(var(--end-x)) translateY(var(--end-y)) rotate(calc(var(--initial-rotate) + var(--rotation-delta))) scale(0.3);
   }
 }
 
@@ -276,15 +246,6 @@ html {
                 inset 0 0 10px hsla(var(--booth-accent-color), 0.15); 
     border-color: color-mix(in srgb, var(--booth-accent-color) 85%, transparent); 
   }
-}
-
-
-/* Animated borders wrapper - Toned down */
-.booth-card-border-wrap {
-  border-radius: var(--radius); 
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -373,7 +334,7 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .scroll-animate, .floating-shape, .particle, .booth-card-base::before, .magnetic-btn::before, .ripple, .morphing-shape-bg, .gradient-text, .loading-spinner, .loading-spinner::before, .loading-spinner::after {
+  .scroll-animate, .neon-streak, .booth-card-base::before, .magnetic-btn::before, .ripple, .morphing-shape-bg, .gradient-text, .loading-spinner, .loading-spinner::before, .loading-spinner::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -457,9 +418,9 @@ html {
   background: var(--gradient-secondary);
   animation: morph 12s ease-in-out infinite alternate; 
   opacity: 0.2; 
-  filter: blur(10px); 
+  filter: blur(20px); /* Increased blur for deeper background effect */
   position: absolute; 
-  z-index: -1; 
+  /* z-index will be set inline in HeroVisualEffects.tsx to ensure it's behind neon streaks */
 }
 
 @keyframes morph {
@@ -571,4 +532,3 @@ html {
 .ai-suggester-form-card .text-emerald { 
   color: var(--neon-green) !important;
 }
-
