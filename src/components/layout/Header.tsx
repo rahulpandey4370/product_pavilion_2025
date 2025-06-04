@@ -8,7 +8,7 @@ import { cn } from '@/lib/utils';
 
 const navItems = [
   { name: 'Home', href: '/' },
-  { name: 'All Booths', href: '/#booths' }, // Link to booths section on home page
+  { name: 'Explore Pavilions', href: '/#booths' }, // Link to booths section on home page
   { name: 'AI Suggester', href: '/#ai-suggester' }, // Link to AI suggester section
 ];
 
