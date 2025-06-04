@@ -278,7 +278,7 @@ export const booths: Booth[] = [
     tagline: 'Cloud Enablers',
     description: 'Discover the power of self-managed portals, intelligent cloud architecture, and real-time monitoring—designed to drive innovation, agility, and control. Visit us to see how Epicor delivers a smarter, faster path to the cloud.',
     iconName: 'Cloud',
-    heroImage: 'https://images.unsplash.com/photo-1561736778-92e52a7769ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjbG91ZCUyMGNvbXB1dGluZ3xlbnwwfHx8fDE3NDkwMjgxNjB8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    heroImage: 'https://images.unsplash.com/photo-1690627931320-16ac56eb2588?q=80&w=2093&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     features: [
       {
         id: 'f-cld-self-serve-upgrade',
@@ -290,7 +290,7 @@ export const booths: Booth[] = [
         id: 'f-cld-solarwinds-monitoring',
         name: 'Resource Monitoring with SolarWinds',
         description: 'See how real-time resource monitoring comes to life with SolarWinds. This demo features intuitive dashboards that provide visibility into the health and performance of servers, networks, and applications—complete with proactive alerting and deep operational insights.',
-        image: 'https://images.unsplash.com/photo-1690627931320-16ac56eb2588?q=80&w=2093&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        image: 'https://images.unsplash.com/photo-1561736778-92e52a7769ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjbG91ZCUyMGNvbXB1dGluZ3xlbnwwfHx8fDE3NDkwMjgxNjB8MA&ixlib=rb-4.1.0&q=80&w=1080'
       },
       {
         id: 'f-cld-nextgen-arch-ops',
