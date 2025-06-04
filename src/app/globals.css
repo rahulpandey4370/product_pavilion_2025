@@ -221,32 +221,6 @@ html {
   }
 }
 
-
-/* Typewriter effect for main heading */
-.typewriter-container {
-  display: inline-block; /* Necessary for width animation */
-  line-height: 1.2; /* Adjust line height for taller fonts */
-}
-.typewriter {
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 3px solid var(--neon-blue);
-  animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
-  width: 0; /* Start with no width */
-}
-
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-@keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: var(--neon-blue); }
-}
-
-
 /* Booth Card Enhancements */
 .booth-card-base { 
   background: var(--glass-bg);
@@ -433,7 +407,6 @@ html {
     opacity: 1;
     transform: none;
   }
-  /* Removed .typewriter specific override to allow animation visibility */
 }
 
 
@@ -627,7 +600,3 @@ html {
 .ai-suggester-form-card .text-emerald { /* If CheckCircle uses text-emerald */
   color: var(--neon-green) !important;
 }
-
-    
-
-    

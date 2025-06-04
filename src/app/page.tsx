@@ -1,7 +1,7 @@
 
 'use client'; // Mark as client component for useEffect and scroll animations
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react'; // Import useState
 import { booths } from '@/lib/booth-data';
 import BoothGrid from '@/components/booths/BoothGrid';
 import BoothSuggesterForm from '@/components/ai/BoothSuggesterForm';
@@ -10,9 +10,24 @@ import { ArrowDown } from 'lucide-react';
 import Link from 'next/link';
 import HeroVisualEffects from '@/components/shared/HeroVisualEffects'; // Import new component
 import { cn } from '@/lib/utils';
+import LoadingScreen from '@/components/layout/LoadingScreen'; // Added for loading screen
 
 export default function HomePage() {
+  const [isLoading, setIsLoading] = useState(true); // Added for loading screen
+
   useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1500); // Adjust time as needed
+
+    return () => clearTimeout(timer);
+  }, []);
+
+
+  useEffect(() => {
+    if (isLoading) return; // Don't run animations if loading
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -29,7 +44,11 @@ export default function HomePage() {
     elementsToAnimate.forEach((el) => observer.observe(el));
 
     return () => elementsToAnimate.forEach((el) => observer.unobserve(el));
-  }, []);
+  }, [isLoading]);
+
+  if (isLoading) {
+    return <LoadingScreen />;
+  }
 
   return (
     <div className="space-y-24">
@@ -38,17 +57,15 @@ export default function HomePage() {
         <HeroVisualEffects /> {/* Add visual effects component */}
         <div className="container mx-auto px-4 z-10"> {/* Ensure content is above effects */}
           <h1 className={cn(
-            "text-5xl md:text-7xl font-bold mb-8", // Adjusted margin
-            "typewriter-container" // Container for typewriter
+            "text-5xl md:text-7xl font-bold mb-8",
+            "gradient-text" 
           )}>
-            <span className="typewriter gradient-text">
-              Epicor Product Pavilion 2025
-            </span>
+            Epicor Product Pavilion 2025
           </h1>
-          <p className="text-xl md:text-2xl text-foreground/80 mb-12 max-w-3xl mx-auto scroll-animate fade-in" style={{animationDelay: '3.6s'}}> {/* Increased text-foreground opacity */}
+          <p className="text-xl md:text-2xl text-foreground/80 mb-12 max-w-3xl mx-auto scroll-animate fade-in" style={{animationDelay: '0.2s'}}> 
             Explore cutting-edge product showcases, discover innovative features, and find solutions tailored to your needs.
           </p>
-          <div className="scroll-animate slide-in-up" style={{animationDelay: '3.8s'}}>
+          <div className="scroll-animate slide-in-up" style={{animationDelay: '0.4s'}}> 
             <GradientButton size="lg" asChild>
               <Link href="#booths" className="magnetic-btn">
                 <span className="btn-text">Explore Booths</span> <ArrowDown className="ml-2 h-5 w-5" />
