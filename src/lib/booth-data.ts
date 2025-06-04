@@ -55,26 +55,26 @@ export const booths: Booth[] = [
     iconName: 'Lightbulb',
     heroImage: 'https://placehold.co/1200x400.png',
     features: [
-      { 
-        id: 'f2-ecm', 
-        name: 'ECM', 
-        description: 'AI transforming purchase orders, accelerating cloud migrations, and simplifying integrations.', 
-        longDescription: 'Step into the future with our AI pavilion, where cutting-edge demos showcase how AI is revolutionizing business. See how powerful language models transform massive purchase orders into streamlined sales orders, how AI smartly accelerates cloud migrations by analyzing and upgrading customizations, and how low-code AI-driven automation simplifies system integration—making complex tasks faster, smarter, and accessible to everyone. Experience firsthand how AI is reshaping efficiency across order management, cloud adoption, and workflow automation.', 
-        image: 'https://placehold.co/600x400.png' 
+      {
+        id: 'f2-ecm-updated',
+        name: 'ECM',
+        description: 'AI transforming purchase orders, accelerating cloud migrations, and simplifying integrations.',
+        longDescription: 'Step into the future with our AI pavilion, where cutting-edge demos showcase how AI is revolutionizing business. See how powerful language models transform massive purchase orders into streamlined sales orders, how AI smartly accelerates cloud migrations by analyzing and upgrading customizations, and how low-code AI-driven automation simplifies system integration—making complex tasks faster, smarter, and accessible to everyone. Experience firsthand how AI is reshaping efficiency across order management, cloud adoption, and workflow automation.',
+        image: 'https://placehold.co/600x400.png'
       },
-      { 
-        id: 'f2-automation-studio', 
-        name: 'Automation Studio', 
-        description: 'Low-code AI-driven automation making complex system integration faster and smarter.', 
-        longDescription: 'Step into the future with our AI pavilion, where cutting-edge demos showcase how AI is revolutionizing business. See how powerful language models transform massive purchase orders into streamlined sales orders, how AI smartly accelerates cloud migrations by analyzing and upgrading customizations, and how low-code AI-driven automation simplifies system integration—making complex tasks faster, smarter, and accessible to everyone. Experience firsthand how AI is reshaping efficiency across order management, cloud adoption, and workflow automation.', 
-        image: 'https://placehold.co/600x400.png' 
+      {
+        id: 'f2-automation-studio-updated',
+        name: 'Automation Studio',
+        description: 'Low-code AI-driven automation making complex system integration faster and smarter.',
+        longDescription: 'Step into the future with our AI pavilion, where cutting-edge demos showcase how AI is revolutionizing business. See how powerful language models transform massive purchase orders into streamlined sales orders, how AI smartly accelerates cloud migrations by analyzing and upgrading customizations, and how low-code AI-driven automation simplifies system integration—making complex tasks faster, smarter, and accessible to everyone. Experience firsthand how AI is reshaping efficiency across order management, cloud adoption, and workflow automation.',
+        image: 'https://placehold.co/600x400.png'
       },
-      { 
-        id: 'f2-project-ascend', 
-        name: 'Project Ascend', 
-        description: 'Experience firsthand how AI is reshaping efficiency across order management, cloud adoption, and workflow automation.', 
-        longDescription: 'Step into the future with our AI pavilion, where cutting-edge demos showcase how AI is revolutionizing business. See how powerful language models transform massive purchase orders into streamlined sales orders, how AI smartly accelerates cloud migrations by analyzing and upgrading customizations, and how low-code AI-driven automation simplifies system integration—making complex tasks faster, smarter, and accessible to everyone. Experience firsthand how AI is reshaping efficiency across order management, cloud adoption, and workflow automation.', 
-        image: 'https://placehold.co/600x400.png' 
+      {
+        id: 'f2-project-ascend-updated',
+        name: 'Project Ascend',
+        description: 'Experience firsthand how AI is reshaping efficiency across order management, cloud adoption, and workflow automation.',
+        longDescription: 'Step into the future with our AI pavilion, where cutting-edge demos showcase how AI is revolutionizing business. See how powerful language models transform massive purchase orders into streamlined sales orders, how AI smartly accelerates cloud migrations by analyzing and upgrading customizations, and how low-code AI-driven automation simplifies system integration—making complex tasks faster, smarter, and accessible to everyone. Experience firsthand how AI is reshaping efficiency across order management, cloud adoption, and workflow automation.',
+        image: 'https://placehold.co/600x400.png'
       },
     ],
   },
@@ -86,9 +86,27 @@ export const booths: Booth[] = [
     iconName: 'Rocket',
     heroImage: 'https://placehold.co/1200x400.png',
     features: [
-      { id: 'f3-1', name: 'AI Code Assistant', description: 'Smart code suggestions and auto-completion.', longDescription: 'Our AI Code Assistant integrates with your IDE to provide intelligent code suggestions, auto-completion, and bug detection, speeding up development and improving code quality.', image: 'https://placehold.co/600x400.png' },
-      { id: 'f3-2', name: 'Automated Testing with AI', description: 'Generate and run tests intelligently.', longDescription: 'Reduce testing time and improve coverage with AI-driven test case generation, prioritization, and automated execution. Identify critical bugs faster.', image: 'https://placehold.co/600x400.png' },
-      { id: 'f3-3', name: 'AI Project Management', description: 'Optimize project timelines and resources.', longDescription: 'Utilize AI for smarter project planning, resource allocation, and risk assessment. Get predictive insights to keep your projects on track and within budget.', image: 'https://placehold.co/600x400.png' },
+      {
+        id: 'f3-csf',
+        name: 'CSF',
+        description: 'AI-driven C# code generation for e-invoicing and intelligent unit test creation.',
+        longDescription: 'Experience how AI transforms software delivery—from auto-generating C# code for e-invoicing to intelligent unit test creation with GitHub Copilot. See our AI Agent in action, generating smart pull request previews in Azure DevOps. Accelerate development, reduce effort, and empower partners like never before',
+        image: 'https://placehold.co/600x400.png'
+      },
+      {
+        id: 'f3-automation-studio-dev',
+        name: 'Automation Studio',
+        description: 'AI Agent generating smart pull request previews in Azure DevOps for faster cycles.',
+        longDescription: 'Experience how AI transforms software delivery—from auto-generating C# code for e-invoicing to intelligent unit test creation with GitHub Copilot. See our AI Agent in action, generating smart pull request previews in Azure DevOps. Accelerate development, reduce effort, and empower partners like never before',
+        image: 'https://placehold.co/600x400.png'
+      },
+      {
+        id: 'f3-data-fabric-dev',
+        name: 'Data Fabric',
+        description: 'Accelerate development and empower partners using AI-enhanced software delivery.',
+        longDescription: 'Experience how AI transforms software delivery—from auto-generating C# code for e-invoicing to intelligent unit test creation with GitHub Copilot. See our AI Agent in action, generating smart pull request previews in Azure DevOps. Accelerate development, reduce effort, and empower partners like never before',
+        image: 'https://placehold.co/600x400.png'
+      },
     ],
   },
   {
