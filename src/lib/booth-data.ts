@@ -5,8 +5,8 @@ export const booths: Booth[] = [
   {
     id: 'prism-ai-use-cases',
     name: 'Prism AI Use Cases',
-    tagline: 'Unlock the Power of AI',
-    description: 'Journey Towards Cognitive ERP - Powered by PRISM AI',
+    tagline: 'Journey Towards Cognitive ERP - Powered by PRISM AI',
+    description: 'Embark on a transformative journey towards Cognitive ERP. Discover how PRISM AI is powering the next generation of intelligent enterprise solutions.',
     iconName: 'Cpu',
     heroImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx0ZWNobm9sb2d5JTIwYmFubmVyfGVufDB8fHx8MTc0OTAyNjM4N3ww&ixlib=rb-4.1.0&q=80&w=1080',
     features: [
@@ -267,7 +267,7 @@ export const booths: Booth[] = [
     tagline: 'Tools for Your Cloud Journey',
     description: 'A suite of tools and services designed to facilitate your adoption and optimization of cloud technologies, ensuring a smooth and successful transition.',
     iconName: 'Layers',
-    heroImage: 'https://images.unsplash.com/photo-1605918321371-584f5deab0a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8Y2xvdWQlMjBjb21wdXRpbmd8ZW58MHx8fHwxNzQ5MDI4MTYwfDA&ixlib=rb-4.1.0&q=80&w=1080',
+    heroImage: 'https://placehold.co/1200x400.png',
     features: [
       { id: 'f8-1', name: 'Cloud Migration Tools', description: 'Simplify your move to the cloud.', longDescription: 'Automate and streamline the process of migrating your applications, data, and infrastructure to the cloud. Minimize downtime and risk with our proven methodologies and tools.', image: 'https://placehold.co/600x400.png' },
       { id: 'f8-2', name: 'Cost Optimization', description: 'Control and reduce your cloud spending.', longDescription: 'Gain visibility into your cloud costs, identify savings opportunities, and implement optimization strategies. Ensure you get the most value from your cloud investment.', image: 'https://placehold.co/600x400.png' },
