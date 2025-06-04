@@ -44,7 +44,7 @@ export const booths: Booth[] = [
         id: 'f1-ecm-prism-agent',
         name: 'ECM Prism Agent: AI-Powered Document Intelligence',
         description: 'Transforms ECM search with AI-powered natural language queries. Users can summarize, extract insights, and compare documents using conversational prompts, enabling smarter, faster document handling.',
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1706466614149-5e04fd018a49?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxBSXxlbnwwfHx8fDE3NDg5MjMwODV8MA&ixlib=rb-4.1.0&q=80&w=1080'
       },
       {
         id: 'f1-quickship-agent',
@@ -378,3 +378,4 @@ export const getBoothById = (id: string): Booth | undefined => {
 //   longDescription: 'Learn how the GBL process automates license generation for Data Interchange and EULK, streamlining compliance and license management processes.',
 //   image: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxHbG9iYWwlMjBMaWNlbnNpbmd8ZW58MHx8fHwxNzQ5MDI5NDc2fDA&ixlib=rb-4.1.0&q=80&w=1080'
 // }
+
