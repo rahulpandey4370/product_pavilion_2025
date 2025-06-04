@@ -3,7 +3,7 @@
 
 import { booths } from '@/lib/booth-data';
 import BoothGrid from '@/components/booths/BoothGrid';
-import BoothSuggesterForm from '@/components/ai/BoothSuggesterForm';
+// import BoothSuggesterForm from '@/components/ai/BoothSuggesterForm'; // Commented out as per request
 import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
 import Link from 'next/link';
@@ -51,7 +51,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* AI Booth Suggester Section */}
+      {/* AI Booth Suggester Section - Removed as per request */}
+      {/* 
       <section id="ai-suggester" className="py-16 bg-background/30 rounded-lg" style={{backdropFilter: 'blur(5px)'}}>
         <div className="container mx-auto px-4">
            <h2 className="text-4xl font-bold text-center mb-12 gradient-text">Need Guidance? Let AI Help!</h2>
@@ -59,7 +60,8 @@ export default function HomePage() {
             <BoothSuggesterForm />
           </div>
         </div>
-      </section>
+      </section> 
+      */}
     </div>
   );
 }

@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils';
 const navItems = [
   { name: 'Home', href: '/' },
   { name: 'Explore Booths', href: '/#booths' }, // Link to booths section on home page
-  { name: 'AI Suggester', href: '/#ai-suggester' }, // Link to AI suggester section
+  // { name: 'AI Suggester', href: '/#ai-suggester' }, // Removed as per request
 ];
 
 export default function Header() {
