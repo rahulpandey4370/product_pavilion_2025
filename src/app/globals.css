@@ -223,11 +223,11 @@ html {
 
 /* Booth Card Enhancements */
 .booth-card-base { 
-  background: var(--glass-bg);
-  backdrop-filter: blur(12px); /* Slightly more blur */
+  /* Background is now primarily set by theme-specific classes like .booth-prism-ai-theme */
+  /* This class provides the structural glassmorphism and hover transforms */
+  backdrop-filter: blur(12px); 
   -webkit-backdrop-filter: blur(12px); 
-  /* Base border subtly themed */
-  border: 1px solid color-mix(in srgb, var(--booth-accent-color, var(--border-hsl)) 25%, transparent);
+  border: 1px solid color-mix(in srgb, var(--booth-accent-color, var(--border-hsl)) 35%, transparent); /* Slightly more prominent base border */
   box-shadow: var(--glass-shadow);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -255,7 +255,6 @@ html {
 
   .booth-card-base:hover {
     transform: translateY(-12px) scale(1.03); /* Slightly more lift */
-    /* More vibrant themed shadow and border on hover */
     box-shadow: 0 15px 30px hsla(var(--background-hsl), 0.3), /* Adjusted generic shadow */
                 0 0 30px color-mix(in srgb, var(--booth-accent-color) 55%, transparent), /* Wider, more vibrant outer theme glow */
                 0 0 15px color-mix(in srgb, var(--booth-accent-color) 80%, transparent), /* More focused inner theme glow */
@@ -397,23 +396,52 @@ html {
 
 /* Booth-Specific Color Themes (Now using CSS vars for accents on dark cards) */
 .booth-theme-card { 
+  /* Base card color for text, now inherited by default from .booth-card-base */
   color: hsl(var(--card-foreground-hsl)); 
 }
 .booth-theme-card h1, .booth-theme-card h2, .booth-theme-card h3, .booth-theme-card p, .booth-theme-card span {
   color: inherit; 
 }
-/* The background is now var(--glass-bg) or --bg-card-gradient. Booth themes primarily set --booth-accent-color */
-.booth-prism-ai-theme { --booth-accent-color: var(--neon-blue); }
-.booth-non-prism-ai-theme { --booth-accent-color: var(--neon-pink); --neon-pink-hsl: 339 100% 71%;} /* Define HSL for pink if not in main vars */
-.booth-ai-dev-theme { --booth-accent-color: var(--neon-green); }
-.booth-cross-platform-theme { --booth-accent-color: hsl(20, 100%, 60%); } /* Custom orange */
-.booth-manufacturing-erp-theme { --booth-accent-color: hsl(210, 80%, 60%); } /* Industrial blue */
-.booth-integration-theme { --booth-accent-color: var(--neon-purple); }
-.booth-cloud-theme { --booth-accent-color: hsl(200, 100%, 65%); } /* Sky blue */
-.booth-cloud-enablers-theme { --booth-accent-color: hsl(220, 70%, 60%); } /* Deeper blue */
 
-/* Hover box-shadows for booth cards now use var(--booth-accent-color) directly with color-mix() in .booth-card-base:hover */
+/*
+  --neon-blue: hsl(180 100% 50%);
+  --neon-pink: hsl(320 100% 60%);
+  --neon-green: hsl(120 100% 50%);
+  --neon-purple: hsl(280 100% 65%);
+*/
 
+.booth-prism-ai-theme { 
+  --booth-accent-color: var(--neon-blue);
+  background-image: linear-gradient(145deg, hsla(180, 100%, 50%, 0.25), hsla(200, 100%, 40%, 0.15), var(--glass-bg));
+}
+.booth-non-prism-ai-theme { 
+  --booth-accent-color: var(--neon-pink); 
+  background-image: linear-gradient(145deg, hsla(320, 100%, 60%, 0.25), hsla(300, 100%, 50%, 0.15), var(--glass-bg));
+}
+.booth-ai-dev-theme { 
+  --booth-accent-color: var(--neon-green);
+  background-image: linear-gradient(145deg, hsla(120, 100%, 50%, 0.25), hsla(140, 100%, 40%, 0.15), var(--glass-bg));
+}
+.booth-cross-platform-theme { 
+  --booth-accent-color: hsl(20, 100%, 60%); /* Custom orange */
+  background-image: linear-gradient(145deg, hsla(20, 100%, 60%, 0.25), hsla(30, 100%, 50%, 0.15), var(--glass-bg));
+}
+.booth-manufacturing-erp-theme { 
+  --booth-accent-color: hsl(210, 80%, 60%); /* Industrial blue */
+  background-image: linear-gradient(145deg, hsla(210, 80%, 60%, 0.25), hsla(220, 80%, 50%, 0.15), var(--glass-bg));
+}
+.booth-integration-theme { 
+  --booth-accent-color: var(--neon-purple);
+  background-image: linear-gradient(145deg, hsla(280, 100%, 65%, 0.25), hsla(260, 100%, 55%, 0.15), var(--glass-bg));
+}
+.booth-cloud-theme { 
+  --booth-accent-color: hsl(200, 100%, 65%); /* Sky blue */
+  background-image: linear-gradient(145deg, hsla(200, 100%, 65%, 0.25), hsla(210, 100%, 55%, 0.15), var(--glass-bg));
+}
+.booth-cloud-enablers-theme { 
+  --booth-accent-color: hsl(220, 70%, 60%); /* Deeper blue */
+  background-image: linear-gradient(145deg, hsla(220, 70%, 60%, 0.25), hsla(230, 70%, 50%, 0.15), var(--glass-bg));
+}
 
 /* Morphing Shapes */
 .morphing-shape-bg { 
@@ -506,7 +534,7 @@ html {
 /* Ensure Shadcn Card uses our glassmorphic styles if .card is applied to it */
 /* This might be redundant if BoothCard.tsx correctly applies .booth-card-base */
 .card { 
-  background: var(--glass-bg) !important; 
+  background: var(--glass-bg) !important; /* Default for Shadcn card, but our booth cards will override */
   backdrop-filter: blur(12px) !important;
   -webkit-backdrop-filter: blur(12px) !important;
   border: 1px solid var(--glass-border) !important;
@@ -563,7 +591,3 @@ html {
 .ai-suggester-form-card .text-emerald { /* If CheckCircle uses text-emerald */
   color: var(--neon-green) !important;
 }
-
-    
-
-    
