@@ -78,13 +78,13 @@ export const booths: Booth[] = [
         id: 'f-np-ascend-ai-migration',
         name: 'Project Ascend: AI-Driven Migration to Cloud',
         description: 'See how AI is accelerating the journey to the cloud with Project Ascend. This demo highlights how AI analyzes existing customizations and provides summaries of their intent. The initiative supports future migration and streamlining of these customizations into the latest Kinetic version on cloud—reducing manual effort and enabling a smoother, smarter upgrade path.',
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1561736778-92e52a7769ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjbG91ZCUyMGNvbXB1dGluZ3xlbnwwfHx8fDE3NDkwMjgxNjB8MA&ixlib=rb-4.1.0&q=80&w=1080'
       },
       {
         id: 'f-np-as-ai-integrations',
         name: 'Automation Studio: AI-Enabled Integrations',
         description: 'Discover how AI simplifies integration and automation with Automation Studio. This demo showcases how AI assists in building custom connectors and automation recipes—empowering users to connect systems and streamline workflows without deep technical expertise. It’s low-code integration made smarter, faster, and more accessible.',
-        image: 'https://placehold.co/600x400.png'
+        image: 'https://images.unsplash.com/photo-1616121591347-9e39e909e4a8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxhdXRvbWF0aW9uJTIwd29ya2Zsb3d8ZW58MHx8fHwxNzQ5MDQwNTA1fDA&ixlib=rb-4.1.0&q=80&w=1080'
       },
     ],
   },
@@ -383,3 +383,6 @@ export const getBoothById = (id: string): Booth | undefined => {
 
 
 
+
+
+    
