@@ -88,26 +88,35 @@ It’s proactive, intelligent assistance—right when you need it.`,
     id: 'non-prism-ai-use-cases', // BOOTH 2
     name: 'Non Prism AI Use Cases',
     tagline: 'See the Future of Our Product—Through the Lens of AI',
-    description: 'Step into the future with our AI pavilion, where cutting-edge demos showcase how AI is revolutionizing business. See how powerful language models transform massive purchase orders into streamlined sales orders, how AI smartly accelerates cloud migrations by analyzing and upgrading customizations, and how low-code AI-driven automation simplifies system integration—making complex tasks faster, smarter, and accessible to everyone. Experience firsthand how AI is reshaping efficiency across order management, cloud adoption, and workflow automation.',
+    description: `Step into the future with our AI pavilion, where cutting-edge demos showcase how AI is revolutionizing business.
+See how powerful language models transform massive purchase orders into streamlined sales orders, how AI smartly accelerates cloud migrations by analyzing and upgrading customizations, and how low-code AI-driven automation simplifies system integration—making complex tasks faster, smarter, and accessible to everyone.
+Experience firsthand how AI is reshaping efficiency across order management, cloud adoption, and workflow automation.`,
     iconName: 'Lightbulb',
     heroImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjb3Jwb3JhdGUlMjBkaWdpdGFsfGVufDB8fHx8MTc0OTAzNjM3MXww&ixlib=rb-4.1.0&q=80&w=1080',
     features: [
       {
         id: 'f-np-ecm-ai-order-creation',
         name: 'ECM: AI-Led Order Creation from Document',
-        description: 'Discover how AI is transforming order management with this cutting-edge proof of concept. Leveraging GPT and Google Gemini large language models, this demo showcases the automatic conversion of lengthy purchase orders—up to 100 pages—into structured, schema-aligned sales orders in Epicor Kinetic ERP. The AI extracts key details from header, line-item, and schedule levels, enabling high-volume, low-touch processing for faster, smarter order entry.',
+        description: `Discover how AI is transforming order management with this cutting-edge proof of concept.
+Leveraging GPT and Google Gemini large language models, this demo showcases the automatic conversion of lengthy purchase orders—up to 100 pages—into structured, schema-aligned sales orders in Epicor Kinetic ERP.
+The AI accurately extracts key details from header, line-item, and schedule levels, enabling high-volume, low-touch processing for faster, smarter order entry.`,
         image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8ZG9jdW1lbnRzfGVufDB8fHx8MTc0OTAzNjExNHww&ixlib=rb-4.1.0&q=80&w=1080'
       },
       {
         id: 'f-np-ascend-ai-migration',
         name: 'Project Ascend: AI-Driven Migration to Cloud',
-        description: 'See how AI is accelerating the journey to the cloud with Project Ascend. This demo highlights how AI analyzes existing customizations and provides summaries of their intent. The initiative supports future migration and streamlining of these customizations into the latest Kinetic version on cloud—reducing manual effort and enabling a smoother, smarter upgrade path.',
+        description: `See how AI is accelerating the journey to the cloud with Project Ascend.
+This demo highlights how AI analyzes existing customizations and provides a summary of the intent of each customization.
+Future activities include migrating and streamlining customizations into the latest Kinetic version on the cloud.
+It’s a smarter, faster path to upgrading—reducing manual effort and ensuring a smoother transition to the cloud.`,
         image: 'https://images.unsplash.com/photo-1561736778-92e52a7769ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjbG91ZCUyMGNvbXB1dGluZ3xlbnwwfHx8fDE3NDkwMjgxNjB8MA&ixlib=rb-4.1.0&q=80&w=1080'
       },
       {
         id: 'f-np-as-ai-integrations',
         name: 'Automation Studio: AI-Enabled Integrations',
-        description: 'Discover how AI simplifies integration and automation with Automation Studio. This demo showcases how AI assists in building custom connectors and automation recipes—empowering users to connect systems and streamline workflows without deep technical expertise. It’s low-code integration made smarter, faster, and more accessible.',
+        description: `Discover how AI simplifies integration and automation with Automation Studio.
+This demo showcases how AI assists in building custom connectors and automation recipes—empowering users to connect systems and streamline workflows without deep technical expertise.
+It’s low-code integration made smarter, faster, and more accessible.`,
         image: 'https://images.unsplash.com/photo-1602468432285-0fe26e8352ac?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
     ],
@@ -183,14 +192,14 @@ It’s proactive, intelligent assistance—right when you need it.`,
     ],
   },
   {
-    id: 'cloud-enablers', // BOOTH 8 (visually 4th)
+    id: 'cloud-enablers', // This is "QA meets AI"
     name: 'QA meets AI',
     tagline: 'QA meets AI - Reimagining Quality',
     description: `Step into the future of Quality Assurance at our "QA Meets AI" booth!
 Discover how we’re blending the power of AI and the latest tech innovations to transform traditional QA practices and experience how we’re accelerating releases while boosting confidence in quality.
 Whether you’re curious about how AI can write tests, find bugs, or even help debug them — or just want to see innovation in action — don’t miss this interactive showcase.
 Join us to see how QA is no longer a checkpoint, but a co-pilot in innovation.`,
-    iconName: 'Zap',
+    iconName: 'Zap', // Changed from Layers to Zap
     heroImage: 'https://placehold.co/1200x400.png',
     features: [
       {
@@ -252,7 +261,7 @@ DocuMatch can be seamlessly used through an intuitive UI for manual reviews or i
     ],
   },
   {
-    id: 'cross-platform', // BOOTH 4 (visually 5th)
+    id: 'cross-platform', // BOOTH 4
     name: 'Cross Platform',
     tagline: 'Cross Platform: Beyond ERP – Powering Possibilities Across Platforms',
     description: 'Explore how we’re transforming legacy products with a modern web-based experience—featuring Mattec’s shift to the ICE framework/UX Platform and a redesigned SLS interface. See new compliance capabilities for Support at Home in aged care, and ECM’s mobile app with mass document approvals. Experience seamless freight invoice processing across Kinetic, ECM, and Quick Ship—showcasing the true power of integrated Epicor solutions. Elevate UX, mobility, and operations—all in one booth.',
@@ -292,7 +301,7 @@ DocuMatch can be seamlessly used through an intuitive UI for manual reviews or i
     ],
   },
   {
-    id: 'manufacturing-erp', // BOOTH 5 (visually 6th)
+    id: 'manufacturing-erp', // BOOTH 5
     name: 'Manufacturing ERP',
     tagline: 'Manufacturing ERP: Expand Globally, Excel Industry Specifically (Process Mfg)',
     description: 'Explore Country Specific Functions (CSF) in Kinetic ERP, designed to meet local compliance needs. Get a quick insight into global e-invoicing initiatives driving transparency and accountability in financial transactions. Also, discover Tropos—the ERP built for process manufacturers in food, beverage, pharmaceuticals, metals, and chemicals—featuring recipe-based production, full traceability, regulatory compliance, and lean manufacturing support.',
@@ -332,7 +341,7 @@ DocuMatch can be seamlessly used through an intuitive UI for manual reviews or i
     ],
   },
   {
-    id: 'integration', // BOOTH 6 (visually 7th)
+    id: 'integration', // BOOTH 6
     name: 'Integration',
     tagline: 'Unify platforms & streamline workflows.',
     description: 'Explore the latest in Automation Studio with newly added connectors and recipes, including Propello and Eclipse. See enhanced Data Fabric capabilities—featuring large file support, cross-tenant configurations, and Linux agent integration. Learn how the GBL process automates license generation for Data Interchange and EULK, streamlining compliance. Plus, watch seamless Quick Ship–Automation Studio integration in action with LTL carriers using QS Connector and automation recipes.',
@@ -366,7 +375,7 @@ DocuMatch can be seamlessly used through an intuitive UI for manual reviews or i
     ],
   },
   {
-    id: 'cloud', // BOOTH 7 (visually 8th)
+    id: 'cloud', // BOOTH 7
     name: 'Cloud',
     tagline: 'Cloud Enablers',
     description: 'Discover the power of self-managed portals, intelligent cloud architecture, and real-time monitoring—designed to drive innovation, agility, and control. Visit us to see how Epicor delivers a smarter, faster path to the cloud.',
@@ -442,7 +451,7 @@ const getBoothByIdFromMappedData = (id: string, data: Booth[]): Booth => {
 
 // This is the final exported array, ordered for display on the homepage.
 // Visual order: [1], [2], [3], [8], [4], [5], [6], [7] (using assigned boothNumbers)
-// which maps to IDs: prism-ai-use-cases, non-prism-ai-use-cases, ai-accelerated-development, 
+// which maps to IDs: prism-ai-use-cases, non-prism-ai-use-cases, ai-accelerated-development,
 // cloud-enablers (QA), cross-platform, manufacturing-erp, integration, cloud
 export const booths: Booth[] = [
   getBoothByIdFromMappedData('prism-ai-use-cases', boothDataWithNumbers),
