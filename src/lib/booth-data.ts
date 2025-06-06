@@ -1,7 +1,8 @@
 
 import type { Booth } from '@/types';
 
-export const booths: Booth[] = [
+// Original booths array for reference to reconstruct the new order
+const originalBooths: Booth[] = [
   {
     id: 'prism-ai-use-cases',
     name: 'Prism AI Use Cases',
@@ -327,6 +328,27 @@ export const booths: Booth[] = [
   },
 ];
 
+const booth0 = originalBooths.find(b => b.id === 'prism-ai-use-cases')!;
+const booth1 = originalBooths.find(b => b.id === 'non-prism-ai-use-cases')!;
+const booth2 = originalBooths.find(b => b.id === 'ai-accelerated-development')!;
+const booth3 = originalBooths.find(b => b.id === 'cross-platform')!;
+const booth4 = originalBooths.find(b => b.id === 'manufacturing-erp')!;
+const booth5 = originalBooths.find(b => b.id === 'integration')!;
+const booth6 = originalBooths.find(b => b.id === 'cloud')!;
+const booth7 = originalBooths.find(b => b.id === 'cloud-enablers')!;
+
+
+export const booths: Booth[] = [
+  booth0, // 1. Prism AI Use Cases
+  booth1, // 2. Non Prism AI Use Cases
+  booth2, // 3. AI Accelerated Development
+  booth7, // 8. Cloud Enablers (now 4th)
+  booth3, // 4. Cross Platform (now 5th)
+  booth4, // 5. Manufacturing ERP (now 6th)
+  booth5, // 6. Integration (now 7th)
+  booth6  // 7. Cloud (now 8th)
+];
+
 export const getBoothById = (id: string): Booth | undefined => {
   return booths.find(booth => booth.id === id);
 };
@@ -378,11 +400,4 @@ export const getBoothById = (id: string): Booth | undefined => {
 //   longDescription: 'Learn how the GBL process automates license generation for Data Interchange and EULK, streamlining compliance and license management processes.',
 //   image: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxHbG9iYWwlMjBMaWNlbnNpbmd8ZW58MHx8fHwxNzQ5MDI5NDc2fDA&ixlib=rb-4.1.0&q=80&w=1080'
 // }
-
-
-
-
-
-
-
     
