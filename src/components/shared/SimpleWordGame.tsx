@@ -57,24 +57,33 @@ export default function SimpleWordGame() {
   const isMobile = useIsMobile();
 
   useEffect(() => {
-    const scrollableElement = scrollableGridContainerRef.current;
-    if (scrollableElement) {
-      if (isSelecting && !gameComplete) {
-        scrollableElement.style.overflowX = 'hidden';
-        // Optionally prevent body scroll on touch devices during selection
-        if (isMobile) document.body.style.overflow = 'hidden';
-      } else {
-        scrollableElement.style.overflowX = 'auto';
-        if (isMobile) document.body.style.overflow = '';
+    if (isMobile && isSelecting && !gameComplete) {
+      document.body.style.overflow = 'hidden';
+      if (scrollableGridContainerRef.current) {
+        scrollableGridContainerRef.current.style.overflowX = 'hidden';
+      }
+    } else {
+      // Restore body scroll. Check if it's 'hidden' before changing to avoid
+      // interfering with other components that might manage body scroll.
+      if (document.body.style.overflow === 'hidden') {
+        document.body.style.overflow = '';
+      }
+      // Restore grid scroll
+      if (scrollableGridContainerRef.current) {
+        scrollableGridContainerRef.current.style.overflowX = 'auto';
       }
     }
-    // Cleanup body overflow style when component unmounts or isSelecting changes
+
+    // Cleanup on unmount or when dependencies change leading to scroll restoration
     return () => {
-        if (isMobile && scrollableElement && scrollableElement.style.overflowX !== 'hidden') { // ensure it was us who hid it
-            document.body.style.overflow = '';
-        }
+      // Only restore if it was hidden by this component's logic previously
+      // This check assumes that if isMobile was true, and selection was active,
+      // this effect instance *might* have hidden it.
+      if (isMobile && document.body.style.overflow === 'hidden') {
+         document.body.style.overflow = '';
+      }
     };
-  }, [isSelecting, gameComplete, isMobile]);
+  }, [isMobile, isSelecting, gameComplete]);
 
 
   const isValidPlacement = useCallback((
@@ -150,16 +159,12 @@ export default function SimpleWordGame() {
   
   const generateGrid = useCallback(() => {
     let newGrid = Array(size.rows).fill(null).map(() => Array(size.cols).fill(''));
-
-    // Use the initialWords for consistent word list for placement
     const wordsForPlacement = initialWords.map(w => w.word).sort((a, b) => b.length - a.length);
 
     for (const word of wordsForPlacement) {
       const { grid: updatedGrid, position } = placeWord(newGrid, word);
       if (position) {
         newGrid = updatedGrid;
-      } else {
-        // console.warn(`Could not place word: ${word} in a ${size.rows}x${size.cols} grid with difficulty ${difficulty}`);
       }
     }
 
@@ -221,7 +226,9 @@ export default function SimpleWordGame() {
         if (entry.isIntersecting && !isVisible) {
             setIsVisible(true);
         } else if (!entry.isIntersecting && isVisible) {
-            setIsVisible(false);
+            // Intentionally not setting isVisible to false here to keep game active
+            // User can scroll away and back. If explicit stop is needed, uncomment below:
+            // setIsVisible(false); 
         }
       },
       { threshold: 0.1 }
@@ -230,7 +237,7 @@ export default function SimpleWordGame() {
     return () => {
       observer.disconnect();
     };
-  }, [isVisible]);
+  }, [isVisible]); // Removed isVisible from deps to avoid re-observing on false
 
 
   useEffect(() => {
@@ -344,7 +351,7 @@ export default function SimpleWordGame() {
 
   const handleGridTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
     if (!isSelecting || gameComplete) return;
-    event.preventDefault();
+    event.preventDefault(); // Crucial for preventing page scroll during drag
     const touch = event.touches[0];
     const element = document.elementFromPoint(touch.clientX, touch.clientY);
     if (element) {
@@ -366,10 +373,6 @@ export default function SimpleWordGame() {
     if (newDifficulty === 'easy') setSize({rows: 10, cols: 10});
     else if (newDifficulty === 'medium') setSize({rows: 15, cols: 15});
     else setSize({rows: 18, cols: 18});
-    
-    // Reset logic is handled by useEffect watching [difficulty, isVisible, size, generateGrid]
-    // Triggering a state change that is part of that useEffect's dependencies will cause it to run.
-    // For example, if isVisible is true, changing difficulty/size will trigger the effect.
   }, []);
 
   useEffect(() => {
@@ -546,7 +549,7 @@ export default function SimpleWordGame() {
 
       <div className="flex flex-col md:flex-row gap-4 md:gap-8 justify-center items-start w-full px-2">
         <div
-          className="p-2 sm:p-3 md:p-4 rounded-lg shadow-lg border-2 border-indigo-400/30 dark:border-indigo-600/30 bg-card/90 dark:bg-slate-900/90 backdrop-blur-sm relative"
+          className="w-full p-2 sm:p-3 md:p-4 rounded-lg shadow-lg border-2 border-indigo-400/30 dark:border-indigo-600/30 bg-card/90 dark:bg-slate-900/90 backdrop-blur-sm relative"
           onMouseLeave={() => { 
             if (isSelecting) {
               handleMouseUp();
