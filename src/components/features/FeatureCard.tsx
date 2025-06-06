@@ -23,10 +23,21 @@ export default function FeatureCard({ feature, onViewDetails, index, boothThemeC
       )}
     >
       <Card className={cn(
-        "booth-card-base h-full flex flex-col overflow-hidden", 
+        "relative booth-card-base h-full flex flex-col overflow-hidden", // Added 'relative'
         "glow-effect",
         boothThemeClass // Apply booth theme class for its background and --booth-accent-color
       )}>
+        {/* Number Badge */}
+        <div 
+          className={cn(
+            "absolute top-2.5 right-2.5 z-20 flex h-7 w-7 items-center justify-center rounded-full text-sm font-bold shadow-lg",
+            "bg-[var(--booth-accent-color)] text-[hsl(var(--primary-foreground-hsl))]"
+          )}
+          aria-hidden="true"
+        >
+          {index + 1}
+        </div>
+
         {feature.image && (
           <div className="relative w-full h-48">
             <Image
