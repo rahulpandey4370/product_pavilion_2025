@@ -144,7 +144,6 @@ export default function BoothDetailPage() {
               />
             </div>
           )}
-          <p className="mt-8 text-lg opacity-80 max-w-3xl mx-auto">{booth.description}</p>
         </div>
       </section>
 
