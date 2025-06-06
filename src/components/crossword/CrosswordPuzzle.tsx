@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { Check, XIcon, Lightbulb, RefreshCcw } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 interface CrosswordEntry {
   id: number;
@@ -355,7 +356,7 @@ export default function CrosswordPuzzle() {
     setTimeout(() => { // Remove revealed flag after animation
         setGrid(prevGrid => prevGrid.map(row => row.map(cell => ({ ...cell, isRevealed: false }))));
         setIsRevealing(false);
-    }, entry.word.length * 100 + 500); // Animation duration
+    }, puzzleEntries.reduce((max, entry) => Math.max(max, entry.word.length), 0) * 100 + 500); // Animation duration based on longest word
   };
 
   const resetPuzzle = () => {
