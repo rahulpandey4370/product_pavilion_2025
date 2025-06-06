@@ -123,27 +123,13 @@ export default function BoothDetailPage() {
 
       {/* Booth Header Section */}
       <section className={cn(
-          "relative py-16 md:py-24 rounded-lg overflow-hidden booth-theme-card glow-effect", 
+          "relative py-12 md:py-16 rounded-lg overflow-hidden booth-theme-card glow-effect", 
           boothThemeClass
         )}
       >
         <div className="container mx-auto px-4 text-center relative z-10">
-          <DynamicLucideIcon iconName={booth.iconName} className="h-20 w-20 mx-auto mb-6 text-[var(--booth-accent-color)]" />
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">{booth.name}</h1>
-          <p className="text-xl md:text-2xl opacity-90 mb-6 max-w-3xl mx-auto">{booth.tagline}</p>
-          {booth.heroImage && (
-            <div className="relative w-full max-w-4xl h-64 md:h-96 mx-auto mt-8 rounded-lg overflow-hidden shadow-2xl border-2 border-[var(--glass-border)]">
-              <Image
-                src={booth.heroImage}
-                alt={`${booth.name} hero image`}
-                layout="fill"
-                objectFit="cover"
-                priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1024px"
-                data-ai-hint="technology banner"
-              />
-            </div>
-          )}
+          <DynamicLucideIcon iconName={booth.iconName} className="h-16 w-16 md:h-20 md:w-20 mx-auto mb-4 text-[var(--booth-accent-color)]" />
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 gradient-text">{booth.name}</h1>
         </div>
       </section>
 
