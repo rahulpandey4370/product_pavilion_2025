@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -179,7 +180,7 @@ export default function SimpleWordGame() {
     setElapsedTime(0);
     // Only activate timer if component is visible
     setTimerActive(isVisible);
-  }, [difficulty, isVisible]);
+  }, [difficulty, isVisible, size]); // Added size to dependencies for grid regeneration
 
   // Timer function with improved accuracy
   useEffect(() => {
@@ -229,7 +230,7 @@ export default function SimpleWordGame() {
           }
         }
       },
-      { threshold: 0.2 } // Trigger when at least 20% of the component is visible
+      { threshold: 0.1 } // Trigger when at least 10% of the component is visible
     );
     
     observer.observe(gameRef.current);
@@ -481,51 +482,52 @@ export default function SimpleWordGame() {
 
   // Cell styling
   const getCellClass = (row: number, col: number) => {
-    const baseClasses = "w-8 h-8 flex items-center justify-center select-none rounded font-semibold border transition-all";
+    const baseClasses = "flex items-center justify-center select-none rounded font-semibold border transition-all";
+    const responsiveSizeClasses = "w-6 h-6 text-xs sm:w-7 sm:h-7 sm:text-sm md:w-8 md:h-8 md:text-base";
     
     // Check if cell is part of a found word
     const foundWordData = isPartOfFoundWord(row, col);
     
     if (isCellSelected(row, col)) {
       // Colorful gradient when selected
-      return `${baseClasses} bg-gradient-to-br from-primary to-purple-500 dark:from-primary dark:to-indigo-700 text-white shadow-md transform scale-110`;
+      return `${baseClasses} ${responsiveSizeClasses} bg-gradient-to-br from-primary to-purple-500 dark:from-primary dark:to-indigo-700 text-white shadow-md transform sm:scale-110 scale-105`;
     } else if (foundWordData) {
       // Green gradient for found words with animation timing
       const timeSinceFound = foundWordData.foundTimestamp ? Date.now() - foundWordData.foundTimestamp : 3000;
       const isRecentlyFound = timeSinceFound < 3000;
       
-      return `${baseClasses} ${
+      return `${baseClasses} ${responsiveSizeClasses} ${
         isRecentlyFound 
-          ? 'bg-gradient-to-br from-green-400 to-green-600 text-white scale-105' 
+          ? 'bg-gradient-to-br from-green-400 to-green-600 text-white sm:scale-105' 
           : 'bg-gradient-to-br from-green-400/70 to-green-500/70 dark:from-green-500/60 dark:to-green-600/60 text-white'
       }`;
     } else {
       // Light/dark mode adaptive styling
-      return `${baseClasses} bg-white/90 hover:bg-secondary/40 dark:bg-slate-800 dark:border-slate-700 dark:hover:bg-slate-700 hover:shadow-sm`;
+      return `${baseClasses} ${responsiveSizeClasses} bg-white/90 hover:bg-secondary/40 dark:bg-slate-800 dark:border-slate-700 dark:hover:bg-slate-700 hover:shadow-sm`;
     }
   };
   return (
     <div ref={gameRef} className="w-full flex flex-col items-center">
-      <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-5xl mb-6">
+      <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-5xl mb-6 px-2">
         <h3 className="text-xl font-semibold text-center bg-gradient-to-br from-primary to-purple-600 dark:from-primary dark:to-indigo-400 text-transparent bg-clip-text">
           Find Epicor product words in the grid!
         </h3>
         
         {/* Timer display */}
         {isVisible && (
-          <div className="flex items-center bg-white dark:bg-slate-800 rounded-lg px-4 py-2 shadow-md border border-primary/30 dark:border-indigo-500/30 mt-4 md:mt-0">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary dark:text-indigo-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="flex items-center bg-white dark:bg-slate-800 rounded-lg px-3 py-1.5 sm:px-4 sm:py-2 shadow-md border border-primary/30 dark:border-indigo-500/30 mt-4 md:mt-0">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-primary dark:text-indigo-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            <span className="font-mono font-medium text-gray-800 dark:text-gray-200">{formatTime(elapsedTime)}</span>
+            <span className="font-mono font-medium text-gray-800 dark:text-gray-200 text-sm sm:text-base">{formatTime(elapsedTime)}</span>
           </div>
         )}
       </div>
       
-      <div className="flex flex-wrap justify-center gap-4 mb-6">
+      <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-6 px-2">
         <button 
           onClick={() => handleChangeDifficulty('easy')} 
-          className={`px-4 py-2 rounded-lg transition-all ${difficulty === 'easy' 
+          className={`px-3 py-1.5 sm:px-4 sm:py-2 text-sm rounded-lg transition-all ${difficulty === 'easy' 
             ? 'bg-gradient-to-r from-green-400 to-green-600 text-white shadow-md' 
             : 'bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600'}`}
         >
@@ -533,7 +535,7 @@ export default function SimpleWordGame() {
         </button>
         <button 
           onClick={() => handleChangeDifficulty('medium')} 
-          className={`px-4 py-2 rounded-lg transition-all ${difficulty === 'medium' 
+          className={`px-3 py-1.5 sm:px-4 sm:py-2 text-sm rounded-lg transition-all ${difficulty === 'medium' 
             ? 'bg-gradient-to-r from-blue-400 to-blue-600 text-white shadow-md' 
             : 'bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600'}`}
         >
@@ -541,7 +543,7 @@ export default function SimpleWordGame() {
         </button>
         <button 
           onClick={() => handleChangeDifficulty('hard')} 
-          className={`px-4 py-2 rounded-lg transition-all ${difficulty === 'hard' 
+          className={`px-3 py-1.5 sm:px-4 sm:py-2 text-sm rounded-lg transition-all ${difficulty === 'hard' 
             ? 'bg-gradient-to-r from-red-400 to-red-600 text-white shadow-md' 
             : 'bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600'}`}
         >
@@ -549,21 +551,21 @@ export default function SimpleWordGame() {
         </button>
         <button 
           onClick={resetGame} 
-          className="px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white shadow-md transition-all"
+          className="px-3 py-1.5 sm:px-4 sm:py-2 text-sm rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white shadow-md transition-all"
         >
           New Puzzle
         </button>
       </div>
       
       {/* Completion meter */}
-      <div className="w-full max-w-md mb-6">
-        <div className="text-sm mb-1 flex justify-between">
+      <div className="w-full max-w-sm sm:max-w-md mb-6 px-2">
+        <div className="text-xs sm:text-sm mb-1 flex justify-between">
           <span className="font-medium text-gray-700 dark:text-gray-300">Progress</span>
           <span className="font-semibold text-primary dark:text-indigo-400">{completionPercent}%</span>
         </div>
-        <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 shadow-inner overflow-hidden">
+        <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 sm:h-3 shadow-inner overflow-hidden">
           <motion.div 
-            className="bg-gradient-to-r from-primary via-purple-500 to-indigo-500 h-3 rounded-full shadow-sm"
+            className="bg-gradient-to-r from-primary via-purple-500 to-indigo-500 h-full rounded-full shadow-sm"
             initial={{ width: 0 }}
             animate={{ width: `${completionPercent}%` }}
             transition={{ duration: 0.5 }}
@@ -575,7 +577,7 @@ export default function SimpleWordGame() {
       <AnimatePresence mode="wait">
         {message && (
           <motion.div 
-            className={`mb-6 px-6 py-3 rounded-lg shadow-md border ${
+            className={`mb-6 px-4 py-2 sm:px-6 sm:py-3 text-sm rounded-lg shadow-md border ${
               gameComplete 
               ? 'bg-gradient-to-r from-green-500/10 to-green-600/10 border-green-500/30 text-green-800 dark:text-green-300' 
               : 'bg-gradient-to-r from-blue-500/10 to-indigo-500/10 border-blue-500/30 text-blue-800 dark:text-blue-300'
@@ -587,7 +589,7 @@ export default function SimpleWordGame() {
           >
             <div className="font-medium">{message}</div>
             {gameComplete && (
-              <div className="text-sm mt-1 opacity-80">
+              <div className="text-xs sm:text-sm mt-1 opacity-80">
                 Your time: {formatTime(elapsedTime)}
               </div>
             )}
@@ -595,10 +597,10 @@ export default function SimpleWordGame() {
         )}
       </AnimatePresence>
       
-      <div className="flex flex-col md:flex-row gap-8 justify-center items-start w-full">
-        {/* Word Search Grid */}
+      <div className="flex flex-col md:flex-row gap-4 md:gap-8 justify-center items-start w-full px-2">
+        {/* Word Search Grid Container */}
         <div 
-          className="p-4 rounded-lg shadow-lg border-2 border-indigo-400/30 dark:border-indigo-600/30 bg-white/90 dark:bg-slate-800/90 backdrop-blur relative"
+          className="p-2 sm:p-3 md:p-4 rounded-lg shadow-lg border-2 border-indigo-400/30 dark:border-indigo-600/30 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm relative"
           style={{ touchAction: 'none' }}
           onTouchMove={(e) => e.preventDefault()}
           onMouseLeave={() => {
@@ -606,46 +608,52 @@ export default function SimpleWordGame() {
               handleMouseUp();
             }
           }}
-          ref={gameRef}
+          
         >
-          <div className="grid gap-1" style={{ gridTemplateColumns: `repeat(${size.cols}, minmax(0, 1fr))` }}>
-            {grid.map((row, rowIndex) => (
-              row.map((letter, colIndex) => (
-                <div
-                  key={`${rowIndex}-${colIndex}`}
-                  className={getCellClass(rowIndex, colIndex)}
-                  onMouseDown={() => handleMouseDown(rowIndex, colIndex)}
-                  onMouseOver={() => handleMouseOver(rowIndex, colIndex)}
-                  onMouseUp={handleMouseUp}
-                  onTouchStart={() => handleMouseDown(rowIndex, colIndex)}
-                  onTouchMove={(e) => {
-                    // Get touch position and convert to grid coordinates
-                    const touch = e.touches[0];
-                    const element = document.elementFromPoint(touch.clientX, touch.clientY);
-                    const cellCoords = element?.getAttribute('data-cell');
-                    if (cellCoords) {
-                      const [r, c] = cellCoords.split('-').map(Number);
-                      handleMouseOver(r, c);
-                    }
-                  }}
-                  onTouchEnd={handleMouseUp}
-                  data-cell={`${rowIndex}-${colIndex}`}
-                >
-                  {letter}
-                </div>
-              ))
-            ))}
+          <div className="overflow-x-auto">
+            <div 
+              className="grid min-w-max gap-[2px]" 
+              style={{ gridTemplateColumns: `repeat(${size.cols}, minmax(0, 1fr))` }}
+              ref={gameRef} // Moved ref here for IntersectionObserver to observe the grid itself
+            >
+              {grid.map((row, rowIndex) => (
+                row.map((letter, colIndex) => (
+                  <div
+                    key={`${rowIndex}-${colIndex}`}
+                    className={getCellClass(rowIndex, colIndex)}
+                    onMouseDown={() => handleMouseDown(rowIndex, colIndex)}
+                    onMouseOver={() => handleMouseOver(rowIndex, colIndex)}
+                    onMouseUp={handleMouseUp}
+                    onTouchStart={() => handleMouseDown(rowIndex, colIndex)}
+                    onTouchMove={(e) => {
+                      // Get touch position and convert to grid coordinates
+                      const touch = e.touches[0];
+                      const element = document.elementFromPoint(touch.clientX, touch.clientY);
+                      const cellCoords = element?.getAttribute('data-cell');
+                      if (cellCoords) {
+                        const [r, c] = cellCoords.split('-').map(Number);
+                        handleMouseOver(r, c);
+                      }
+                    }}
+                    onTouchEnd={handleMouseUp}
+                    data-cell={`${rowIndex}-${colIndex}`}
+                  >
+                    {letter}
+                  </div>
+                ))
+              ))}
+            </div>
           </div>
         </div>
         
         {/* Word List */}
-        <div className="p-4 rounded-lg shadow-lg border-2 border-indigo-400/30 dark:border-indigo-600/30 bg-white/90 dark:bg-slate-800/90 backdrop-blur w-full max-w-md">
-          <h4 className="text-lg font-semibold mb-3 text-primary dark:text-indigo-400">Words to Find</h4>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div className="w-full md:max-w-xs lg:max-w-sm p-3 sm:p-4 rounded-lg shadow-lg border-2 border-indigo-400/30 dark:border-indigo-600/30 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm">
+          <h4 className="text-base sm:text-lg font-semibold mb-3 text-primary dark:text-indigo-400">Words to Find</h4>
+          <div className="grid grid-cols-2 gap-2 sm:gap-3">
             {words.map((wordData, index) => (
               <motion.div 
                 key={index}
-                className={`p-2 rounded-md transition-all ${
+                className={`p-1.5 sm:p-2 text-xs sm:text-sm rounded-md transition-all ${
                   wordData.found 
                     ? 'bg-gradient-to-r from-green-400/20 to-green-500/20 dark:from-green-500/30 dark:to-green-600/30 border border-green-400/30 dark:border-green-500/30' 
                     : 'bg-gray-100 dark:bg-gray-800 border border-transparent'
@@ -662,11 +670,11 @@ export default function SimpleWordGame() {
               >
                 <div className="flex items-center">
                   {wordData.found ? (
-                    <svg className="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                     </svg>
                   ) : (
-                    <span className="w-4 h-4 mr-2"></span>
+                    <span className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2"></span>
                   )}
                   <span className={`font-medium ${wordData.found ? 'line-through text-green-700 dark:text-green-400' : ''}`}>
                     {wordData.word}
@@ -680,3 +688,4 @@ export default function SimpleWordGame() {
     </div>
   );
 }
+
