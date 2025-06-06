@@ -14,7 +14,6 @@ import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 
 const SimpleWordGame = dynamic(() => import('@/components/shared/SimpleWordGame'), { ssr: false });
-const CrosswordPuzzle = dynamic(() => import('@/components/crossword/CrosswordPuzzle'), { ssr: false });
 
 
 export default function HomePage() {
@@ -113,19 +112,6 @@ export default function HomePage() {
               Test your Epicor knowledge! Find our key products and solutions in this interactive word search puzzle.
             </p>
             <SimpleWordGame />
-          </div>
-        </div>
-      </section>
-
-      {/* Crossword Puzzle Section */}
-      <section id="crossword" className="py-16">
-        <div className="container mx-auto px-4">
-           <div className="products-section-background">
-            <h2 className="text-4xl font-bold text-center mb-4 gradient-text">ProductVerse Crossword</h2>
-            <p className="text-xl text-foreground/80 text-center mb-12 max-w-2xl mx-auto">
-              Challenge your knowledge of Epicor's solutions with our interactive crossword puzzle!
-            </p>
-            <CrosswordPuzzle />
           </div>
         </div>
       </section>

@@ -16,7 +16,6 @@ const navItems = [
   { name: 'Home', href: '/' },
   { name: 'Explore Booths', href: '/#booths' },
   { name: 'Word Search', href: '/#word-search' },
-  { name: 'Crossword', href: '/#crossword' },
 ];
 
 // Helper component for SheetClose functionality on link click
