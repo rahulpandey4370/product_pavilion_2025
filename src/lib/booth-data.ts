@@ -132,62 +132,20 @@ It’s low-code integration made smarter, faster, and more accessible.`,
       {
         id: 'f-ai-dev-csf-einvoicing',
         name: 'CSF E-Invoicing AI',
-        description: 'A framework where, once the business analyst creates the e-invoice JSON structure and mapping, AI generates the corresponding C# code. This code fetches, processes, and formats the data to produce the final e-invoice JSON file—ready for transmission to vendors. This innovation cuts down manual development effort and empowers partners to create e-invoicing templates without needing Epicor PD support.',
+        description: 'A framework, where once BA creates the e-invoice json structure and mapping, AI will be used to generate a C# code which will query the necessary data, massage it and generate the end json file which can be sent to e-invoice vendor. This will cut down development effort and is a step towards enabling partners to create e-invoicing template without Epicor PD support.',
         image: 'https://images.unsplash.com/photo-1693045181224-9fc2f954f054?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxN3x8aW52b2ljZXxlbnwwfHx8fDE3NDkwMjg2NzN8MA&ixlib=rb-4.1.0&q=80&w=1080'
       },
       {
         id: 'f-ai-dev-unittest-copilot',
         name: 'Unit Test Automation with GitHub Copilot',
-        description: 'Boost developer productivity with AI-powered unit test generation. This demo highlights how GitHub Copilot streamlines writing comprehensive test cases—saving time and improving code quality by automating repetitive work, allowing developers to focus on building features.',
+        description: 'Boost developer productivity with AI-powered unit test generation. This demo highlights how GitHub Copilot streamlines the creation of comprehensive test cases—saving time while improving code quality and reliability. By automating repetitive test writing, developers can focus more on building features and less on boilerplate.',
         image: 'https://images.unsplash.com/photo-1556075798-4825dfaaf498?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxnaXRodWIlMjB8ZW58MHx8fHwxNzQ5MDM4NTI2fDA&ixlib=rb-4.1.0&q=80&w=1080'
       },
       {
         id: 'f-ai-dev-pr-review',
         name: 'AI-Based PR Review',
-        description: 'AI Agent integrated with Azure DevOps to automatically generate intelligent pull request summaries and previews. This enables faster, more informed code reviews and improves collaboration across development teams.',
+        description: 'Explore how our AI Agent integrates with Azure DevOps to automatically generate intelligent pull request summaries.It helps reviewers understand changes faster, speeds up approvals, and enhances overall code collaboration and quality.',
         image: 'https://images.unsplash.com/photo-1607799632518-da91dd151b38?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-      },
-      {
-        id: 'f-ai-dev-epiconnect',
-        name: 'EpiConnect – Smarter Development & Testing through AI-Driven Customer Insight',
-        description: 'EpiConnect bridges gaps between Engineering and Support using AI to analyze support tickets, identify recurring issues, monitor sentiment, and prioritize improvements. It also recommends severity for reported issues and aligns product testing with real customer pain points for more data-driven decisions.',
-        image: 'https://images.unsplash.com/photo-1599658880436-c61792e70672?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-      },
-      {
-        id: 'f-ai-dev-log-analyzer',
-        name: 'Log Analyzer through AI',
-        description: 'An AI-driven tool that semantically analyzes unstructured log files using large language models. It allows users to query logs in natural language, detect anomalies faster, and supports a modular, scalable, and product-agnostic setup—enhancing debugging and incident resolution.',
-        image: 'https://images.unsplash.com/photo-1746608943132-065d1d4b3c5d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-      },
-      {
-        id: 'f-ai-dev-imagen',
-        name: 'iMAGen – Intelligent Manual & Automated Test Generator',
-        description: 'iMAGen reads Jira requirements, summarizes feature expectations, and automatically generates detailed manual test cases. It integrates with test repositories and significantly improves QA efficiency—making it scalable across multiple products and projects.',
-        image: 'https://images.unsplash.com/photo-1745674684463-62f62cb88d4c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-      },
-      {
-        id: 'f-ai-dev-itrace',
-        name: 'iTRACE – Intelligent Test Root-Cause Analysis and Correction Engine',
-        description: 'An AI-assisted tool that analyzes logs, screenshots, and scripts to identify test automation failures. It provides actionable root-cause insights and fix suggestions—reducing debugging time from hours to minutes and accelerating continuous testing cycles.',
-        image: 'https://images.unsplash.com/photo-1573164574472-797cdf4a583a?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-      },
-      {
-        id: 'f-ai-dev-impact-analyzer',
-        name: 'Impact Analyzer – AI-Enabled Precision Testing',
-        description: 'Uses LLMs to analyze code diffs or commits from CodeChurn Tool and determine the impacted modules, functionalities, and relevant regression test cases. This enables precision testing and reduces unnecessary test runs—improving test relevance and efficiency.',
-        image: 'https://images.unsplash.com/photo-1582224369048-e4d2d7a6ba30?q=80&w=2097&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-      },
-      {
-        id: 'f-ai-dev-recoder-executor',
-        name: 'ReCoder Executor – No Code Solution for Test Automation',
-        description: 'A no-code test execution platform designed for scripts generated by Epicor ReCoder. It allows users to organize, execute, and monitor automated tests through an intuitive interface—streamlining automation workflows without requiring any programming skills.',
-        image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-      },
-      {
-        id: 'f-ai-dev-documatch',
-        name: 'Epicor DocuMatch',
-        description: 'A robust document comparison engine capable of identifying content differences across formats—including images and charts. It can be used manually or integrated into automation workflows, supporting validation and quality assurance across diverse document types.',
-        image: 'https://images.unsplash.com/photo-1600267165477-6d4cc741b379?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
     ],
   },
@@ -208,7 +166,7 @@ Join us to see how QA is no longer a checkpoint, but a co-pilot in innovation.`,
         description: `EpiConnect bridges the visibility gap between Engineering and Support by leveraging AI to analyze support ticket data, automate ticket resolution, uncover customer usage patterns, and surface actionable insights.
 It empowers teams to recognize recurring themes, monitor customer sentiment, and prioritize improvements effectively.
 By automatically assessing and recommending the severity of reported issues, EpiConnect helps support teams and stakeholders triage and respond with consistency and urgency. It also enables data-driven decisions by aligning product enhancements and testing strategies with real customer needs and sentiment trends.`,
-        image: 'https://placehold.co/600x400.png',
+        image: 'https://images.unsplash.com/photo-1599658880436-c61792e70672?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         category: 'AI in QA'
       },
       {
@@ -216,7 +174,7 @@ By automatically assessing and recommending the severity of reported issues, Epi
         name: 'Log Analyzer through AI',
         description: `AI Log Analyzer is an AI-driven system designed to analyze unstructured log files across different applications. It uses large language models (LLMs) to semantically interpret logs, allowing users—from developers to business analysts—to query system behaviors through natural language.
 The product features a modular architecture, vector-based log search, and a scalable, product-agnostic core. Key benefits include faster issue resolution, reduced dependence on deep technical knowledge, and adaptability across multiple products.`,
-        image: 'https://placehold.co/600x400.png',
+        image: 'https://images.unsplash.com/photo-1746608943132-065d1d4b3c5d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         category: 'AI in QA'
       },
       {
@@ -224,21 +182,21 @@ The product features a modular architecture, vector-based log search, and a scal
         name: 'iMAGen - Intelligent Manual & Automated Test Generator',
         description: `iMAGen (Intelligent Manual & Automated Test Case Generator) is an AI-powered tool that streamlines test case creation by reading Jira requirements, summarizing feature needs, and generating comprehensive manual test cases in minutes.
 It integrates with test repositories, boosts QA efficiency, and is easily scalable across products.`,
-        image: 'https://placehold.co/600x400.png',
+        image: 'https://images.unsplash.com/photo-1745674684463-62f62cb88d4c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         category: 'AI in QA'
       },
       {
         id: 'f8-itrace',
         name: 'iTRACE - Intelligent Test Root-cause Analysis and Correction Engine',
         description: `iTRACE is an AI-assisted tool that analyzes automation failures using logs, screenshots, and scripts to quickly identify root causes, suggest fixes, and provide insights—reducing debugging time from hours to minutes and enabling faster, seamless continuous testing.`,
-        image: 'https://placehold.co/600x400.png',
+        image: 'https://images.unsplash.com/photo-1573164574472-797cdf4a583a?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         category: 'AI in QA'
       },
       {
         id: 'f8-impact-analyzer',
         name: 'Impact Analyzer - AI Enabled Precision Testing',
         description: `An intelligent tool that ingests code diffs or commits from the CodeChurn Tool, leverages an LLM to analyze changes, and identifies impacted areas including affected modules, functionalities, and potential regression test cases—enabling precision testing.`,
-        image: 'https://placehold.co/600x400.png',
+        image: 'https://images.unsplash.com/photo-1582224369048-e4d2d7a6ba30?q=80&w=2097&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         category: 'AI in QA'
       },
       {
@@ -246,7 +204,7 @@ It integrates with test repositories, boosts QA efficiency, and is easily scalab
         name: 'ReCoder Executor: No-Code Solution for Test Automation',
         description: `Epicor ReCoder Test Executor is a powerful, user-friendly, no-code test script execution and management tool designed to streamline automation workflows for scripts generated by Epicor ReCoder.
 It offers a seamless interface to organize, execute, and monitor automated tests efficiently without the need for coding.`,
-        image: 'https://placehold.co/600x400.png',
+        image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         category: 'AI in QA'
       },
       {
@@ -255,7 +213,7 @@ It offers a seamless interface to organize, execute, and monitor automated tests
         description: `DocuMatch is a powerful and versatile document comparison engine designed to compare a wide range of document types with precision and efficiency.
 It offers a rich set of features for detecting content differences—including images and charts.
 DocuMatch can be seamlessly used through an intuitive UI for manual reviews or integrated as a comparison package within automation projects, making it ideal for both end-users and developers seeking reliable document validation and quality assurance.`,
-        image: 'https://placehold.co/600x400.png',
+        image: 'https://images.unsplash.com/photo-1600267165477-6d4cc741b379?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         category: 'AI in QA'
       }
     ],
@@ -271,31 +229,31 @@ DocuMatch can be seamlessly used through an intuitive UI for manual reviews or i
       {
         id: 'f-cp-mattec-new-ux',
         name: 'Showcasing the New Mattec Experience',
-        description: "Step into the future of Mattec with a modernized user experience. This demo illustrates the migration from legacy tech like C, C++, and MFC to a fully web-based platform built on the Kinetic ICE framework. The new Advanced MES interface eliminates client installs, enhances navigation, and lets users personalize their homepage with shortcuts—creating a faster, more user-friendly experience.",
+        description: "Step into the future of Mattec with a preview of its modernized user experience. This demo highlights Mattec’s transformation from legacy technologies like C, C++, Embedded C, and MFC to a fully web-based platform. Built on Kinetic’s ICE framework and UX platform, the new Advanced MES interface eliminates client installations, offers seamless navigation across screens, and enables users to personalize their homepage with shortcuts for quicker access.",
         image: 'https://images.unsplash.com/photo-1602576666092-bf6447a729fc?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
       {
         id: 'f-cp-ecm-mobile-bulk',
         name: 'ECM On the Go: Bulk Approvals through Mobile App',
-        description: "Revolutionize mobile workflows with ECM’s enhanced mobile app, now featuring mass document approval. Executives on the move can quickly select and approve multiple documents in one tap—without needing to open each one—bringing desktop-level efficiency to mobile devices.",
+        description: "Experience a smarter, faster way to manage document approvals with ECM’s enhanced mobile capabilities. This demo showcases the new mass approval feature in the ECM mobile app—designed specifically for on-the-go executives. Previously limited by the browser version's usability constraints, users can now select and approve multiple documents in one tap, without the need to open each individually. It's efficiency redefined for mobile-first workflows.",
         image: 'https://images.unsplash.com/photo-1640694514279-090bb1b09ee9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkYXNoYm9hcmQlMjBpbiUyMG1vYmlsZXxlbnwwfHx8fDE3NDkwMjkwNTN8MA&ixlib=rb-4.1.0&q=80&w=1080'
       },
       {
         id: 'f-cp-ice-overview',
         name: 'ICE Overview',
-        description: "An overview of Epicor’s powerful ICE framework and its role in enabling innovation across products like Kinetic, Mattec, and SLS. Learn about key tools like BAQs, BPMs, Epicor Functions, UD Services, and Extension Maintenance—empowering users and developers to extend and automate the platform with ease.",
+        description: "An overview of the Epicor ICE framework and its capabilities and integration into products like Kinetic, Mattec, and SLS, among others. We would also like to emphasize tools like BAQs, BPMs, Epicor Functions, UD Services and Extension Maintenance.",
         image: 'https://images.unsplash.com/photo-1664526937033-fe2c11f1be25?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
       {
         id: 'f-cp-qs-freight',
         name: 'Quick Ship: Integrated Freight Validation',
-        description: "This demo highlights seamless freight invoice validation by integrating ECM, Quick Ship, and Kinetic ERP. Invoices captured through ECM are auto-validated by Quick Ship and processed in Kinetic—reducing errors, cutting manual tasks, and optimizing freight workflows.",
+        description: "Experience end-to-end freight invoice tracking with seamless integration between ECM, Quick Ship, and Kinetic ERP. This demo showcases how freight invoices captured through ECM are automatically validated by Quick Ship and processed within Kinetic—ensuring accuracy, reducing manual effort, and streamlining logistics workflows.",
         image: 'https://images.unsplash.com/photo-1664575602276-acd073f104c1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
       {
         id: 'f-cp-sls-new-ux-support',
         name: 'SLS New Experience & Support at Home',
-        description: "Discover the redesigned, browser-based SLS interface built on Kinetic design principles. Also featured is the “Support at Home” module—helping aged care providers maintain compliance with Australia’s Aged Care Quality Standards. Includes tools for streamlined incident reporting, accurate documentation, and enhanced client privacy and rights.",
+        description: "Explore the modernized SLS browser experience, redesigned for an intuitive, user-friendly interface aligned with the Kinetic design principles. This demo also highlights the Support at Home program—empowering approved providers to deliver high-quality, consumer-directed care while upholding recipients’ rights and privacy. Built to support compliance with the Aged Care Quality Standards and the Aged Care Act 1997, the system ensures accurate recordkeeping and streamlined incident reporting.",
         image: 'https://images.unsplash.com/photo-1608222351212-18fe0ec7b13b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       }
     ],
@@ -311,19 +269,19 @@ DocuMatch can be seamlessly used through an intuitive UI for manual reviews or i
       {
         id: 'f-mfg-csf-flow',
         name: 'CSF Overall Flow',
-        description: "An end-to-end demonstration of the Quote to Cash cycle in a generic manufacturing ERP context. This model provides a high-level understanding of the business flow supported by Kinetic ERP, enabling a deeper appreciation of the integrated capabilities that support global operations.",
+        description: "A generic manufacturing ERP Quote to cash model and demo.",
         image: 'https://images.unsplash.com/photo-1580983559367-0dc2f8934365?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
       {
         id: 'f-mfg-csf-einvoicing',
         name: 'CSF E-invoicing Coverage',
-        description: "A visual model showing the structure and information flow in e-invoicing systems mandated globally. The demo helps audiences understand the key entities and processes within a CSF-based e-invoicing framework, essential for ensuring compliance and automation across borders.",
+        description: "A model of e-invoicing with entities and information flow, so that audience can visualize and understand the various functions within the e-invoicing framework which is being manadated by all coutries across the board",
         image: 'https://images.unsplash.com/photo-1616156027751-fc9a850fdc9b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
       {
         id: 'f-mfg-tropos-mobile',
         name: 'Tropos Mobile App',
-        description: "Explore the modernized mobile experience of Tropos, where old RBA-based screens have been revamped using the latest technology stack. The new mobile app enhances usability and responsiveness—bringing a contemporary, mobile-first approach to process manufacturing operations.",
+        description: "Conversion of old mobile RBA pages into newer screens with latest tech stack",
         image: 'https://images.unsplash.com/photo-1514575110897-1253ff7b2ccb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
       {
@@ -335,7 +293,7 @@ DocuMatch can be seamlessly used through an intuitive UI for manual reviews or i
       {
         id: 'f-mfg-tropos-liquor',
         name: 'Tropos: Learn to Make Liquor',
-        description: "Dive into a smart, unified platform built to manage the planning, simulation, and execution of liquor blending. This feature showcases how precision, experimentation, and quality control come together in one digital solution—empowering manufacturers to maintain batch consistency and compliance.",
+        description: "Explore a unified platform designed for planning, simulating, and executing liquor blending processes with accuracy and control. This demo showcases how technology brings consistency and precision to every batch—supporting experimentation, quality assurance, and production efficiency in one seamless experience.",
         image: 'https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       }
     ],
@@ -351,25 +309,25 @@ DocuMatch can be seamlessly used through an intuitive UI for manual reviews or i
       {
         id: 'f-int-connectors-recipes',
         name: 'AI New Connectors/Recipes',
-        description: 'Discover the latest additions to Automation Studio’s connector library, including integrations with Propello, Eclipse, and more. These new recipes enable smoother automation and wider platform support—empowering users to connect business systems faster and build intelligent workflows with minimal effort.',
+        description: 'Highlighting newly added Connectors and Recipes in Automation Studio, including Propello, Eclipse, and more.',
         image: 'https://images.unsplash.com/photo-1587440871875-191322ee64b0?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
       {
         id: 'f-int-data-fabric',
         name: 'Data Fabric',
-        description: 'Showcasing powerful new capabilities in Data Fabric, this demo includes support for large files, cross-tenant configurations, and Linux-based agent deployments. These enhancements offer greater flexibility, scalability, and platform compatibility for complex integration needs.',
+        description: 'Showcasing new capabilities in Data Fabric, including large file support, cross-tenant configuration, and Linux agent integration.',
         image: 'https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=2006&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
       {
         id: 'f-int-gbl-licensing',
         name: 'DI / EULK (GBL Licensing Automation)',
-        description: 'This demo walks through the GBL (Global Business Logic) process used to automatically generate licenses for Data Interchange and EULK. By eliminating manual intervention, this automation streamlines compliance tasks and accelerates license provisioning in enterprise environments.',
+        description: 'Demonstrating the GBL process for generating licenses for Data Interchange and EULK. This showcases how licensing is streamlined and automated within the system.',
         image: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxHbG9iYWwlMjBMaWNlbnNpbmd8ZW58MHx8fHwxNzQ5MDI5NDc2fDA&ixlib=rb-4.1.0&q=80&w=1080'
       },
       {
         id: 'f-int-quickship-ltl',
         name: 'Quick Ship LTL: Automation Studio Integration',
-        description: 'Experience seamless integration between Quick Ship and Automation Studio. This demo shows how the QS Connector and automation recipes are used to coordinate logistics workflows with LTL carriers—reducing manual processing, increasing visibility, and improving shipping efficiency.',
+        description: 'Demonstrating QS-AS integration with an LTL carrier using QS Connector and automation Recipes.',
         image: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
     ],
@@ -384,32 +342,32 @@ DocuMatch can be seamlessly used through an intuitive UI for manual reviews or i
     features: [
       {
         id: 'f-cld-self-serve-upgrade',
-        name: 'Self-Serve Upgrade via Cloud Management Portal',
-        description: 'Experience the new Self-Serve Upgrade capability in the Cloud Management Portal (CMP), empowering customers to trigger upgrades independently. This innovation reduces upgrade time from 24+ hours to under 1 hour, eliminates dependency on CloudOps, and accelerates platform agility—improving overall customer experience and operational efficiency.',
+        name: "CMP, Infra & it's architecture, Self Serve upgrade",
+        description: 'Self-Serve Upgrade capability in the Cloud Management Portal, enabling customers to trigger upgrades independently. This reduces upgrade time from over 24 hours to under 1 hour, significantly improving customer autonomy and experience. It eliminates dependency on CloudOps, streamlines upgrade workflows, and accelerates issue resolution. This capability also enhances platform scalability and reduces operational overhead.',
         image: 'https://images.unsplash.com/photo-1667984390538-3dea7a3fe33d?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
       {
         id: 'f-cld-solarwinds-monitoring',
         name: 'Resource Monitoring with SolarWinds',
-        description: 'See how real-time resource monitoring comes to life with SolarWinds. This demo features intuitive dashboards that provide visibility into the health and performance of servers, networks, and applications—complete with proactive alerting and deep operational insights.',
+        description: 'A SolarWinds resource monitoring demo showcases real-time visibility and performance tracking of network, server, and application resources through intuitive dashboards and alerts.',
         image: 'https://images.unsplash.com/photo-1561736778-92e52a7769ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjbG91ZCUyMGNvbXB1dGluZ3xlbnwwfHx8fDE3NDkwMjgxNjB8MA&ixlib=rb-4.1.0&q=80&w=1080'
       },
       {
         id: 'f-cld-nextgen-arch-ops',
         name: 'Next-Gen Cloud Architecture & Operations',
-        description: 'Explore our next-gen architecture, combining scalable infrastructure, Infrastructure as Code (IaC), CI/CD, and policy-driven governance. With AI-assisted operational insights and anomaly detection, this architecture ensures consistent deployments, faster provisioning, and resilient cloud operations at scale.',
+        description: 'Next-Gen Cloud Architecture and Operations leverages scalable infrastructure and intelligent automation to streamline environment management. It enables faster provisioning, consistent operations, and improved agility through IaC, CI/CD, policy governance, with AI piloted to assist in operational insights and anomaly detection.',
         image: 'https://images.unsplash.com/photo-1629904853893-c2c8981a1dc5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
       {
         id: 'f-cld-quickship-deployment',
-        name: 'Quick Ship Deployment (Cloud-Native)',
-        description: 'Discover how Quick Ship’s SaaS solution utilizes ARM templates and PowerShell scripting to enable streamlined deployments and seamless upgrades—delivering speed, reliability, and cloud-native scalability for logistics platforms.',
+        name: 'Quick Ship Deployment',
+        description: "QuickShip's SaaS solution leverages cloud-native services, using ARM and PowerShell scripts to streamline deployment and upgrades",
         image: 'https://images.unsplash.com/photo-1577760258779-e787a1733016?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
       {
         id: 'f-cld-resource-optimization',
-        name: 'Cloud Resource Optimization: Auto Start/Stop',
-        description: 'This initiative demonstrates automated scheduling of start/stop routines for non-production cloud VMs—minimizing costs, conserving energy, and ensuring cloud resources are used only when needed. A smart solution to improve sustainability and reduce operational waste.',
+        name: 'Cloud Resource Optimization through Scheduled Auto Start/Stop',
+        description: 'Optimization - Save cost & energy. The goal of this initiative is to best utilize the cloud VMs/accounts which are used for non-production purpose having auto scheduling of start/stop of the machines based on the usage',
         image: 'https://images.unsplash.com/photo-1667984390535-6d03cff0b11a?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       },
     ],
