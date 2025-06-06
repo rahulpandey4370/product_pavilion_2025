@@ -10,12 +10,13 @@ import { ThemeToggle } from '@/components/theme/ThemeToggle';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetClose } from '@/components/ui/sheet'; // Added Sheet components
 import type { ReactNode } from 'react';
-import { useState } from 'react';
+import { useState, useEffect, useMemo } from 'react'; // Added useEffect and useMemo
+import { useIsMobile } from '@/hooks/use-mobile'; // Import useIsMobile
 
-const navItems = [
+const baseNavItems = [
   { name: 'Home', href: '/' },
   { name: 'Explore Booths', href: '/#booths' },
-  { name: 'Word Search', href: '/#word-search' },
+  { name: 'Word Search', href: '/#word-search', mobileOnly: false }, // Add flag
 ];
 
 // Helper component for SheetClose functionality on link click
@@ -39,6 +40,23 @@ const NavLink: React.FC<{ href: string; children: ReactNode; currentPathname: st
 export default function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const isMobile = useIsMobile(); // Get mobile state
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const navItems = useMemo(() => {
+    if (!mounted) { // Before hydration, assume desktop or provide a default
+        return baseNavItems.filter(item => item.mobileOnly !== false); // Show all initially or only non-mobile-restricted
+    }
+    if (isMobile) {
+      return baseNavItems.filter(item => item.href !== '/#word-search');
+    }
+    return baseNavItems;
+  }, [isMobile, mounted]);
+
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60">

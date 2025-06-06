@@ -1,7 +1,7 @@
 
 'use client'; 
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { booths } from '@/lib/booth-data';
 import BoothGrid from '@/components/booths/BoothGrid';
 // import BoothSuggesterForm from '@/components/ai/BoothSuggesterForm'; // Commented out as per request
@@ -12,6 +12,7 @@ import HeroVisualEffects from '@/components/shared/HeroVisualEffects';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
+import { useIsMobile } from '@/hooks/use-mobile'; // Import useIsMobile
 
 // Updated dynamic import to explicitly use the default export
 const SimpleWordGame = dynamic(
@@ -22,6 +23,12 @@ const SimpleWordGame = dynamic(
 
 export default function HomePage() {
   const subHeadingText = "Welcome to Manufacturing Bay";
+  const isMobile = useIsMobile(); // Get mobile state
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const sentenceVariants = {
     hidden: { opacity: 1 },
@@ -107,18 +114,20 @@ export default function HomePage() {
         </div>
       </section>
       
-      {/* Word Search Game Section */}
-      <section id="word-search" className="pt-0 pb-16">
-        <div className="container mx-auto px-4">
-          <div className="products-section-background">
-            <h2 className="text-4xl font-bold text-center mb-4 gradient-text">Epicor Product Word Search</h2>
-            <p className="text-xl text-foreground/80 text-center mb-12 max-w-2xl mx-auto">
-              Test your Epicor knowledge! Find our key products and solutions in this interactive word search puzzle.
-            </p>
-            <SimpleWordGame />
+      {/* Word Search Game Section - Conditionally render based on isMobile */}
+      {mounted && !isMobile && (
+        <section id="word-search" className="pt-0 pb-16">
+          <div className="container mx-auto px-4">
+            <div className="products-section-background">
+              <h2 className="text-4xl font-bold text-center mb-4 gradient-text">Epicor Product Word Search</h2>
+              <p className="text-xl text-foreground/80 text-center mb-12 max-w-2xl mx-auto">
+                Test your Epicor knowledge! Find our key products and solutions in this interactive word search puzzle.
+              </p>
+              <SimpleWordGame />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </div>
   );
 }
