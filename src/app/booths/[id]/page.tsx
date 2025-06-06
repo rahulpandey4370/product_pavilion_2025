@@ -12,7 +12,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft, ArrowRight, Home, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import DynamicLucideIcon from '@/components/shared/DynamicLucideIcon';
+// import DynamicLucideIcon from '@/components/shared/DynamicLucideIcon'; // No longer needed directly here if header is removed
 
 // Helper to get theme class based on booth ID
 const getBoothThemeClass = (boothId?: string | null) => {
@@ -95,7 +95,7 @@ export default function BoothDetailPage() {
               <span className="text-foreground/90">Home</span>
             </Link>
             <ChevronRight className="h-4 w-4 text-foreground/50" />
-            <span className="font-medium text-base gradient-text">{booth.name}</span>
+            <span className="font-medium text-base gradient-text">{booth.name}</span> {/* Booth name retained here */}
           </div>
           {/* Navigation buttons side */}
           <div className="flex items-center space-x-2">
@@ -121,7 +121,7 @@ export default function BoothDetailPage() {
         </nav>
       </div>
 
-      {/* Booth Header Section */}
+      {/* Booth Header Section - REMOVED 
       <section className={cn(
           "relative py-12 md:py-16 rounded-lg overflow-hidden booth-theme-card glow-effect", 
           boothThemeClass
@@ -132,6 +132,7 @@ export default function BoothDetailPage() {
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 gradient-text">{booth.name}</h1>
         </div>
       </section>
+      */}
 
       {/* Features Grid Section */}
       <section className="products-section-background">
