@@ -13,7 +13,11 @@ import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 
-const SimpleWordGame = dynamic(() => import('@/components/shared/SimpleWordGame'), { ssr: false });
+// Updated dynamic import to explicitly use the default export
+const SimpleWordGame = dynamic(
+  () => import('@/components/shared/SimpleWordGame').then((mod) => mod.default), 
+  { ssr: false }
+);
 
 
 export default function HomePage() {
