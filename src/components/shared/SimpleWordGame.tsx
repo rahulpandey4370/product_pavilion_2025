@@ -10,20 +10,28 @@ type WordData = {
   foundTimestamp?: number; // Track when the word was found
 };
 
+const initialWords: Omit<WordData, 'found' | 'foundTimestamp'>[] = [
+  { word: 'KINETIC'},
+  { word: 'PRISM'},
+  { word: 'MATTEC'},
+  { word: 'QUICKSHIP'},
+  { word: 'TROPOS'},
+  { word: 'EPICONNECT'},
+  { word: 'DOCUMATCH'},
+  { word: 'ITRACE'},
+  { word: 'IMAGEN'},
+  { word: 'ASCEND'},
+];
+
+const randomLetter = () => {
+  const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  return letters.charAt(Math.floor(Math.random() * letters.length));
+};
+
 export default function SimpleWordGame() {
-  // Words related to Epicor products (extracted from booth_data)
-  const [words, setWords] = useState<WordData[]>([
-    { word: 'KINETIC', found: false },
-    { word: 'PRISM', found: false },
-    { word: 'MATTEC', found: false },
-    { word: 'QUICKSHIP', found: false },
-    { word: 'TROPOS', found: false },
-    { word: 'EPICONNECT', found: false },
-    { word: 'DOCUMATCH', found: false },
-    { word: 'ITRACE', found: false },
-    { word: 'IMAGEN', found: false },
-    { word: 'ASCEND', found: false },
-  ]);
+  const [words, setWords] = useState<WordData[]>(() =>
+    initialWords.map(w => ({ ...w, found: false }))
+  );
 
   const [grid, setGrid] = useState<string[][]>([]);
   const [selectedLetters, setSelectedLetters] = useState<{row: number, col: number}[]>([]);
@@ -32,10 +40,9 @@ export default function SimpleWordGame() {
   const [completionPercent, setCompletionPercent] = useState<number>(0);
   const [isSelecting, setIsSelecting] = useState<boolean>(false);
   const [gameComplete, setGameComplete] = useState<boolean>(false);
-  const [difficulty, setDifficulty] = useState<'easy' | 'medium' | 'hard'>('easy'); // Default to easy
+  const [difficulty, setDifficulty] = useState<'easy' | 'medium' | 'hard'>('easy');
   const [size, setSize] = useState<{rows: number, cols: number}>(() => {
-    // Initial size based on default 'easy' difficulty
-    return {rows: 10, cols: 10};
+    return {rows: 10, cols: 10}; // Default for easy
   });
 
   const [startTime, setStartTime] = useState<number | null>(null);
@@ -47,25 +54,30 @@ export default function SimpleWordGame() {
   const gameContainerRef = useRef<HTMLDivElement>(null);
   const scrollableGridContainerRef = useRef<HTMLDivElement>(null);
 
-  const isMobile = useIsMobile(); // Hook to check for mobile screen size
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const scrollableElement = scrollableGridContainerRef.current;
     if (scrollableElement) {
       if (isSelecting && !gameComplete) {
         scrollableElement.style.overflowX = 'hidden';
+        // Optionally prevent body scroll on touch devices during selection
+        if (isMobile) document.body.style.overflow = 'hidden';
       } else {
         scrollableElement.style.overflowX = 'auto';
+        if (isMobile) document.body.style.overflow = '';
       }
     }
-  }, [isSelecting, gameComplete]);
+    // Cleanup body overflow style when component unmounts or isSelecting changes
+    return () => {
+        if (isMobile && scrollableElement && scrollableElement.style.overflowX !== 'hidden') { // ensure it was us who hid it
+            document.body.style.overflow = '';
+        }
+    };
+  }, [isSelecting, gameComplete, isMobile]);
 
-  const randomLetter = () => {
-    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    return letters.charAt(Math.floor(Math.random() * letters.length));
-  };
 
-  const isValidPlacement = (
+  const isValidPlacement = useCallback((
     currentGrid: string[][],
     word: string,
     row: number,
@@ -73,24 +85,21 @@ export default function SimpleWordGame() {
     rowDelta: number,
     colDelta: number
   ): boolean => {
-    // Check bounds for the start of the word
     if (row < 0 || row >= size.rows || col < 0 || col >= size.cols) return false;
-    // Check bounds for the end of the word
     if (row + (word.length - 1) * rowDelta < 0 || row + (word.length - 1) * rowDelta >= size.rows) return false;
     if (col + (word.length - 1) * colDelta < 0 || col + (word.length - 1) * colDelta >= size.cols) return false;
 
     for (let i = 0; i < word.length; i++) {
       const r = row + i * rowDelta;
       const c = col + i * colDelta;
-
       if (currentGrid[r][c] !== '' && currentGrid[r][c] !== word[i]) {
         return false;
       }
     }
     return true;
-  };
-  
-  const placeWord = (currentGrid: string[][], word: string): {
+  }, [size.rows, size.cols]);
+
+  const placeWord = useCallback((currentGrid: string[][], word: string): {
     grid: string[][],
     position: {row: number, col: number, rowDelta: number, colDelta: number} | null
   } => {
@@ -98,28 +107,24 @@ export default function SimpleWordGame() {
       {rowDelta: 0, colDelta: 1},  // Horizontal (Right)
       {rowDelta: 1, colDelta: 0},  // Vertical (Down)
       {rowDelta: 1, colDelta: 1},  // Diagonal (Down-Right)
-      {rowDelta: 1, colDelta: -1}, // Diagonal (Down-Left) - Only for medium/hard
-      // For Hard, we can also add reversed directions implicitly by trying to place reversed words
-      // or explicitly add these:
-      // {rowDelta: 0, colDelta: -1}, // Horizontal (Left)
-      // {rowDelta: -1, colDelta: 0}, // Vertical (Up)
-      // {rowDelta: -1, colDelta: -1},// Diagonal (Up-Left)
-      // {rowDelta: -1, colDelta: 1}, // Diagonal (Up-Right)
+      {rowDelta: 1, colDelta: -1}, // Diagonal (Down-Left)
+      {rowDelta: 0, colDelta: -1}, // Horizontal (Left)
+      {rowDelta: -1, colDelta: 0}, // Vertical (Up)
+      {rowDelta: -1, colDelta: -1},// Diagonal (Up-Left)
+      {rowDelta: -1, colDelta: 1}, // Diagonal (Up-Right)
     ];
 
     let availableDirections = difficulty === 'easy'
-      ? directions.slice(0, 2) // Horizontal, Vertical
+      ? directions.slice(0, 2)
       : difficulty === 'medium'
-        ? directions.slice(0, 3) // Horizontal, Vertical, Diagonal Down-Right
-        : directions; // All defined directions for hard (or more if added)
+        ? directions.slice(0, 3)
+        : directions;
 
-    const maxAttempts = 100; // Increased attempts
+    const maxAttempts = 100;
     for (let attempt = 0; attempt < maxAttempts; attempt++) {
       const direction = availableDirections[Math.floor(Math.random() * availableDirections.length)];
       const { rowDelta, colDelta } = direction;
 
-      // Determine a random starting position for the word
-      // Ensure the start position allows the word to fit given its length and direction
       let row, col;
       if (rowDelta >= 0) {
           row = Math.floor(Math.random() * (size.rows - Math.max(0, (word.length -1) * rowDelta) ));
@@ -132,39 +137,24 @@ export default function SimpleWordGame() {
           col = Math.floor(Math.random() * (size.cols + (word.length -1) * colDelta )) - (word.length -1) * colDelta;
       }
 
-
       if (isValidPlacement(currentGrid, word, row, col, rowDelta, colDelta)) {
-        const newGrid = [...currentGrid.map(r => [...r])]; // Ensure deep copy for modification
-
+        const newGrid = [...currentGrid.map(r => [...r])];
         for (let i = 0; i < word.length; i++) {
-          const r = row + i * rowDelta;
-          const c = col + i * colDelta;
-          newGrid[r][c] = word[i];
+          newGrid[row + i * rowDelta][col + i * colDelta] = word[i];
         }
-
-        return {
-          grid: newGrid,
-          position: {
-            row,
-            col,
-            rowDelta,
-            colDelta
-          }
-        };
+        return { grid: newGrid, position: { row, col, rowDelta, colDelta } };
       }
     }
-
-    return { grid: currentGrid, position: null }; // Return original grid if placement fails
-  };
-
+    return { grid: currentGrid, position: null };
+  }, [size.rows, size.cols, difficulty, isValidPlacement]);
+  
   const generateGrid = useCallback(() => {
     let newGrid = Array(size.rows).fill(null).map(() => Array(size.cols).fill(''));
 
-    const wordsToPlace = [...words] // Use a copy of the current words state
-      .sort((a, b) => b.word.length - a.word.length) // Place longer words first
-      .map(w => w.word);
+    // Use the initialWords for consistent word list for placement
+    const wordsForPlacement = initialWords.map(w => w.word).sort((a, b) => b.length - a.length);
 
-    for (const word of wordsToPlace) {
+    for (const word of wordsForPlacement) {
       const { grid: updatedGrid, position } = placeWord(newGrid, word);
       if (position) {
         newGrid = updatedGrid;
@@ -173,7 +163,6 @@ export default function SimpleWordGame() {
       }
     }
 
-    // Fill remaining empty cells with random letters
     for (let r = 0; r < size.rows; r++) {
       for (let c = 0; c < size.cols; c++) {
         if (newGrid[r][c] === '') {
@@ -182,29 +171,27 @@ export default function SimpleWordGame() {
       }
     }
     return newGrid;
-  }, [size.rows, size.cols, words, difficulty]); // Added difficulty and words here
+  }, [size.rows, size.cols, difficulty, placeWord]);
 
 
   useEffect(() => {
-    if (isVisible) { // Only generate grid if component is visible
+    if (isVisible) {
         setGrid(generateGrid());
-        setWords(currentWords => currentWords.map(w => ({...w, found: false, foundTimestamp: undefined})));
+        setWords(currentWords => initialWords.map(w => ({ ...w, found: false, foundTimestamp: undefined })));
         setGameComplete(false);
         setMessage('');
-
         if (timerRef.current) clearInterval(timerRef.current);
         setStartTime(Date.now());
         setElapsedTime(0);
         setTimerActive(true);
     } else {
-        // Optionally clear grid or stop timer when not visible
         if (timerRef.current) {
             clearInterval(timerRef.current);
             timerRef.current = null;
             setTimerActive(false);
         }
     }
-  }, [difficulty, isVisible, size, generateGrid]); // generateGrid is now a dependency
+  }, [difficulty, isVisible, size, generateGrid]);
 
   useEffect(() => {
     if (timerActive && startTime && isVisible) {
@@ -231,19 +218,19 @@ export default function SimpleWordGame() {
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
-        if (entry.isIntersecting && !isVisible) { // If becoming visible and wasn't before
+        if (entry.isIntersecting && !isVisible) {
             setIsVisible(true);
-        } else if (!entry.isIntersecting && isVisible) { // If becoming not visible and was before
+        } else if (!entry.isIntersecting && isVisible) {
             setIsVisible(false);
         }
       },
-      { threshold: 0.1 } // Trigger when 10% of the component is visible
+      { threshold: 0.1 }
     );
     observer.observe(gameContainerRef.current);
     return () => {
       observer.disconnect();
     };
-  }, [isVisible]); // Added isVisible to dependencies
+  }, [isVisible]);
 
 
   useEffect(() => {
@@ -281,40 +268,31 @@ export default function SimpleWordGame() {
     const rowDiff = row - lastSelected.row;
     const colDiff = col - lastSelected.col;
 
-    // Allow only straight or diagonal lines
-    if (!( (Math.abs(rowDiff) <= 1 && colDiff === 0) || // Vertical
-           (Math.abs(colDiff) <= 1 && rowDiff === 0) || // Horizontal
-           (Math.abs(rowDiff) === 1 && Math.abs(colDiff) === 1) // Diagonal
+    if (!( (Math.abs(rowDiff) <= 1 && colDiff === 0) || 
+           (Math.abs(colDiff) <= 1 && rowDiff === 0) || 
+           (Math.abs(rowDiff) === 1 && Math.abs(colDiff) === 1) 
         )) {
       return;
     }
 
-    // If continuing a line, ensure it's in the same direction
     if (selectedLetters.length > 1) {
       const secondLastSelected = selectedLetters[selectedLetters.length - 2];
       const prevRowDiff = lastSelected.row - secondLastSelected.row;
       const prevColDiff = lastSelected.col - secondLastSelected.col;
-
-      // Normalize current diff to be unit (e.g., (2,0) -> (1,0))
       const unitRowDiff = rowDiff === 0 ? 0 : rowDiff / Math.abs(rowDiff);
       const unitColDiff = colDiff === 0 ? 0 : colDiff / Math.abs(colDiff);
-
       if (prevRowDiff !== unitRowDiff || prevColDiff !== unitColDiff) {
-        return; // Not continuing in the same direction
+        return; 
       }
     }
 
-
-    // Check if this cell is already selected to prevent re-adding
     if (selectedLetters.some(pos => pos.row === row && pos.col === col)) {
-        // If the user is backtracking along the selection, remove the last cell
         if (selectedLetters.length > 1 && selectedLetters[selectedLetters.length - 2].row === row && selectedLetters[selectedLetters.length - 2].col === col) {
             setSelectedLetters(prev => prev.slice(0, -1));
             setSelectedWord(prevWord => prevWord.slice(0, -1));
         }
         return;
     }
-
 
     setSelectedLetters(prev => [...prev, {row, col}]);
     setSelectedWord(prevWord => prevWord + grid[row][col]);
@@ -340,31 +318,21 @@ export default function SimpleWordGame() {
       newWords[wordIndex].found = true;
       newWords[wordIndex].foundTimestamp = Date.now();
       setWords(newWords);
-
-      // Do not reset timer here; it should continue if game is not complete
-      // if (!timerActive && !startTime) { 
-      //   setStartTime(Date.now());
-      //   setTimerActive(true);
-      // }
-
       setTimeout(() => {
         setSelectedLetters([]);
         setSelectedWord('');
-        // setMessage(''); // Clear message after a bit, or let next interaction clear it
-      }, 1500); // Keep selection visible for a bit
+      }, 1500);
     } else {
-      // Clear selection immediately if not a new word or already found
       setSelectedLetters([]);
       setSelectedWord('');
       if (wordIndex !== -1 && words[wordIndex].found) {
         setMessage(`You already found ${words[wordIndex].word}!`);
-      } else if (word.length > 2) { // Only show "not in list" for reasonably long words
+      } else if (word.length > 2) {
         setMessage(`'${word}' is not in the list.`);
       } else {
-        setMessage(''); // Clear message for very short non-words
+        setMessage('');
       }
-      // Clear message after a short delay if it's an error/info message
-      if (wordIndex === -1 || words[wordIndex].found) {
+      if (wordIndex === -1 || (wordIndex !== -1 && words[wordIndex].found)) {
         setTimeout(() => {
           if (message === (`'${word}' is not in the list.`) || message === (`You already found ${words[wordIndex]?.word}!`)) {
             setMessage('');
@@ -376,12 +344,9 @@ export default function SimpleWordGame() {
 
   const handleGridTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
     if (!isSelecting || gameComplete) return;
-
     event.preventDefault();
-
     const touch = event.touches[0];
     const element = document.elementFromPoint(touch.clientX, touch.clientY);
-
     if (element) {
       const cellCoords = element.getAttribute('data-cell');
       if (cellCoords) {
@@ -398,29 +363,15 @@ export default function SimpleWordGame() {
 
   const handleChangeDifficulty = useCallback((newDifficulty: 'easy' | 'medium' | 'hard') => {
     setDifficulty(newDifficulty);
-    // setWords(currentWords => currentWords.map(w => ({...w, found: false, foundTimestamp: undefined})));
-    // setGameComplete(false);
-    // setMessage('');
-
     if (newDifficulty === 'easy') setSize({rows: 10, cols: 10});
     else if (newDifficulty === 'medium') setSize({rows: 15, cols: 15});
     else setSize({rows: 18, cols: 18});
     
-    // Game reset logic is now primarily handled by the useEffect watching [difficulty, isVisible, size]
-    // So, we just need to ensure isVisible might trigger a re-generation if it's already true.
-    // Or, explicitly call reset parts here:
-    setWords(currentWords => currentWords.map(w => ({...w, found: false, foundTimestamp: undefined})));
-    setGameComplete(false);
-    setMessage('');
-    if (timerRef.current) clearInterval(timerRef.current);
-    setStartTime(Date.now()); // Reset start time for new difficulty
-    setElapsedTime(0);
-    setTimerActive(isVisible); // Re-evaluate timer based on visibility
-    // The useEffect watching [difficulty, isVisible, size] will call generateGrid.
+    // Reset logic is handled by useEffect watching [difficulty, isVisible, size, generateGrid]
+    // Triggering a state change that is part of that useEffect's dependencies will cause it to run.
+    // For example, if isVisible is true, changing difficulty/size will trigger the effect.
+  }, []);
 
-  }, [isVisible, words]); // words dependency removed as it's reset inside
-
-  // Effect to handle responsive difficulty changes
   useEffect(() => {
     if (isMobile && (difficulty === 'medium' || difficulty === 'hard')) {
       handleChangeDifficulty('easy');
@@ -429,9 +380,8 @@ export default function SimpleWordGame() {
 
 
   const resetGame = useCallback(() => {
-    // Difficulty remains the same, but grid and words are reset
-    setWords(currentWords => currentWords.map(w => ({...w, found: false, foundTimestamp: undefined})));
-    setGrid(generateGrid()); // Regenerate grid with current difficulty/size
+    setWords(currentWords => initialWords.map(w => ({ ...w, found: false, foundTimestamp: undefined })));
+    setGrid(generateGrid());
     setSelectedLetters([]);
     setSelectedWord('');
     setMessage('');
@@ -440,50 +390,40 @@ export default function SimpleWordGame() {
     setStartTime(Date.now());
     setElapsedTime(0);
     setTimerActive(isVisible);
-  }, [generateGrid, isVisible]); // Added generateGrid and isVisible
+  }, [generateGrid, isVisible]);
 
   const isCellSelected = (row: number, col: number) => {
     return selectedLetters.some(pos => pos.row === row && pos.col === col);
   };
 
-  // This function needs to be efficient or memoized if grid/words change frequently
-  // For now, it's okay as it runs on cell render.
   const isPartOfFoundWord = (row: number, col: number) => {
-    if (grid.length === 0) return null; // Ensure grid is initialized
+    if (grid.length === 0) return null;
 
     for (const wordData of words) {
         if (!wordData.found) continue;
         const word = wordData.word;
-
-        // This logic assumes words are placed only in limited directions.
-        // For a more robust solution, store word positions when generating the grid.
-        // Or, implement a more exhaustive search (can be slow).
-        // Simplified check: iterate through all possible start cells and directions for the found word.
         const directions = [
-            {rD: 0, cD: 1}, {rD: 1, cD: 0}, {rD: 1, cD: 1}, {rD: 1, cD: -1}, // Standard
-            {rD: 0, cD: -1}, {rD: -1, cD: 0}, {rD: -1, cD: -1}, {rD: -1, cD: 1} // Reversed
+            {rD: 0, cD: 1}, {rD: 1, cD: 0}, {rD: 1, cD: 1}, {rD: 1, cD: -1},
+            {rD: 0, cD: -1}, {rD: -1, cD: 0}, {rD: -1, cD: -1}, {rD: -1, cD: 1}
         ];
 
         for (let rStart = 0; rStart < size.rows; rStart++) {
             for (let cStart = 0; cStart < size.cols; cStart++) {
                 for (const {rD, cD} of directions) {
-                    let currentWord = '';
-                    let path = [];
                     let match = true;
+                    let path = [];
                     for (let i = 0; i < word.length; i++) {
                         const curR = rStart + i * rD;
                         const curC = cStart + i * cD;
-                        if (curR < 0 || curR >= size.rows || curC < 0 || curC >= size.cols || grid[curR][curC] !== word[i]) {
+                        if (curR < 0 || curR >= size.rows || curC < 0 || curC >= size.cols || grid[curR]?.[curC] !== word[i]) {
                             match = false;
                             break;
                         }
                         path.push({r: curR, c: curC});
                     }
                     if (match) {
-                        // Word found starting at (rStart, cStart) in direction (rD, cD)
-                        // Check if (row, col) is part of this found word path
                         if (path.some(p => p.r === row && p.c === col)) {
-                            return wordData; // Return the wordData object
+                            return wordData;
                         }
                     }
                 }
@@ -493,7 +433,6 @@ export default function SimpleWordGame() {
     return null;
   };
 
-
   const getCellClass = (row: number, col: number) => {
     const baseClasses = "flex items-center justify-center select-none rounded font-semibold border transition-all";
     const responsiveSizeClasses = "w-6 h-6 text-xs sm:w-7 sm:h-7 sm:text-sm md:w-8 md:h-8 md:text-base";
@@ -502,7 +441,7 @@ export default function SimpleWordGame() {
     if (isCellSelected(row, col)) {
       return `${baseClasses} ${responsiveSizeClasses} bg-gradient-to-br from-primary to-purple-500 dark:from-primary dark:to-indigo-700 text-primary-foreground shadow-md transform sm:scale-105`;
     } else if (foundWordData) {
-      const timeSinceFound = foundWordData.foundTimestamp ? Date.now() - foundWordData.foundTimestamp : 3001; // Default to >3s
+      const timeSinceFound = foundWordData.foundTimestamp ? Date.now() - foundWordData.foundTimestamp : 3001;
       const isRecentlyFound = timeSinceFound < 3000;
       return `${baseClasses} ${responsiveSizeClasses} ${isRecentlyFound ? 'bg-gradient-to-br from-green-400 to-green-600 text-white sm:scale-105' : 'bg-gradient-to-br from-green-400/70 to-green-500/70 dark:from-green-500/60 dark:to-green-600/60 text-white'} cursor-default`;
     } else {
@@ -510,7 +449,7 @@ export default function SimpleWordGame() {
     }
   };
   
-  if (!isVisible && !grid.length) { // If not visible and grid not yet generated (initial load)
+  if (!isVisible && !grid.length) {
     return (
         <div ref={gameContainerRef} className="w-full flex flex-col items-center p-8 min-h-[300px] justify-center">
             <p className="text-muted-foreground">Loading Word Search Game...</p>
@@ -518,14 +457,13 @@ export default function SimpleWordGame() {
     );
   }
 
-
   return (
     <div ref={gameContainerRef} className="w-full flex flex-col items-center">
       <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-5xl mb-6 px-2">
         <h3 className="text-xl font-semibold text-center bg-gradient-to-br from-primary to-purple-600 dark:from-primary dark:to-indigo-400 text-transparent bg-clip-text">
           Find Epicor product words in the grid!
         </h3>
-        {isVisible && ( // Only show timer if game is visible
+        {isVisible && (
           <div className="flex items-center bg-card dark:bg-slate-800 rounded-lg px-3 py-1.5 sm:px-4 sm:py-2 shadow-md border border-primary/30 dark:border-indigo-500/30 mt-4 md:mt-0">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-primary dark:text-indigo-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -541,7 +479,7 @@ export default function SimpleWordGame() {
             key={d}
             onClick={() => handleChangeDifficulty(d as 'easy')}
             className={`px-3 py-1.5 sm:px-4 sm:py-2 text-sm rounded-lg transition-all ${difficulty === d
-              ? `bg-gradient-to-r ${d === 'easy' ? 'from-green-400 to-green-600' : d === 'medium' ? 'from-blue-400 to-blue-600' : 'from-red-400 to-red-600'} text-white shadow-md`
+              ? `bg-gradient-to-r from-green-400 to-green-600 text-white shadow-md`
               : 'bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600'}`}
           >
             {d.charAt(0).toUpperCase() + d.slice(1)}
@@ -682,3 +620,4 @@ export default function SimpleWordGame() {
   );
 }
 
+    
