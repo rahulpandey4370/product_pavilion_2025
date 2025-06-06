@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 
 interface BoothCardProps {
   booth: Booth;
-  index: number;
+  index: number; // Index is still useful for other things like staggered animations if needed
 }
 
 // Helper to get theme class based on booth ID
@@ -24,12 +24,12 @@ const getBoothThemeClass = (boothId: string) => {
     case 'manufacturing-erp': return 'booth-manufacturing-erp-theme';
     case 'integration': return 'booth-integration-theme';
     case 'cloud': return 'booth-cloud-theme';
-    case 'cloud-enablers': return 'booth-cloud-enablers-theme';
+    case 'cloud-enablers': return 'booth-cloud-enablers-theme'; // This will apply to "QA meets AI" as its ID is 'cloud-enablers'
     default: return '';
   }
 };
 
-export default function BoothCard({ booth, index }: BoothCardProps) {
+export default function BoothCard({ booth }: BoothCardProps) { // Removed index from destructuring as it's not used for numbering
   const themeClass = getBoothThemeClass(booth.id);
 
   return (
@@ -41,15 +41,14 @@ export default function BoothCard({ booth, index }: BoothCardProps) {
         themeClass,
         "glow-effect"
       )}>
-        {/* Animated Number */}
+        {/* Animated Number using booth.boothNumber */}
         <div
           className={cn(
             "absolute top-3 right-4 z-20 text-4xl font-extrabold animated-booth-number",
-            // No background, no circle, just the animated number
           )}
           aria-hidden="true"
         >
-          {index + 1}
+          {booth.boothNumber}
         </div>
 
         <CardHeader className="flex flex-row items-center space-x-4 p-6 text-white z-10">

@@ -15,7 +15,7 @@ export interface Booth {
   tagline: string;
   description: string;
   features: Feature[];
-  iconName: string; 
+  iconName: string;
   heroImage?: string; // Placeholder image URL for booth detail page
-  // colorGradient and pattern removed, will be handled by CSS classes based on id
+  boothNumber: number; // Specific number to display on the card
 }
