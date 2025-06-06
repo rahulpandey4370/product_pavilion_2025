@@ -1,6 +1,6 @@
-
 'use client'; 
 
+import React from 'react';
 import { booths } from '@/lib/booth-data';
 import BoothGrid from '@/components/booths/BoothGrid';
 // import BoothSuggesterForm from '@/components/ai/BoothSuggesterForm'; // Commented out as per request
@@ -10,6 +10,9 @@ import Link from 'next/link';
 import HeroVisualEffects from '@/components/shared/HeroVisualEffects'; 
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
+import dynamic from 'next/dynamic';
+
+const SimpleWordGame = dynamic(() => import('@/components/shared/SimpleWordGame'), { ssr: false });
 
 export default function HomePage() {
   const subHeadingText = "Welcome to Manufacturing Bay";
@@ -108,7 +111,18 @@ export default function HomePage() {
           </div>
         </div>
       </section> 
-      */}
+      */}      {/* Word Search Game Section */}
+      <section id="word-search" className="pt-0 pb-16">
+        <div className="container mx-auto px-4">
+          <div className="products-section-background">
+            <h2 className="text-4xl font-bold text-center mb-4 gradient-text">Epicor Product Word Search</h2>
+            <p className="text-xl text-foreground/80 text-center mb-12 max-w-2xl mx-auto">
+              Test your Epicor knowledge! Find our key products and solutions in this interactive word search puzzle.
+            </p>
+            <SimpleWordGame />
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

@@ -12,6 +12,7 @@ import { Button } from '@/components/ui/button';
 const navItems = [
   { name: 'Home', href: '/' },
   { name: 'Explore Booths', href: '/#booths' },
+  { name: 'Word Search', href: '/#word-search' },
 ];
 
 export default function Header() {
