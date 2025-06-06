@@ -37,29 +37,29 @@ export default function BoothCard({ booth, index }: BoothCardProps) {
       className="h-full booth-card-border-wrap"
     >
       <Card className={cn(
-        "booth-card-base booth-theme-card h-full flex flex-col overflow-hidden relative", // Added 'relative'
+        "booth-card-base booth-theme-card h-full flex flex-col overflow-hidden relative",
         themeClass,
         "glow-effect"
       )}>
-        {/* Number Badge */}
+        {/* Animated Number */}
         <div
           className={cn(
-            "absolute top-2.5 right-2.5 z-20 flex h-7 w-7 items-center justify-center rounded-full text-sm font-bold shadow-lg",
-            "bg-[var(--booth-accent-color)] text-[hsl(var(--primary-foreground-hsl))]"
+            "absolute top-3 right-4 z-20 text-4xl font-extrabold animated-booth-number",
+            // No background, no circle, just the animated number
           )}
           aria-hidden="true"
         >
           {index + 1}
         </div>
 
-        <CardHeader className="flex flex-row items-center space-x-4 p-6 text-white z-10"> {/* Added z-10 */}
+        <CardHeader className="flex flex-row items-center space-x-4 p-6 text-white z-10">
           <DynamicLucideIcon iconName={booth.iconName} className="h-10 w-10 text-[var(--booth-accent-color)]" />
           <div>
             <CardTitle className="text-2xl font-headline">{booth.name}</CardTitle>
             <CardDescription className="text-white/80">{booth.tagline}</CardDescription>
           </div>
         </CardHeader>
-        <CardContent className="flex-grow flex flex-col justify-between p-6 text-white/90 z-10"> {/* Added z-10 */}
+        <CardContent className="flex-grow flex flex-col justify-between p-6 text-white/90 z-10">
           <p className="mb-4 text-sm">{booth.description}</p>
           <div className="mt-auto flex justify-between items-center">
             <Badge

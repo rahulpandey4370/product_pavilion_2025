@@ -367,7 +367,7 @@ html.light .booth-card-base::before {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .shooting-star, .aurora-blob, .booth-card-base::before, .gradient-text, .loading-spinner, .loading-spinner::before, .loading-spinner::after, .hero-effects-container {
+  .shooting-star, .aurora-blob, .booth-card-base::before, .gradient-text, .loading-spinner, .loading-spinner::before, .loading-spinner::after, .hero-effects-container, .animated-booth-number {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -624,4 +624,35 @@ html.light .products-section-background {
   @apply gradient-text; /* gradient-text is themed */
 }
 
+/* New animation for booth card numbers */
+.animated-booth-number {
+  color: var(--booth-accent-color);
+  text-shadow:
+    0 0 3px hsla(var(--booth-accent-color-hsl-values), 0.6),
+    0 0 6px hsla(var(--booth-accent-color-hsl-values), 0.4),
+    0 0 10px hsla(var(--booth-accent-color-hsl-values), 0.2);
+  animation: pulseNumberGlow 2.5s infinite alternate ease-in-out;
+  /* Ensure this doesn't inherit other text colors from parent by default */
+  -webkit-text-fill-color: var(--booth-accent-color); /* For Webkit browsers */
+  paint-order: stroke fill; /* Helps with text shadow rendering */
+}
+
+@keyframes pulseNumberGlow {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.95);
+    text-shadow:
+      0 0 3px hsla(var(--booth-accent-color-hsl-values), 0.5),
+      0 0 6px hsla(var(--booth-accent-color-hsl-values), 0.3),
+      0 0 10px hsla(var(--booth-accent-color-hsl-values), 0.15);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.05);
+    text-shadow:
+      0 0 5px hsla(var(--booth-accent-color-hsl-values), 0.7),
+      0 0 10px hsla(var(--booth-accent-color-hsl-values), 0.5),
+      0 0 18px hsla(var(--booth-accent-color-hsl-values), 0.3);
+  }
+}
     
