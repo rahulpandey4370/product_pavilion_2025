@@ -52,37 +52,28 @@ export default function SimpleWordGame() {
 
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const gameContainerRef = useRef<HTMLDivElement>(null);
-  const scrollableGridContainerRef = useRef<HTMLDivElement>(null); // Keep for potential future use or specific styling needs.
+  const scrollableGridContainerRef = useRef<HTMLDivElement>(null);
 
   const isMobile = useIsMobile();
 
   useEffect(() => {
-    // Store the original body overflow style when the component mounts or visibility changes to true
     let originalBodyOverflow = '';
-    if (isVisible) { // Only attempt to grab if game is becoming visible
-        originalBodyOverflow = document.body.style.overflow;
+    if (typeof window !== 'undefined') {
+      originalBodyOverflow = document.body.style.overflow;
     }
 
     if (isMobile && isSelecting && !gameComplete) {
-      if (document.body.style.overflow !== 'hidden') { // Avoid redundant sets
-        document.body.style.overflow = 'hidden';
-      }
+      document.body.style.overflow = 'hidden';
     } else {
-      // Only restore if it was set to 'hidden' by this component
-      if (document.body.style.overflow === 'hidden') {
-        document.body.style.overflow = originalBodyOverflow || '';
-      }
+      document.body.style.overflow = originalBodyOverflow || '';
     }
 
-    // Cleanup function
     return () => {
-      // If the component unmounts and body overflow was 'hidden' (potentially by this component)
-      // restore it to what it was or default.
-      if (document.body.style.overflow === 'hidden') {
-         document.body.style.overflow = originalBodyOverflow || '';
+      if (typeof window !== 'undefined') {
+        document.body.style.overflow = originalBodyOverflow || '';
       }
     };
-  }, [isMobile, isSelecting, gameComplete, isVisible]);
+  }, [isMobile, isSelecting, gameComplete]);
 
 
   const isValidPlacement = useCallback((
@@ -158,7 +149,6 @@ export default function SimpleWordGame() {
   
   const generateGrid = useCallback(() => {
     let newGrid = Array(size.rows).fill(null).map(() => Array(size.cols).fill(''));
-    // eslint-disable-next-line @typescript-eslint/no-shadow
     const wordsForPlacement = initialWords.map(w => w.word).sort((a, b) => b.length - a.length);
 
     for (const word of wordsForPlacement) {
@@ -182,7 +172,6 @@ export default function SimpleWordGame() {
   useEffect(() => {
     if (isVisible) {
         setGrid(generateGrid());
-        // eslint-disable-next-line @typescript-eslint/no-shadow
         setWords(currentWords => initialWords.map(w => ({ ...w, found: false, foundTimestamp: undefined })));
         setGameComplete(false);
         setMessage('');
@@ -314,7 +303,6 @@ export default function SimpleWordGame() {
 
     const word = selectedWord.toUpperCase();
     const reversedWord = word.split('').reverse().join('');
-    // eslint-disable-next-line @typescript-eslint/no-shadow
     const wordIndex = words.findIndex(w => w.word === word || w.word === reversedWord);
 
     if (wordIndex !== -1 && !words[wordIndex].found) {
@@ -338,8 +326,9 @@ export default function SimpleWordGame() {
         setMessage('');
       }
       if (wordIndex === -1 || (wordIndex !== -1 && words[wordIndex].found)) {
+        const currentMessage = message;
         setTimeout(() => {
-          if (message === (`'${word}' is not in the list.`) || message === (`You already found ${words[wordIndex]?.word}!`)) {
+          if (message === currentMessage) { // Only clear if it hasn't changed
             setMessage('');
           }
         }, 2000);
@@ -348,8 +337,9 @@ export default function SimpleWordGame() {
   };
 
   const handleGridTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
+    // This function is for the inner grid to detect cell hover during touch.
+    // Scroll prevention will be handled by the parent scrollableGridContainerRef.
     if (!isSelecting || gameComplete) return;
-    event.preventDefault(); 
     const touch = event.touches[0];
     const element = document.elementFromPoint(touch.clientX, touch.clientY);
     if (element) {
@@ -381,7 +371,6 @@ export default function SimpleWordGame() {
 
 
   const resetGame = useCallback(() => {
-    // eslint-disable-next-line @typescript-eslint/no-shadow
     setWords(currentWords => initialWords.map(w => ({ ...w, found: false, foundTimestamp: undefined })));
     setGrid(generateGrid());
     setSelectedLetters([]);
@@ -555,16 +544,24 @@ export default function SimpleWordGame() {
             }
           }}
         >
-          <div ref={scrollableGridContainerRef} className="overflow-x-auto"> 
+          <div 
+            ref={scrollableGridContainerRef} 
+            className="overflow-x-auto"
+            style={{ touchAction: isMobile && isSelecting ? 'none' : 'auto' }}
+            onTouchMove={(e) => {
+              if (isMobile && isSelecting) {
+                e.preventDefault();
+              }
+            }}
+          > 
             <div
               className="grid min-w-max gap-[2px]" 
               style={{ 
                 gridTemplateColumns: `repeat(${size.cols}, minmax(0, 1fr))`,
-                ...(isMobile && isSelecting && { touchAction: 'none' } as React.CSSProperties)
               }}
               onMouseUp={handleMouseUp} 
               onTouchEnd={handleMouseUp} 
-              onTouchMove={handleGridTouchMove}
+              onTouchMove={handleGridTouchMove} // This remains for cell detection
             >
               {grid.map((rowLetters, rowIndex) => (
                 rowLetters.map((letter, colIndex) => (
