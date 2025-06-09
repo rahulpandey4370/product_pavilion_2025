@@ -388,12 +388,14 @@ const boothDataWithNumbers: Booth[] = originalBoothsDataForMapping.map((booth) =
     case 'integration': boothNumber = 6; break;
     case 'cloud': boothNumber = 7; break;
     default:
+      // Fallback for any booths not explicitly mapped, though all should be.
+      // This attempts to maintain original order if an ID is missed in the switch.
       const originalOrderForFallback = [
         'prism-ai-use-cases', 'non-prism-ai-use-cases', 'ai-accelerated-development',
-        'cross-platform', 'manufacturing-erp', 'integration', 'cloud', 'qa-meets-ai' // ID CHANGED
+        'cross-platform', 'manufacturing-erp', 'integration', 'cloud', 'qa-meets-ai'
       ];
       boothNumber = originalOrderForFallback.indexOf(booth.id) + 1;
-      if (boothNumber === 0) boothNumber = originalBoothsDataForMapping.length +1;
+      if (boothNumber === 0) boothNumber = originalBoothsDataForMapping.length +1; // Should not happen
   }
   return { ...booth, boothNumber };
 });
@@ -414,7 +416,7 @@ export const booths: Booth[] = [
   getBoothByIdFromMappedData('prism-ai-use-cases', boothDataWithNumbers),
   getBoothByIdFromMappedData('non-prism-ai-use-cases', boothDataWithNumbers),
   getBoothByIdFromMappedData('ai-accelerated-development', boothDataWithNumbers),
-  getBoothByIdFromMappedData('qa-meets-ai', boothDataWithNumbers), // ID CHANGED - This is "QA meets AI", displays number 8
+  getBoothByIdFromMappedData('qa-meets-ai', boothDataWithNumbers), // This ensures the object with id: 'qa-meets-ai' is used
   getBoothByIdFromMappedData('cross-platform', boothDataWithNumbers),
   getBoothByIdFromMappedData('manufacturing-erp', boothDataWithNumbers),
   getBoothByIdFromMappedData('integration', boothDataWithNumbers),
