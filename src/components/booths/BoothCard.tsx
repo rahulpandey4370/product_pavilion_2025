@@ -24,7 +24,7 @@ const getBoothThemeClass = (boothId: string) => {
     case 'manufacturing-erp': return 'booth-manufacturing-erp-theme';
     case 'integration': return 'booth-integration-theme';
     case 'cloud': return 'booth-cloud-theme';
-    case 'cloud-enablers': return 'booth-cloud-enablers-theme'; // This will apply to "QA meets AI" as its ID is 'cloud-enablers'
+    case 'qa-meets-ai': return 'booth-cloud-enablers-theme'; // ID CHANGED, theme class name kept for now
     default: return '';
   }
 };

@@ -12,7 +12,6 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft, ArrowRight, Home, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-// import DynamicLucideIcon from '@/components/shared/DynamicLucideIcon'; // No longer needed directly here if header is removed
 
 // Helper to get theme class based on booth ID
 const getBoothThemeClass = (boothId?: string | null) => {
@@ -25,7 +24,7 @@ const getBoothThemeClass = (boothId?: string | null) => {
     case 'manufacturing-erp': return 'booth-manufacturing-erp-theme';
     case 'integration': return 'booth-integration-theme';
     case 'cloud': return 'booth-cloud-theme';
-    case 'cloud-enablers': return 'booth-cloud-enablers-theme';
+    case 'qa-meets-ai': return 'booth-cloud-enablers-theme'; // ID CHANGED, theme class name kept for now
     default: return '';
   }
 };

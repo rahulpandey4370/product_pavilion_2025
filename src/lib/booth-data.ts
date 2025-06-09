@@ -150,14 +150,14 @@ It’s low-code integration made smarter, faster, and more accessible.`,
     ],
   },
   {
-    id: 'cloud-enablers', // This is "QA meets AI"
+    id: 'qa-meets-ai', // BOOTH 8 - ID CHANGED
     name: 'QA meets AI',
     tagline: 'QA meets AI - Reimagining Quality',
     description: `Step into the future of Quality Assurance at our "QA Meets AI" booth!
 Discover how we’re blending the power of AI and the latest tech innovations to transform traditional QA practices and experience how we’re accelerating releases while boosting confidence in quality.
 Whether you’re curious about how AI can write tests, find bugs, or even help debug them — or just want to see innovation in action — don’t miss this interactive showcase.
 Join us to see how QA is no longer a checkpoint, but a co-pilot in innovation.`,
-    iconName: 'Zap', // Changed from Layers to Zap
+    iconName: 'Zap',
     heroImage: 'https://placehold.co/1200x400.png',
     features: [
       {
@@ -382,19 +382,18 @@ const boothDataWithNumbers: Booth[] = originalBoothsDataForMapping.map((booth) =
     case 'prism-ai-use-cases': boothNumber = 1; break;
     case 'non-prism-ai-use-cases': boothNumber = 2; break;
     case 'ai-accelerated-development': boothNumber = 3; break;
-    case 'cloud-enablers': boothNumber = 8; break; // This is "QA meets AI"
+    case 'qa-meets-ai': boothNumber = 8; break; // ID CHANGED
     case 'cross-platform': boothNumber = 4; break;
     case 'manufacturing-erp': boothNumber = 5; break;
     case 'integration': boothNumber = 6; break;
     case 'cloud': boothNumber = 7; break;
-    default: // Fallback, should ideally not be hit if all IDs are covered
-      // Find its original index in a predefined order to assign remaining numbers
+    default:
       const originalOrderForFallback = [
         'prism-ai-use-cases', 'non-prism-ai-use-cases', 'ai-accelerated-development',
-        'cross-platform', 'manufacturing-erp', 'integration', 'cloud', 'cloud-enablers'
+        'cross-platform', 'manufacturing-erp', 'integration', 'cloud', 'qa-meets-ai' // ID CHANGED
       ];
       boothNumber = originalOrderForFallback.indexOf(booth.id) + 1;
-      if (boothNumber === 0) boothNumber = originalBoothsDataForMapping.length +1; // if not found in fallback
+      if (boothNumber === 0) boothNumber = originalBoothsDataForMapping.length +1;
   }
   return { ...booth, boothNumber };
 });
@@ -410,12 +409,12 @@ const getBoothByIdFromMappedData = (id: string, data: Booth[]): Booth => {
 // This is the final exported array, ordered for display on the homepage.
 // Visual order: [1], [2], [3], [8], [4], [5], [6], [7] (using assigned boothNumbers)
 // which maps to IDs: prism-ai-use-cases, non-prism-ai-use-cases, ai-accelerated-development,
-// cloud-enablers (QA), cross-platform, manufacturing-erp, integration, cloud
+// qa-meets-ai (QA), cross-platform, manufacturing-erp, integration, cloud
 export const booths: Booth[] = [
   getBoothByIdFromMappedData('prism-ai-use-cases', boothDataWithNumbers),
   getBoothByIdFromMappedData('non-prism-ai-use-cases', boothDataWithNumbers),
   getBoothByIdFromMappedData('ai-accelerated-development', boothDataWithNumbers),
-  getBoothByIdFromMappedData('cloud-enablers', boothDataWithNumbers), // This is "QA meets AI", displays number 8
+  getBoothByIdFromMappedData('qa-meets-ai', boothDataWithNumbers), // ID CHANGED - This is "QA meets AI", displays number 8
   getBoothByIdFromMappedData('cross-platform', boothDataWithNumbers),
   getBoothByIdFromMappedData('manufacturing-erp', boothDataWithNumbers),
   getBoothByIdFromMappedData('integration', boothDataWithNumbers),
@@ -424,7 +423,6 @@ export const booths: Booth[] = [
 
 
 export const getBoothById = (id: string): Booth | undefined => {
-  // getBoothById should also search from the final ordered `booths` array or use the mapping
   return booths.find(booth => booth.id === id);
 };
 
