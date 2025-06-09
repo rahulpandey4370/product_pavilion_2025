@@ -11,11 +11,29 @@ import { cn } from '@/lib/utils';
 interface FeatureCardProps {
   feature: Feature;
   onViewDetails: () => void;
-  index: number; // Index is kept as it might be used for other purposes like animation delays in future, but not for numbering
+  index: number;
   boothThemeClass: string;
 }
 
+// Helper function to truncate description to a maximum number of sentences
+const truncateDescription = (description: string, maxSentences: number = 3): string => {
+  if (!description) {
+    return '';
+  }
+  // This regex splits the text into sentences, capturing the sentence and its ending punctuation.
+  const sentences = description.match(/[^.!?]+[.!?]+/g) || [];
+  
+  if (sentences.length > maxSentences) {
+    return sentences.slice(0, maxSentences).join(' ').trim() + '...';
+  }
+  // If not enough sentences to truncate, or regex didn't split as expected but text is short, return original.
+  // If regex fails and text is long, this will return original. A more robust tokenizer might be needed for complex cases.
+  return description;
+};
+
 export default function FeatureCard({ feature, onViewDetails, index, boothThemeClass }: FeatureCardProps) {
+  const shortDescription = truncateDescription(feature.description);
+
   return (
     <div
       className={cn(
@@ -25,20 +43,8 @@ export default function FeatureCard({ feature, onViewDetails, index, boothThemeC
       <Card className={cn(
         "relative booth-card-base h-full flex flex-col overflow-hidden",
         "glow-effect",
-        boothThemeClass // Apply booth theme class for its background and --booth-accent-color
+        boothThemeClass
       )}>
-        {/* Number Badge - REMOVED
-        <div
-          className={cn(
-            "absolute top-2.5 right-2.5 z-20 flex h-7 w-7 items-center justify-center rounded-full text-sm font-bold shadow-lg",
-            "bg-[var(--booth-accent-color)] text-[hsl(var(--primary-foreground-hsl))]"
-          )}
-          aria-hidden="true"
-        >
-          {index + 1}
-        </div>
-        */}
-
         {feature.image && (
           <div className="relative w-full h-48">
             <Image
@@ -58,7 +64,7 @@ export default function FeatureCard({ feature, onViewDetails, index, boothThemeC
           {feature.category && <CardDescription className="text-[var(--neon-blue)]">{feature.category}</CardDescription>}
         </CardHeader>
         <CardContent className="flex-grow flex flex-col justify-between z-10">
-          <p className="text-sm mb-4">{feature.description}</p>
+          <p className="text-sm mb-4">{shortDescription}</p>
           <Button
             onClick={onViewDetails}
             size="sm"
