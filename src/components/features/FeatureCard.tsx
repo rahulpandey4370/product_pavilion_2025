@@ -16,7 +16,7 @@ interface FeatureCardProps {
 }
 
 // Helper function to truncate description to a maximum number of sentences
-const truncateDescription = (description: string, maxSentences: number = 2): string => { // Changed maxSentences to 2
+const truncateDescription = (description: string, maxSentences: number = 1): string => { // Changed maxSentences to 1
   if (!description) {
     return '';
   }
