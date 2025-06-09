@@ -25,7 +25,7 @@ type FeedbackFormData = z.infer<typeof feedbackFormSchema>;
 
 export default function FeedbackForm() {
   const [isLoading, setIsLoading] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
+  const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error'; message: string; blobUrl?: string } | null>(null);
   const [availableFeatures, setAvailableFeatures] = useState<Feature[]>([]);
 
   const form = useForm<FeedbackFormData>({
@@ -52,17 +52,31 @@ export default function FeedbackForm() {
   const onSubmit: SubmitHandler<FeedbackFormData> = async (data) => {
     setIsLoading(true);
     setSubmitStatus(null);
-    console.log('Feedback Submitted:', data);
 
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    try {
+      const response = await fetch('/api/feedback', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
 
-    // For now, we'll just show a success message.
-    // In a real app, you'd send this to a backend.
-    setSubmitStatus({ type: 'success', message: 'Thank you! Your feedback has been submitted successfully.' });
-    form.reset();
-    setAvailableFeatures([]); // Reset features dropdown as well
-    setIsLoading(false);
+      const result = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus({ type: 'success', message: `Feedback submitted! URL: ${result.url}`, blobUrl: result.url });
+        form.reset();
+        setAvailableFeatures([]);
+      } else {
+        setSubmitStatus({ type: 'error', message: result.error || 'Failed to submit feedback. Please try again.' });
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      setSubmitStatus({ type: 'error', message: 'An unexpected error occurred during submission.' });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -177,7 +191,19 @@ export default function FeedbackForm() {
           <Alert variant={submitStatus.type === 'error' ? 'destructive' : 'default'} className="mt-6 bg-opacity-10">
             {submitStatus.type === 'success' ? <CheckCircle className="h-5 w-5" /> : <AlertTriangle className="h-5 w-5" />}
             <AlertTitle>{submitStatus.type === 'success' ? 'Success!' : 'Error'}</AlertTitle>
-            <AlertDescription>{submitStatus.message}</AlertDescription>
+            <AlertDescription>
+              {submitStatus.message}
+              {submitStatus.blobUrl && (
+                <a 
+                  href={submitStatus.blobUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="block mt-2 text-xs underline hover:text-primary"
+                >
+                  View stored feedback (if public)
+                </a>
+              )}
+            </AlertDescription>
           </Alert>
         )}
       </CardContent>
