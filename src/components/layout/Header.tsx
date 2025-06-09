@@ -3,33 +3,36 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Sparkles, Linkedin as LinkedinIcon, Menu } from 'lucide-react'; // Added Menu icon
+import { Sparkles, Linkedin as LinkedinIcon, Menu, MessageSquareText } from 'lucide-react'; // Added Menu, MessageSquareText
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { ThemeToggle } from '@/components/theme/ThemeToggle';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetClose } from '@/components/ui/sheet'; // Added Sheet components
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import type { ReactNode } from 'react';
-import { useState } from 'react';
+import { useState, useEffect, useMemo } from 'react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
-const navItems = [
-  { name: 'Home', href: '/' },
-  { name: 'Explore Booths', href: '/#booths' },
-  { name: 'Word Search', href: '/#word-search' },
+const baseNavItems = [
+  { name: 'Home', href: '/', icon: null },
+  { name: 'Explore Booths', href: '/#booths', icon: null },
+  { name: 'Word Search', href: '/#word-search', icon: null, mobileOnly: false, desktopOnly: false }, // mobileOnly, desktopOnly for clarity
+  { name: 'Feedback', href: '/#feedback', icon: MessageSquareText, mobileOnly: false, desktopOnly: false },
 ];
 
 // Helper component for SheetClose functionality on link click
-const NavLink: React.FC<{ href: string; children: ReactNode; currentPathname: string; onClick?: () => void }> = ({ href, children, currentPathname, onClick }) => {
+const NavLink: React.FC<{ href: string; children: ReactNode; currentPathname: string; onClick?: () => void; icon?: React.ElementType }> = ({ href, children, currentPathname, onClick, icon: Icon }) => {
   const isActive = (href.startsWith('/#') && currentPathname === '/') || currentPathname === href;
   return (
     <Link
       href={href}
       className={cn(
-        'block py-3 px-4 rounded-md text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground',
+        'flex items-center gap-2 py-3 px-4 rounded-md text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground',
         isActive ? 'bg-primary text-primary-foreground hover:bg-primary/90' : 'text-muted-foreground'
       )}
       onClick={onClick}
     >
+      {Icon && <Icon className="h-5 w-5" />}
       {children}
     </Link>
   );
@@ -39,6 +42,22 @@ const NavLink: React.FC<{ href: string; children: ReactNode; currentPathname: st
 export default function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const isMobile = useIsMobile();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  const navItems = useMemo(() => {
+    if (!mounted) { // Return a default set of nav items before client-side hydration
+        return baseNavItems.filter(item => item.name !== 'Word Search'); // Temporarily hide word search until mounted
+    }
+    return baseNavItems.filter(item => {
+      if (item.name === 'Word Search') {
+        return !isMobile; // Only show Word Search if not mobile
+      }
+      return true; // Show all other items
+    });
+  }, [isMobile, mounted]);
+
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60">
@@ -55,12 +74,13 @@ export default function Header() {
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  'text-sm font-medium transition-colors hover:text-primary',
-                  (pathname === item.href || (item.href.includes('#') && pathname === '/'))
+                  'text-sm font-medium transition-colors hover:text-primary flex items-center gap-1',
+                  (pathname === item.href || (item.href.startsWith('/#') && pathname === '/'))
                     ? 'text-primary'
                     : 'text-muted-foreground'
                 )}
               >
+                {item.icon && <item.icon className="h-4 w-4" />}
                 {item.name}
               </Link>
             ))}
@@ -116,6 +136,7 @@ export default function Header() {
                       href={item.href} 
                       currentPathname={pathname}
                       onClick={() => setIsMobileMenuOpen(false)}
+                      icon={item.icon}
                     >
                       {item.name}
                     </NavLink>
