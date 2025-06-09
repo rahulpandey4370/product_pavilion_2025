@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, type ReactNode } from 'react';
 import { useForm, type SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -25,7 +25,7 @@ type FeedbackFormData = z.infer<typeof feedbackFormSchema>;
 
 export default function FeedbackForm() {
   const [isLoading, setIsLoading] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error'; message: string; blobUrl?: string } | null>(null);
+  const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error'; message: ReactNode } | null>(null);
   const [availableFeatures, setAvailableFeatures] = useState<Feature[]>([]);
 
   const form = useForm<FeedbackFormData>({
@@ -65,7 +65,16 @@ export default function FeedbackForm() {
       const result = await response.json();
 
       if (response.ok) {
-        setSubmitStatus({ type: 'success', message: `Feedback submitted! URL: ${result.url}`, blobUrl: result.url });
+        setSubmitStatus({
+          type: 'success',
+          message: (
+            <>
+              Success! Feedback Submitted
+              <br />
+              Thank you for your feedback!
+            </>
+          ),
+        });
         form.reset();
         setAvailableFeatures([]);
       } else {
@@ -193,16 +202,6 @@ export default function FeedbackForm() {
             <AlertTitle>{submitStatus.type === 'success' ? 'Success!' : 'Error'}</AlertTitle>
             <AlertDescription>
               {submitStatus.message}
-              {submitStatus.blobUrl && (
-                <a 
-                  href={submitStatus.blobUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="block mt-2 text-xs underline hover:text-primary"
-                >
-                  View stored feedback (if public)
-                </a>
-              )}
             </AlertDescription>
           </Alert>
         )}
