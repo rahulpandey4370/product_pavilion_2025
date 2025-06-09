@@ -2,7 +2,7 @@
 'use client';
 
 import Image from 'next/image';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import type { Feature } from '@/types';
 import { Button } from '@/components/ui/button';
 import { Eye } from 'lucide-react';
@@ -61,7 +61,6 @@ export default function FeatureCard({ feature, onViewDetails, index, boothThemeC
         )}
         <CardHeader className="z-10">
           <CardTitle className="text-xl font-headline gradient-text">{feature.name}</CardTitle>
-          {feature.category && <CardDescription className="text-[var(--neon-blue)]">{feature.category}</CardDescription>}
         </CardHeader>
         <CardContent className="flex-grow flex flex-col justify-between z-10">
           <p className="text-sm mb-4">{shortDescription}</p>
